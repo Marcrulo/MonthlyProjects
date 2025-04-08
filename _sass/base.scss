@@ -14,6 +14,7 @@ $blockquote-border: $dove-grey !default;
 body {
   margin: 0;
   padding: 0;
+  padding-top: 100px; /* Ensures content doesn't get hidden behind the header */
   background: $body-background url("../images/bkg.png") 0 0;
   color: $body-foreground;
   font-size: 16px;
@@ -28,6 +29,21 @@ body {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url("../images/bkg.png"); /* Replace with your image URL */
+  background-size: cover; /* Ensures the image covers the header area */
+  background-position: center; /* Centers the background image */
+  z-index: 1000; /* Ensures it's on top of other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional, adds a subtle shadow */
+  padding: 10px 0; /* Optional, adjust padding as needed */
+  height: 60px; /* Set header height */
+}
+
 
 
 section {
@@ -274,5 +290,26 @@ a:active, a:focus {
 }
 
 #wrapper {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 300px);
+}
+
+/* Styling the scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Track (the part the thumb slides within) */
+::-webkit-scrollbar-track {
+  background: #333; /* Dark background for the track */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #729433; /* Dark color for the handle */
+  border-radius: 10px; /* Optional: rounded corners for the scrollbar thumb */
+}
+
+/* Hover state for the scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background: #b5e853; /* Lighter color when hovering over the handle */
 }
