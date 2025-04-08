@@ -5,7 +5,7 @@ author:
   email: "marcus.presutti.eu@gmail.com"
   url: "https://ashishchaudhary.in/hacker-blog"
 
-baseurl: "/monthly_projects"
+baseurl: "/MonthlyProjects"
 
 source: .
 destination: ./_site
