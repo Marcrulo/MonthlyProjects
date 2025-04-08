@@ -3,11 +3,12 @@ layout: default
 ---
 
 <article>
-  <h2>{{ page.title }}</h2>
+  <h1 class="page_title">{{ page.title }}</h1>
   <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">
     {{ page.date | date: "%B %Y" }}
     {% assign month_name = page.date | date: "%B" %}
     {{ site.data.month_emoji[month_name] }}
   </time>
+  <br><br>
   {{ content }}
 </article>
