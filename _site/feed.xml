@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/monthly_projects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/monthly_projects/" rel="alternate" type="text/html" /><updated>2025-04-08T12:21:27+02:00</updated><id>http://localhost:4000/monthly_projects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">[“Markdown reference”]</title><link href="http://localhost:4000/monthly_projects/0-markdown-reference" rel="alternate" type="text/html" title="[“Markdown reference”]" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/monthly_projects/0-markdown-reference</id><content type="html" xml:base="http://localhost:4000/monthly_projects/0-markdown-reference"><![CDATA[<p>Text can be <strong>bold</strong>, <em>italic</em>, <del>strikethrough</del> or <code class="language-plaintext highlighter-rouge">keyword</code>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/monthly_projects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/monthly_projects/" rel="alternate" type="text/html" /><updated>2025-04-08T15:22:18+02:00</updated><id>http://localhost:4000/monthly_projects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">[“Markdown reference”]</title><link href="http://localhost:4000/monthly_projects/0-markdown-reference" rel="alternate" type="text/html" title="[“Markdown reference”]" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/monthly_projects/0-markdown-reference</id><content type="html" xml:base="http://localhost:4000/monthly_projects/0-markdown-reference"><![CDATA[<p>Text can be <strong>bold</strong>, <em>italic</em>, <del>strikethrough</del> or <code class="language-plaintext highlighter-rouge">keyword</code>.</p>
 
 <p><a href="another-page">Link to another page</a>.</p>
 
@@ -161,15 +161,15 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The final element.
 </code></pre></div></div>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Guide to formatting posts]]></summary></entry><entry><title type="html">Let’s kick this off with a website!</title><link href="http://localhost:4000/monthly_projects/1-website" rel="alternate" type="text/html" title="Let’s kick this off with a website!" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/monthly_projects/1-website</id><content type="html" xml:base="http://localhost:4000/monthly_projects/1-website"><![CDATA[<h1 id="prologue"><a href="#prologue"></a>Prologue</h1>
-<p>I really love coding. Coding is both my profession and my hobby, but unfortunately, I haven’t found time to commit to any interesting hobby projects as of late. My excuse is usually that I don’t have time, or that the project becomes to large and messy.</p>
+<p>I really love coding. Coding is both my profession and my hobby, but unfortunately, I haven’t found time to commit to any interesting hobby projects as of late. My excuse is usually that I don’t have time, or that the project becomes to large and messy. Also, despite having done a ton of projects, none of them are really easy to showcase.</p>
 
-<p>But I intend to try a <em>new approach</em>:</p>
+<p>To fix all of these issues, I’ll try a <em>new approach</em>:</p>
 <blockquote>
   <p><strong><em>“I have to complete and document a coding project each month</em></strong>.
 <strong><em>But… should I happen to come across a different creative non-coding project, the same rules apply.</em>“</strong></p>
 </blockquote>
 
-<p>This way, I must do some project, and then figure out the size of it, depending on how much time I have available. In reality there is never a good moment to start a project - <em>just do it</em>.</p>
+<p>This way, I must start and finish a project, and then figure out the size of it, depending on how much time I have available. In reality there is never a good moment to start a project - <em>so just do it</em>.</p>
 
 <h1 id="website"><a href="#website"></a>Website</h1>
 <p>Enough rambling - now to the fun part!</p>

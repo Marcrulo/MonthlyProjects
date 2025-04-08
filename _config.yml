@@ -30,3 +30,6 @@ plugins:
 # Custom variables
 owner : "marcus.presutti"
 year : "2025"
+
+sass:
+  sass_dir: _sass
