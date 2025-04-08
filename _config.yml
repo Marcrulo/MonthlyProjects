@@ -33,3 +33,6 @@ year : "2025"
 
 sass:
   sass_dir: _sass
+
+include:
+  - assets
