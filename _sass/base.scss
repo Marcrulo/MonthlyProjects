@@ -144,6 +144,11 @@ ul li {
   list-style-image:url('../images/bullet.png');
 }
 
+time {
+  font-size: 12px;
+  color: #999;
+}
+
 blockquote {
   color: $blockquote-color;
   padding-left: 10px;

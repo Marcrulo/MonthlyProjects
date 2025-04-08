@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: CV
 ---
 
 Something about me.

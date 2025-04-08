@@ -1,7 +1,10 @@
 ---
-title: Sample Page
+title: [Markdown reference]
+description: Guide to formatting posts
 published: true
 ---
+
+
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
