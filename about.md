@@ -27,6 +27,7 @@ title: About me
 
 ### 🧑‍💼 Experience
 
+<br>
 **Student Assitant** (_Production_) – [ChemoMetec](https://chemometec.com/) \
 📅 Dec. 2021 – Dec. 2023 | 📍 Lillerød, Denmark 
 - **Analysing** and **refining** production data, whilst providing meaningful insights for the machine operators, using **self-made visualization- and report generating software**.
@@ -45,38 +46,65 @@ are sent through mail.
 **Consultant** - [Presutti Solutions](https://lasso.dk/firmaer/44744821/presutti-solutions) \
 📅 Feb. 2024 -   Now   | 📍 Ballerup, Denmark
 - Maintaining production **PHP website** for [linsen.dk](https://www.linsen.dk), which has involved **classic tasks for modern websites** such as: Google Tag Manager for market analysis, SQL querying, css styling, adding cookies (and cookie banners) etc.
-- 
+- Adding insights into how being **self-employed** works, which has put me in an **entrepreneurial mindset**.
 
 <br>
 **Student Assistant** (_Insights & Machine Learning_) – [GN](https://www.gn.com/) \
 📅 Sep. 2024 -   Now   | 📍 Ballerup, Denmark
-- ...
-- ...
+- Maintaining and building **Power BI reports**; based on hearing-aid event data.
+- Creating **analyses in proof-of-concept projects**; i.e. pricing and viability of translation technology, and **machine learning classification** of biosensor experiments
+
+<br>
 
 ---
 
 ### 🎓 Education
 
-**HTX (_Programming and Mathematics_)** – [Hillerød Teknisk Gymnasie](https://unord.dk/skoler/hilleroed-tekniske-gymnasium)  
+<br>
+**HTX (_Programming and Mathematics_)** – [Hillerød Teknisk Gymnasium](https://unord.dk/skoler/hilleroed-tekniske-gymnasium)  
 📅 Aug. 2017 – Jun. 2020 | 📍 Hillerød, Denmark
-- ...
+- Learned programming
+- Introduced to Python, SQL and HTML/CSS/JS
+- _Technology_ class taught me about creating viable products
 
+<br>
 **BSc in Engineering (_AI and Data_)** – [DTU](https://www.dtu.dk/)  
 📅 Sep. 2020 – Jan. 2024 | 📍 Kgs. Lyngby, Denmark
-- ...
+- Got into machine learning
+- Got fond of image analysis / computer vision
 
+<br>
 **MSc in Engineering (_Human-Centered AI_)** – [DTU](https://www.dtu.dk/)  
 📅 Feb. 2024 – (expected) Jun. 2026 | 📍 Kgs. Lyngby, Denmark
-- ...
+- Got more into deep learning, in particular
+- Became more comfortable with advanced math
+
+<br>
 
 ---
 
 ### 💻 Skills
 
-- **Languages:** Python, JavaScript, [etc.]
-- **Frameworks:** React, Jekyll, [etc.]
-- **Tools:** Git, Docker, [etc.]
-- **Other:** Public speaking, Writing, [etc.]
+
+**Data analysis** 
+- Python
+- SQL
+- Power BI
+- Excel
+- (R)
+
+**Web**
+- HTML / CSS / JS
+- Jekyll
+- REST API
+- Web scraping
+- (PHP + Yii)
+
+**Machine Learning**
+- PyTorch
+- Computer vision
+
+<br>
 
 ---
 
@@ -96,18 +124,24 @@ _Link:_ [GitHub/Live URL]
 --- 
 -->
 
-### 🏆 Competitions
+### 🏆 Competition participation
 
-- [Dansk Datalogi Dyst (2019)](https://danskdatalogidyst.dk/)
-- [DM i AI (2022)](https://dmiai.dk/)
-- [DM i AI (2023)](https://dmiai.dk/)
 - [DM i AI (2024)](https://dmiai.dk/)
+- [DM i AI (2023)](https://dmiai.dk/)
+- [DM i AI (2022)](https://dmiai.dk/)
+- [Dansk Datalogi Dyst (2019)](https://danskdatalogidyst.dk/)
+
+<br>
+
+---
 
 ### 📬 Contact
 
 - **Email:** marcus.presutti.eu@gmail.com 
 - **GitHub:** [github.com/Marcrulo](https://www.github.com/Marcrulo)  
 - **LinkedIn:** [linkedin.com/in/marcus-presutti/](https://www.linkedin.com/in/marcus-presutti/)  
+
+<br>
 
 ---
 

@@ -26,11 +26,12 @@ title: Archive
           <ul>
         {% endif %}
       {% endunless %}
-        <li><time>{{ post.date | date:"%d %b" }} - </time>
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+        <li><time>{{ post.date | date:"%B" }}</time>
+          - <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             {{ post.title }}
           </a>
         </li>
+
     {% endfor %}
     </ul>
 
