@@ -1,22 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-04-12T09:54:23+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/0-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/0-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/0-historic"><![CDATA[<h3 id="-bachelors-project">🧑‍🎓 Bachelor’s project</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-04-12T15:48:35+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/0-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/0-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/0-historic"><![CDATA[<h3 id="-bachelors-project">🧑‍🎓 Bachelor’s project</h3>
 <p>…</p>
 
 <h3 id="-color-ohms-converter">🔌 Color-ohms converter</h3>
-<p>…</p>
+<p>During my 3rd year of high school, I had a class in electronics. Especially, we started working with <em>analog</em> electronics, which requires us to build “breadboards” consisting of different components, most notably the <strong><em>resistor</em></strong>, which (to over-simplify) regulates the voltage going through a system.</p>
 
-<h3 id="️-js-canvas-game-border-control">🕹️ JS canvas game (Border control)</h3>
-<p>…</p>
+<p>Well, in order to know the <em>impedence</em> of a resistor, you’d have to read the colored labels on it:</p>
 
-<h3 id="-discord-bots-spam-bot--dolph-bot">🤖 Discord bots (spam bot + Dolph bot)</h3>
-<p>…</p>
+<p><img src="/MonthlyProjects/assets/images/resistor.png" alt="resistor" title="Title" /></p>
 
-<h3 id="-netto-tilbudsavis--alt-muligt">🛒 Netto tilbudsavis + alt muligt</h3>
-<p>…</p>
+<p>The main idea is that the order of the first colors indicate the significant digits, the following indicate the scale, and the later ones indicate tolerance and other less important attributes. As you can imagine, this is very tedious to do every time you want to find a certain resistor.
+So that’s why I created a GUI that would help me convert colors to Impedence values, and vice versa. I used <code class="language-plaintext highlighter-rouge">PyQt4</code> for the GUI, and had a class representation of each resistor, which is an arbitrary choice.</p>
 
-<h3 id="️-tron-game-ai-not-complete">🏍️ Tron game (AI not complete)</h3>
-<p>…</p>
+<h3 id="️-js-canvas-game">🕹️ JS canvas game</h3>
+<p>For my first class in programming in high school, we had to create a simple JavaScript canvas game. The game was about moving a character left and right in order to avoid missiles raining down from above. The code was super messy, and I felt like the project had potential, so I ended up re-programming the game a year later, as I had become more familar how to code <em>properly</em>. I ended up adding a speed boost and other special buttons, as well as upgrading the sprites.</p>
 
-<h3 id="-police-text-analysis-map-stuff-exam-project">🚔 Police text analysis map stuff (exam project)</h3>
+<p>These extra upgrades taught me about control-mechanics and how seemingly simple things have to be accounted for; such as clicking left and right at the same time, square vs. circular bounding boxes etc.</p>
+
+<h3 id="-discord-bots">🤖 Discord bots</h3>
+<p>The communications platform <a href="https://discord.com/">Discord</a> had become very famous, especially among gamers as myself. This could be attributed to the high quality interface, but maybe also the fact that you could build or import bots that could interact with the users. These could be music bots that played music in the voice channel, or game bots that let you play in the the general chat room. More generally, you can interact with a program using text commannds, which would allow people to actviate basically any function defineded in Pytyhon or JavaScript (or whichever languages are available). For me at least, it felt natural to try building on of my own, by following the official <a href="https://discord.com/developers/docs/intro">Discord developer documention</a>.</p>
+
+<p>(Examples…)</p>
+
+<p>The bots were not very complex. In fact, they were really easy to get up and running…</p>
+
+<h3 id="-netto-store-ads-notification">🛒 Netto store ads notification</h3>
+<p>When I moved away from home, I always checked the Netto ads for good price drops, but this quickly felt like a daunting manual task. Browsing the ads required me to open the official Netto app, and then scroll through everything. I look for certain items, so everything else is just a distraction. I was thinking to myself that this must be automated.</p>
+
+<p>I started by trying to use the official <a href="https://developer.sallinggroup.com/api-reference">Salling API</a> to extract the prices of goods in Netto, but it didn’t work the way I wanted. Instead, I ended up webscraping a site that hosted the store ads for all major convenience stores. Then, I tried using simple key-search to extract the items I was interested in, and then had it send an email to me with both the images and prices of the items in mind. This way I could check the mail when the ads were updated, and I only saw the items that made sense.</p>
+
+<h3 id="️-tron-game">🏍️ Tron game</h3>
+<p>I had gone a bit back and forth regarding game development, but I thought I’d give it a shot again, with the hope of creating an AI to play a custom game after being inspired by <a href="https://www.youtube.com/watch?v=AaGK-fj-BAM&amp;ab_channel=TheCodingTrain">this video</a>. I was inspired</p>
+
+<h3 id="-police-">🚔 Police …</h3>
 <p>…</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[A brief description of previous (not-that-well-documented) hobby projects]]></summary></entry><entry><title type="html">0. Website (this one)</title><link href="http://localhost:4000/MonthlyProjects/1-website" rel="alternate" type="text/html" title="0. Website (this one)" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/1-website</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/1-website"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
 <p>I really love coding. Coding is both my profession and my hobby, but unfortunately, I haven’t found time to commit to any interesting hobby projects as of late. My excuse is usually that I don’t have time, or that the project becomes to large and messy. Also, despite having done a ton of projects, none of them are really easy to showcase.</p>
 
