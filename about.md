@@ -144,5 +144,3 @@ _Link:_ [GitHub/Live URL]
 <br>
 
 ---
-
-Thanks for stopping by!
