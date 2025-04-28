@@ -14,7 +14,7 @@ title: About me
   </div>
 
   <div style="flex: 0 0 200px;">
-    <img src="{{ site.baseurl }}/assets/images/me.jpg" alt="Photo of me" style="width: 100%; max-width: 200px; border-radius: 50px;">
+    <img src="{{ site.baseurl }}/assets/images/about/me.jpg" alt="Photo of me" style="width: 100%; max-width: 200px; border-radius: 50px;">
   </div>
 
 </div>

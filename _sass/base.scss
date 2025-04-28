@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 100px; /* Ensures content doesn't get hidden behind the header */
-  background: $body-background url("../images/bkg.png") 0 0;
+  background: $body-background url("../images/all/bkg.png") 0 0;
   color: $body-foreground;
   font-size: 16px;
   line-height: 1.5;
@@ -50,7 +50,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../images/bkg.png");
+  background-image: url("../images/all/bkg.png");
   background-size: cover;
   background-position: center;
   opacity: 0.9; /* Adjust transparency here */
@@ -193,7 +193,7 @@ dt {
 }
 
 ul li {
-  list-style-image:url('../images/bullet.png');
+  list-style-image:url('../images/all/bullet.png');
 }
 
 time {
@@ -284,7 +284,7 @@ hr {
 
 .btn-github .icon {
   opacity: 0.6;
-  background: url("../images/blacktocat.png") 0 0 no-repeat;
+  background: url("../images/all/blacktocat.png") 0 0 no-repeat;
 }
 
 /* Links

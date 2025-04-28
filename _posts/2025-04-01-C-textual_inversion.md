@@ -1,0 +1,125 @@
+---
+title: 1. Textual Inversion
+description: Utilize textual inversion to learn an word-embedding of the Pokémon "Charizard", in order to generate an image with Stable Diffusion 1.5
+published: true
+---
+
+## [](#prologue)Prologue
+- motivation
+- short project
+- anecdote?
+
+## [](#textual-inversion)Textual Inversion
+- Diffusion models
+- Retraining methodologies
+
+ https://huggingface.co/docs/diffusers/training/text_inversion
+
+
+
+## [](#hugging-face)Hugging Face 🤗
+- tutorial
+- model limitations
+
+## [](#dataset)Dataset
+
+https://huggingface.co/docs/diffusers/training/create_dataset
+
+- cat dataset
+- charizard full
+- charizard handpicked
+
+## [](#training)Training
+
+https://github.com/huggingface/diffusers/blob/main/examples/textual_inversion/textual_inversion.py
+
+- local vs. cloud
+- gradient checkpointing
+- mixed precision
+- xFormers
+- deepspeed
+- wandb
+
+
+```python
+os.environ["MODEL_NAME"] = "stable-diffusion-v1-5/stable-diffusion-v1-5"
+os.environ["DATA_DIR"] = "./charizard"
+os.environ["HUGGINGFACE_HUB_TOKEN"] = ...
+```
+
+
+```python
+import torch
+torch.cuda.empty_cache()
+
+!accelerate launch textual_inversion.py \
+  --pretrained_model_name_or_path    =   $MODEL_NAME \
+  --train_data_dir                   =   $DATA_DIR \
+  --output_dir                       =   "textual_inversion_charizard"
+  --learnable_property               =   "object" \
+  --report_to                        =   "wandb" \
+  
+  --placeholder_token                =   "<charizard>" \
+  --initializer_token                =   "dragon" \
+
+  --resolution                       =   512 \
+  --train_batch_size                 =   1 \
+  --gradient_accumulation_steps      =   8 \
+  --max_train_steps                  =   2000 \
+  
+  --learning_rate                    =   1e-2 \
+  --lr_warmup_steps                  =   100 \
+  --scale_lr                         =   True \
+  --lr_scheduler                     =   "cosine" \
+
+  --gradient_checkpointing           =   True \
+  --mixed_precision                  =   "fp16" \
+  --enable_xformers_memory_efficient_attention \
+
+  
+```
+
+
+## [](#results)Results
+- prompting
+- "charizard" vs "dragon"
+
+
+
+
+```python
+from diffusers import StableDiffusionPipeline
+
+# Load the base model
+pipeline = StableDiffusionPipeline.from_pretrained(
+    "runwayml/stable-diffusion-v1-5", 
+    torch_dtype=torch.float16
+).to("cuda")
+
+# Load your custom textual inversion embedding
+pipeline.load_textual_inversion("textual_inversion_charizard", placeholder_token="<charizard>")
+
+# Prompt model
+prompt = "Something ... <charizard> ... something"
+image = pipeline(prompt, num_inference_steps=50).images[0]
+image.save("out.png")
+```
+
+
+```python
+prompt = "<charizard>, a dragon-like Pokémon with blazing orange scales, roaring as it flies through a stormy sky. Flames burst from its mouth, lighting a volcanic land with lava and obsidian cliffs. Hyper-detailed digital art, vibrant colors, cinematic lighting, realism meets anime. ArtStation trending, 8K, dramatic scene with smoke swirling around its fiery tail"
+```
+
+```python
+prompt = "A hyper-realistic cinematic illustration of <charizard> soaring through a dramatic sky, glowing embers around it, wings spread wide, powerful fire breath, epic lighting, golden hour, volumetric light, ultra-detailed, 4k, concept art, artstation, trending on ArtStation"
+```
+
+```python
+prompt = "A breathtaking, ultra-detailed cartoon illustration of <charizard>, majestic and powerful, flying through a dramatic sunset sky, vibrant and saturated colors, intricate fire and smoke effects, cinematic lighting, highly polished fantasy art, masterpiece, 8k, extremely sharp and clean linework, professional character design"
+```
+
+
+## [](#reflection)Reflection
+- quality
+- what i learned
+- things to try next time

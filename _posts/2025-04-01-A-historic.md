@@ -12,7 +12,7 @@ During my 3rd year of high school, I had a class in electronics. Especially, we 
 
 Well, in order to know the _impedence_ of a resistor, you'd have to read the colored labels on it:
 
-![resistor]({{ site.baseurl}}/assets/images/resistor.png "Title")
+![resistor]({{ site.baseurl}}/assets/images/historic/resistor.png "Title")
 
 The main idea is that the order of the first colors indicate the significant digits, the following indicate the scale, and the later ones indicate tolerance and other less important attributes. As you can imagine, this is very tedious to do every time you want to find a certain resistor.
 So that's why I created a GUI that would help me convert colors to Impedence values, and vice versa. I used `PyQt4` for the GUI, and had a class representation of each resistor, which is an arbitrary choice. 
@@ -41,8 +41,8 @@ I started by trying to use the official [Salling API](https://developer.sallingg
 ### 🏍️ Tron game
 I had gone a bit back and forth regarding game development, but I thought I'd give it a shot again, with the hope of creating an AI to play a custom game after being inspired by [this video](https://www.youtube.com/watch?v=AaGK-fj-BAM&ab_channel=TheCodingTrain) of a guy coding snake from the bottom up in JavaScript. I tried to recreate the old arcade classis [Tron](https://tron.fandom.com/wiki/TRON_(arcade_game))
 
-![tron1]({{ site.baseurl}}/assets/images/tron1.png "tron1")
-![tron2]({{ site.baseurl}}/assets/images/tron2.png "tron2")
+![tron1]({{ site.baseurl}}/assets/images/historic/tron1.png "tron1")
+![tron2]({{ site.baseurl}}/assets/images/historic/tron2.png "tron2")
 
 
 ### 🚔 Police ...
