@@ -13,13 +13,16 @@ published: true
 - Diffusion models
 - Retraining methodologies
 
- https://huggingface.co/docs/diffusers/training/text_inversion
-
 
 
 ## [](#hugging-face)Hugging Face 🤗
+
+https://huggingface.co/docs/diffusers/training/text_inversion
+
 - tutorial
 - model limitations
+
+
 
 ## [](#dataset)Dataset
 
