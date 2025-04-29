@@ -5,13 +5,29 @@ published: true
 ---
 
 ## [](#prologue)Prologue
-- motivation
-- short project
-- anecdote?
+With the website quickly done, I still had time for another April project. I am currently taking a course on deep learning in computer vision, where we had about diffusion models for some weeks. A few weeks ago, I was not able to do the task on *textual inversion*. We were given most of the code, but the code stack was kind of a mess to get an overview of, and as a result, I could not generate anything remotely interesting. I was thinking to myself that it was not supposed to be that hard to implement, which is why I went to the internet. And as I should have thought, I was lead to [Hugging Face 🤗](https://huggingface.co)
+
 
 ## [](#textual-inversion)Textual Inversion
-- Diffusion models
-- Retraining methodologies
+Let's start from scratch: "What is textual inversion?"
+
+So, diffusion models like "Stable Diffusion" use (most notably) text to generate images. In order for these models to use that for anything, we need a model that learns comparisons between training images and their respective text labels. For this, a common solution is to use the CLIP model. This model encodes text and images in pairs, into a latent space, where the model tries to learn the encoding that increases similarity between image and text in each pair. Each **\<token\>** now has it's own latent representation that, through the prompt, guides how the diffusion model should produce an image. 
+
+But what if I want to create an image of something very specific that can't be captured my a prompt? Do we then need to retrain the entire diffusion model? Luckily no, since the diffusion model and CLIP model are completely independent of each other. Instead, we use **textual inversion** to create a new embedding, that belongs to the same latent space that the CLIP encoder captures. This requires us to use a few images (5-7 should be plenty) that belongs to that embedding, in order to start.
+
+To make it easy for ourselves, we can initialize a new embedding from an existing similar one. Then, we update the embedding directly, by optimizing wrt. the predicted noise of the diffusion model, similarly to how we'd normally train a diffusion model. This entire process should be done while freezing all parameters that are not the embedding.
+
+This was a very brief overview. For more information, visit the original paper: [An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion
+](https://arxiv.org/abs/2208.01618)
+
+![textualinversion]({{ site.baseurl }}/assets/images/textual_inversion/textual_inversion_paper.png "textualinversion")
+
+
+> TLDR: I have some specific images of an object or style, and I want my diffusion model to learn to represent that. This is done by teaching the model a new embedding vector.
+
+Alright now, let's get to work!
+
+
 
 
 
