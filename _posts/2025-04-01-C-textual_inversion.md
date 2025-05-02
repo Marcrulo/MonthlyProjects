@@ -33,7 +33,7 @@ Alright now, let's get to work!
 
 ## [](#hugging-face)Hugging Face 🤗
 
-https://huggingface.co/docs/diffusers/training/text_inversion
+A good place to start is with a [tutorial](https://huggingface.co/docs/diffusers/training/text_inversion) from Hugging Face, which forms the base of this (rather small) project. They provide us with the relevant textual-inversion 
 
 - tutorial
 - model limitations
