@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-04-29T16:49:49+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/A-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-historic"><![CDATA[<h3 id="️-tron-game-2024">🏍️ Tron game [2024]</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-05-06T10:45:20+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/A-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-historic"><![CDATA[<h3 id="️-tron-game-2024">🏍️ Tron game [2024]</h3>
 <p>I had gone a bit back and forth regarding game development, but I thought I’d give it a shot again, with the hope of creating an AI to play a custom game after being inspired by <a href="https://www.youtube.com/watch?v=AaGK-fj-BAM&amp;ab_channel=TheCodingTrain">this video</a> of a guy coding snake from the bottom up in JavaScript. I tried to recreate the old arcade classic <a href="https://tron.fandom.com/wiki/TRON_(arcade_game)">Tron</a></p>
 
 <p><img src="/MonthlyProjects/assets/images/tron1.png" alt="tron1" title="tron1" />
@@ -118,82 +118,161 @@ The highlights consist of:</p>
 
 <h2 id="hugging-face-"><a href="#hugging-face"></a>Hugging Face 🤗</h2>
 
-<p>https://huggingface.co/docs/diffusers/training/text_inversion</p>
+<p>The journey starts at a <a href="https://huggingface.co/docs/diffusers/training/text_inversion">Hugging Face tutorial</a>, which forms the base of this (rather small) project. All the “logic” has been provided, so we only need to concern ourselves with data, training parameters, and inference. This is the only things we need to define before running the training code:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"MODEL_NAME"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"stable-diffusion-v1-5/stable-diffusion-v1-5"</span>
+<span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"DATA_DIR"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"./charizard"</span>
+<span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"HUGGINGFACE_HUB_TOKEN"</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">HUGGINGFACE_HUB_TOKEN</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
-<ul>
-  <li>tutorial</li>
-  <li>model limitations</li>
-</ul>
+<p>The downside of relying solely on Hugging Face’s implementation, is that it only works for the simpler Stable-Diffusion v1.5 models, and not the more impressive v3.5 models. This is not because of model complexity per se, but rather that the newer models don’t use CLIP (or in the same way at least)</p>
 
 <h2 id="dataset"><a href="#dataset"></a>Dataset</h2>
 
-<p>https://huggingface.co/docs/diffusers/training/create_dataset</p>
+<p>In the tutorial, we are creating an embedding of a weird cat-like statue:
+<img src="/MonthlyProjects/assets/images/textual_inversion/cat.jpeg" alt="cat" title="cat" /></p>
 
-<ul>
-  <li>cat dataset</li>
-  <li>charizard full</li>
-  <li>charizard handpicked</li>
-</ul>
+<p>But I have a better idea: Let’s instead create an embedding for the famous Pokémon <strong>Charizard</strong>:
+<img src="/MonthlyProjects/assets/images/textual_inversion/charizard_base.jpg" alt="charizard_base" title="charizard_base" /></p>
+
+<p>It was very straight forward to create a <a href="https://huggingface.co/docs/diffusers/training/create_dataset">custom datasets</a> instead, as it simply required one to have a folder with images in, and then pass the folder name as a training argument.</p>
+
+<p>I used a collection of Pokémon images from a <a href="https://www.kaggle.com/datasets/thedagger/pokemon-generation-one">Kaggle dataset</a>. It contains a total of 52 images of Charizard (as well as all other Pokémon), but not all of the images are of great quality. I picked the 7 cleanest ones for this project. 
+<img src="/MonthlyProjects/assets/images/textual_inversion/charizard_all.png" alt="charizard_all" title="charizard_all" /></p>
 
 <h2 id="training"><a href="#training"></a>Training</h2>
 
-<p>https://github.com/huggingface/diffusers/blob/main/examples/textual_inversion/textual_inversion.py</p>
+<p>With most of the code given, and the images selected, the training really comes down to the choice of training arguments - all of which are defined in <a href="https://github.com/huggingface/diffusers/blob/main/examples/textual_inversion/textual_inversion.py">this script</a></p>
 
-<ul>
-  <li>local vs. cloud</li>
-  <li>gradient checkpointing</li>
-  <li>mixed precision</li>
-  <li>xFormers</li>
-  <li>deepspeed</li>
-  <li>wandb</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"MODEL_NAME"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"stable-diffusion-v1-5/stable-diffusion-v1-5"</span>
-<span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"DATA_DIR"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"./charizard"</span>
-<span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"HUGGINGFACE_HUB_TOKEN"</span><span class="p">]</span> <span class="o">=</span> <span class="p">...</span>
-</code></pre></div></div>
-
+<p>I could tune on this all day, but this was the arguments I ended up with:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="n">empty_cache</span><span class="p">()</span>
 
 <span class="err">!</span><span class="n">accelerate</span> <span class="n">launch</span> <span class="n">textual_inversion</span><span class="p">.</span><span class="n">py</span> \
   <span class="o">--</span><span class="n">pretrained_model_name_or_path</span>    <span class="o">=</span>   <span class="err">$</span><span class="n">MODEL_NAME</span> \
   <span class="o">--</span><span class="n">train_data_dir</span>                   <span class="o">=</span>   <span class="err">$</span><span class="n">DATA_DIR</span> \
-  <span class="o">--</span><span class="n">output_dir</span>                       <span class="o">=</span>   <span class="s">"textual_inversion_charizard"</span>
+  <span class="o">--</span><span class="n">output_dir</span>                       <span class="o">=</span>   <span class="s">"textual_inversion_charizard"</span> \
   <span class="o">--</span><span class="n">learnable_property</span>               <span class="o">=</span>   <span class="s">"object"</span> \
   <span class="o">--</span><span class="n">report_to</span>                        <span class="o">=</span>   <span class="s">"wandb"</span> \
-  
+
   <span class="o">--</span><span class="n">placeholder_token</span>                <span class="o">=</span>   <span class="s">"&lt;charizard&gt;"</span> \
   <span class="o">--</span><span class="n">initializer_token</span>                <span class="o">=</span>   <span class="s">"dragon"</span> \
 
   <span class="o">--</span><span class="n">resolution</span>                       <span class="o">=</span>   <span class="mi">512</span> \
   <span class="o">--</span><span class="n">train_batch_size</span>                 <span class="o">=</span>   <span class="mi">1</span> \
-  <span class="o">--</span><span class="n">gradient_accumulation_steps</span>      <span class="o">=</span>   <span class="mi">8</span> \
-  <span class="o">--</span><span class="n">max_train_steps</span>                  <span class="o">=</span>   <span class="mi">2000</span> \
-  
-  <span class="o">--</span><span class="n">learning_rate</span>                    <span class="o">=</span>   <span class="mf">1e-2</span> \
-  <span class="o">--</span><span class="n">lr_warmup_steps</span>                  <span class="o">=</span>   <span class="mi">100</span> \
-  <span class="o">--</span><span class="n">scale_lr</span>                         <span class="o">=</span>   <span class="bp">True</span> \
-  <span class="o">--</span><span class="n">lr_scheduler</span>                     <span class="o">=</span>   <span class="s">"cosine"</span> \
+  <span class="o">--</span><span class="n">gradient_accumulation_steps</span>      <span class="o">=</span>   <span class="mi">4</span> \
 
   <span class="o">--</span><span class="n">gradient_checkpointing</span>           <span class="o">=</span>   <span class="bp">True</span> \
   <span class="o">--</span><span class="n">mixed_precision</span>                  <span class="o">=</span>   <span class="s">"fp16"</span> \
   <span class="o">--</span><span class="n">enable_xformers_memory_efficient_attention</span> \
 
-  
+  <span class="o">--</span><span class="n">max_train_steps</span>                  <span class="o">=</span>   <span class="mi">2000</span> \
+  <span class="o">--</span><span class="n">learning_rate</span>                    <span class="o">=</span>   <span class="mf">1e-2</span> \
+  <span class="o">--</span><span class="n">lr_warmup_steps</span>                  <span class="o">=</span>   <span class="mi">100</span> \
+  <span class="o">--</span><span class="n">scale_lr</span>                         <span class="o">=</span>   <span class="bp">True</span> \
+  <span class="o">--</span><span class="n">lr_scheduler</span>                     <span class="o">=</span>   <span class="s">"cosine"</span> 
 </code></pre></div></div>
+<p>Small comments on this: I use “weights and biases” (<a href="https://wandb.ai/home">wandb</a>) to track losses live during training. Also note that we can choose to train either an “object” or “style” embedding.</p>
+
+<p>Even though the training process is dependent on many parameters intertwined, I’d say we can still group tuning into at least these few categories:</p>
+<ol>
+  <li>Convergence</li>
+  <li>Memory efficiency</li>
+  <li>Architecture (but this is out of our control)</li>
+</ol>
+
+<h3 id="convergence"><a href="#convergence"></a>Convergence</h3>
+<p>I chose to initialize the embedding as a “dragon”, as “Charizard” is also a dragon - even though it’s a Pokémon as well. As “Charizard” is an animated character cartoon character, it not fully represent a dragon. To see what dragons might look like with SD v1.5 model, consider the following examples:</p>
+
+<p><img src="/MonthlyProjects/assets/images/textual_inversion/normal_dragon.png" alt="normal_dragon" title="normal_dragon" /></p>
+
+<p>Despite tuning a lot with learning-rate, learning-rate scheduling, warmup steps, and learning-rate scaling, I usually get loss curves like this:</p>
+
+<p><img src="/MonthlyProjects/assets/images/textual_inversion/loss.png" alt="loss_curve" title="loss_curve" /></p>
+
+<p>This shows absolutely no sign of learning, even though, the embedding is definitely better than the initialization, or at least closer to a “Charizard” (which should be evident from the results)</p>
+
+<h3 id="memory"><a href="#memory"></a>Memory</h3>
+<p>As always when working with deep learning on image data, memory quickly becomes an issue, as we usually want fast training + high resolution images. Getting most out of one’s GPU is not a trivial task; therefore we need to utilize as many optimization tricks as possible. But first, let’s check out the stats of the GPU we are using.</p>
+
+<p>Unless you are a gamer, it is unlikely that you own a modern NVIDIA GPU that isi suitable for training DL models. Google Colab therefore becomes a good first choice for (cloud) training. But I actually have a GPU locally, meaning that I should consider which GPU (and setup) I prefer.</p>
+
+<p>Let’s start by considering the GPU specs. Free tier users on Colab get a <strong>Tesla T4</strong> GPU, and I own a <strong>GeForce RTX 2070 Super</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th><strong>Tesla T4</strong></th>
+      <th><strong>GeForce RTX 2070 Super</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GPU Memory (VRAM)</td>
+      <td><strong><em>16 GB</em></strong></td>
+      <td>8 GB</td>
+    </tr>
+    <tr>
+      <td>FP16/FP32 Compute Performance</td>
+      <td>8.141 TFLOPS</td>
+      <td><strong><em>9.062 TFLOPS</em></strong></td>
+    </tr>
+    <tr>
+      <td>Memory Bandwidth</td>
+      <td>320.0 GB/s</td>
+      <td><strong><em>448.0 GB/s</em></strong></td>
+    </tr>
+    <tr>
+      <td>Power consumption (TDP)</td>
+      <td><strong><em>70 Watt</em></strong></td>
+      <td>215 Watt</td>
+    </tr>
+    <tr>
+      <td>CUDA Cores</td>
+      <td>2560</td>
+      <td>2560</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Stats are taken from <a href="https://technical.city/en/video/Tesla-T4-vs-GeForce-RTX-2070-Super">here</a></p>
+</blockquote>
+
+<p>The Tesla GPU provides double as much VRAM, which is awesome, but the RTX 2070 GPU is faster. 
+Another thing is that when working on Colab, you are assigned a “session”, which you can be disconnected from. On the other hand, running training locally means that the PC is noisy, and can’t run other GPU heavy tasks. In conclusion, Colab might have a better GPU in my opinion, as I value VRAM a lot. Despite that, I think the ease of running things locally is what works best for me, so <em>I opted with running the training locally</em>.</p>
+
+<p>With the limited VRAM, I have to be extra cautious about memory use. I need some tricks!</p>
+
+<h4 id="mixed-precision"><a href="#mixed-precision"></a>Mixed precision</h4>
+<p>…</p>
+
+<h4 id="gradient-checkpointing"><a href="#gradient-checkpointing"></a>Gradient Checkpointing</h4>
+<p>…</p>
+
+<h4 id="xformers"><a href="#xFormer"></a>xFormers</h4>
+<p>…</p>
+
+<h4 id="deepspeed"><a href="#deepspeed"></a>DeepSpeed</h4>
+<p>…</p>
+
+<h4 id="gradient-accumulation"><a href="#gradient-accumulation"></a>Gradient accumulation</h4>
+<p>(https://chatgpt.com/share/68179d8b-83c8-8002-9e0c-ed6042010ac1)</p>
+
+<h3 id="architecture"><a href="#Architecture"></a>(Architecture)</h3>
+<p>…</p>
+
+<hr />
 
 <h2 id="results"><a href="#results"></a>Results</h2>
-<ul>
-  <li>prompting</li>
-  <li>“charizard” vs “dragon”</li>
-</ul>
+<p>Now that the model has been trained, the only thing left is to create some prompts, and generate some images. The inference code looks something like this:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">diffusers</span> <span class="kn">import</span> <span class="n">StableDiffusionPipeline</span>
 
 <span class="c1"># Load the base model
 </span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">StableDiffusionPipeline</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span>
-    <span class="s">"runwayml/stable-diffusion-v1-5"</span><span class="p">,</span> 
+    <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"MODEL_NAME"</span><span class="p">],</span> 
     <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="p">.</span><span class="n">float16</span>
 <span class="p">).</span><span class="n">to</span><span class="p">(</span><span class="s">"cuda"</span><span class="p">)</span>
 
@@ -206,18 +285,32 @@ The highlights consist of:</p>
 <span class="n">image</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"out.png"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">prompt</span> <span class="o">=</span> <span class="s">"&lt;charizard&gt;, a dragon-like Pokémon with blazing orange scales, roaring as it flies through a stormy sky. Flames burst from its mouth, lighting a volcanic land with lava and obsidian cliffs. Hyper-detailed digital art, vibrant colors, cinematic lighting, realism meets anime. ArtStation trending, 8K, dramatic scene with smoke swirling around its fiery tail"</span>
-</code></pre></div></div>
+<p>The strategy was quite simple. In my experience, some keywords/tags seem to be more effective than others, which is why I used ChatGPT to craft a diffusion prompt from natural language. Tags like “8K” and “ArtStation trending” seem to be associated with higher quality images. I assume that newer models have natural language capabilities incorporated - but that is not the case the early stable diffusion models.</p>
 
+<p>My first attempt at a prompt was to create a more or less realistic looking Charizard, which the model interpreted as smooth 3D-like:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">prompt</span> <span class="o">=</span> <span class="s">"A hyper-realistic cinematic illustration of &lt;charizard&gt; soaring through a dramatic sky, glowing embers around it, wings spread wide, powerful fire breath, epic lighting, golden hour, volumetric light, ultra-detailed, 4k, concept art, artstation, trending on ArtStation"</span>
 </code></pre></div></div>
+<p><img src="/MonthlyProjects/assets/images/textual_inversion/hyper_realistic.png" alt="hyper_realistic" title="hyper_realistic" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">prompt</span> <span class="o">=</span> <span class="s">"A breathtaking, ultra-detailed cartoon illustration of &lt;charizard&gt;, majestic and powerful, flying through a dramatic sunset sky, vibrant and saturated colors, intricate fire and smoke effects, cinematic lighting, highly polished fantasy art, masterpiece, 8k, extremely sharp and clean linework, professional character design"</span>
+<p>I then realized that the training images were all of a cartoon style, so my intuition was now to create a more cartoony look:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">prompt</span> <span class="o">=</span> <span class="s">"&lt;charizard&gt;, a dragon-like Pokémon with blazing orange scales, roaring as it flies through a stormy sky. Flames burst from its mouth, lighting a volcanic land with lava and obsidian cliffs. Hyper-detailed digital art, vibrant colors, cinematic lighting, realism meets anime. ArtStation trending, 8K, dramatic scene with smoke swirling around its fiery tail"</span>
 </code></pre></div></div>
+<p><img src="/MonthlyProjects/assets/images/textual_inversion/dragon_like.png" alt="dragon_like" title="dragon_like" /></p>
+
+<p><img src="/MonthlyProjects/assets/images/textual_inversion/majestic_dragon.png" alt="majestic_dragon" title="majestic_dragon" /></p>
+
+<p>The results were interesting but not impressive. I was then unsure if the training had gone wrong, or if the model is simply very bad. I then tried the following prompt, where I switched out “dragon” with “&lt;charizard&gt;” in one of the 3 cases. You can probably guess which.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">prompt</span> <span class="o">=</span> <span class="s">"A breathtaking, ultra-detailed cartoon illustration of dragon, majestic and powerful, flying through a dramatic sunset sky, vibrant and saturated colors, intricate fire and smoke effects, cinematic lighting, highly polished fantasy art, masterpiece, 8k, extremely sharp and clean linework, professional character design"</span>
+</code></pre></div></div>
+<p><img src="/MonthlyProjects/assets/images/textual_inversion/ultra_detailed.png" alt="ultra_detailed" title="ultra_detailed" /></p>
+
+<p>Just for comparison, the following images are from using the prompts “Charizard” and “Charizard cartoon” on the stable diffusion v3.5 large model without textual inversion:
+<img src="/MonthlyProjects/assets/images/textual_inversion/sd35.png" alt="sd35" title="sd35" /></p>
 
 <h2 id="reflection"><a href="#reflection"></a>Reflection</h2>
-<ul>
-  <li>quality</li>
-  <li>what i learned</li>
-  <li>things to try next time</li>
-</ul>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Utilize textual inversion to learn an word-embedding of the Pokémon "Charizard", in order to generate an image with Stable Diffusion 1.5]]></summary></entry></feed>
+<p>While not the quality I had hoped for, it was still fun to work with training optimizations, and especially to observe the monstrosities that the model created. While the simple SD v1.5 is quite small/simple, it is very accesible, and should also be quite simple to fine-tune using LoRA (which I look forward to in the future).</p>
+
+<p>I am not entirely satisfied with my efforts in lowering the training loss. I should have been more meticulous in tracking losses from the start, and tuning more responsively. The Charizard embedding could have been of much higher quality.</p>
+
+<p>Now that I have become slightly more accustomed to the Huggingface API, I think a next step in this domain would definitely be to try larger models, and to do some more <em>heavy</em> training.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Utilize textual inversion to learn an word-embedding of the Pokémon "Charizard", in order to generate an image with Stable Diffusion 1.5]]></summary></entry></feed>

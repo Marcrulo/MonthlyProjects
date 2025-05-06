@@ -95,9 +95,9 @@ are sent through mail.
 
 **Web**
 - HTML / CSS / JS
-- Jekyll
 - REST API
 - Web scraping
+- Jekyll
 - (PHP + Yii)
 
 **Machine Learning**

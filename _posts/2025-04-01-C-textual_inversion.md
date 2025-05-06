@@ -33,40 +33,38 @@ Alright now, let's get to work!
 
 ## [](#hugging-face)Hugging Face 🤗
 
-A good place to start is with a [tutorial](https://huggingface.co/docs/diffusers/training/text_inversion) from Hugging Face, which forms the base of this (rather small) project. They provide us with the relevant textual-inversion 
+The journey starts at a [Hugging Face tutorial](https://huggingface.co/docs/diffusers/training/text_inversion), which forms the base of this (rather small) project. All the "logic" has been provided, so we only need to concern ourselves with data, training parameters, and inference. This is the only things we need to define before running the training code:
+```python
+import os
+os.environ["MODEL_NAME"] = "stable-diffusion-v1-5/stable-diffusion-v1-5"
+os.environ["DATA_DIR"] = "./charizard"
+os.environ["HUGGINGFACE_HUB_TOKEN"] = <HUGGINGFACE_HUB_TOKEN>
+```
 
-- tutorial
-- model limitations
+
+
+The downside of relying solely on Hugging Face's implementation, is that it only works for the simpler Stable-Diffusion v1.5 models, and not the more impressive v3.5 models. This is not because of model complexity per se, but rather that the newer models don't use CLIP (or in the same way at least)
 
 
 
 ## [](#dataset)Dataset
 
-https://huggingface.co/docs/diffusers/training/create_dataset
+In the tutorial, we are creating an embedding of a weird cat-like statue:
+![cat]({{ site.baseurl }}/assets/images/textual_inversion/cat.jpeg "cat")
 
-- cat dataset
-- charizard full
-- charizard handpicked
+But I have a better idea: Let's instead create an embedding for the famous Pokémon **Charizard**:
+![charizard_base]({{ site.baseurl }}/assets/images/textual_inversion/charizard_base.jpg "charizard_base")
+
+It was very straight forward to create a [custom datasets](https://huggingface.co/docs/diffusers/training/create_dataset) instead, as it simply required one to have a folder with images in, and then pass the folder name as a training argument.
+
+I used a collection of Pokémon images from a [Kaggle dataset](https://www.kaggle.com/datasets/thedagger/pokemon-generation-one). It contains a total of 52 images of Charizard (as well as all other Pokémon), but not all of the images are of great quality. I picked the 7 cleanest ones for this project. 
+![charizard_all]({{ site.baseurl }}/assets/images/textual_inversion/charizard_all.png "charizard_all")
 
 ## [](#training)Training
 
-https://github.com/huggingface/diffusers/blob/main/examples/textual_inversion/textual_inversion.py
+With most of the code given, and the images selected, the training really comes down to the choice of training arguments - all of which are defined in [this script](https://github.com/huggingface/diffusers/blob/main/examples/textual_inversion/textual_inversion.py)
 
-- local vs. cloud
-- gradient checkpointing
-- mixed precision
-- xFormers
-- deepspeed
-- wandb
-
-
-```python
-os.environ["MODEL_NAME"] = "stable-diffusion-v1-5/stable-diffusion-v1-5"
-os.environ["DATA_DIR"] = "./charizard"
-os.environ["HUGGINGFACE_HUB_TOKEN"] = ...
-```
-
-
+I could tune on this all day, but this was the arguments I ended up with:
 ```python
 import torch
 torch.cuda.empty_cache()
@@ -74,44 +72,113 @@ torch.cuda.empty_cache()
 !accelerate launch textual_inversion.py \
   --pretrained_model_name_or_path    =   $MODEL_NAME \
   --train_data_dir                   =   $DATA_DIR \
-  --output_dir                       =   "textual_inversion_charizard"
+  --output_dir                       =   "textual_inversion_charizard" \
   --learnable_property               =   "object" \
   --report_to                        =   "wandb" \
-  
+
   --placeholder_token                =   "<charizard>" \
   --initializer_token                =   "dragon" \
 
   --resolution                       =   512 \
   --train_batch_size                 =   1 \
-  --gradient_accumulation_steps      =   8 \
-  --max_train_steps                  =   2000 \
-  
-  --learning_rate                    =   1e-2 \
-  --lr_warmup_steps                  =   100 \
-  --scale_lr                         =   True \
-  --lr_scheduler                     =   "cosine" \
+  --gradient_accumulation_steps      =   4 \
 
   --gradient_checkpointing           =   True \
   --mixed_precision                  =   "fp16" \
   --enable_xformers_memory_efficient_attention \
 
-  
+  --max_train_steps                  =   2000 \
+  --learning_rate                    =   1e-2 \
+  --lr_warmup_steps                  =   100 \
+  --scale_lr                         =   True \
+  --lr_scheduler                     =   "cosine" 
 ```
+Small comments on this: I use "weights and biases" ([wandb](https://wandb.ai/home)) to track losses live during training. Also note that we can choose to train either an "object" or "style" embedding.
+
+
+Even though the training process is dependent on many parameters intertwined, I'd say we can still group tuning into at least these few categories:
+1. Convergence
+2. Memory efficiency
+3. Architecture (but this is out of our control)
+
+
+### [](#convergence)Convergence
+I chose to initialize the embedding as a "dragon", as "Charizard" is also a dragon - even though it's a Pokémon as well. As "Charizard" is an animated character cartoon character, it not fully represent a dragon. To see what dragons might look like with SD v1.5 model, consider the following examples:
+
+![normal_dragon]({{ site.baseurl }}/assets/images/textual_inversion/normal_dragon.png "normal_dragon")
+
+
+Despite tuning a lot with learning-rate, learning-rate scheduling, warmup steps, and learning-rate scaling, I usually get loss curves like this:
+
+![loss_curve]({{ site.baseurl }}/assets/images/textual_inversion/loss.png "loss_curve")
+
+This shows absolutely no sign of learning, even though, the embedding is definitely better than the initialization, or at least closer to a "Charizard" (which should be evident from the results)
+
+
+
+
+### [](#memory)Memory
+As always when working with deep learning on image data, memory quickly becomes an issue, as we usually want fast training + high resolution images. Getting most out of one's GPU is not a trivial task; therefore we need to utilize as many optimization tricks as possible. But first, let's check out the stats of the GPU we are using.
+
+Unless you are a gamer, it is unlikely that you own a modern NVIDIA GPU that isi suitable for training DL models. Google Colab therefore becomes a good first choice for (cloud) training. But I actually have a GPU locally, meaning that I should consider which GPU (and setup) I prefer.
+
+Let's start by considering the GPU specs. Free tier users on Colab get a **Tesla T4** GPU, and I own a **GeForce RTX 2070 Super**:
+
+|                               | **Tesla T4** | **GeForce RTX 2070 Super** |
+|-------------------------------|--------------|--------------------|
+| GPU Memory (VRAM)             | ***16 GB***  | 8 GB               |
+| FP16/FP32 Compute Performance | 8.141 TFLOPS | ***9.062 TFLOPS*** |
+| Memory Bandwidth              | 320.0 GB/s   | ***448.0 GB/s***   |
+| Power consumption (TDP)       | ***70 Watt***| 215 Watt           |
+| CUDA Cores                    | 2560         | 2560               |
+
+> Stats are taken from [here](https://technical.city/en/video/Tesla-T4-vs-GeForce-RTX-2070-Super)
+
+The Tesla GPU provides double as much VRAM, which is awesome, but the RTX 2070 GPU is faster. 
+Another thing is that when working on Colab, you are assigned a "session", which you can be disconnected from. On the other hand, running training locally means that the PC is noisy, and can't run other GPU heavy tasks. In conclusion, Colab might have a better GPU in my opinion, as I value VRAM a lot. Despite that, I think the ease of running things locally is what works best for me, so *I opted with running the training locally*.
+
+With the limited VRAM, I have to be extra cautious about memory use. I need some tricks!
+
+#### [](#mixed-precision)Mixed precision
+...
+
+#### [](#gradient-checkpointing)Gradient Checkpointing
+...
+
+#### [](#xFormer)xFormers
+...
+
+#### [](#deepspeed)DeepSpeed
+...
+
+#### [](#gradient-accumulation)Gradient accumulation
+(https://chatgpt.com/share/68179d8b-83c8-8002-9e0c-ed6042010ac1)
+
+
+
+
+
+
+### [](#Architecture)(Architecture)
+...
+
+
+---
+
+
+
+
 
 
 ## [](#results)Results
-- prompting
-- "charizard" vs "dragon"
-
-
-
+Now that the model has been trained, the only thing left is to create some prompts, and generate some images. The inference code looks something like this:
 
 ```python
 from diffusers import StableDiffusionPipeline
 
 # Load the base model
 pipeline = StableDiffusionPipeline.from_pretrained(
-    "runwayml/stable-diffusion-v1-5", 
+    os.environ["MODEL_NAME"], 
     torch_dtype=torch.float16
 ).to("cuda")
 
@@ -124,21 +191,38 @@ image = pipeline(prompt, num_inference_steps=50).images[0]
 image.save("out.png")
 ```
 
+The strategy was quite simple. In my experience, some keywords/tags seem to be more effective than others, which is why I used ChatGPT to craft a diffusion prompt from natural language. Tags like "8K" and "ArtStation trending" seem to be associated with higher quality images. I assume that newer models have natural language capabilities incorporated - but that is not the case the early stable diffusion models. 
 
-```python
-prompt = "<charizard>, a dragon-like Pokémon with blazing orange scales, roaring as it flies through a stormy sky. Flames burst from its mouth, lighting a volcanic land with lava and obsidian cliffs. Hyper-detailed digital art, vibrant colors, cinematic lighting, realism meets anime. ArtStation trending, 8K, dramatic scene with smoke swirling around its fiery tail"
-```
-
+My first attempt at a prompt was to create a more or less realistic looking Charizard, which the model interpreted as smooth 3D-like:
 ```python
 prompt = "A hyper-realistic cinematic illustration of <charizard> soaring through a dramatic sky, glowing embers around it, wings spread wide, powerful fire breath, epic lighting, golden hour, volumetric light, ultra-detailed, 4k, concept art, artstation, trending on ArtStation"
 ```
+![hyper_realistic]({{ site.baseurl }}/assets/images/textual_inversion/hyper_realistic.png "hyper_realistic")
+
+I then realized that the training images were all of a cartoon style, so my intuition was now to create a more cartoony look:
+```python
+prompt = "<charizard>, a dragon-like Pokémon with blazing orange scales, roaring as it flies through a stormy sky. Flames burst from its mouth, lighting a volcanic land with lava and obsidian cliffs. Hyper-detailed digital art, vibrant colors, cinematic lighting, realism meets anime. ArtStation trending, 8K, dramatic scene with smoke swirling around its fiery tail"
+```
+![dragon_like]({{ site.baseurl }}/assets/images/textual_inversion/dragon_like.png "dragon_like")
+
+![majestic_dragon]({{ site.baseurl }}/assets/images/textual_inversion/majestic_dragon.png "majestic_dragon")
+
+
+The results were interesting but not impressive. I was then unsure if the training had gone wrong, or if the model is simply very bad. I then tried the following prompt, where I switched out "dragon" with "\<charizard\>" in one of the 3 cases. You can probably guess which. 
 
 ```python
-prompt = "A breathtaking, ultra-detailed cartoon illustration of <charizard>, majestic and powerful, flying through a dramatic sunset sky, vibrant and saturated colors, intricate fire and smoke effects, cinematic lighting, highly polished fantasy art, masterpiece, 8k, extremely sharp and clean linework, professional character design"
+prompt = "A breathtaking, ultra-detailed cartoon illustration of dragon, majestic and powerful, flying through a dramatic sunset sky, vibrant and saturated colors, intricate fire and smoke effects, cinematic lighting, highly polished fantasy art, masterpiece, 8k, extremely sharp and clean linework, professional character design"
 ```
+![ultra_detailed]({{ site.baseurl }}/assets/images/textual_inversion/ultra_detailed.png "ultra_detailed")
+
+Just for comparison, the following images are from using the prompts "Charizard" and "Charizard cartoon" on the stable diffusion v3.5 large model without textual inversion:
+![sd35]({{ site.baseurl }}/assets/images/textual_inversion/sd35.png "sd35")
+
 
 
 ## [](#reflection)Reflection
-- quality
-- what i learned
-- things to try next time
+While not the quality I had hoped for, it was still fun to work with training optimizations, and especially to observe the monstrosities that the model created. While the simple SD v1.5 is quite small/simple, it is very accesible, and should also be quite simple to fine-tune using LoRA (which I look forward to in the future). 
+
+I am not entirely satisfied with my efforts in lowering the training loss. I should have been more meticulous in tracking losses from the start, and tuning more responsively. The Charizard embedding could have been of much higher quality.
+
+Now that I have become slightly more accustomed to the Huggingface API, I think a next step in this domain would definitely be to try larger models, and to do some more *heavy* training.
