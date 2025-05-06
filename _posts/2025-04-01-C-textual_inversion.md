@@ -143,13 +143,12 @@ With the limited VRAM, I have to be extra cautious about memory use. I need some
 In order to update weights and gradients with high precision, 32-bit precision is usually used ±3.4*x*10^38. To reduce the amount of memory for storing these large number, we use *mixed precision*. This means that for certain calculations and weights, only 16-bit precision is used ±6.5*x*10^4. We risk losing some precision, but get a significant memory increase in return, and usually also a speedup with certain optimized hardware.
 
 #### [](#gradient-checkpointing)Gradient Checkpointing
-...
+As I understand it, a lot of memory is used during backpropagation because we store all activations. Therefore it is sometimes preferable to only store some of the activations, and recompute the others. This obviously requries more compute time, but it saves a lot of memory as well.
 
 #### [](#xFormer)xFormers
-...
+Transformers are present many places throughout stable diffusion, and by using *xFormers* we almost risk-free optimizations like reduced VRAM and faster computation. Even though we don't train the transformers themselves, they are still a part of the model (Inside the U-Net for instance).
 
 #### [](#gradient-accumulation)Gradient accumulation
-(https://chatgpt.com/share/68179d8b-83c8-8002-9e0c-ed6042010ac1)
 
 
 #### [](#deepspeed)DeepSpeed
