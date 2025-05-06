@@ -140,7 +140,7 @@ Another thing is that when working on Colab, you are assigned a "session", which
 With the limited VRAM, I have to be extra cautious about memory use. I need some tricks!
 
 #### [](#mixed-precision)Mixed precision
-In order to update weights and gradients with high precision, 32-bit precision is usually used ($\pm3.4\times10^{38} $). To reduce the amount of memory for storing these large number, we use *mixed precision*. This means that for certain calculations and weights, only 16-bit precision is used ($\pm6.5\times10^{4}$). We risk losing some precision, but get a significant memory increase in return, and usually also a speedup with certain optimized hardware.
+In order to update weights and gradients with high precision, 32-bit precision is usually used ±3.4*x*10^38. To reduce the amount of memory for storing these large number, we use *mixed precision*. This means that for certain calculations and weights, only 16-bit precision is used ±6.5*x*10^4. We risk losing some precision, but get a significant memory increase in return, and usually also a speedup with certain optimized hardware.
 
 #### [](#gradient-checkpointing)Gradient Checkpointing
 ...
