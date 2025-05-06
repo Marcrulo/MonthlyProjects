@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-05-06T12:26:23+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/A-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-historic"><![CDATA[<h3 id="️-tron-game-2024">🏍️ Tron game [2024]</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-05-06T15:57:37+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/A-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-historic"><![CDATA[<h3 id="️-tron-game-2024">🏍️ Tron game [2024]</h3>
 <p>I had gone a bit back and forth regarding game development, but I thought I’d give it a shot again, with the hope of creating an AI to play a custom game after being inspired by <a href="https://www.youtube.com/watch?v=AaGK-fj-BAM&amp;ab_channel=TheCodingTrain">this video</a> of a guy coding snake from the bottom up in JavaScript. I tried to recreate the old arcade classic <a href="https://tron.fandom.com/wiki/TRON_(arcade_game)">Tron</a></p>
 
 <p><img src="/MonthlyProjects/assets/images/tron1.png" alt="tron1" title="tron1" />
@@ -178,11 +178,11 @@ The highlights consist of:</p>
 <ol>
   <li>Convergence</li>
   <li>Memory efficiency</li>
-  <li>Architecture (but this is out of our control)</li>
+  <li>Architecture  (but this is out of scope for this project)</li>
 </ol>
 
 <h3 id="convergence"><a href="#convergence"></a>Convergence</h3>
-<p>I chose to initialize the embedding as a “dragon”, as “Charizard” is also a dragon - even though it’s a Pokémon as well. As “Charizard” is an animated character cartoon character, it not fully represent a dragon. To see what dragons might look like with SD v1.5 model, consider the following examples:</p>
+<p>I chose to initialize the embedding as a “dragon”, as “Charizard” is also a dragon - even though it’s a Pokémon as well. As “Charizard” is just an animated character, it doesn’t fully represent a dragon as we know it from fantasy. To see what dragons might look like with SD v1.5 model, consider the following examples:</p>
 
 <p><img src="/MonthlyProjects/assets/images/textual_inversion/normal_dragon.png" alt="normal_dragon" title="normal_dragon" /></p>
 
@@ -249,21 +249,23 @@ Another thing is that when working on Colab, you are assigned a “session”, w
 <p>In order to update weights and gradients with high precision, 32-bit precision is usually used ±3.4<em>x</em>10^38. To reduce the amount of memory for storing these large number, we use <em>mixed precision</em>. This means that for certain calculations and weights, only 16-bit precision is used ±6.5<em>x</em>10^4. We risk losing some precision, but get a significant memory increase in return, and usually also a speedup with certain optimized hardware.</p>
 
 <h4 id="gradient-checkpointing"><a href="#gradient-checkpointing"></a>Gradient Checkpointing</h4>
-<p>…</p>
+<p>As I understand it, a lot of memory is used during backpropagation because we store all activations. Therefore it is sometimes preferable to only store some of the activations, and recompute the others. This obviously requries more compute time, but it saves a lot of memory as well.</p>
 
 <h4 id="xformers"><a href="#xFormer"></a>xFormers</h4>
-<p>…</p>
+<p>Transformers are present many places throughout stable diffusion, and by using <em>xFormers</em> we get almost risk-free optimizations, like reduced VRAM and faster computation. Even though we don’t train the transformers themselves, they are still used in training.</p>
 
 <h4 id="gradient-accumulation"><a href="#gradient-accumulation"></a>Gradient accumulation</h4>
-<p>(https://chatgpt.com/share/68179d8b-83c8-8002-9e0c-ed6042010ac1)</p>
+<p>Despite all the optimization tricks, I was not able to create a 512x512 image, using a batch-size of more than 1. I was not willing to reduce the image resolution, so I figured out an amazing trick, that I have already used for other DL projects: <em>gradient accumulation</em>. When increasing the batch-size, much more data is contained in memory. This is what allows models to utilize the parallelization ability of the GPU.</p>
+
+<p>While mini-batching lets you compute gradients over all element in the batch, gradient accumulation computes the gradient over multiple batches. So, when you can’t fit a larger batch-size into memory, but still want a better gradient estimate, you can use the next batch(es) as a part of the estimate, before updating weights. In this context, <em>effective</em> batch size is the total number of samples that went into a gradient estimate:</p>
+<pre><code class="language-math">eff_batch_size = batch_size * gradient_accumulation_steps
+</code></pre>
+<p>So clarify, gradient accumulation kind of gives you are larger batch-size, but the accurate expression is that the “effective batch size” increases.</p>
+
+<p>While batches can be processed in parallel, gradient accumulation requires a full forward+backward pass for each gradient accumulation step.</p>
 
 <h4 id="deepspeed"><a href="#deepspeed"></a>DeepSpeed</h4>
-<p>…</p>
-
-<h3 id="architecture"><a href="#Architecture"></a>(Architecture)</h3>
-<p>…</p>
-
-<hr />
+<p>DeepSpeed is an open-source library my Microsoft that can add significant performance boosts to model training… if you utilize <em>multiple</em> GPUs. As neither Colab nor my local setup has this capability, adding DeepSpeed doesn’t really add anything. It might have something especially for single GPU use, but it did not seem to have an actual impact on my model.</p>
 
 <h2 id="results"><a href="#results"></a>Results</h2>
 <p>Now that the model has been trained, the only thing left is to create some prompts, and generate some images. The inference code looks something like this:</p>
