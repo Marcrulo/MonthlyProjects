@@ -99,11 +99,11 @@ Small comments on this: I use "weights and biases" ([wandb](https://wandb.ai/hom
 Even though the training process is dependent on many parameters intertwined, I'd say we can still group tuning into at least these few categories:
 1. Convergence
 2. Memory efficiency
-3. Architecture (but this is out of our control)
+3. Architecture  (but this is out of scope for this project)
 
 
 ### [](#convergence)Convergence
-I chose to initialize the embedding as a "dragon", as "Charizard" is also a dragon - even though it's a Pokémon as well. As "Charizard" is an animated character cartoon character, it not fully represent a dragon. To see what dragons might look like with SD v1.5 model, consider the following examples:
+I chose to initialize the embedding as a "dragon", as "Charizard" is also a dragon - even though it's a Pokémon as well. As "Charizard" is just an animated character, it doesn't fully represent a dragon as we know it from fantasy. To see what dragons might look like with SD v1.5 model, consider the following examples:
 
 ![normal_dragon]({{ site.baseurl }}/assets/images/textual_inversion/normal_dragon.png "normal_dragon")
 
@@ -146,27 +146,22 @@ In order to update weights and gradients with high precision, 32-bit precision i
 As I understand it, a lot of memory is used during backpropagation because we store all activations. Therefore it is sometimes preferable to only store some of the activations, and recompute the others. This obviously requries more compute time, but it saves a lot of memory as well.
 
 #### [](#xFormer)xFormers
-Transformers are present many places throughout stable diffusion, and by using *xFormers* we almost risk-free optimizations like reduced VRAM and faster computation. Even though we don't train the transformers themselves, they are still a part of the model (Inside the U-Net for instance).
+Transformers are present many places throughout stable diffusion, and by using *xFormers* we get almost risk-free optimizations, like reduced VRAM and faster computation. Even though we don't train the transformers themselves, they are still used in training.
 
 #### [](#gradient-accumulation)Gradient accumulation
+Despite all the optimization tricks, I was not able to create a 512x512 image, using a batch-size of more than 1. I was not willing to reduce the image resolution, so I figured out an amazing trick, that I have already used for other DL projects: *gradient accumulation*. When increasing the batch-size, much more data is contained in memory. This is what allows models to utilize the parallelization ability of the GPU. 
+
+While mini-batching lets you compute gradients over all element in the batch, gradient accumulation computes the gradient over multiple batches. So, when you can't fit a larger batch-size into memory, but still want a better gradient estimate, you can use the next batch(es) as a part of the estimate, before updating weights. In this context, *effective* batch size is the total number of samples that went into a gradient estimate:
+```math
+eff_batch_size = batch_size * gradient_accumulation_steps
+```
+So clarify, gradient accumulation kind of gives you are larger batch-size, but the accurate expression is that the "effective batch size" increases. 
+
+While batches can be processed in parallel, gradient accumulation requires a full forward+backward pass for each gradient accumulation step.
 
 
 #### [](#deepspeed)DeepSpeed
-...
-
-
-
-
-
-
-### [](#Architecture)(Architecture)
-...
-
-
----
-
-
-
+DeepSpeed is an open-source library my Microsoft that can add significant performance boosts to model training... if you utilize *multiple* GPUs. As neither Colab nor my local setup has this capability, adding DeepSpeed doesn't really add anything. It might have something especially for single GPU use, but it did not seem to have an actual impact on my model.
 
 
 
