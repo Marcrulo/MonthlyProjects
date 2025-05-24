@@ -1,14 +1,14 @@
 ---
 title: Historic projects
-description: A brief description of previous (not-that-well-documented) hobby projects
+description: A brief description of some previous projects
 published: true
 ---
 
 ### 🏍️ Tron game [2024]
 I had gone a bit back and forth regarding game development, but I thought I'd give it a shot again, with the hope of creating an AI to play a custom game after being inspired by [this video](https://www.youtube.com/watch?v=AaGK-fj-BAM&ab_channel=TheCodingTrain) of a guy coding snake from the bottom up in JavaScript. I tried to recreate the old arcade classic [Tron](https://tron.fandom.com/wiki/TRON_(arcade_game))
 
-![tron1]({{ site.baseurl}}/assets/images/tron1.png "tron1")
-![tron2]({{ site.baseurl}}/assets/images/tron2.png "tron2")
+![tron1]({{ site.baseurl}}/assets/images/historic/tron1.png "tron1")
+![tron2]({{ site.baseurl}}/assets/images/historic/tron2.png "tron2")
 
 ### 🧑‍🎓 Bachelor project [2023]
 For my bachelor's in _Artificial Intelligence and Data_ I did a project in collaboration with the company I worked at, [ChemoMetec](https://chemometec.com/):
@@ -19,7 +19,7 @@ To keep it short, the main objective was to tune parameters of a physical machin
 
 I did `Bayesian Optimization` using `Gaussian processes` to choose parameters, and then trained an `XGBoost` model to match features with certain purity scores. To add explainability to the model, I used [SHAP](https://shap.readthedocs.io/en/latest/)
 
-![shap]({{ site.baseurl}}/assets/images/shap.png "shap")
+![shap]({{ site.baseurl}}/assets/images/historic/shap.png "shap")
 
 
 ### 🛒 Netto store ads notification [2020]

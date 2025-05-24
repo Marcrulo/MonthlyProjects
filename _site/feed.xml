@@ -1,8 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-05-22T17:07:31+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">2. Shortcut Removal using Diffusion Models</title><link href="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion" rel="alternate" type="text/html" title="2. Shortcut Removal using Diffusion Models" /><published>2025-05-01T00:00:00+02:00</published><updated>2025-05-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[A summary of my exam project in the course "Advanced Deep Learning in Computer Vision"]]></summary></entry><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/A-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-historic"><![CDATA[<h3 id="️-tron-game-2024">🏍️ Tron game [2024]</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-05-24T13:27:20+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">2. Shortcut Removal using Diffusion Models</title><link href="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion" rel="alternate" type="text/html" title="2. Shortcut Removal using Diffusion Models" /><published>2025-05-01T00:00:00+02:00</published><updated>2025-05-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>May has been a busy month, as I had to prepare for (and attend) 4 exams, as well as creating curriculum for the <strong><em>introduction to python and numerical algorithms for solving differential equations</em></strong> used in this <a href="https://unf.dk/aktiviteter/2025-06-29/unf-matematisk-modelleringsuge/">UNF summer camp</a>, where I am volunteering.</p>
+
+<p>So instead of rushing a project, now that exams are done, I thought it would be interesting to share my exam project from the DTU course, “<strong>Advanced Deep Learning in Computer Vision</strong>”. The project was done in collaboration with 2 awesome guys, Joakim Dihn and Vebjörn Skre, with the professor Aasa Feragen as supervisor (who also happened to supervise my Bachelor’s thesis)</p>
+
+<h2 id="project-formulation"><a href="#project"></a>Project Formulation</h2>
+
+<p>This project is about removing <em>shortcuts</em> from <a href="https://challenge.isic-archive.com/data/#2018">lesion images</a>. In classification, a “shortcut” is some kind of proxy in the image, that is highly correlated with a specific class, without being the actual object of interest. An example would be how a model that is supposed to distinguish between a <em>wolf</em> and a <em>husky</em> might look for snow in the background. This is because images of wolves are usually taken in cold places (usually with snow). This becomes a problem when an image of a wolf in either not in a snowy area, or we get an image of a husky that <em>is</em> in a snowy area:</p>
+
+<p><img src="/MonthlyProjects/assets/images/shortcuts/wolf_husky.png" alt="wolf_husky" title="wolf_husky" /></p>
+
+<p>In this project, the dataset consists of images of lesions of 7 classes (disease types + benign), but we are also provided with a label of whether the image contains a known shortcut or not. Shortcuts in this case are usually ruler markings on the skin.</p>
+
+<p>Our goal is then to remove those shortcuts by first noising the image, and then recreate the image with the shortcut gone - esentially creating a <strong><em>counterfactual explanation</em></strong> of what an image would look like without the shortcut there. This is meant as a preprocessing step that can be applied to a dataset, such that the model that classifies lesion diseases will never be impacted by shortcuts, which lets the model focus on relevant features. The methods are based on <a href="https://arxiv.org/abs/2203.04306">this paper</a>.</p>
+
+<h2 id="understanding-the-problem"><a href="#understand"></a>Understanding the Problem</h2>
+
+<p>From the very start, we had a hard time really understanding the nuance of the proposed method. They put a lot of emphasis on the use of DDIM instead of DDPM. We thought that the only change here was to remove the variance of the standard DDPM denoising process. We now realize that the paper also proposed a deterministic <em>forward</em> process that let us “encode anatomical information”. The lack of stochasticity is good, since we are not interested in creating a more expressive image. The only source of stochasticity in the denoising process comes from how we guide the noise prediction toward the “non-shortcut” class.</p>
+
+<p><img src="/MonthlyProjects/assets/images/shortcuts/algorithm1.png" alt="algorithm1" title="algorithm1" /></p>
+
+<p>Notice in the forward process how the only “external noise” comes from the noise predictor. This makes it so that if no classifier guidance was present, we could reproduce the original image exactly through the denoising process. Speaking of classifier guidance, it took us some time to realize that using classifier guidance to guide the denoising toward the non-shortcut class was much better than training a diffusion model unconditionally (only training it on images without shortcuts). In both cases, the goal is to guide the denoising toward the distribution of images that don’t include shortcuts. But, with classifier guidance, we can tune the inference by not only using the noise level <em>L</em>, but also the gradient scale <em>s</em>.</p>
+
+<h2 id="dataset-and-artificial-shortcuts"><a href="#dataset"></a>Dataset and <em>Artificial</em> Shortcuts</h2>
+
+<p>To simplify the task at hand, we reduced the dataset to two classes:  “Melanoma diagnosis” and “Non-melanoma diagnosis”. Even though a “healthy” vs. “non-healthy” class would be more desirable; it just wasn’t an option. We wanted to see how much the shortcuts impacted predictions, but as the shortcuts themselves weren’t very clear, we introduced artificial green shortcuts that we would add to many “Melanoma” images. This was also done to increase the correlation between shortcuts and the melanoma class.</p>
+
+<p>Removal of original shortcuts:
+<img src="/MonthlyProjects/assets/images/shortcuts/denoise_orig.png" alt="denoise_orig" title="denoise_orig" /></p>
+
+<p>Removal of artificial shortcuts:
+<img src="/MonthlyProjects/assets/images/shortcuts/denoise_artificial.png" alt="denoise_artificial" title="denoise_artificial" /></p>
+
+<p>Although not perfect, the impact of removing an artificial shortcut is way more clear.</p>
+
+<h2 id="classifier-results"><a href="#results"></a>Classifier Results</h2>
+<ul>
+  <li>attention map</li>
+  <li>accuracy / f1-score</li>
+</ul>
+
+<p>To check what a model “sees” when it makes a prediction, we have trained a Visual Transformer model (ViT) that shows which areas have higher associated attention. The model has been trained on the dataset with artificial shortcuts. The following first shows an example of an image from the artificial shortcut dataset, and below it, an image with the shortcut removed through diffusion:</p>
+
+<p><img src="/MonthlyProjects/assets/images/shortcuts/attention.png" alt="attention" title="attention" /></p>
+
+<p>It is very obvious from this, that the model abuses the shortcut when it’s present. When it’s not present, it actually looks at the lesions. More specifically, it look at the edge of the lesion, which is also what professional doctors use when looking for signs of disease.</p>
+
+<p>We have also tried to compare accuracy of models. In the first case, the models have been trained and tested on the artificial shortcut dataset, and in the second one, the models have been trained on the dataset with artificial shortcuts <em>removed</em> - through diffusion, and tested on images with artificial shortcuts:</p>
+
+<p><img src="/MonthlyProjects/assets/images/shortcuts/accuracy.png" alt="accuracy" title="accuracy" /></p>
+
+<p>There are two bars, indicating the predictive ability of the model on shortcut- and non-shortcut images, respectively.</p>
+
+<p>The top plot seems to completely over-utilize the shortcuts, as they get almost perfect predictions when shortcuts are present. They also perform very poorly when a shortcut is then <em>not</em> present.</p>
+
+<p>The bottom plot shows the effect of removing shortcuts altogether (but testing on images with shortcuts). The models don’t seems to perform significatly differently despite shortcuts being present. On top of that, the accuracy even increases for the images without shortcuts, as the model can now focus on the actual lesions.</p>
+
+<p>It should be noted that an accuracy below 50% in a binary classification task is a bit weird, since we would then just flip the prediction to get a better accuracy. We are aware of the “bad quality” of the models. The important thing is, that the model has a better understanding of the classes. We do still get a higher accuracy than before.</p>
+
+<h2 id="discussion-and-conclusion"><a href="#discussion"></a>Discussion and Conclusion</h2>
+<p>I think the quality of shortcut removal is quite good, but not nearly as impressive as in the paper. As we didn’t utilize the deterministic forward process, our diffusion model altered too much of the images, despite using the correct denoising process. It might have helped to find an even better pair of parameters for the noise level (L=160) and gradient scale (s=100).</p>
+
+<p>Despite that, the still managed to increase generalizability. The lesion classifiers then just had to be trained better, such that it would reach accuracies of &gt;50%</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[A summary of my exam project in the course "Advanced Deep Learning in Computer Vision"]]></summary></entry><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/A-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-historic"><![CDATA[<h3 id="️-tron-game-2024">🏍️ Tron game [2024]</h3>
 <p>I had gone a bit back and forth regarding game development, but I thought I’d give it a shot again, with the hope of creating an AI to play a custom game after being inspired by <a href="https://www.youtube.com/watch?v=AaGK-fj-BAM&amp;ab_channel=TheCodingTrain">this video</a> of a guy coding snake from the bottom up in JavaScript. I tried to recreate the old arcade classic <a href="https://tron.fandom.com/wiki/TRON_(arcade_game)">Tron</a></p>
 
-<p><img src="/MonthlyProjects/assets/images/tron1.png" alt="tron1" title="tron1" />
-<img src="/MonthlyProjects/assets/images/tron2.png" alt="tron2" title="tron2" /></p>
+<p><img src="/MonthlyProjects/assets/images/historic/tron1.png" alt="tron1" title="tron1" />
+<img src="/MonthlyProjects/assets/images/historic/tron2.png" alt="tron2" title="tron2" /></p>
 
 <h3 id="-bachelor-project-2023">🧑‍🎓 Bachelor project [2023]</h3>
 <p>For my bachelor’s in <em>Artificial Intelligence and Data</em> I did a project in collaboration with the company I worked at, <a href="https://chemometec.com/">ChemoMetec</a>:</p>
@@ -13,7 +75,7 @@
 
 <p>I did <code class="language-plaintext highlighter-rouge">Bayesian Optimization</code> using <code class="language-plaintext highlighter-rouge">Gaussian processes</code> to choose parameters, and then trained an <code class="language-plaintext highlighter-rouge">XGBoost</code> model to match features with certain purity scores. To add explainability to the model, I used <a href="https://shap.readthedocs.io/en/latest/">SHAP</a></p>
 
-<p><img src="/MonthlyProjects/assets/images/shap.png" alt="shap" title="shap" /></p>
+<p><img src="/MonthlyProjects/assets/images/historic/shap.png" alt="shap" title="shap" /></p>
 
 <h3 id="-netto-store-ads-notification-2020">🛒 Netto store ads notification [2020]</h3>
 <p>When I moved away from home, I always checked the Netto ads for good price drops, but this quickly felt like a daunting manual task. Browsing the ads required me to open the official Netto app, and then scroll through everything. I look for certain items, so everything else is just a distraction. I was thinking to myself that this must be automated.</p>
@@ -45,7 +107,7 @@ So that’s why I created a GUI that would help me convert colors to Impedence v
 <h3 id="️-js-canvas-game-2018">🕹️ JS canvas game [2018]</h3>
 <p>For my first class in programming in high school, we had to create a simple JavaScript canvas game. The game was about moving a character left and right in order to avoid missiles raining down from above. The code was super messy, and I felt like the project had potential, so I ended up re-programming the game a year later, as I had become more familar how to code <em>properly</em>. I ended up adding a speed boost and other special buttons, as well as upgrading the sprites.</p>
 
-<p>These extra upgrades taught me about control-mechanics and how seemingly simple things have to be accounted for; such as clicking left and right at the same time, square vs. circular bounding boxes etc.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[A brief description of previous (not-that-well-documented) hobby projects]]></summary></entry><entry><title type="html">0. Website (this one)</title><link href="http://localhost:4000/MonthlyProjects/B-website" rel="alternate" type="text/html" title="0. Website (this one)" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/B-website</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/B-website"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>These extra upgrades taught me about control-mechanics and how seemingly simple things have to be accounted for; such as clicking left and right at the same time, square vs. circular bounding boxes etc.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[A brief description of some previous projects]]></summary></entry><entry><title type="html">0. Website (this one)</title><link href="http://localhost:4000/MonthlyProjects/B-website" rel="alternate" type="text/html" title="0. Website (this one)" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/B-website</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/B-website"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
 <p>I really love coding. Coding is both my profession and my hobby, but unfortunately, I haven’t found time to commit to any interesting hobby projects as of late. My excuse is usually that I don’t have time, or that the project becomes to large and messy. Also, despite having done a ton of projects, none of them are really easy to showcase.</p>
 
 <p>To fix all of these issues, I’ll try a <em>new approach</em>:</p>
