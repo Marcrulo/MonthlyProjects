@@ -43,8 +43,6 @@ Removal of artificial shortcuts:
 Although not perfect, the impact of removing an artificial shortcut is way more clear.
 
 ## [](#results)Classifier Results
-* attention map
-* accuracy / f1-score
 
 To check what a model "sees" when it makes a prediction, we have trained a Visual Transformer model (ViT) that shows which areas have higher associated attention. The model has been trained on the dataset with artificial shortcuts. The following first shows an example of an image from the artificial shortcut dataset, and below it, an image with the shortcut removed through diffusion:
 
