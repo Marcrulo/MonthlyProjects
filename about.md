@@ -36,7 +36,7 @@ are sent through mail.
 - Parameter optimization of welding in production, using **Bayesian optimization**, by analysing product quality through images (**Bachelor thesis**).
 
 <br>
-**STUDENT ASSISTANT (_CRM & Loyalty_) – [Dansk Industri (DI)](https://www.danskindustri.dk/) \
+**STUDENT ASSISTANT** (_CRM & Loyalty_) – [Dansk Industri (DI)](https://www.danskindustri.dk/) \
 📅 Jan. 2024 - Aug. 2024 | 📍 Copenhagen, Denmark 
 - Handling in-house requests, which often involve **database querying**, **data processing** and **visualization** of member data. Usually done using **Python**, **R**, and **Excel**.
 - Adding insights to DI’s membership satisfaction analysis, using **statistical testing**, **sentiment analysis**, **multivariate regression** etc.
