@@ -28,7 +28,7 @@ title: About me
 ### 🧑‍💼 Experience
 
 <br>
-**Student Assitant** (_Production_) – [ChemoMetec](https://chemometec.com/) \
+**STUDENT ASSISTANT** (_Production_) – [ChemoMetec](https://chemometec.com/) \
 📅 Dec. 2021 – Dec. 2023 | 📍 Lillerød, Denmark 
 - **Analysing** and **refining** production data, whilst providing meaningful insights for the machine operators, using **self-made visualization- and report generating software**.
 - Developed an **LLM-pipeline** for daily summarizations of production batches, which
@@ -36,20 +36,20 @@ are sent through mail.
 - Parameter optimization of welding in production, using **Bayesian optimization**, by analysing product quality through images (**Bachelor thesis**).
 
 <br>
-**Student Assistant** (_CRM & Loyalty_) – [Dansk Industri (DI)](https://www.danskindustri.dk/) \
+**STUDENT ASSISTANT (_CRM & Loyalty_) – [Dansk Industri (DI)](https://www.danskindustri.dk/) \
 📅 Jan. 2024 - Aug. 2024 | 📍 Copenhagen, Denmark 
 - Handling in-house requests, which often involve **database querying**, **data processing** and **visualization** of member data. Usually done using **Python**, **R**, and **Excel**.
 - Adding insights to DI’s membership satisfaction analysis, using **statistical testing**, **sentiment analysis**, **multivariate regression** etc.
 - Maintaining **Power BI reports**; used by colleagues to visualize membership data.
 
 <br>
-**Consultant** - [Presutti Solutions](https://lasso.dk/firmaer/44744821/presutti-solutions) \
+**CONSULTANT / FREELANCER** - [Presutti Solutions](https://lasso.dk/firmaer/44744821/presutti-solutions) \
 📅 Feb. 2024 -   Now   | 📍 Ballerup, Denmark
 - Maintaining production **PHP website** for [linsen.dk](https://www.linsen.dk), which has involved **classic tasks for modern websites** such as: Google Tag Manager for market analysis, SQL querying, css styling, adding cookies (and cookie banners) etc.
 - Adding insights into how being **self-employed** works, which has put me in an **entrepreneurial mindset**.
 
 <br>
-**Student Assistant** (_Insights & Machine Learning_) – [GN](https://www.gn.com/) \
+**STUDENT ASSISTANT** (_Insights & Machine Learning_) – [GN](https://www.gn.com/) \
 📅 Sep. 2024 -   Now   | 📍 Ballerup, Denmark
 - Maintaining and building **Power BI reports**; based on hearing-aid event data.
 - Creating **analyses in proof-of-concept projects**; i.e. pricing and viability of translation technology, and **machine learning classification** of biosensor experiments
