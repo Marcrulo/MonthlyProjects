@@ -17,9 +17,9 @@ published: true
 * Problem/project overview
   * Natural language search for trials
 * Cloud assistance
-  * Storage (Azure - blob storage)
+  * Storage    (Azure    - blob storage)
   * Processing (Azure ML - Notebooks/Jobs)
-  * Endpoint (Azure ML - Endpoints) 
+  * Endpoint   (Azure ML - Endpoints) 
 
 ## [](#data-gathering)Data Gathering
 * "Domstolsdatabasen"
@@ -76,6 +76,8 @@ published: true
 * Improvement ideas
 * Cloud usage and accessibility
   * Azure CLI in the future?
+  * Local dev up online (slow feedback because of containers being built etc.)
   * How to manage Azure ML documentation, but ChatGPT is very good at the Azure CLI (and not so much with the UI)
   * Chat does know about debugging, though
+  * There seems to have been some confusion regarding v1 and v2 of the Azure SDK
 
