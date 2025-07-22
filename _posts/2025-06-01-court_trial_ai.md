@@ -85,15 +85,15 @@ At first, the reason for using the cloud was primarily just to learn more about 
 
 I had initially started working on Machine Learning Operations (MLOps) at a DTU course of the same name, where we tried doing some simple ML workflows on Google Cloud Platform, but did not utilize the ML-specific services. Later on, I got some experience in Azure, working in the ML team at GN. At GN, I went through Microsoft's official tutorials, and finally got to test it out during this project. 
 
-...
+Azure has everything we can ask for. 
+1. It provides a **storage account** for *blob storage*
+2. **environments** that VMs such as endpoints and job scripts can utilize
+3. In Azure ML Studio we get many features such as **notebooks**, **job scripts**, **endpoint hosting** etc. It tries to encapsulate the entire ML workflow from start to finish.
 
-* Azure walkthrough
-  * Storage
-  * Environments
-  * Azure ML notebooks
-  * Train job script
-* RAG endpoint
-* Cost overview
+In Azure, you create an endpoint, but you also need to actually *deploy* a VM that acts as our API server. It should be noted that they run until you turn them off. I had falsely assumed that it was stationary until someone did an API call (cold start), which in turn cost me around 1000 DKK.
+
+For the overall expendeture of the project, I present the full overview:
+- *Cost overview*
 
 ## [](#results)Results
 * Examples
