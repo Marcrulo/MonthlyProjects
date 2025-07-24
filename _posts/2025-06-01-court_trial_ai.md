@@ -130,13 +130,22 @@ Building a RAG model requires that we can convert our prompt, as well as the ref
 As we are working with a Danish dataset, it is not possible to simply use the default models, as they are usually in English. Even so-called "multi-lingual" models can still struggle with Danish, as the Danish language is quite underrepresented on the internet. My best attempt was to use a model from Huggingface that was explicitly fine-tuned for the Danish language ([link](https://huggingface.co/KennethTM/MiniLM-L6-danish-encoder)). It's definitely not perfect, but it's alright.
 
 A limitation I have encountered is that the tokenization of words seems a bit wrong. In terms of vector similarity, the word "Kølle" ("club", as in the weapon) and "Køleskab" ("refrigerator") are way too similar due to the *køl* -token. Let's consider this table of distances between embeddings (meaning that lower values indicate more similarity)
+
 ![embedding_matrix]({{ site.baseurl }}/assets/images/domstol/embedding_matrix.png "embedding_matrix")
+
 Vector similarity is somewhat complicated, since embedding might actually be similar in one way, but not the way *I* want. In the matrix above we see that "bat" (bat), "stav" (rod/stick), and "hammer" (hammer) are somewhat similar to each other, but not similar to "Kølle".
 
-Let's get into a bit more details regarding this embedding model. 
-- section about how embedding models are trained
-- *embedding- and token dimension/size
-...
+### (Theory) Training an embedding model
+Let's get into a bit more details regarding this embedding model. For basically any NLP (Natural Language Processing) -related task, we should use a transformer-based model. The most popular one would be the GPT-models that are used for the famous chatbots. But GPT-models are inherently text prediction models which are good for *generating* text, but not necessarily *classifying* text. On the other hand, BERT-models are good at classification as it takes an entire sequence and analyses each part of the sequence from both left-to-right, but also right-to-left, making them *bi-directional* (the B in BERT). Our embedding model is therefore a fine-tuned BERT model for (Danish) sentence embeddings, aka. Sentence-BERT.
+
+To optimzie the weights of a deep neural network, we need a *loss-function* that defines how well the task is being solved during training, in order to nudge the weights in the right direction. This model has been trained using a *contrasive* loss function:
+
+![contrastive_loss]({{ site.baseurl }}/assets/images/domstol/contrastive_loss.png "contrastive_loss")
+
+Let's understand this. The training dataset consist of N pairs of sentences, where each element (A and B) in a pair is somehow related to each other. Given the current state of the model, we try to embed A, B and many other sentences. The goal is the make the embedding of A and B more similar (numerator), while letting A and the other sentences become more dissimilar (denominator). This loss is then propagated backwards through the network, and the weights are updated accordingly. Whether sentences are similar or not in the final model is hugely dependent on what the dataset has defined as similar. 
+
+The model we are using is quite light-weight, which was probably to make fine-tuning to the Danish dataset easier. This means that our model embedding-dimension is (only) of size 384, but the maximum sequence (input) length is 512 tokens, which is actually a good amount (~400 words). This should make sure that all of our paragraphs fit individually, but not entire court trial documents.
+
 Recall that our task is to find the trial document that best matches our prompt. We are quite limited by this token size, as we can't simply embed an entire document into a single vector (that would likely also require a larger embedding size). Instead, we will try and embed each paragraph of the documents, and track which paragraph belongs to which document. This is called "chunking", for which there are multiple strategies for how to embed these subtexts. We are lucky to have these beautifully split paragraphs, but for long texts, another strategy could be to embed overlapping subtexts of a fixed window-size, and a fixed overlap-size.
 
 ## [](#rag-model)RAG Model
