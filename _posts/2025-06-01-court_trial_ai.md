@@ -116,7 +116,18 @@ I have added a small overview of all the important attributes. Some of them are 
 ## [](#data-processing)Data Processing
 So, we split the response data into the meta data and the document data. The meta data can easily be described in a table, and will therefore be saved as a parquet-file (instead of csv) in order to save disk space. To further optimize space/memory usage, the column data types are selected manually.
 
-- before / after
+```python
+# Convert data types for efficiency
+df_meta['id']           = df_meta['id'].astype('uint32')
+df_meta['doc_id']       = df_meta['doc_id'].astype('uint32')
+df_meta['verdict_date'] = pd.to_datetime(df_meta['verdict_date'])
+df_meta['doc_type']     = df_meta['doc_type'].astype('category')
+df_meta['profession']   = df_meta['profession'].astype('category')
+df_meta['instance']     = df_meta['instance'].astype('category')
+df_meta['case_type']    = df_meta['case_type'].astype('category')
+
+df_meta.to_parquet('meta.parquet', index=False)
+```
 
 This is a somewhat neglible addition, as the table is ~5000x10. But it's still a good principle, and I also just learned these tricks from my "Python and High-peformance Computing" course, so I wanted to see it in practice.
 
@@ -158,7 +169,7 @@ Recall that our task is to find the trial document that best matches our prompt.
 
 Let's make it completely clear what we want to achieve using this model:
 
-> A list of the k most relevant documents wrt. a prompt, given the similarity between the prompt and a single paragraph in these documents. (I have allowed duplicate documents to be shown)
+> **A list of the k most relevant documents wrt. a prompt, given the similarity between the prompt and a single paragraph in these documents. (I have allowed duplicate documents to be shown)**
 
 It is, however, quite common to extend a chat-bot with RAG capabilities, but not necessary. To do this, the RAG model should return some text, which can then be injected into the "system prompt" (not the "user prompt"). A simplified example could be:
 
@@ -180,7 +191,6 @@ Anyway, we are keeping it simple.
 We have not talked about the challenge of searching for similar documents, which is very interesting. The straight forward way to find the most similar vectors wrt. the prompt vector, would be to simply check all options by brute force. In itself, this is slow, but using the FAISS (Facebook AI Similarity Search) library, many optimizations have been applied to speedup even the brute-force approach. It's very memory efficient, and it utilizes multiprocessing in order to parallelize the computation. They also offer approximate solutions for large datasets, where brute force in not feasible.
 
 In the end, the flow looks like this:
-- Flowchart/pipeline of entire model (later, update it to include the cloud)
 
 Flowchart:
 - access data with api
@@ -215,6 +225,7 @@ Azure has everything we can ask for.
 2. **environments** that VMs such as endpoints and job scripts can utilize
 3. In Azure ML Studio we get many features such as **notebooks**, **job scripts**, **endpoint hosting** etc. It tries to encapsulate the entire ML workflow from start to finish.
 
+### Cost management
 In Azure, you create an endpoint, but you also need to actually *deploy* a VM that acts as our API server. It should be noted that they run until you turn them off. I had falsely assumed that it was stationary until someone did an API call (cold start), which in turn cost me around 900 DKK.
 
 For the overall expendeture of the project, I present the full overview:
