@@ -138,11 +138,17 @@ Vector similarity is somewhat complicated, since embedding might actually be sim
 ### (Theory) Training an embedding model
 Let's get into a bit more details regarding this embedding model. For basically any NLP (Natural Language Processing) -related task, we should use a transformer-based model. The most popular one would be the GPT-models that are used for the famous chatbots. But GPT-models are inherently text prediction models which are good for *generating* text, but not necessarily *classifying* text. On the other hand, BERT-models are good at classification as it takes an entire sequence and analyses each part of the sequence from both left-to-right, but also right-to-left, making them *bi-directional* (the B in BERT). Our embedding model is therefore a fine-tuned BERT model for (Danish) sentence embeddings, aka. Sentence-BERT.
 
-To optimzie the weights of a deep neural network, we need a *loss-function* that defines how well the task is being solved during training, in order to nudge the weights in the right direction. This model has been trained using a *contrastive* loss function:
+To optimzie the weights of a deep neural network, we need a *loss-function* that defines how well the task is being solved during training, in order to nudge the weights in the right direction. This model has been trained using a *contrastive* loss function, which we need to minimize (but the fraction should be maximzied, so to speak):
 
 ![contrastive_loss]({{ site.baseurl }}/assets/images/domstol/contrastive_loss.png "contrastive_loss")
 
-Let's understand this. The training dataset consist of N pairs of sentences, where each element (A and B) in a pair is somehow related to each other. Given the current state of the model, we try to embed A, B and many other sentences. The goal is the make the embedding of A and B more similar (numerator), while letting A and the other sentences become more dissimilar (denominator). This loss is then propagated backwards through the network, and the weights are updated accordingly. Whether sentences are similar or not in the final model is hugely dependent on what the dataset has defined as similar. 
+Let's understand this. The training dataset consist of N pairs of sentences, where each element (A and B) in a pair is somehow related to each other. Given the current state of the model, we try to embed A, B and many other sentences. The goal is the make the embedding of A and B more similar (numerator), while letting A and the other sentences become more dissimilar (denominator). Note that the vector operation between embeddings is the *inner product*
+
+![inner_product]({{ site.baseurl }}/assets/images/domstol/inner_product.png "inner_product")
+
+which is also called the *cosine similarity*
+
+This loss is then propagated backwards through the network, and the weights are updated accordingly. Whether sentences are similar or not in the final model is hugely dependent on what the dataset has defined as similar. 
 
 The model we are using is quite light-weight, which was probably to make fine-tuning to the Danish dataset easier. This means that our model embedding-dimension is (only) of size 384, but the maximum sequence (input) length is 512 tokens, which is actually a good amount (~400 words). This should make sure that all of our paragraphs fit individually, but not entire court trial documents.
 
@@ -197,8 +203,10 @@ Flowchart cloud:
 
 
 ## [](#cloud)Cloud
-At first, the reason for using the cloud was primarily just to learn more about it, despite thinking that it won't be necessary, but it was actually quite beneficial. First of all, it enabled me to host an endpoint for the model, which makes it possible to interact with it from anywhere in the world. But most importantly, it was actually quite nice to offload the data processing to a cloud computer. Not only would my local PC have been unavailable for proper use, the computation also happened much faster, since the cheaper VMs ran the processing way faster than my own PC, and also did not encounter any crashes. 
-(3 hours vs. 5+ hours ?)
+At first, the reason for using the cloud was primarily just to learn more about it, despite thinking that it won't be necessary, but it was actually quite beneficial. First of all, it enabled me to host an endpoint for the model, which makes it possible to interact with it from anywhere in the world. But most importantly, it was actually quite nice to offload the data processing to a cloud computer. Not only would my local PC have been unavailable for proper use, the computation also happened much faster, since the cheaper VMs ran the processing way faster than my own PC, and also did not encounter any crashes. It took Azure 3½ hours using some of the cheapest compute, but mine had not even finished after 5+ hours locally.
+
+![job_script]({{ site.baseurl }}/assets/images/domstol/job_script.png "job_script")
+
 
 I had initially started working on Machine Learning Operations (MLOps) at a DTU course of the same name, where we tried doing some simple ML workflows on Google Cloud Platform, but did not utilize the ML-specific services. Later on, I got some experience in Azure, working in the ML team at GN. At GN, I went through Microsoft's official tutorials, and finally got to test it out during this project. 
 
@@ -214,9 +222,9 @@ For the overall expendeture of the project, I present the full overview:
 ![azure_costs]({{ site.baseurl }}/assets/images/domstol/azure_costs.png "azure_costs")
 
 * ~900 kr. was spent on **Compute**, which is everytime a computer is running computation. This is notebooks, job scripts, building environments and endpoint deployments etc.
-* ~100 kr. was spent on **Storage**, which is the files I have in BLOB storage. This is the text files, FAISS index, and meta data files.
-* ~30 kr. was spent on **Networking**, ...
-* ~30 kr. was spent on **Containers**, ...
+* ~100 kr. was spent on **Storage**, which is for storing the files I have in BLOB storage. This is the text files, FAISS index, and meta data files.
+* ~30 kr. was spent on **Networking**, which is the cost of bandwidth of data leaving Azure. This must accumulate from multiple sources, and there is not an obvious resource that consumes a ton of bandwidth.
+* ~30 kr. was spent on **Containers**, which is basically compute used in (emphemeral) containers. This would be the serverless job scripts that I used for processing.
 
 
 
