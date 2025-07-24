@@ -138,7 +138,7 @@ Vector similarity is somewhat complicated, since embedding might actually be sim
 ### (Theory) Training an embedding model
 Let's get into a bit more details regarding this embedding model. For basically any NLP (Natural Language Processing) -related task, we should use a transformer-based model. The most popular one would be the GPT-models that are used for the famous chatbots. But GPT-models are inherently text prediction models which are good for *generating* text, but not necessarily *classifying* text. On the other hand, BERT-models are good at classification as it takes an entire sequence and analyses each part of the sequence from both left-to-right, but also right-to-left, making them *bi-directional* (the B in BERT). Our embedding model is therefore a fine-tuned BERT model for (Danish) sentence embeddings, aka. Sentence-BERT.
 
-To optimzie the weights of a deep neural network, we need a *loss-function* that defines how well the task is being solved during training, in order to nudge the weights in the right direction. This model has been trained using a *contrasive* loss function:
+To optimzie the weights of a deep neural network, we need a *loss-function* that defines how well the task is being solved during training, in order to nudge the weights in the right direction. This model has been trained using a *contrastive* loss function:
 
 ![contrastive_loss]({{ site.baseurl }}/assets/images/domstol/contrastive_loss.png "contrastive_loss")
 
@@ -152,10 +152,19 @@ Recall that our task is to find the trial document that best matches our prompt.
 
 Let's make it completely clear what we want to achieve using this model:
 
-* A list of the k most relevant documents wrt. a prompt, given the similarity between the prompt and a single paragraph in these documents. (I have allowed duplicate documents to be shown)***
+> A list of the k most relevant documents wrt. a prompt, given the similarity between the prompt and a single paragraph in these documents. (I have allowed duplicate documents to be shown)
 
-It is, however, quite common to extend a chat-bot with RAG capabilities, but not necessary. To do this, the RAG model should return some text, which can then be injected into the "system prompt" (not the "user prompt"). An example could be:
-- show example of chatbot with RAG
+It is, however, quite common to extend a chat-bot with RAG capabilities, but not necessary. To do this, the RAG model should return some text, which can then be injected into the "system prompt" (not the "user prompt"). A simplified example could be:
+
+```
+SYSTEM            : "You are a helpful chatbot that summarizes court trial documents" 
+USER PROMPT       : "Man charged for violent behavior whlie under the influence of drugs"
+<RAG>             : *search for relevant documents*
+<RAG>             : *returns [doc_A, doc_B, doc_C]*
+SYSTEM            : "The court trial in question this: {content of doc_A, doc_B, doc_C}
+ASSITANT RESPONSE : "The trials are <...>"
+```
+
 
 If we were to do this ourselves, we should be cautious of:
 1. The quality of the LLM used, due to challenges with the Danish language
@@ -166,6 +175,25 @@ We have not talked about the challenge of searching for similar documents, which
 
 In the end, the flow looks like this:
 - Flowchart/pipeline of entire model (later, update it to include the cloud)
+
+Flowchart:
+- access data with api
+- process it
+- save text files
+- embed paragraphs in text files (store as FAISS index)
+- embed prompt
+- search for similar documents
+
+Flowchart cloud:
+- access data with api (job script)
+- process it (same job script)
+- save text files (same job script)
+- text files are stored in blob storage
+- embedding of paragraphs (new job script)
+- meta data and faiss index stored in blob storage
+- inference on endpoint
+
+
 
 
 ## [](#cloud)Cloud
@@ -179,10 +207,18 @@ Azure has everything we can ask for.
 2. **environments** that VMs such as endpoints and job scripts can utilize
 3. In Azure ML Studio we get many features such as **notebooks**, **job scripts**, **endpoint hosting** etc. It tries to encapsulate the entire ML workflow from start to finish.
 
-In Azure, you create an endpoint, but you also need to actually *deploy* a VM that acts as our API server. It should be noted that they run until you turn them off. I had falsely assumed that it was stationary until someone did an API call (cold start), which in turn cost me around 1000 DKK.
+In Azure, you create an endpoint, but you also need to actually *deploy* a VM that acts as our API server. It should be noted that they run until you turn them off. I had falsely assumed that it was stationary until someone did an API call (cold start), which in turn cost me around 900 DKK.
 
 For the overall expendeture of the project, I present the full overview:
-- *Cost overview*
+
+![azure_costs]({{ site.baseurl }}/assets/images/domstol/azure_costs.png "azure_costs")
+
+* ~900 kr. was spent on **Compute**, which is everytime a computer is running computation. This is notebooks, job scripts, building environments and endpoint deployments etc.
+* ~100 kr. was spent on **Storage**, which is the files I have in BLOB storage. This is the text files, FAISS index, and meta data files.
+* ~30 kr. was spent on **Networking**, ...
+* ~30 kr. was spent on **Containers**, ...
+
+
 
 ## [](#results)Results
 Now that the endpoint is up an running, we can try an inspect the results. 
