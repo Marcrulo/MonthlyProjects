@@ -13,45 +13,125 @@ As an engineer, I would also like to see things in practice, rather than just th
 As the ambition level of the project fell, I wanted to add a layer of complexity and utilize cloud computing for every step of the project, including testing, data processing, storage, and even endpoint hosting, primarily using Azure Machine Learning.
 
 ## [](#data-gathering)Data Gathering
+In Denmark, we recently acquired a public database of court case documents, which are accesible through the [website](https://domsdatabasen.dk/) or the [API](https://domsdatabasen.dk/spoergsmaal-og-svar/api-adgang-til-domsdatabasen/). Although not exhaustive, it contains many cases from recent years. We will use the API to collect a local copy of all the data.
 
-In Denmark, we recently acquired a public database of court case documents, which are accesible through the website [link] or the API [link]. Although not exhaustive, it contains many cases from recent years. We will use the API to collect a local copy of all the data.
+We first need to authenticate:
+```python
+import requests
+from dotenv import dotenv_values
+config = dotenv_values(".env")
 
-...We first need to authenticate:
-[code]
+# Authenticate with the API
+url = "https://domsdatabasen.dk/webapi/kapi/v1/autoriser"
+headers = {"Content-Type": "application/json"}
+body = {"Email": config["username"], "Password": config["password"]}
+response = requests.post(url, json=body, headers=headers)
 
-...then get data...
+# Check if the response is successful
+if response.status_code == 200:
+    data = response.json()
+    print("Authorization successful!")
+    print("User ID:        ", data["userId"])
+    print("User Name:      ", data["username"])
+    print("Issued UTC time:", data["issuedUtcTime"])
+    token = data["tokenString"]
+    print("Token:          ", token)
+else:
+    print("Error:", response.status_code, response.text)
+```
 
-request header (input)
-- parameters and limitations
-- [code]
+And then we can fetch the data with a series of GET requests:
+```python
+headers = {'Authorization': f'Bearer {token}'}
+sideNr = 1
+while True:
+  
+    # Go through each page
+    params = {
+        'sideNr': sideNr,
+        'perSide': 25
+    }
+    response = requests.get(url, headers=headers, params=params)
 
-request response (output)
-- explain data overall
-- more in-depth with the important ones
+    if response.status_code == 200:
+        data = response.json()
+    ...
+```
+```python
+# For each page, extract data
+for item in data:
+
+    # For each page, extract documents
+    for doc in item['documents']:
+        ...
+```
+```python
+# Extract the HTML content of the document
+document = doc['contentHtml']
+if not document: continue
+all_documents.append(document)
+
+bs = BeautifulSoup(document, 'html.parser')
+text = ''
+for page in bs.find_all('div', class_='page'):
+    text += page.get_text(separator="\n").strip() + '\n'
+
+text_to_txt(text,     f'{texts_dir}/{doc["id"]}')
+text_to_txt(document, f'{texts_dir+'_html'}/{doc["id"]}')
+```
+
+```python
+# Extract meta data
+all_meta.append([item['headline'],
+                '?'.join([subject['displayText'] for subject in item['caseSubjects']]),
+                int(item['id']),
+                int(doc['id']),
+                doc['displayTitle'],
+                doc['verdictDateTime'],
+                item['closedCourtroom'],
+                item['profession']['displayText'],
+                item['instance']['displayText'],
+                item['caseType']['displayText']
+                ])
+```
+The filters available in the request header is quite limited. We can extract 25 documents per page, which is reasonable, but we are not able to filter by time, or any other relevant attributes. This is also why we need to extract every document, since we can't guarantee which document we get otherwise.
+
+I have added a small overview of all the important attributes. Some of them are attributes for the *case*, while some are attributes of the actual *documents* associated with a case.
+
+| **Attribute**   | **Type**   | **Description**                                              |
+|-----------------|------------|--------------------------------------------------------------|
+| headline        | _case_     | Headline of the case                                         |
+| caseSubjects    | _case_     | Themes/topics of a case (violence, drugs, taxes etc.)        |
+| id              | _case_     | Unique ID for a case                                         |
+| id              | _document_ | Unique ID for a document                                     |
+| displayTitle    | _document_ | Title of document                                            |
+| verdictDateTime | _document_ | Time of verdict (as defined in the document)                 |
+| closedCourtroom | _case_     | Whether the courtroom has been closed from public or not     |
+| profession      | _case_     | Type of case (criminal case, foreclosure etc.)               |
+| instance        | _case_     | Stage of court: District court, High court, or Supreme court |
+| caseType        | _case_     | More specicailly what category the case is                   |
+
 
 
 ## [](#data-processing)Data Processing
+So, we split the response data into the meta data and the document data. The meta data can easily be described in a table, and will therefore be saved as a parquet-file (instead of csv) in order to save disk space. To further optimize space/memory usage, the column data types are selected manually.
 
-So, we split the response data into  the meta data and the document data. The meta data can easily be described in a table, and will therefore be saved as a parquet-file (instead of csv) in order to save disk space. To further optimize space/memory usage, the column data types are selected manually.
-
-before / after
+- before / after
 
 This is a somewhat neglible addition, as the table is ~5000x10. But it's still a good principle, and I also just learned these tricks from my "Python and High-peformance Computing" course, so I wanted to see it in practice.
 
-As for the actual documents, they are stored in HTML format. The text itself can easily be extracted using the Beautiful Soup (bs4) library. 
-[Code]
-
-It is also beneficial to split the text into small paragraphs, such that they can later be used for "chunking" (more on that later). It is easy to make these splits, as each actual paragraph is given by the HTML paragraph- or 'p' tag
+As for the actual documents, they are stored in HTML format. The text itself can easily be extracted using the Beautiful Soup (bs4) library. It is also beneficial to split the text into small paragraphs, such that they can later be used for "chunking" (more on that later). It is easy to make these splits, as each actual paragraph is given by the HTML paragraph- or 'p' tag (see previous section for examples). 
 
 Now, the most computationally demanding processing step is to convert each of these paragraphs into an embedding vector, which can take multiple hours. We explain the embedding vectors next.
 
-Sentence Embeddings
+### Sentence Embeddings
 Building a RAG model requires that we can convert our prompt, as well as the reference material, into a vector representation, such that they can be compared. This representation is formally called an embedding. We need ML embedding models to perform this transformation.
 
-As we are working with a Danish dataset, it is not possible to simply use the default models, as they are usually in English. Even so-called "multi-lingual" models can still struggle with Danish, as the Danish language is quite underrepresented on the internet. My best attempt was to use a model from Huggingface that was explicitly fine-tuned for the Danish language [link]. It's definitely not perfect, but it's alright.
+As we are working with a Danish dataset, it is not possible to simply use the default models, as they are usually in English. Even so-called "multi-lingual" models can still struggle with Danish, as the Danish language is quite underrepresented on the internet. My best attempt was to use a model from Huggingface that was explicitly fine-tuned for the Danish language ([link](https://huggingface.co/KennethTM/MiniLM-L6-danish-encoder)). It's definitely not perfect, but it's alright.
 
-A limitation I have encountered is that the tokenization of words seems a bit wrong. In terms of vector similarity, the word "Kølle" ("club", as in the weapon) and "Køleskab" ("refrigerator") are way too similar. Even the vector representation of different types of blunt weapons does not even come close in terms of similarity.
-example with cosine-similarity + words : in a table format
+A limitation I have encountered is that the tokenization of words seems a bit wrong. In terms of vector similarity, the word "Kølle" ("club", as in the weapon) and "Køleskab" ("refrigerator") are way too similar due to the *køl* -token. Let's consider this table of distances between embeddings (meaning that lower values indicate more similarity)
+![embedding_matrix]({{ site.baseurl }}/assets/images/domstol/embedding_matrix.png "embedding_matrix")
+Vector similarity is somewhat complicated, since embedding might actually be similar in one way, but not the way *I* want. In the matrix above we see that "bat" (bat), "stav" (rod/stick), and "hammer" (hammer) are somewhat similar to each other, but not similar to "Kølle".
 
 Let's get into a bit more details regarding this embedding model. 
 - section about how embedding models are trained
@@ -96,12 +176,20 @@ For the overall expendeture of the project, I present the full overview:
 - *Cost overview*
 
 ## [](#results)Results
-* Examples
-  * Top 5 chunks
-  * Best headline
-  * Qualitative description of most similar document(s)
+Now that the endpoint is up an running, we can try an inspect the results. 
+- [call endpoint - code]
+- 2 examples:
+  - *define prompt*
+  - *Top 5 chunks*
+  - *Best headline*
+  - *Qualitative description of most similar document(s)*
+
+To get an intuitive feel of how close the vector are, other than the distance itself, we can display all the embeddings as a 2D prjection using PCA. It would seem that the chunks/points that are closest in the full space are also quite close in the 2 principal directions/dimensions
 * Points in 2D space
-* Present endpoint
+
+Let's see if these 2 principal components actually contain that much information:
+* compare eigen-values
+
 
 ## [](#reflection)Reflection
 * RAG quality
