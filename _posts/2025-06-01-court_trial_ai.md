@@ -313,13 +313,15 @@ But notice that the results 1 and 4 are the most dissimilar in PCA space, while 
 The graph above shows how much information is kept, by reducing the dataset to K components. Using 100 out of 384 PCs, we keep around 80% information. Experience tells me that this dataset can't really be compressed, as all the dimensions have a quite big impact. This would suggest that the embeddings contain much actual information along all/most elements in the vector.
 
 ## [](#reflection)Reflection
-* RAG quality
-* RAG limitation
-* Improvement ideas
-* Cloud usage and accessibility
-  * Azure in the future? SDKv1 vs SDKv2 troubles
-  * Local dev vs online (slow feedback because of containers being built etc.)
-  * Many things to consider: 
-    * define environments properly
-    * assign roles/permission to resources
+The RAG is quite limited by the Danish embeddings, even though it did alright. I should definitely have included the headline as a valid chunk that could be compared to the prompt embedding, but I did not think of that in time. The RAG could be improved if I pushes the limit on how much text I would ass to each chunk. The current paragraphs/chunks don't even come near the ~400 word limit. I also imagine that doing the project on a translated version of the court data might actually have been better, instead of training an embedding model on Danish data. The language is definitely a bottleneck in making this work perfectly, but not necessarily the first bottleneck. 
 
+### Assesment of cloud computing
+
+The idea of having everything hosted on the cloud in a pay-as-you-go fashion is quite appealing. In theory it's great, but in practice it has been a mess to get working. It's definitely more clear to me what to do in the future, but it still requires a solid plan as you quickly lose the overview. 
+
+First of all, you have to be careful what resources are running, which is not displayed in a clear way. Also, the Azure SDK (libraries, whatever) are very confusing, as they have 2 very different versions that tend to conflict with each other... sometimes. Everything worked when I was consistent at using SDKv2 only, but it was very unclear at first that there was this distinction.
+
+Another thing to consider is the feedback of doing changes. Azure ML does provide cloud notebooks which lets one run code directly in the cloud, but they take some time to get up and running. For almost any other thing, it would take a long time to see if it worked. This is because things behave differently on the cloud, as the need certain access rights, and code has to work with the online environment. When working locally, things usually just work. The biggest reason for using the cloud is that its available almost 100% of the time. The computers need to be turned off, which makes server hosting and automatic script execution very easy. 
+
+### Final thoughts
+This has been a very large project, and I have learned a ton. I never expected the results to be any good, as the methods used/learned were important in themselves. I have always struggled with cloud computing, but I think this experience helped me figure it out. I am still interested in working with court data, but that would be in the context of creating an AI to assist or replace the classic role of the judge.
