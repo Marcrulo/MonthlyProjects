@@ -226,7 +226,10 @@ For the overall expendeture of the project, I present the full overview:
 
 
 ## [](#results)Results
-Now that the endpoint is up an running, we can try an inspect the results. 
+Now that the endpoint is up an running, we can try an inspect the results of the following prompt:
+
+> **Prompt: "Tiltalt for at besidde våben og stoffer"** 
+
 ```python
 import requests
 import json
@@ -240,70 +243,68 @@ headers = {
 }
 
 data = {
-    "prompt": "Tilsalt for at besidde våben og stoffer"
+    "prompt": "Tiltalt for at besidde våben og stoffer"
 }
 
 response = requests.post(endpoint, headers=headers, json=data)
 print(response.json())
 ```
 
-Output...
+This request retrieves the 5 best matches, from best to worst, in a JSON style format. To make it more readable, I've omitted some number, and formatted it neatly:
 ```
-'headline'     : 'Tiltale for bl.a. forsøg på manddrab ved at have planlagt at dræbe flere personer på skoler m.v. ved skyderier. Påstand om konfiskation'
-  
-'case_subjects': 'Strafferetlige sanktioner og andre foranstaltninger?Våben, eksplosiver og fyrværkeri?Liv og legeme'
-
-'chunk_text'   : 'at have opnået våbentilladelse og tilladelse til at opbevare våben'
-
-'distance'     : '0.7364452'
+'HEADLINE'     : 'Tiltale for bl.a. forsøg på manddrab ved at have planlagt at dræbe flere personer på skoler m.v. ved skyderier. Påstand om konfiskation'
+'CASE_SUBJECTS': 'Strafferetlige sanktioner og andre foranstaltninger. Våben, eksplosiver og fyrværkeri. Liv og legeme'
+'CHUNK_TEXT'   : 'at have opnået våbentilladelse og tilladelse til at opbevare våben'
+'DISTANCE'     : '0.7364452'
 ``` 
 
 ```
-'headline'    : 'Landsretten stadfæstede byrettens dom i sag om tiltale for overtrædelse af lov om euforiserende stoffer § 3, stk. 1, jf. § 2, stk. 4, jf. bekendtgørelse om euforiserende stoffer § 30, stk. 1, jf. § 3, stk. 2, jf. bilag 1, liste B, nr. 59 og straffelovens §279 a.'
+'HEADLINE'     : 'Landsretten stadfæstede byrettens dom i sag om tiltale for overtrædelse af lov om euforiserende stoffer § 3, stk. 1, jf. § 2, stk. 4, jf. bekendtgørelse om euforiserende stoffer § 30, stk. 1, jf. § 3, stk. 2, jf. bilag 1, liste B, nr. 59 og straffelovens §279 a.'
  
-'case_subjects': 'Narkotika?Formueforbrydelser'
+'CASE_SUBJECTS': 'Narkotika. Formueforbrydelser'
   
-'chunk_text'   : 'vens § 191, stk. 1, 1. pkt., våbenbekendtgørelsen, lov om visse dopingmidler og lovgivningen om euforiserende stoffer.'
+'CHUNK_TEXT'   : 'vens § 191, stk. 1, 1. pkt., våbenbekendtgørelsen, lov om visse dopingmidler og lovgivningen om euforiserende stoffer.'
 
-'distance'     : '0.7441238'
+'DISTANCE'     : '0.7441238'
 ```
 
 ```
-'headline'     : 'Landsrettens dom i sag om overtrædelse af straffelovens § 192a, stk. 1, nr. 1, jf. til dels stk. 3, jf. våbenlovens § 10, stk. 1, jf. § 2, stk. 1, jf. § 1, stk. 1, nr. 1 - 3 mv. stadfæstes med den ændring, at tiltalte straffes med fængsel i 3 år'
+'HEADLINE'     : 'Landsrettens dom i sag om overtrædelse af straffelovens § 192a, stk. 1, nr. 1, jf. til dels stk. 3, jf. våbenlovens § 10, stk. 1, jf. § 2, stk. 1, jf. § 1, stk. 1, nr. 1 - 3 mv. stadfæstes med den ændring, at tiltalte straffes med fængsel i 3 år'
 
-'case_subjects': 'Våben, eksplosiver og fyrværkeri?Strafferetlige sanktioner og andre foranstaltninger?Udlændinge?Narkotika'
+'CASE_SUBJECTS': 'Våben, eksplosiver og fyrværkeri. Strafferetlige sanktioner og andre foranstaltninger. Udlændinge. Narkotika'
 
-'chunk_text'   : 'overdragelse og i overtrædelse af våbenlovgivningen ved at have været i besiddelse af en kre-ditkortkniv, et knojern og to peberspray.'
+'CHUNK_TEXT'   : 'overdragelse og i overtrædelse af våbenlovgivningen ved at have været i besiddelse af en kre-ditkortkniv, et knojern og to peberspray.'
 
-'distance'     : '0.7442008'
- ```
+'DISTANCE'     : '0.7442008'
+```
 
- ```
- {'headline': 'Tiltale for overtrædelse af bl.a. straffelovens § 191, stk. 1, 2. pkt., jf. til dels stk. 2, jf. lov om euforiserende stoffer § 3, stk.1, jf. § 2, stk. 4, jf. bekendtgørelse om euforiserende stoffer § 30 (dagældende § 27), jf. § 3, jf. bilag 1, liste B, nr. 70 samt straffelovens § 192a, stk. 1, nr. 1, jfr. stk. 3, jfr. våbenlovens § 10, stk. 1, jfr. § 1, stk. 1, nr. 1, 2 og 3. Påstand om konfiskation',
-  'case_subjects': 'Narkotika?Våben, eksplosiver og fyrværkeri?Formueforbrydelser?Forbrydelser mod offentlig myndighed',
-  'chunk_text': 'Lange fængselsstraffe for salg af kokain og besiddelse af skydevåben',
-  'distance': '0.79919827'},
- ```
+```
+'HEADLINE'     : 'Tiltale for overtrædelse af bl.a. straffelovens § 191, stk. 1, 2. pkt., jf. til dels stk. 2, jf. lov om euforiserende stoffer § 3, stk.1, jf. § 2, stk. 4, jf. bekendtgørelse om euforiserende stoffer § 30 (dagældende § 27), jf. § 3, jf. bilag 1, liste B, nr. 70 samt straffelovens § 192a, stk. 1, nr. 1, jfr. stk. 3, jfr. våbenlovens § 10, stk. 1, jfr. § 1, stk. 1, nr. 1, 2 og 3. Påstand om konfiskation'
 
- ```
- {'headline': 'Tiltale for narko- og våbenbesiddelse. Påstand om konfiskation',
-  'case_subjects': 'Narkotika?Våben, eksplosiver og fyrværkeri?Færdsel?Strafferetlige sanktioner og andre foranstaltninger',
-  'chunk_text': 'Om våben og ammunition (forhold 1)',
-  'distance': '0.8109229'}
+'CASE_SUBJECTS': 'Narkotika. Våben, eksplosiver og fyrværkeri. Formueforbrydelser. Forbrydelser mod offentlig myndighed'
+
+'CHUNK_TEXT'   : 'Lange fængselsstraffe for salg af kokain og besiddelse af skydevåben'
+
+'DISTANCE'     : '0.79919827'
+```
+
+```
+'HEADLINE'     : 'Tiltale for narko- og våbenbesiddelse. Påstand om konfiskation'
+
+'CASE_SUBJECTS': 'Narkotika. Våben, eksplosiver og fyrværkeri. Færdsel. Strafferetlige sanktioner og andre foranstaltninger'
+
+'CHUNK_TEXT'   : 'Om våben og ammunition (forhold 1)'
+
+'DISTANCE'     : '0.8109229'
 ```
 
 
 
 
-- [call endpoint - code]
-- 2 examples:
-  - *define prompt*
-  - *Top 5 chunks*
-  - *Best headline*
-  - *Qualitative description of most similar document(s)*
+
 
 To get an intuitive feel of how close the vector are, other than the distance itself, we can display all the embeddings as a 2D prjection using PCA. It would seem that the chunks/points that are closest in the full space are also quite close in the 2 principal directions/dimensions
-* Points in 2D space
+
 ![pca_projection]({{ site.baseurl }}/assets/images/domstol/pca_projection.jpeg "pca_projection")
 
 
