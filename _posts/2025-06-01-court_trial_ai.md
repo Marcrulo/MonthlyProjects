@@ -5,7 +5,6 @@ published: true
 ---
 
 ## [](#prologue)Prologue
-Prologue
 Ethics regarding the use of AI for decision making in court, has been one of my favorite topics to discuss, as the philosophy of intelligence, conciousness, and emotions has had a big impact on my world view. 
 
 As an engineer, I would also like to see things in practice, rather than just theorize about things. This is what drove me to start a project about AI with public Danish court trial data. Ideally, the available data would be structuered in a way similar to datasets in supervised learning, where we have a text description of the case, and a label corresponding to the punishment. Unfortunately, this was not the case, as the data consists of text documents that are not defined in a specific template. Therefore, the goal became to make a RAG model for retrieving these court documents based on a search prompt. I.e. to do natural text search on these documents. I want to do this using local models, and without LLM-pipeline libraries like LangChain.
@@ -191,23 +190,7 @@ Anyway, we are keeping it simple.
 We have not talked about the challenge of searching for similar documents, which is very interesting. The straight forward way to find the most similar vectors wrt. the prompt vector, would be to simply check all options by brute force. In itself, this is slow, but using the FAISS (Facebook AI Similarity Search) library, many optimizations have been applied to speedup even the brute-force approach. It's very memory efficient, and it utilizes multiprocessing in order to parallelize the computation. They also offer approximate solutions for large datasets, where brute force in not feasible.
 
 In the end, the flow looks like this:
-
-Flowchart:
-- access data with api
-- process it
-- save text files
-- embed paragraphs in text files (store as FAISS index)
-- embed prompt
-- search for similar documents
-
-Flowchart cloud:
-- access data with api (job script)
-- process it (same job script)
-- save text files (same job script)
-- text files are stored in blob storage
-- embedding of paragraphs (new job script)
-- meta data and faiss index stored in blob storage
-- inference on endpoint
+![workflow_local]({{ site.baseurl }}/assets/images/domstol/workflow_local.png "workflow_local")
 
 
 
@@ -224,6 +207,9 @@ Azure has everything we can ask for.
 1. It provides a **storage account** for *blob storage*
 2. **environments** that VMs such as endpoints and job scripts can utilize
 3. In Azure ML Studio we get many features such as **notebooks**, **job scripts**, **endpoint hosting** etc. It tries to encapsulate the entire ML workflow from start to finish.
+
+This is my attempt at creating the equivalent workflow, from before, in the cloud:
+![workflow_cloud]({{ site.baseurl }}/assets/images/domstol/workflow_cloud.png "workflow_cloud")
 
 ### Cost management
 In Azure, you create an endpoint, but you also need to actually *deploy* a VM that acts as our API server. It should be noted that they run until you turn them off. I had falsely assumed that it was stationary until someone did an API call (cold start), which in turn cost me around 900 DKK.
@@ -260,9 +246,9 @@ Let's see if these 2 principal components actually contain that much information
 * RAG limitation
 * Improvement ideas
 * Cloud usage and accessibility
-  * Azure CLI in the future?
-  * Local dev up online (slow feedback because of containers being built etc.)
-  * How to manage Azure ML documentation, but ChatGPT is very good at the Azure CLI (and not so much with the UI)
-  * Chat does know about debugging, though
-  * There seems to have been some confusion regarding v1 and v2 of the Azure SDK
+  * Azure in the future? SDKv1 vs SDKv2 troubles
+  * Local dev vs online (slow feedback because of containers being built etc.)
+  * Many things to consider: 
+    * define environments properly
+    * assign roles/permission to resources
 
