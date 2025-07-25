@@ -228,7 +228,8 @@ For the overall expendeture of the project, I present the full overview:
 ## [](#results)Results
 Now that the endpoint is up an running, we can try an inspect the results of the following prompt:
 
-> **Prompt: "Tiltalt for at besidde våben og stoffer"** 
+> **(DK) Prompt: "Tiltalt for at besidde våben og stoffer"** \
+> **(EN) Prompt: "Charged with possession of weapons and drugs"**
 
 ```python
 import requests
@@ -250,8 +251,9 @@ response = requests.post(endpoint, headers=headers, json=data)
 print(response.json())
 ```
 
-This request retrieves the 5 best matches, from best to worst, in a JSON style format. To make it more readable, I've omitted some number, and formatted it neatly:
+This request retrieves the 5 best matches, from best to worst, in a JSON style format. To make it more readable here, I've omitted some numbers, and formatted it neatly:
 ```
+RESULT 1)
 'HEADLINE'     : 'Tiltale for bl.a. forsøg på manddrab ved at have planlagt at dræbe flere personer på skoler m.v. ved skyderier. Påstand om konfiskation'
 'CASE_SUBJECTS': 'Strafferetlige sanktioner og andre foranstaltninger. Våben, eksplosiver og fyrværkeri. Liv og legeme'
 'CHUNK_TEXT'   : 'at have opnået våbentilladelse og tilladelse til at opbevare våben'
@@ -259,62 +261,56 @@ This request retrieves the 5 best matches, from best to worst, in a JSON style f
 ``` 
 
 ```
+RESULT 2)
 'HEADLINE'     : 'Landsretten stadfæstede byrettens dom i sag om tiltale for overtrædelse af lov om euforiserende stoffer § 3, stk. 1, jf. § 2, stk. 4, jf. bekendtgørelse om euforiserende stoffer § 30, stk. 1, jf. § 3, stk. 2, jf. bilag 1, liste B, nr. 59 og straffelovens §279 a.'
- 
 'CASE_SUBJECTS': 'Narkotika. Formueforbrydelser'
-  
 'CHUNK_TEXT'   : 'vens § 191, stk. 1, 1. pkt., våbenbekendtgørelsen, lov om visse dopingmidler og lovgivningen om euforiserende stoffer.'
-
 'DISTANCE'     : '0.7441238'
 ```
 
 ```
+RESULT 3)
 'HEADLINE'     : 'Landsrettens dom i sag om overtrædelse af straffelovens § 192a, stk. 1, nr. 1, jf. til dels stk. 3, jf. våbenlovens § 10, stk. 1, jf. § 2, stk. 1, jf. § 1, stk. 1, nr. 1 - 3 mv. stadfæstes med den ændring, at tiltalte straffes med fængsel i 3 år'
-
 'CASE_SUBJECTS': 'Våben, eksplosiver og fyrværkeri. Strafferetlige sanktioner og andre foranstaltninger. Udlændinge. Narkotika'
-
 'CHUNK_TEXT'   : 'overdragelse og i overtrædelse af våbenlovgivningen ved at have været i besiddelse af en kre-ditkortkniv, et knojern og to peberspray.'
-
 'DISTANCE'     : '0.7442008'
 ```
 
 ```
+RESULT 4)
 'HEADLINE'     : 'Tiltale for overtrædelse af bl.a. straffelovens § 191, stk. 1, 2. pkt., jf. til dels stk. 2, jf. lov om euforiserende stoffer § 3, stk.1, jf. § 2, stk. 4, jf. bekendtgørelse om euforiserende stoffer § 30 (dagældende § 27), jf. § 3, jf. bilag 1, liste B, nr. 70 samt straffelovens § 192a, stk. 1, nr. 1, jfr. stk. 3, jfr. våbenlovens § 10, stk. 1, jfr. § 1, stk. 1, nr. 1, 2 og 3. Påstand om konfiskation'
-
 'CASE_SUBJECTS': 'Narkotika. Våben, eksplosiver og fyrværkeri. Formueforbrydelser. Forbrydelser mod offentlig myndighed'
-
 'CHUNK_TEXT'   : 'Lange fængselsstraffe for salg af kokain og besiddelse af skydevåben'
-
 'DISTANCE'     : '0.79919827'
 ```
 
 ```
+RESULT 5)
 'HEADLINE'     : 'Tiltale for narko- og våbenbesiddelse. Påstand om konfiskation'
-
 'CASE_SUBJECTS': 'Narkotika. Våben, eksplosiver og fyrværkeri. Færdsel. Strafferetlige sanktioner og andre foranstaltninger'
-
 'CHUNK_TEXT'   : 'Om våben og ammunition (forhold 1)'
-
 'DISTANCE'     : '0.8109229'
 ```
 
+In the output, the "CHUNK_TEXT" is what is actually being compared with the prompt, and "DISTANCE" defined how close the sentences are in vector space. 
+
+Even if the chunk-text in result 2 and 4 are the only ones that actually mentions both weapons and drugs, the "case subjects" usually include both. This is purely coincidental.
+It's hard to say why only 2 and 4 seem valid, as the distance measure doesn't come with a good explanation. Result 1 does not even have "drugs" in the case subject. The embeddings might have had a focus on something different. To maybe better understand these embeddings, let's try visualizing them.
 
 
+### PCA projection
 
+To get an intuitive feel of how close the vector are, other than the distance itself, we can display all the embeddings as a 2D prjection using PCA. This means that all the information of the 384 dimensions have been cramped into 2 dimensions, or *principal components* (PC). These PCs are basically combinations of all 384 dimensions, but are supposed to "span the space of most information".
 
-
-To get an intuitive feel of how close the vector are, other than the distance itself, we can display all the embeddings as a 2D prjection using PCA. It would seem that the chunks/points that are closest in the full space are also quite close in the 2 principal directions/dimensions
+It would seem that the chunks/points that are closest in the full space are also quite close in the 2 principal directions/dimensions
 
 ![pca_projection]({{ site.baseurl }}/assets/images/domstol/pca_projection.jpeg "pca_projection")
 
-
-
-...explained variance...
+But notice that the results 1 and 4 are the most dissimilar in PCA space, while 2,3 and 5 are more similar to the prompt (and each other). We should understand this as: By only considering the 2 most important "directions of information", results 2,3 and 5 have more in common with the prompt. The compression into 2 dimensions is only meant to be guiding, and used for visualization, but it can actually be useful to reduce it to something like 100 dimensions, as the remaining dimensions might be considered noise.
 
 ![explained_variance]({{ site.baseurl }}/assets/images/domstol/explained_variance.jpeg "explained_variance")
 
-
-
+The graph above shows how much information is kept, by reducing the dataset to K components. Using 100 out of 384 PCs, we keep around 80% information. Experience tells me that this dataset can't really be compressed, as all the dimensions have a quite big impact. This would suggest that the embeddings contain much actual information along all/most elements in the vector.
 
 ## [](#reflection)Reflection
 * RAG quality
