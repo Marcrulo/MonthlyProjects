@@ -1,4 +1,377 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-06-03T11:02:34+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">//Under Construction// 5. Danish Championhsip in AI - All 3 Tasks</title><link href="http://localhost:4000/MonthlyProjects/dmiai_2025" rel="alternate" type="text/html" title="//Under Construction// 5. Danish Championhsip in AI - All 3 Tasks" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/dmiai_2025</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/dmiai_2025"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[...]]></summary></entry><entry><title type="html">//Under Construction// 4. Crowd-sourced Beverage Rating</title><link href="http://localhost:4000/MonthlyProjects/beverage_rating" rel="alternate" type="text/html" title="//Under Construction// 4. Crowd-sourced Beverage Rating" /><published>2025-07-01T00:00:00+02:00</published><updated>2025-07-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/beverage_rating</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/beverage_rating"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[...]]></summary></entry><entry><title type="html">//Under Construction// 3. Court Trial AI</title><link href="http://localhost:4000/MonthlyProjects/court_trial_ai" rel="alternate" type="text/html" title="//Under Construction// 3. Court Trial AI" /><published>2025-06-01T00:00:00+02:00</published><updated>2025-06-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/court_trial_ai</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/court_trial_ai"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[...]]></summary></entry><entry><title type="html">2. Shortcut Removal using Diffusion Models</title><link href="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion" rel="alternate" type="text/html" title="2. Shortcut Removal using Diffusion Models" /><published>2025-05-01T00:00:00+02:00</published><updated>2025-05-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-07-27T09:04:34+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">//Under Construction// 8. Crowd-sourced Beverage Rating</title><link href="http://localhost:4000/MonthlyProjects/beverage_rating" rel="alternate" type="text/html" title="//Under Construction// 8. Crowd-sourced Beverage Rating" /><published>2025-10-01T00:00:00+02:00</published><updated>2025-10-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/beverage_rating</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/beverage_rating"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Website made using Replit]]></summary></entry><entry><title type="html">//Under Construction// 7. Self-hosted concert notifier</title><link href="http://localhost:4000/MonthlyProjects/ticketmaster-raspberry-pi" rel="alternate" type="text/html" title="//Under Construction// 7. Self-hosted concert notifier" /><published>2025-09-01T00:00:00+02:00</published><updated>2025-09-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/ticketmaster-raspberry-pi</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/ticketmaster-raspberry-pi"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Notify on mail when a relevant concert is revealed using the Ticket Master API (hosted on Raspberry Pi)]]></summary></entry><entry><title type="html">//Under Construction// 5. Danish Championhsip in AI - All 3 Tasks</title><link href="http://localhost:4000/MonthlyProjects/A-dmiai_2025" rel="alternate" type="text/html" title="//Under Construction// 5. Danish Championhsip in AI - All 3 Tasks" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-dmiai_2025</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-dmiai_2025"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+
+<h2 id="task-1---name"><a href="#task-1"></a>Task 1 - [name]</h2>
+
+<h3 id="others-solutions">Others’ solutions</h3>
+
+<h2 id="task-2---name"><a href="#task-2"></a>Task 2 - [name]</h2>
+
+<h3 id="others-solutions-1">Others’ solutions</h3>
+
+<h2 id="task-3---name"><a href="#task-3"></a>Task 3 - [name]</h2>
+
+<h3 id="others-solutions-2">Others’ solutions</h3>
+
+<h2 id="conclusion"><a href="#conclusion"></a>Conclusion</h2>
+
+<h3 id="leaderboard">Leaderboard</h3>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[An overview of the 3 tasks from DMiAI, and how we tried to solve it]]></summary></entry><entry><title type="html">//Under Construction// 6. DTU course discovery</title><link href="http://localhost:4000/MonthlyProjects/B-dtu_courses" rel="alternate" type="text/html" title="//Under Construction// 6. DTU course discovery" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/B-dtu_courses</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/B-dtu_courses"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Add website interface to Social Graph course exam project]]></summary></entry><entry><title type="html">4. RAG model for Danish court trial data (Part 2/2)</title><link href="http://localhost:4000/MonthlyProjects/court_trial_ai_B" rel="alternate" type="text/html" title="4. RAG model for Danish court trial data (Part 2/2)" /><published>2025-07-01T00:00:00+02:00</published><updated>2025-07-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/court_trial_ai_B</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/court_trial_ai_B"><![CDATA[<h2 id="cloud"><a href="#cloud"></a>Cloud</h2>
+<p>At first, the reason for using the cloud was primarily just to learn more about it, despite thinking that it won’t be necessary, but it was actually quite beneficial. First of all, it enabled me to host an endpoint for the model, which makes it possible to interact with it from anywhere in the world. But most importantly, it was actually quite nice to offload the data processing to a cloud computer. Not only would my local PC have been unavailable for proper use, the computation also happened much faster, since the cheaper VMs ran the processing way faster than my own PC, and also did not encounter any crashes. It took Azure 3½ hours using some of the cheapest compute, but mine had not even finished after 5+ hours locally.</p>
+
+<p><img src="/MonthlyProjects/assets/images/domstol/job_script.png" alt="job_script" title="job_script" /></p>
+
+<p>I had initially started working on Machine Learning Operations (MLOps) at a DTU course of the same name, where we tried doing some simple ML workflows on Google Cloud Platform, but did not utilize the ML-specific services. Later on, I got some experience in Azure, working in the ML team at GN. At GN, I went through Microsoft’s official tutorials, and finally got to test it out during this project.</p>
+
+<p>Azure has everything we can ask for.</p>
+<ol>
+  <li>It provides a <strong>storage account</strong> for <em>blob storage</em></li>
+  <li><strong>environments</strong> that VMs such as endpoints and job scripts can utilize</li>
+  <li>In Azure ML Studio we get many features such as <strong>notebooks</strong>, <strong>job scripts</strong>, <strong>endpoint hosting</strong> etc. It tries to encapsulate the entire ML workflow from start to finish.</li>
+</ol>
+
+<p>This is my attempt at creating the equivalent workflow, from before, in the cloud:</p>
+
+<p><img src="/MonthlyProjects/assets/images/domstol/workflow_cloud.png" alt="workflow_cloud" title="workflow_cloud" /></p>
+
+<h3 id="cost-management">Cost management</h3>
+<p>In Azure, you create an endpoint, but you also need to actually <em>deploy</em> a VM that acts as our API server. It should be noted that they run until you turn them off. I had falsely assumed that it was stationary until someone did an API call (cold start), which in turn cost me around 900 DKK.</p>
+
+<p>For the overall expendeture of the project, I present the full overview:</p>
+
+<p><img src="/MonthlyProjects/assets/images/domstol/azure_costs.png" alt="azure_costs" title="azure_costs" /></p>
+
+<ul>
+  <li>~900 kr. was spent on <strong>Compute</strong>, which is every time a computer is running computation. This is notebooks, job scripts, building environments and endpoint deployments etc.</li>
+  <li>~100 kr. was spent on <strong>Storage</strong>, which is for storing the files I have in BLOB storage. This is the text files, FAISS index, and meta data files.</li>
+  <li>~30 kr. was spent on <strong>Networking</strong>, which is the cost of bandwidth of data leaving Azure. This must accumulate from multiple sources, as there is not an obvious resource that consumes a ton of bandwidth.</li>
+  <li>~30 kr. was spent on <strong>Containers</strong>, which is basically compute used in (emphemeral) containers. This would be the serverless job scripts that I used for processing.</li>
+</ul>
+
+<h2 id="results"><a href="#results"></a>Results</h2>
+<p>Now that the endpoint is up an running, we can try an inspect the results of the following prompt:</p>
+
+<blockquote>
+  <p><strong>(DK) Prompt: “Tiltalt for at besidde våben og stoffer”</strong> <br />
+<strong>(EN) Prompt: “Charged with possession of weapons and drugs”</strong></p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">endpoint</span> <span class="o">=</span> <span class="s">"&lt;ENDPOINT-URL&gt;"</span> 
+<span class="n">api_key</span>  <span class="o">=</span> <span class="s">"&lt;API-KEY&gt;"</span>  
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+    <span class="s">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s">"</span>
+<span class="p">}</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"prompt"</span><span class="p">:</span> <span class="s">"Tiltalt for at besidde våben og stoffer"</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div></div>
+
+<p>This request retrieves the 5 best matches, from best to worst, in a JSON style format. To make it more readable here, I’ve omitted some numbers, and formatted it neatly:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RESULT 1)
+'HEADLINE'     : 'Tiltale for bl.a. forsøg på manddrab ved at have planlagt at dræbe flere personer på skoler m.v. ved skyderier. Påstand om konfiskation'
+'CASE_SUBJECTS': 'Strafferetlige sanktioner og andre foranstaltninger. Våben, eksplosiver og fyrværkeri. Liv og legeme'
+'CHUNK_TEXT'   : 'at have opnået våbentilladelse og tilladelse til at opbevare våben'
+'DISTANCE'     : '0.7364452'
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RESULT 2)
+'HEADLINE'     : 'Landsretten stadfæstede byrettens dom i sag om tiltale for overtrædelse af lov om euforiserende stoffer § 3, stk. 1, jf. § 2, stk. 4, jf. bekendtgørelse om euforiserende stoffer § 30, stk. 1, jf. § 3, stk. 2, jf. bilag 1, liste B, nr. 59 og straffelovens §279 a.'
+'CASE_SUBJECTS': 'Narkotika. Formueforbrydelser'
+'CHUNK_TEXT'   : 'vens § 191, stk. 1, 1. pkt., våbenbekendtgørelsen, lov om visse dopingmidler og lovgivningen om euforiserende stoffer.'
+'DISTANCE'     : '0.7441238'
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RESULT 3)
+'HEADLINE'     : 'Landsrettens dom i sag om overtrædelse af straffelovens § 192a, stk. 1, nr. 1, jf. til dels stk. 3, jf. våbenlovens § 10, stk. 1, jf. § 2, stk. 1, jf. § 1, stk. 1, nr. 1 - 3 mv. stadfæstes med den ændring, at tiltalte straffes med fængsel i 3 år'
+'CASE_SUBJECTS': 'Våben, eksplosiver og fyrværkeri. Strafferetlige sanktioner og andre foranstaltninger. Udlændinge. Narkotika'
+'CHUNK_TEXT'   : 'overdragelse og i overtrædelse af våbenlovgivningen ved at have været i besiddelse af en kre-ditkortkniv, et knojern og to peberspray.'
+'DISTANCE'     : '0.7442008'
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RESULT 4)
+'HEADLINE'     : 'Tiltale for overtrædelse af bl.a. straffelovens § 191, stk. 1, 2. pkt., jf. til dels stk. 2, jf. lov om euforiserende stoffer § 3, stk.1, jf. § 2, stk. 4, jf. bekendtgørelse om euforiserende stoffer § 30 (dagældende § 27), jf. § 3, jf. bilag 1, liste B, nr. 70 samt straffelovens § 192a, stk. 1, nr. 1, jfr. stk. 3, jfr. våbenlovens § 10, stk. 1, jfr. § 1, stk. 1, nr. 1, 2 og 3. Påstand om konfiskation'
+'CASE_SUBJECTS': 'Narkotika. Våben, eksplosiver og fyrværkeri. Formueforbrydelser. Forbrydelser mod offentlig myndighed'
+'CHUNK_TEXT'   : 'Lange fængselsstraffe for salg af kokain og besiddelse af skydevåben'
+'DISTANCE'     : '0.79919827'
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RESULT 5)
+'HEADLINE'     : 'Tiltale for narko- og våbenbesiddelse. Påstand om konfiskation'
+'CASE_SUBJECTS': 'Narkotika. Våben, eksplosiver og fyrværkeri. Færdsel. Strafferetlige sanktioner og andre foranstaltninger'
+'CHUNK_TEXT'   : 'Om våben og ammunition (forhold 1)'
+'DISTANCE'     : '0.8109229'
+</code></pre></div></div>
+
+<p>In the output, the “CHUNK_TEXT” is what is actually being compared with the prompt, and “DISTANCE” defined how close the sentences are in vector space.</p>
+
+<p>Even if the chunk-text in result 2 and 4 are the only ones that actually mentions both weapons and drugs, the “case subjects” usually include both. This is purely coincidental.
+It’s hard to say why only 2 and 4 seem valid, as the distance measure doesn’t come with a good explanation. Result 1 does not even have “drugs” in the case subject. The embeddings might have had a focus on something different. To maybe better understand these embeddings, let’s try visualizing them.</p>
+
+<h3 id="pca-projection">PCA projection</h3>
+
+<p>To get an intuitive feel of how close the vector are, other than the distance itself, we can display all the embeddings as a 2D prjection using PCA. This means that all the information of the 384 dimensions have been cramped into 2 dimensions, or <em>principal components</em> (PC). These PCs are basically combinations of all 384 dimensions, but are supposed to “span the 2D space of most information”.</p>
+
+<p>It would seem that the chunks/points that are closest in the full space are also quite close in the 2 principal directions/dimensions:</p>
+
+<p><img src="/MonthlyProjects/assets/images/domstol/pca_projection.jpeg" alt="pca_projection" title="pca_projection" /></p>
+
+<p>But notice that the results 1 and 4 are the most dissimilar to the prompt, in PCA space, while 2,3 and 5 are more similar (also to each other). We should understand this as: By only considering the 2 most important “directions of information”, results 2,3 and 5 have more in common with the prompt. The compression into 2 dimensions is only meant to be guiding, and used for visualization, but it can actually be useful to reduce it to something like 100 dimensions, as the remaining dimensions might be considered noise.</p>
+
+<p><img src="/MonthlyProjects/assets/images/domstol/explained_variance.jpeg" alt="explained_variance" title="explained_variance" /></p>
+
+<p>The graph above shows how much information is kept, by reducing the dataset to K components. Using 100 out of 384 PCs, we keep around 80% information. Experience tells me that this dataset can’t really be compressed, as all the dimensions have a quite big impact, since the curve is not very start for low K’s. This would suggest that the embeddings don’t have a few latent variables that explain most of the information.</p>
+
+<h2 id="reflection"><a href="#reflection"></a>Reflection</h2>
+<p>The RAG is quite limited by the Danish embeddings, even though it did alright. I should definitely also have included the headline as a valid chunk that could be compared to the prompt embedding, but I did not think of that in time. The RAG could be improved further if I pushed the limit on how much text I would assign to each chunk. The current paragraphs/chunks don’t even come near the ~400 word limit. I also imagine that doing the project on a translated version of the court data might actually have been better, instead of training an embedding model on Danish data. The language is definitely a bottleneck in making this work perfectly, but not necessarily the first bottleneck.</p>
+
+<h3 id="assesment-of-cloud-computing">Assesment of cloud computing</h3>
+<p>The idea of having everything hosted on the cloud in a pay-as-you-go fashion is quite appealing. In theory it’s great, but in practice it has been a mess to get working. It’s definitely more clear to me what to do in the future, but it still requires a solid plan as you quickly lose the overview.</p>
+
+<p>First of all, you have to be careful what resources are running, which is not displayed in a clear way. Also, the Azure SDK (libraries, whatever) are very confusing, as they have 2 very different versions that tend to conflict with each other. Everything worked when I was consistent at using SDKv2 only, but it was very unclear at first that there was this distinction.</p>
+
+<p>Another thing to consider is the feedback of doing changes. Azure ML does provide cloud notebooks which lets one run code directly in the cloud, but they take some time to get up and running. For almost any other thing, it would take a long time to see if it worked. This is because things behave differently on the cloud, as they need certain access rights, and code has to work with the online environment etc. . When working locally, things usually just work. The biggest reason for using the cloud is that its available almost 100% of the time. The cloud computers don’t need to be turned off, which makes server hosting and automatic script execution very easy.</p>
+
+<h3 id="final-thoughts">Final thoughts</h3>
+<p>This has been a very large project, and I have learned a ton. I never expected the results to be any good, as the methods used/learned were important in themselves. I have always struggled with cloud computing, but I think this experience helped me figure it out. I am still interested in working with court data, but that would be in the context of creating an AI to assist or replace the classic role of the judge.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[(Part 2/2) Hosting the model in the cloud]]></summary></entry><entry><title type="html">3. RAG model for Danish court trial data (Part 1/2)</title><link href="http://localhost:4000/MonthlyProjects/court_trial_ai_A" rel="alternate" type="text/html" title="3. RAG model for Danish court trial data (Part 1/2)" /><published>2025-06-01T00:00:00+02:00</published><updated>2025-06-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/court_trial_ai_A</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/court_trial_ai_A"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>Ethics regarding the use of AI for decision making in court, has been one of my favorite topics to discuss, as the philosophy of intelligence, conciousness, and emotions in AI has had a big impact on my world view.</p>
+
+<p>As an engineer, I would also like to see things in practice, rather than just theorize about things. This is what drove me to start a project about AI with public Danish court trial data. Ideally, the available data would be structuered in a way similar to datasets in supervised learning, where we have a text description of the case, and a label corresponding to the punishment. Unfortunately, this was not the case, as the data consists of text documents that are not defined in a specific template. Therefore, the goal became to make a RAG model for retrieving these court documents based on a search prompt. I.e. to do natural text search on these documents. I want to do this using local models, and without LLM-pipeline libraries like LangChain.</p>
+
+<p>As the ambition level of the project fell, I had to challenge myself in another way to keep it exciting. I chose to utilize cloud computing for every step of the project, including testing, data processing, storage, and even endpoint hosting, primarily using Azure Machine Learning. I have always struggled with using cloud computing succesfully, so this is a perfect chance to give it another shot.</p>
+
+<h2 id="data-gathering"><a href="#data-gathering"></a>Data Gathering</h2>
+<p>In Denmark, we recently acquired a public database of court case documents, which are accesible through the <a href="https://domsdatabasen.dk/">website</a> or the <a href="https://domsdatabasen.dk/spoergsmaal-og-svar/api-adgang-til-domsdatabasen/">API</a>. Although not exhaustive, it contains many cases from recent years. We will use the API to collect a local copy of all the data.</p>
+
+<p>We first need to authenticate:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">dotenv_values</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">dotenv_values</span><span class="p">(</span><span class="s">".env"</span><span class="p">)</span>
+
+<span class="c1"># Authenticate with the API
+</span><span class="n">url</span> <span class="o">=</span> <span class="s">"https://domsdatabasen.dk/webapi/kapi/v1/autoriser"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">}</span>
+<span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Email"</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s">"username"</span><span class="p">],</span> <span class="s">"Password"</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s">"password"</span><span class="p">]}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="c1"># Check if the response is successful
+</span><span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Authorization successful!"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"User ID:        "</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">"userId"</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"User Name:      "</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">"username"</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Issued UTC time:"</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">"issuedUtcTime"</span><span class="p">])</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"tokenString"</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Token:          "</span><span class="p">,</span> <span class="n">token</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Error:"</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>And then we can fetch the data with a series of GET requests:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="sa">f</span><span class="s">'Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s">'</span><span class="p">}</span>
+<span class="n">sideNr</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+  
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'sideNr'</span><span class="p">:</span> <span class="n">sideNr</span><span class="p">,</span>
+        <span class="s">'perSide'</span><span class="p">:</span> <span class="mi">25</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="p">...</span>
+    <span class="n">sideNr</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># For each page, extract case data
+</span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+
+    <span class="c1"># For each case, extract documents
+</span>    <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s">'documents'</span><span class="p">]:</span>
+        <span class="p">...</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Extract the HTML content of the document
+</span><span class="n">document</span> <span class="o">=</span> <span class="n">doc</span><span class="p">[</span><span class="s">'contentHtml'</span><span class="p">]</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">document</span><span class="p">:</span> <span class="k">continue</span>
+<span class="n">all_documents</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+
+<span class="c1"># Use BS4 to extract paragraphs
+</span><span class="n">bs</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">document</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s">''</span>
+<span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">bs</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'div'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'page'</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="n">page</span><span class="p">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">separator</span><span class="o">=</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">).</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span>
+
+<span class="c1"># Write each document to a .txt file (both text and HTML)
+</span><span class="n">text_to_txt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span>     <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">texts_dir</span><span class="si">}</span><span class="s">/</span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="n">text_to_txt</span><span class="p">(</span><span class="n">document</span><span class="p">,</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">texts_dir</span><span class="o">+</span><span class="s">'_html'</span><span class="si">}</span><span class="s">/</span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Save meta data
+</span><span class="n">all_meta</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">item</span><span class="p">[</span><span class="s">'headline'</span><span class="p">],</span>
+                <span class="s">'?'</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="n">subject</span><span class="p">[</span><span class="s">'displayText'</span><span class="p">]</span> <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s">'caseSubjects'</span><span class="p">]]),</span>
+                <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s">'id'</span><span class="p">]),</span>
+                <span class="nb">int</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="s">'id'</span><span class="p">]),</span>
+                <span class="n">doc</span><span class="p">[</span><span class="s">'displayTitle'</span><span class="p">],</span>
+                <span class="n">doc</span><span class="p">[</span><span class="s">'verdictDateTime'</span><span class="p">],</span>
+                <span class="n">item</span><span class="p">[</span><span class="s">'closedCourtroom'</span><span class="p">],</span>
+                <span class="n">item</span><span class="p">[</span><span class="s">'profession'</span><span class="p">][</span><span class="s">'displayText'</span><span class="p">],</span>
+                <span class="n">item</span><span class="p">[</span><span class="s">'instance'</span><span class="p">][</span><span class="s">'displayText'</span><span class="p">],</span>
+                <span class="n">item</span><span class="p">[</span><span class="s">'caseType'</span><span class="p">][</span><span class="s">'displayText'</span><span class="p">]</span>
+                <span class="p">])</span>
+</code></pre></div></div>
+<p>The filters available in the request header is quite limited. We can extract 25 documents per page, which is reasonable, but we are not able to filter by time, or any other relevant attributes. Also, sorting is not possible. This is also why we need to extract every document, since we can’t guarantee which document we get otherwise.</p>
+
+<p>I have added a small overview of all the important attributes. Some of them are attributes for the <em>case</em>, while some are attributes of the actual <em>documents</em> associated with a case:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Attribute</strong></th>
+      <th><strong>Type</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>headline</td>
+      <td><em>case</em></td>
+      <td>Headline of the case</td>
+    </tr>
+    <tr>
+      <td>caseSubjects</td>
+      <td><em>case</em></td>
+      <td>Themes/topics of a case (violence, drugs, taxes etc.)</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td><em>case</em></td>
+      <td>Unique ID for a case</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td><em>document</em></td>
+      <td>Unique ID for a document</td>
+    </tr>
+    <tr>
+      <td>displayTitle</td>
+      <td><em>document</em></td>
+      <td>Title of document</td>
+    </tr>
+    <tr>
+      <td>verdictDateTime</td>
+      <td><em>document</em></td>
+      <td>Time of verdict (as defined in the document)</td>
+    </tr>
+    <tr>
+      <td>closedCourtroom</td>
+      <td><em>case</em></td>
+      <td>Whether the courtroom has been closed from public or not</td>
+    </tr>
+    <tr>
+      <td>profession</td>
+      <td><em>case</em></td>
+      <td>Type of case (criminal case, foreclosure etc.)</td>
+    </tr>
+    <tr>
+      <td>instance</td>
+      <td><em>case</em></td>
+      <td>Stage of court (District court, High court, or Supreme) court</td>
+    </tr>
+    <tr>
+      <td>caseType</td>
+      <td><em>case</em></td>
+      <td>More specifically what category the case is</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-processing"><a href="#data-processing"></a>Data Processing</h2>
+<p>So, we split the response data into the meta data and the document data. The meta data can easily be described in a table, and will therefore be saved as a parquet-file (instead of csv) in order to save disk space. To further optimize space/memory usage, the column data types are selected manually.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Convert data types for efficiency
+</span><span class="n">df_meta</span><span class="p">[</span><span class="s">'id'</span><span class="p">]</span>           <span class="o">=</span> <span class="n">df_meta</span><span class="p">[</span><span class="s">'id'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'uint32'</span><span class="p">)</span>
+<span class="n">df_meta</span><span class="p">[</span><span class="s">'doc_id'</span><span class="p">]</span>       <span class="o">=</span> <span class="n">df_meta</span><span class="p">[</span><span class="s">'doc_id'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'uint32'</span><span class="p">)</span>
+<span class="n">df_meta</span><span class="p">[</span><span class="s">'verdict_date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_meta</span><span class="p">[</span><span class="s">'verdict_date'</span><span class="p">])</span>
+<span class="n">df_meta</span><span class="p">[</span><span class="s">'doc_type'</span><span class="p">]</span>     <span class="o">=</span> <span class="n">df_meta</span><span class="p">[</span><span class="s">'doc_type'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>
+<span class="n">df_meta</span><span class="p">[</span><span class="s">'profession'</span><span class="p">]</span>   <span class="o">=</span> <span class="n">df_meta</span><span class="p">[</span><span class="s">'profession'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>
+<span class="n">df_meta</span><span class="p">[</span><span class="s">'instance'</span><span class="p">]</span>     <span class="o">=</span> <span class="n">df_meta</span><span class="p">[</span><span class="s">'instance'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>
+<span class="n">df_meta</span><span class="p">[</span><span class="s">'case_type'</span><span class="p">]</span>    <span class="o">=</span> <span class="n">df_meta</span><span class="p">[</span><span class="s">'case_type'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>
+
+<span class="c1"># Save to .parquet
+</span><span class="n">df_meta</span><span class="p">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="s">'meta.parquet'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is a somewhat neglible addition, as the table is ~5000x10. But it’s still a good principle, and I also just learned these tricks from my “Python and High-peformance Computing” course, so I wanted to see it in practice.</p>
+
+<p>As for the actual documents, they are stored in HTML format. The text itself can easily be extracted using the Beautiful Soup (bs4) library. It is also beneficial to split the text into small paragraphs, such that they can later be used for “chunking” (more on that later). It is easy to make these splits, as each actual paragraph is given by the HTML paragraph- or ‘p’ tag.</p>
+
+<p>Now, the most computationally demanding processing step is to convert each of these paragraphs into an embedding vector, which can take multiple hours. We explain the embedding vectors next.</p>
+
+<h3 id="sentence-embeddings">Sentence Embeddings</h3>
+<p>Building a RAG model requires that we can convert our prompt, as well as the reference material, into a vector representation, such that they can be compared. This representation is formally called an embedding. We need ML embedding models to perform this transformation.</p>
+
+<p>As we are working with a Danish dataset, it is not possible to simply use the default models, as they are usually in English. Even so-called “multi-lingual” models can still struggle with Danish, as the Danish language is quite underrepresented on the internet. My best attempt was to use a model from Huggingface that was explicitly fine-tuned for the Danish language (<a href="https://huggingface.co/KennethTM/MiniLM-L6-danish-encoder">link</a>). It’s definitely not perfect, but it’s alright.</p>
+
+<p>A limitation I have encountered is that the tokenization of words seems a bit wrong. In terms of vector similarity, the word “Kølle” (“club”, as in the weapon) and “Køleskab” (“refrigerator”) are way too similar due to the <em>køl</em> -token. Let’s consider this table of distances between embeddings (meaning that lower values indicate more similarity)</p>
+
+<p><img src="/MonthlyProjects/assets/images/domstol/embedding_matrix.png" alt="embedding_matrix" title="embedding_matrix" /></p>
+
+<p>Vector similarity is somewhat complicated, since embeddings might actually be similar in one way, but not the way <em>I</em> want. In the matrix above we see that “bat” (bat), “stav” (rod/stick), and “hammer” (hammer) are somewhat similar to each other, but not similar to “Kølle”.</p>
+
+<h3 id="theory-training-an-embedding-model">(Theory) Training an embedding model</h3>
+<p>Let’s get into a bit more details regarding this embedding model. For basically any NLP (Natural Language Processing) -related task, we should use a transformer-based model. The most popular one would be the GPT-models that are used for the famous chatbots. But GPT-models are inherently text prediction models which are good for <em>generating</em> text, but not necessarily <em>classifying</em> text. On the other hand, BERT-models are good at classification as it takes an entire sequence and analyses each part of the sequence from both left-to-right, but also right-to-left, making them <em>bi-directional</em> (the B in BERT). Our embedding model is therefore a fine-tuned BERT model for (Danish) sentence embeddings, aka. Sentence-BERT.</p>
+
+<p>To optimzie the weights of a deep neural network, we need a <em>loss-function</em> that defines how well the task is being solved during training, in order to nudge the weights in the right direction. This model has been trained using a <em>contrastive</em> loss function, which we need to minimize (but the fraction should be maximzied, so to speak):</p>
+
+<p><img src="/MonthlyProjects/assets/images/domstol/contrastive_loss.png" alt="contrastive_loss" title="contrastive_loss" /></p>
+
+<p>Let’s understand this. The training dataset consist of N pairs of sentences, where each element (A and B) in a pair is somehow related to each other. Given the current state of the model, we try to embed A, B, and many other sentences. The goal is the make the embedding of A and B more similar (numerator), while letting A and the other sentences become more dissimilar (denominator). Note that the vector operation between embeddings is the <em>inner product</em>, which is also called the <em>cosine similarity</em>:</p>
+
+<p><img src="/MonthlyProjects/assets/images/domstol/inner_product.png" alt="inner_product" title="inner_product" /></p>
+
+<p>This loss is then propagated backwards through the network, and the weights are updated accordingly. Whether sentences are similar or not in the final model is hugely dependent on what the dataset has defined as being similar.</p>
+
+<p>The model we are using is quite light-weight, which was probably to make fine-tuning to the Danish dataset easier. This means that our model embedding-dimension is (only) of size 384, but the maximum sequence (input) length is 512 tokens, which is actually a good amount (~400 words). This should make sure that all of our paragraphs fit individually, but not entire court trial documents.</p>
+
+<p>Recall that our task is to find the trial document that best matches our prompt. We are quite limited by this token size, as we can’t simply embed an entire document into a single vector (that would likely also require a larger embedding size). Instead, we will try and embed each paragraph of the documents, and track which paragraph belongs to which document. This is called “chunking”, for which there are multiple strategies for how to embed these subtexts. We are lucky to already have beautifully split paragraphs in the trial documents, but for long texts, another strategy could be to embed overlapping subtexts of a fixed window-size, and a fixed overlap-size.</p>
+
+<h2 id="rag-model"><a href="#rag-model"></a>RAG Model</h2>
+
+<p>Let’s make it completely clear what we want to achieve using this model:</p>
+
+<blockquote>
+  <p><strong>A list of the k most relevant documents wrt. a prompt, given the similarity between the prompt and a single paragraph in these documents.</strong></p>
+</blockquote>
+
+<p>It is, however, quite common to extend a chat-bot with RAG capabilities, but not necessary. To do this, the RAG model should return some text, which can then be injected into the “system prompt” (not the “user prompt”). A simplified example could be:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>USER PROMPT       : "What is the worst punishment a burglar has received?"
+&lt;RAG&gt;             : *search for relevant documents*
+&lt;RAG&gt;             : *returns [doc_A, doc_B, doc_C]*
+SYSTEM            : "Your job is to answer questions about the following court trials: {content of doc_A, doc_B, doc_C}
+ASSITANT RESPONSE : "Here is the worst punishment a burglar has received: &lt;...&gt;"
+</code></pre></div></div>
+
+<p>If we were to do this ourselves, we should be cautious of:</p>
+<ol>
+  <li>The quality of the LLM used, due to challenges with the Danish language</li>
+  <li>Which information the RAG returns, as the entire reference document is too large to fit within the system prompt</li>
+</ol>
+
+<p>Anyway, we are keeping it simple.</p>
+
+<p>We have not talked about the challenge of searching for similar documents, which is very interesting. The straight forward way to find the most similar vectors wrt. the prompt vector, would be to simply check all options by brute force. In itself, this is slow, but using the FAISS (Facebook AI Similarity Search) library, many optimizations have been applied to speedup even the brute-force approach. It’s very memory efficient, and it utilizes multiprocessing in order to parallelize the computation. They also offer approximate solutions for large datasets, where brute force in not feasible.</p>
+
+<p>As we have covered all steps of the process, let’s show a over-simplified flowchart:</p>
+
+<p><img src="/MonthlyProjects/assets/images/domstol/workflow_local.png" alt="workflow_local" title="workflow_local" /></p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[(Part 1/2) A model for retrieving relevant historic trials, given short text description]]></summary></entry><entry><title type="html">2. Shortcut Removal using Diffusion Models</title><link href="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion" rel="alternate" type="text/html" title="2. Shortcut Removal using Diffusion Models" /><published>2025-05-01T00:00:00+02:00</published><updated>2025-05-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
 <p>May has been a busy month, as I had to prepare for (and attend) 4 exams, as well as creating curriculum for the <strong><em>introduction to python and numerical algorithms for solving differential equations</em></strong> used in this <a href="https://unf.dk/aktiviteter/2025-06-29/unf-matematisk-modelleringsuge/">UNF summer camp</a>, where I am volunteering.</p>
 
 <p>So instead of rushing a project, now that exams are done, I thought it would be interesting to share my exam project from the DTU course, “<strong>Advanced Deep Learning in Computer Vision</strong>”. The project was done in collaboration with 2 awesome guys, Joakim Dihn and Vebjörn Skre, with the professor Aasa Feragen as supervisor (who also happened to supervise my Bachelor’s thesis)</p>
