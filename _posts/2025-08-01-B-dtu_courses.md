@@ -577,15 +577,15 @@ What will likely happen is that I forget about the project, or maybe don't reall
 
 The obvious solution for this is then to create a scheduled job for scraping the course websites and create the graph. I tried some recommended websites for free python script hosting, but I also need file hosting as well. It did not go well. I then found that **GitHub actions** lets you do exactly that. GitHub actions is usually used for CI/CD tasks, but it doesn't *have* to be that. 
 
-I have created an `update_courses.yml` workflow file. This is simply a test that runs daily, but eventually it will be made to run all the correct scripts, yearly.
+I have created an `update_courses.yml` workflow file. This will run all the processing once a year on July 1st.
 
 ```yaml
-name: Run Python Daily (change later)
+name: Update Graph
 
 on:
   schedule:
-    # Runs at 00:00 UTC every day
-    - cron: '0 0 * * *'
+    # Runs at 00:00 UTC on July 1st every year
+    - cron: '0 0 1 7 *'
   workflow_dispatch: # allows manual run
 
 jobs:
@@ -611,22 +611,22 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Run Python script
+    - name: Run Python scripts
       run: |
         cd processing
         python 1_scrape_content.py
+        python 2_create_graph.py
 
     - name: Push output file to branch
       run: |
-        cd processing
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git checkout -B daily-output
-        mkdir -p output
-        mv valid_courses.json output/
-        git add output/valid_courses.json
+        git add jsons/valid_courses.json
+        git add jsons/id_to_name.json
+        git add jsons/graphs.json
         git commit -m "Update output for $(date +'%Y-%m-%d')"
-        git push -u origin daily-output --force
+        git push -u origin master --force
+
 ```
 
 The coolest thing is that you let a "bot user" push files to the repo. So instead of adding the graph JSON file directly into the Chrome extension, the file will be located and updated at a specific file in the repo, which is directly accessible from the web (since its a public repo). It will basically act as a GitHub "gist" file.
