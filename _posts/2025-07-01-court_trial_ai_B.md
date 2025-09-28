@@ -2,6 +2,7 @@
 title: 4. RAG model for Danish court trial data (Part 2/2)
 description: (Part 2/2) Hosting the model in the cloud
 published: true
+image: 'domstol/standoff.png'
 ---
 
 ## [](#cloud)Cloud

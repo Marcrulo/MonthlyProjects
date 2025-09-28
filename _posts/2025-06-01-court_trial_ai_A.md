@@ -2,6 +2,7 @@
 title: 3. RAG model for Danish court trial data (Part 1/2)
 description: (Part 1/2) A model for retrieving relevant historic trials, given short text description
 published: true
+image: 'domstol/workflow_local.png'
 ---
 
 ## [](#prologue)Prologue

@@ -2,6 +2,7 @@
 title: 6. DTU course discovery 
 description: Create a chrome extension for the DTU course website
 published: true
+image: 'courses/screenshot.png'
 ---
 
 ## [](#prologue)Prologue
@@ -14,7 +15,9 @@ What started out as a curiosity, turned into an exam project in the DTU course "
 
 Therefore I came up with a way to help fellow students, using a [Chrome extension that alters the DTU course website](https://chromewebstore.google.com/detail/dtu-extended-course-overv/pfgokeibjgebafnamhbgkgfgbmhmgpde) (and the GitHub [here](https://github.com/Marcrulo/DTU-courses-extension)). A problem with the current [website](https://kurser.dtu.dk/course/02285) is, that while it does show what courses are required for taking 'this' course (the "prerequisites"), it does not show which courses it is a prerequisite to. In other words, it does not show the "subsequent" courses. In general is it quite hard to get an overview of how courses are connected... but the extension solves that!
 
-Let's go through the steps on by one, to see how it all comes together
+I'd also like to add that the Javascript (JS) / Chrome extension part is heavily vibe-coded. It was very fascinating to orchestrate this and let the chatbot build the right features one at a time. All the JS logic is contained in a single file, so it's easy to edit the entire thing at the same time. I realized that designing a good experience was very important, and has actually been quite challenging. As the AI's "manager" I could focus more on the design and user experience, instead of being too fixated on the code itself, as I might become too attached to it, and less willing to change it. 
+
+Anyway, let's go through the steps on by one, to see how it all comes together
 
 
 ## [](#scraping)Scraping
@@ -219,345 +222,24 @@ When you have a project folder with this file within it, you can start testing t
 To alter the HTML content of a page, you first need to define that you need access to a certain page. The wider the permission required, the harder it might be to get the extension approved. Luckily, I only need permission to alter these pages:
 > https://kurser.dtu.dk/course/*
 
-We then need the `content.js` file that does the logic and rendering. The code is basically split into 7 sections:
+We then need the `content.js` file that does the logic and rendering. The significant features are:
 
-**1** - Load relevant files
+**1**) Read the json gists that are continuously updated through a github action
 
-```javascript
-// Get course ID from URL
-// Example: https://kurser.dtu.dk/course/<course-id>
-const courseId = window.location.pathname.split('/').pop();
+**2**) Run code as soon as files are loaded (using async)
 
-// Load id_to_name mapping from JSON file
-async function loadIdToName() {
-  try {
-    const response = await fetch(chrome.runtime.getURL("id_to_name.json"));
-    return await response.json();
-  } catch (err) {
-    console.error("Error loading id_to_name.json", err);
-    throw err; // rethrow so the caller knows it failed
-  }
-}
+**3**) Extend left-most div/table (the element with course type, name, points etc.)
 
-// Load graph data from JSON file for a specific courseId
-async function loadGraph(courseId) {
-  try {
-    const response = await fetch(chrome.runtime.getURL("graphs.json"));
-    const data = await response.json();
-    return data[courseId];
-  } catch (err) {
-    console.error("Error loading graphs.json", err);
-    throw err;
-  }
-}
-```
+**4**) Constructing and rendering tables, where the cells represent graph nodes (courses)
 
-**2** - Run code as soon as files are loaded (using async)
+**5**) Render tables in HTML
 
-```javascript
-(async () => {
-  const graph = await loadGraph(courseId);
-  const mapping = await loadIdToName();
-  
-  ...
+**6**) Draw lines (edges) between cells, corresponding to the graph we computed. Lines are created using the "LeaderLine" package
 
-})();
-```
-**3** - Extend left-most div/table (the element with course type, name, points etc.)
+**7**) Upon hovering, highlight node and its 1-hop neighborhood (highlight immediate neighbors in both directions)
 
-```javascript
-// Insert new rows into the second table on the page
-const tables = document.querySelectorAll("table");
-const table = tables[1];
+**8**) Collapse graph if its too big; requiring the user to click in order to get the full view
 
-const rowBefore = table.insertRow();
-const cell_before1 = rowBefore.insertCell();
-const cell_before2 = rowBefore.insertCell();
-
-// Disclaimer row
-const rowDisclaimer = table.insertRow();
-const cell_disclaimer = rowDisclaimer.insertCell();
-cell_disclaimer.colSpan = 2;
-cell_disclaimer.innerHTML =
-`<label style='font-style: italic; color: gray;'>
-    The graph shows all possible paths of courses leading to/from ${courseId}. <br>
-    However, it is rarely required to take all the courses shown!
-</label>`;
-
-const rowPrereq = table.insertRow();
-const cell_title_prereq = rowPrereq.insertCell();
-const cell_content_prereq = rowPrereq.insertCell();
-
-const rowSubseq = table.insertRow();
-const cell_title_subseq = rowSubseq.insertCell();
-const cell_content_subseq = rowSubseq.insertCell();
-
-// Footer / contact row
-const rowContact = table.insertRow();
-const cell_contact = rowContact.insertCell();
-cell_contact.colSpan = 2;
-cell_contact.innerHTML =
-`<label style='font-style: italic; color: gray; font-size: 8px;'>
-    <br><br>You are welcome to contribute to the project by <br>
-    leaving feedback or suggesting improvements: <br>
-    <a href="https://github.com/Marcrulo/DTU-courses-extension" target="_blank">https://github.com/Marcrulo/DTU-courses-extension</a>
-</label>`;
-
-const rowAfter = table.insertRow();
-const cell_after1 = rowAfter.insertCell();
-const cell_after2 = rowAfter.insertCell();
-
-// Section titles
-cell_title_prereq.innerHTML = "<label>Prerequisite course <br> paths</label>";
-cell_title_subseq.innerHTML = "<label>Subsequent course <br> paths</label>";
-
-// Section dividers
-[cell_before1, cell_before2, cell_after1, cell_after2].forEach(cell => {
-         cell.innerHTML = `<div style="border-top: 1px solid #b50404; margin: 10px 0;"></div>`;
-    });     
-
-```
-
-**4** - Constructing tables structure, where the cells represent graph nodes (courses)
-
-```javascript
-/* ====== BUILD TABLES ====== */
-function buildTables(courseId, graph) {
-const { max_subseq = 0, max_prereq = 0, subseq_height = 0, prereq_height = 0 } = graph;
-
-const table_prereq = Array.from({ length: prereq_height }, () =>
-    Array(max_prereq + 1).fill(null)
-);
-const table_subseq = Array.from({ length: subseq_height }, () =>
-    Array(max_subseq + 1).fill(null)
-);
-
-const prereq_row = {};
-const subseq_row = {};
-
-// Place nodes in correct table depending on level
-for (const { id, level } of graph.nodes) {
-    if (level < 0) {
-    if (!(level in prereq_row)) prereq_row[level] = 0;
-    table_prereq[prereq_row[level]][max_prereq + level] = id;
-    prereq_row[level]++;
-    } else if (level > 0) {
-    if (!(level in subseq_row)) subseq_row[level] = 0;
-    table_subseq[subseq_row[level]][level] = id;
-    subseq_row[level]++;
-    }
-}
-
-// Place the courseId itself
-if (prereq_height > 0) table_prereq[0][max_prereq] = courseId;
-if (subseq_height > 0) table_subseq[0][0] = courseId;
-
-// Ensure non-empty tables
-if (table_prereq.length === 0) table_prereq.push([null]);
-if (table_subseq.length === 0) table_subseq.push([null]);
-
-// Add spacing columns
-for (let row of table_prereq) {
-    for (let j = 1; j < row.length; j += 2) row.splice(j, 0, null);
-}
-for (let row of table_subseq) {
-    for (let j = 1; j < row.length; j += 2) row.splice(j, 0, null);
-}
-
-// Helper: sort values in each column alphabetically
-function sortColumns(table) {
-    const rows = table.length;
-    const cols = table[0]?.length || 0;
-
-    for (let col = 0; col < cols; col++) {
-        const values = [];
-        for (let row = 0; row < rows; row++) {
-            if (table[row][col] !== null) values.push(table[row][col]);
-        }
-        values.sort();
-        for (let row = 0; row < rows; row++) {
-            table[row][col] = row < values.length ? values[row] : null;
-        }
-    }
-}
-
-// Helper: center values vertically in each column
-function centerColumns(table) {
-    const rows = table.length;
-    const cols = table[0]?.length || 0;
-
-    for (let col = 0; col < cols; col++) {
-        const values = [];
-        for (let row = 0; row < rows; row++) {
-            if (table[row][col] !== null) values.push(table[row][col]);
-        }
-        const filled = values.length;
-        if (filled === 0) continue;
-
-        const topPadding = Math.floor((rows - filled) / 2);
-        for (let row = 0; row < rows; row++) {
-            const idx = row - topPadding;
-            table[row][col] = idx >= 0 && idx < filled ? values[idx] : null;
-        }
-    }
-}
-
-sortColumns(table_prereq);
-sortColumns(table_subseq);
-centerColumns(table_prereq);
-centerColumns(table_subseq);
-
-return { table_prereq, table_subseq };
-}
-
-const { table_prereq, table_subseq } = buildTables(courseId, graph);
-```
-
-**5** - Render tables in HTML
-
-```javascript
-/* ====== RENDER TABLES ====== */
-  function renderTable(table, type, fontSizeBase) {
-    return `
-      <table id='course-overview-${type}' style="width: 100%; border-collapse: separate;">
-        ${table.map(row => `
-          <tr>
-            ${row.map((cell, index) => `
-              <td id='${cell ? cell + "_" + type : ""}'
-                  style="width: ${index % 2 === 0 ? "30px" : "50px"};">
-                ${cell ? `
-                  <a href="https://kurser.dtu.dk/course/${cell}"
-                     class="tooltip-link"
-                     style="color: #b50404; text-decoration: none; font-size: ${fontSizeBase - (type === "prereq" ? graph.max_prereq : graph.max_subseq)}px;">
-                    ${cell}
-                    <span class="tooltip-text">${mapping[cell] || "No info available"}</span>
-                  </a>` : ""}
-              </td>`).join("")}
-          </tr>`).join("")}
-      </table>
-    `;
-  }
-
-  // Fill content cells
-  cell_content_prereq.innerHTML = renderTable(table_prereq, "prereq", 16);
-  cell_content_subseq.innerHTML = renderTable(table_subseq, "subseq", 16);
-
-  // Replace with labels if empty
-  function isTableEmpty(table) {
-    return table.every(row => row.every(cell => cell === null));
-  }
-  if (isTableEmpty(table_prereq)) {
-    cell_content_prereq.innerHTML =
-      `<label style="font-style: italic; color: gray;">This course does not have any prerequisites</label>`;
-  }
-  if (isTableEmpty(table_subseq)) {
-    cell_content_subseq.innerHTML =
-      `<label style="font-style: italic; color: gray;">This course does not lead to any other courses</label>`;
-  }
-
-  // Highlight "endpoints" of prereq/subseq tables
-  cell_content_prereq.querySelectorAll("td:last-child").forEach(cell => {
-    cell.style.fontStyle = "italic";
-    cell.style.textDecoration = "underline";
-    cell.style.color = "#b50404";
-  });
-  cell_content_subseq.querySelectorAll("td:first-child").forEach(cell => {
-    cell.style.fontStyle = "italic";
-    cell.style.textDecoration = "underline";
-    cell.style.color = "#b50404";
-  });
-```
-
-**6** - Draw lines (edges) between cells, corresponding to the graph we computed. Lines are created using the "LeaderLine" package
-
-```javascript
-/* ====== DRAW STATIC LEADERLINES ====== */
-  for (const edge of graph.edges) {
-    for (const suffix of ["_prereq", "_subseq"]) {
-      const startNode = document.getElementById(edge.source + suffix);
-      const endNode = document.getElementById(edge.target + suffix);
-      if (startNode && endNode) {
-        new LeaderLine(startNode, endNode, {
-          size: 2,
-          color: "rgba(36, 4, 9, 0.3)",
-          path: "straight",
-          endPlug: "arrow3",
-          startSocket: "right",
-          endSocket: "left",
-        });
-      }
-    }
-  }
-```
-
-**7** - Upon hovering, highlight node and its 1-hop neighborhood (highlight immediate neighbors in both directions)
-
-```javascript
-/* ====== INTERACTIVE HIGHLIGHTING ====== */
-let tempLines = [];
-let highlightedLinks = [];
-
-document.querySelectorAll(".tooltip-link").forEach(link => {
-link.addEventListener("mouseenter", () => {
-    const table_id = "_" + link.closest("table").id.split("-")[2]; // "_prereq" or "_subseq"
-    const hoveredId = link.href.split("/").pop();
-
-    // Find edges connected to hovered course
-    const connectedEdges = graph.edges.filter(
-    e => e.source === hoveredId || e.target === hoveredId
-    );
-
-    // Collect all connected IDs
-    const connectedIds = new Set([hoveredId]);
-    connectedEdges.forEach(e => {
-    connectedIds.add(e.source);
-    connectedIds.add(e.target);
-    });
-
-    // Highlight connected nodes
-    connectedIds.forEach(id => {
-    const elems = document.querySelectorAll(`td[id='${id}${table_id}'] .tooltip-link`);
-    elems.forEach(el => {
-        el.style.fontWeight = "bold";
-        el.style.textDecoration = "underline";
-        el.style.color = "#b50404";
-        highlightedLinks.push(el);
-    });
-    });
-
-    // Draw temporary leaderlines
-    connectedEdges.forEach(edge => {
-    const startNode = document.getElementById(edge.source + table_id);
-    const endNode = document.getElementById(edge.target + table_id);
-    if (startNode && endNode) {
-        const line = new LeaderLine(startNode, endNode, {
-        size: 3,
-        color: "rgba(181, 4, 4, 0.9)",
-        path: "straight",
-        endPlug: "arrow3",
-        startSocket: "right",
-        endSocket: "left",
-        });
-        tempLines.push(line);
-    }
-    });
-});
-
-link.addEventListener("mouseleave", () => {
-    // Remove temporary lines
-    tempLines.forEach(line => line.remove());
-    tempLines = [];
-
-    // Remove highlights
-    highlightedLinks.forEach(el => {
-    el.style.fontWeight = "";
-    el.style.textDecoration = "";
-    el.style.color = "";
-    });
-    highlightedLinks = [];
-  });
-});
-```
 
 In essence, we add a section to the course website, and create a table that represents the course graph. I use the awesome ***LeaderLine*** library for creating arrows (*directed edges*) between cell elements (*nodes*)
 
@@ -571,21 +253,21 @@ The result looks something like this:
 As of now, the extension works fine, but this is only the case for the current course structure. If anything changes with the courses or the prerequisites, the graph will technically be wrong, which may cause confusion and frustration. Let's try and fix that.
 
 ### Automatic updates
-I know for a fact that the course structure is changed once a year at around May or June. If I simply run the script yearly in July, then all will be good, right?
+I know for a fact that the course structure is changed once a year at around May or June. If I simply run the script yearly in July, then all will be good, right? Just to be certain, we run it monthly (because you never know).
 
 What will likely happen is that I forget about the project, or maybe don't really care anymore. Maybe the first years it will work fine, but after that it will not work anymore. 
 
 The obvious solution for this is then to create a scheduled job for scraping the course websites and create the graph. I tried some recommended websites for free python script hosting, but I also need file hosting as well. It did not go well. I then found that **GitHub actions** lets you do exactly that. GitHub actions is usually used for CI/CD tasks, but it doesn't *have* to be that. 
 
-I have created an `update_courses.yml` workflow file. This will run all the processing once a year on July 1st.
+I have created an `update_courses.yml` workflow file. This will run all the processing the 1st of every month.
 
 ```yaml
 name: Update Graph
 
 on:
   schedule:
-    # Runs at 00:00 UTC on July 1st every year
-    - cron: '0 0 1 7 *'
+    # Run 1st of every month
+    - cron: '0 0 1 * *'
   workflow_dispatch: # allows manual run
 
 jobs:
@@ -604,7 +286,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
+        python-version: '3.12.11'
 
     - name: Install dependencies
       run: |
@@ -619,7 +301,7 @@ jobs:
 
     - name: Push output file to branch
       run: |
-        git config --global user.name "github-actions[bot]"
+        git config --global user.name  "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add jsons/valid_courses.json
         git add jsons/id_to_name.json
