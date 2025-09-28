@@ -1,42 +1,432 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-08-09T21:40:16+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">//Under Construction// 8. Crowd-sourced Beverage Rating</title><link href="http://localhost:4000/MonthlyProjects/beverage_rating" rel="alternate" type="text/html" title="//Under Construction// 8. Crowd-sourced Beverage Rating" /><published>2025-10-01T00:00:00+02:00</published><updated>2025-10-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/beverage_rating</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/beverage_rating"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Website made using Replit]]></summary></entry><entry><title type="html">//Under Construction// 7. Self-hosted concert notifier</title><link href="http://localhost:4000/MonthlyProjects/ticketmaster-raspberry-pi" rel="alternate" type="text/html" title="//Under Construction// 7. Self-hosted concert notifier" /><published>2025-09-01T00:00:00+02:00</published><updated>2025-09-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/ticketmaster-raspberry-pi</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/ticketmaster-raspberry-pi"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Notify on mail when a relevant concert is revealed using the Ticket Master API (hosted on Raspberry Pi)]]></summary></entry><entry><title type="html">5. Danish Championhsip in AI - All 3 Tasks</title><link href="http://localhost:4000/MonthlyProjects/A-dmiai_2025" rel="alternate" type="text/html" title="5. Danish Championhsip in AI - All 3 Tasks" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-dmiai_2025</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-dmiai_2025"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
-<p>What a journey it has been to compete at the <a href="https://dmiai.dk/">Danish Championship in AI</a> (hosted by <a href="https://ambolt.io/">Ambolt</a>). Initially, this was meant as a small thing I could do with a few friends, but ended up as a serious competition with a larger team than expected, and an actual chance of becoming Danish champions. We, <strong>Team Seje Rejer</strong>, managed to get 3rd place, which we are all very proud of, even if we were convinced that 1st place was very possible to achieve as well. We won 5,000 DKK for sharing, and were invited for the <a href="https://d3aconference.dk/">D3A conference</a> to share our solutions alongside the other top 3 teams. It has truly been fun - and we have all learned a ton in the process.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-09-28T21:24:08+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">7. LiDAR sensor</title><link href="http://localhost:4000/MonthlyProjects/lidar" rel="alternate" type="text/html" title="7. LiDAR sensor" /><published>2025-09-01T00:00:00+02:00</published><updated>2025-09-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/lidar</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/lidar"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>The first time I heard about a LiDAR, was in the context of self-driving cars ~5 years ago. Apparently, this type of distance sensor is so advanced that it can easily map its surrounding with high speed. I have only worked with an ultra-violet distance sensor for my electronic car set, which did not show very promising results. I was fascinated to hear that there exists sensors out there that actually does accurate distance measuring.</p>
+
+<p>I was completely astounded when I saw <a href="https://www.youtube.com/watch?v=IQJL3htsDyQ">this YouTube video</a> of Mark Rober, who managed to map the entire Disneyland Space Mountain ride using a LiDAR sensor. The layout of this rollercoster ride has been kept secret, as the ride is completely dark.</p>
+
+<p>Fast forward to a month back, where a family member of mine pitches a fun project, that might have some real-life applications. Without getting into specifics, the task would be to detect the width of a hole in a wall, in a place that is less accesible to people - using a LiDAR for accurate measurements. Thus, I ordered the cheapest reliable LiDAR from the internet that I could find, and started working!</p>
+
+<h2 id="getting-started"><a href="#getting-started"></a>Getting Started</h2>
+<p>I ended up buying an <a href="https://www.digikey.dk/da/products/detail/dfrobot/DFR0315/7597150?gclsrc=aw.ds&amp;gad_source=1&amp;gad_campaignid=19553954322&amp;gbraid=0AAAAADrbLlh-CWZhX98IEsoe4Sz-lI9Ua&amp;gclid=CjwKCAjwuePGBhBZEiwAIGCVS8z_Su1dd4dWNB7r0SnpCIOWeb-n-KSgTPRTWCMmvk1Hk53EswkguRoC9A0QAvD_BwE">RPLIDAR A1 from SlamTec</a>, on a Danish website. 
+<img src="/MonthlyProjects/assets/images/lidar/RPLIDAR.png" alt="lidar" title="RPLIDAR" /></p>
+
+<p>The LiDAR comes with associated software for rendering, but I ignored that, and used the raw output for my script. With the huge assistant of <a href="https://github.com/Roboticia/RPLidar">open-source implementations</a>, I was easily able to do some data processing.</p>
+
+<p>To specify a goal for this project, I want to be able to hoist the LiDAR into a bucket, and let it detect the width of a circle that I have carved out of it</p>
+
+<p>&lt;insert image here &gt;</p>
+
+<h2 id="circle-detection"><a href="#circle-detection"></a>Circle Detection</h2>
+<p>The objective is two-fold. I need to detect the presence of the circular surroundings, then I need to determine if the circle if “broken up” by a hole in the wall.</p>
+
+<p>A LiDAR works by continuously “shooting” out lasers that quickly determine the position of an object. It does this while rotating in a single plane. So, this LiDAR only works in the plane (2D). Every measurement is associated with: a distance, an angle, and a timestamp - one row in a table. In order to visualize the circle that would seemingly appear, is to show the after-image of the measurements (if doing this live), or in general, only show a window of X measurements, or maybe within a T (milli)second window instead.</p>
+
+<p>Using the <code class="language-plaintext highlighter-rouge">circle-fit</code> python package, I can easily find the best least-squares fit of a circle for my window of points. I am also using the <strong>DBSCAN</strong> algorithm (<code class="language-plaintext highlighter-rouge">scikit-learn</code>) for ensuring that we only fixate on the largest “connected component” - essentially ignoring all kinds of noisy measurements</p>
+
+<p>The following animation shows how the circle is fit continuously, while being slowly hoisted up and down a simple bucket:</p>
+
+<p><img src="/MonthlyProjects/assets/images/lidar/circle_detection.gif" alt="circle_detection" title="circle_detection" /></p>
+
+<h2 id="hole-detection"><a href="#hole-detection"></a>Hole Detection</h2>
+<p>Now that I can easily detect the circular environment, I want to check for “holes” in the circle. As we will see here, circle detection itself is not thaaat important for measuring the size of the hole. The circle detection is mainly needed for centering the coordinates of the measurements, but it also serves as a nice visual to see a clean circle.</p>
+
+<p>Given all the “window points”, we want to check for the gaps between points, measured in difference in angle. For this purpose, centering the points around (0,0) makes angle calculation much cleaner. If a gap is larger than 50 degress, it is ignored. The following example shows the continuous tracking of the hole:</p>
+
+<p><img src="/MonthlyProjects/assets/images/lidar/hole_detection.gif" alt="hole_detection" title="hole_detection" /></p>
+
+<p>You will quickly realize that the hole moves quite a lot; and that is simply because the hoisting setup is not that robust. This means that the LiDAR itself was rotating. And since all measurements are relative to the LiDAR as the frame of reference, the hole seems to jump quite a bit. Not only that, but as it tilts, the circular surrounding is not captured correctly either.</p>
+
+<h2 id="everything-together"><a href="#everything-together"></a>Everything Together</h2>
+<p>For all of this to really work, I would need a robust hoisting system, otherwise we get the errors mentioned above. The current setup looks like this:</p>
+
+<p><img src="/MonthlyProjects/assets/images/lidar/setup2.png" alt="setup2" title="setup2" /></p>
+
+<p>It is a kitchen roll with a string attached between itself and the LiDAR. By rotating the roll, the LiDAR is pulled straight up, as the string is fixated using my camera tripod. The LiDAR itself needs to be connected to a computer while this happens - hence the wire that goes into my desktop computer.</p>
+
+<h2 id="conclusion-and-future-work"><a href="#conclusion-future-work"></a>Conclusion and Future Work</h2>
+<p>I think this is a great start. This proof of concept demo has shown that it is definitely not impossible to get this thing to work more robustly. The biggest challenge has been to create a stable hoisting setup. Maybe strings are not the best way to move it, since it is susceptible to unwanted rotations.</p>
+
+<p>It did not seem to be a problem that the LiDAR was connected to my computer, but it is definitely a bottleneck in real applications. It would make sense to connect it with a RaspberryPi instead, as that could easily be attached to the LiDAR.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[I got myself a LiDAR sensor - Let's try it out!]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/MonthlyProjects/lidar/RPLIDAR.jpg" /><media:content medium="image" url="http://localhost:4000/MonthlyProjects/lidar/RPLIDAR.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">5. Danish National Championship in AI</title><link href="http://localhost:4000/MonthlyProjects/A-dmiai_2025" rel="alternate" type="text/html" title="5. Danish National Championship in AI" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-dmiai_2025</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-dmiai_2025"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>What a journey it has been to compete at the <a href="https://dmiai.dk/">Danish National Championship in AI</a> (hosted by <a href="https://ambolt.io/">Ambolt</a>). Initially, this was meant as a small thing I could do with a few friends, but ended up as a serious competition with a larger team than expected, and an actual chance of becoming Danish champions. We, <strong>Team Seje Rejer</strong>, managed to get 3rd place, which we are all very proud of, even if we were convinced that 1st place was very possible to achieve as well. We won 5,000 DKK for sharing, and were invited for the <a href="https://d3aconference.dk/">D3A conference</a> to share our solutions alongside the other top 3 teams. It has truly been fun - and we have all learned a ton in the process. Meeting the other teams at D3A was also exciting and fun, as we got to share solutions, and got to make some new friends!</p>
+
+<p><img src="/MonthlyProjects/assets/images/dmiai/d3a.jpg" alt="d3a" title="d3a" />
+(<em>That’s me on the left side of the podium!</em>)</p>
 
 <h2 id="the-competition"><a href="#competition"></a>The Competition</h2>
 <p>The competition is a week long hackaton where your team is evaluated across 3 different challenges. How many points you get in a task depends on your performance <em>relative</em> to the other contestants. The points of the indiviuals challenges are based on the <a href="https://racingnews365.com/f1-points-system">Formula 1 point system</a>; 1. place gets 25 points, 2. place gets 18 points, 3. place gets 15 points, etc.</p>
 
-<p>The challenges are formatted in a way, such that we can host an endpoint to expose our models/systems (whatever) API - the API will then have inputs sent to it, for which there are constraints on how long it can take to return a valid answer.</p>
+<p>The challenges are formatted in a way, such that we can host an endpoint to expose our model thrugh an API. The API will then have inputs sent to it, for which there are constraints on how long it can take to return a valid answer.</p>
 
 <p>Throughout the week, we are able to repeatedly test our models on the <em>validation leaderboard</em>, which signals to everyone how people are doing so far in the competition. Although it is definitely possible to <em>overfit</em> a solution to the validation leaderboard, it should be a good indication as to how well you are expected to perform on the final evaluation test, for which we only have 1 attempt!</p>
 
 <h2 id="challenge-1---emergency-heathcare-rag"><a href="#challenge-1"></a>Challenge 1 - Emergency Heathcare RAG</h2>
-<p>As if decided by fate, one of the challenges was to design a RAG system, which I just happended to have spent my previous 2 months working on.</p>
+<p>As if decided by fate, one of the challenges was to design a RAG system, which I just happended to have spent my previous 2 months working on. I had the main responsiblity for this task.</p>
+
+<p>The task is as follows:</p>
+<blockquote>
+  <p>We have 115 topics in the realm of medicine, each topic has some associated documents that will work as our <em>reference</em> data. We are then given a statement which has been generated based on one of those exact documents, and our job is to tell from which <em>topic</em> this statement belongs to, as well as determining if the statement itself is <em>true</em> or <em>false</em></p>
+</blockquote>
+
+<p>We were limited to 24GB of VRAM during inference, and the inference time must not exceed 5 seconds.</p>
 
 <h3 id="our-solution">Our solution</h3>
-<p>…</p>
+<p>The solution is similar to the previous work I have done with RAG (previous post), so I won’t go into too much detail.</p>
+
+<p>So, we started by chunking the reference data into chunks of varying lengths and overlaps, and then they were all embedded. The first challenge was really to get a good chunking strategy, as well as finding the most powerful embedding model that fit the 24GB VRAM constraint. We ended up using a model from HuggingFace - <code class="language-plaintext highlighter-rouge">Qwen/Qwen3-Embedding-4B</code>. Then, using the FAISS index, we can compare an embedded version of the medicinal statement with the collection of reference embeddings to find the most similar document, and thereby the supposed topic.</p>
+
+<p>And that, we fed the chunk text into an LLM with the following prompts, in order to determine whether the statement was true or false, using the reference data:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">system_prompt</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">"You are a helpful fact-checking assistant."</span>
+    <span class="s">"You will be given a reference document and a statement."</span>
+    <span class="s">"Respond only with 'TRUE' if the statement is supported by the reference, otherwise respond 'FALSE'."</span>
+    <span class="s">"Do not guess. You MAY use outside knowledge to determine the reliability of the statement."</span>
+<span class="p">)</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user_prompt</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">"Reference:"</span>
+    <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">reference</span><span class="si">}</span><span class="s">"</span>
+    <span class="s">"Statement:"</span>
+    <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">statement</span><span class="si">}</span><span class="s">"</span>
+    <span class="s">"Answer:"</span>
+<span class="p">)</span>
+</code></pre></div></div>
+<p>As for the LLM we used the <code class="language-plaintext highlighter-rouge">Qwen/Qwen3-4B</code> model.</p>
 
 <h3 id="others-solutions">Others’ solutions</h3>
-<p>…</p>
+<p>The interesting thing is that all the top teams had somewhat different strategies, but all managed to score ~93% on the validation leaderboard. I would argue that this must be a limit defined by the uncertainty of the validation dataset. In other words, we either have no way to tell which model is actually best, OR all the models are equally good.</p>
+
+<p>The most major strategies that have deviated most from our solution was:</p>
+<ol>
+  <li>The use of the <strong>BM25 algorithm</strong> which is a bag-of-words (algorithmic, not deep learning) approach to the matching and retrieval</li>
+  <li>Using <strong>only smaller chunks</strong>, such that stronger LLMs can be used. (<em>This is because more VRAM is required when the prompt size increases</em>)</li>
+  <li>Using a <strong><em>reasoning model</em></strong> for “truth validation”, but manually cuts it off if its reasoning is too slow, and use a simple BERT type model in those cases</li>
+</ol>
+
+<p>I am confident that utilizing smaller chunks, and therefore a smarter LLM, would definitely have gotten us to the 91% evaluation accuracy along the other groups. Even if most top groups scored ~93%, ours were the only team that did not score 91% on the evaluation set, but instead got 89%.</p>
+
+<p>I was not very much involved in the other 2 challenges. However, I did help with cloud hosting.</p>
 
 <h2 id="challenge-2---racecar"><a href="#challenge-2"></a>Challenge 2 - Racecar</h2>
-<p>…intro…</p>
+<p>The racecar challenge was a <strong>pygame</strong> game/environment where you had to control a car through a five lane highway. In each lane, a car can spawn with a speed relatively close to the speed of the player’s car. All top teams quickly reached the same conclusion - that reinforcement learning was not really viable, and it was better to code an expert system manually. The main challenge was really, that the car could only perceive its surroundings through 16 sensors that output the distance to the closest obstacle.</p>
 
-<h3 id="our-solution-1">Our solution</h3>
-<p>…</p>
+<p><img src="/MonthlyProjects/assets/images/dmiai/race_car_intro.png" alt="race_car_intro" title="race_car_intro" /></p>
 
-<h3 id="others-solutions-1">Others’ solutions</h3>
-<p>…</p>
+<p>With or without machine learning, it is a very hard task to consistently navigate through the track, because it’s hard to perceive cars in the adjacent lanes.</p>
 
 <h2 id="challenge-3---tumor-segmentation"><a href="#challenge-3"></a>Challenge 3 - Tumor Segmentation</h2>
-<p>…intro…</p>
+<p>This task was actually being recycled from a previous year, because of some trouble with the creators of the task we were suppsoed to have. We were supposed to work with diseases and eye scan image data.</p>
 
-<h3 id="our-solution-2">Our solution</h3>
-<p>…</p>
+<p>The challenge now is to segment tumors from PET-scans. We knew from that other year, that the winning team had utilized the public <strong>nnUnet</strong> model, which we conveniently used as well - and so did many others. Despite that, we still managed to score higher than the others. Luck could have been involved, but we actually did modify the default implementation a bit:</p>
+<ol>
+  <li>We trained using specific image augmentations that matched the patterns seen in the validation dataset: {salt/pepper noise, horizontal flips, and small pertubations in angle}</li>
+  <li>We created an ensemble of 5 models, where each model was trained on seperate 5 folds.</li>
+</ol>
 
-<h3 id="others-solutions-2">Others’ solutions</h3>
-<p>…</p>
+<h2 id="final-words"><a href="#final-words"></a>Final words</h2>
+<p>Just for fun, here is the final evaluation leaderboard:</p>
 
-<h2 id="leaderboards">Leaderboards</h2>
-<p>…</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[An overview of how our team solved the 3 tasks from DMiAI and came in 3rd 🏆🥉]]></summary></entry><entry><title type="html">//Under Construction// 6. DTU course discovery</title><link href="http://localhost:4000/MonthlyProjects/B-dtu_courses" rel="alternate" type="text/html" title="//Under Construction// 6. DTU course discovery" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/B-dtu_courses</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/B-dtu_courses"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Add website interface to Social Graph course exam project]]></summary></entry><entry><title type="html">4. RAG model for Danish court trial data (Part 2/2)</title><link href="http://localhost:4000/MonthlyProjects/court_trial_ai_B" rel="alternate" type="text/html" title="4. RAG model for Danish court trial data (Part 2/2)" /><published>2025-07-01T00:00:00+02:00</published><updated>2025-07-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/court_trial_ai_B</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/court_trial_ai_B"><![CDATA[<h2 id="cloud"><a href="#cloud"></a>Cloud</h2>
+<p><img src="/MonthlyProjects/assets/images/dmiai/eval_leaderboard.png" alt="eval_leaderboard" title="eval_leaderboard" /></p>
+
+<p><a href="https://github.com/Marcrulo/TEAM_SEJE_REJER">As well as the code repository</a></p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[An overview of how our team tackled the 3 tasks from DMiAI and came in 3rd 🏆🥉]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/MonthlyProjects/dmiai/d3a.jpg" /><media:content medium="image" url="http://localhost:4000/MonthlyProjects/dmiai/d3a.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">6. DTU course discovery</title><link href="http://localhost:4000/MonthlyProjects/B-dtu_courses" rel="alternate" type="text/html" title="6. DTU course discovery" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/B-dtu_courses</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/B-dtu_courses"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>What started out as a curiosity, turned into an exam project in the DTU course “<strong><em>Social Graphs and Interactions</em></strong>” (02805). Repo can be found <a href="https://github.com/ThereseStein/CourseAnalyzer">here</a>. Even though we managed to create and analyse the course graph for the exam (<em>there was more depth to the project, but let’s omit that for now</em>), I knew that I wanted to somehow help other students in practice, using this data.</p>
+
+<p><img src="/MonthlyProjects/assets/images/courses/big_graph.png" alt="big_graph" title="big_graph" /></p>
+
+<p><em>The graph shows all courses (which have neighbors), and how they are connected to other courses by their prerequisites, where each node is colored by department, and has size equivalent to its degree.</em></p>
+
+<p>Therefore I came up with a way to help fellow students, using a <a href="https://chromewebstore.google.com/detail/dtu-extended-course-overv/pfgokeibjgebafnamhbgkgfgbmhmgpde">Chrome extension that alters the DTU course website</a> (and the GitHub <a href="https://github.com/Marcrulo/DTU-courses-extension">here</a>). A problem with the current <a href="https://kurser.dtu.dk/course/02285">website</a> is, that while it does show what courses are required for taking ‘this’ course (the “prerequisites”), it does not show which courses it is a prerequisite to. In other words, it does not show the “subsequent” courses. In general is it quite hard to get an overview of how courses are connected… but the extension solves that!</p>
+
+<p>I’d also like to add that the Javascript (JS) / Chrome extension part is heavily vibe-coded. It was very fascinating to orchestrate this and let the chatbot build the right features one at a time. All the JS logic is contained in a single file, so it’s easy to edit the entire thing at the same time. I realized that designing a good experience was very important, and has actually been quite challenging. As the AI’s “manager” I could focus more on the design and user experience, instead of being too fixated on the code itself, as I might become too attached to it, and less willing to change it.</p>
+
+<p>Anyway, let’s go through the steps on by one, to see how it all comes together</p>
+
+<h2 id="scraping"><a href="#scraping"></a>Scraping</h2>
+<p>There is no API for retrieving course data nicely, which is why we need to scrape the course website instead (for each course). Using the <strong>BeautifulSoup4</strong> library we can easily go through all possible course number, and check if the website returns a valid course description:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Imports
+</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="c1"># Initial
+</span><span class="n">base_url</span> <span class="o">=</span> <span class="s">"https://kurser.dtu.dk/course/"</span>
+<span class="n">cookies</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'ASP.NET_SessionId'</span> <span class="p">:</span> <span class="s">"&lt;SessionId&gt;"</span><span class="p">,</span>   <span class="c1"># not that important
+</span>    <span class="s">'{DTUCoursesPublicLanguage}'</span> <span class="p">:</span> <span class="s">'en-GB'</span> <span class="c1"># ensure that the site is always in English
+</span><span class="p">}</span>
+
+<span class="c1"># Department number-to-name mapping
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'department_names.json'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">departments</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+<span class="n">departments_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">departments</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="c1"># Loop through all possible course sites
+</span><span class="n">valid_courses</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">dep</span> <span class="ow">in</span> <span class="n">departments_keys</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">course_num</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">dep</span><span class="si">}{</span><span class="n">i</span><span class="si">:</span><span class="mi">03</span><span class="si">}</span><span class="s">"</span>
+        <span class="n">course_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">course_num</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">course_url</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">)</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">content</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">title</span><span class="p">.</span><span class="n">string</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">valid_courses</span><span class="p">[</span><span class="n">course_num</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">text</span>  
+
+<span class="c1"># Save text content for each course description
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'valid_courses.json'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">valid_courses</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h2 id="course-graphs"><a href="#graphs"></a>Course Graphs</h2>
+<p>Now we need to extract the relevant information from the HTML pages in order to create a graph, using the <strong>NetworkX</strong> library.</p>
+
+<p>We start by creating all the nodes:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Initialize directd graph
+</span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<span class="c1"># Go through each course
+</span><span class="k">for</span> <span class="n">course_num</span> <span class="ow">in</span> <span class="n">valid_courses</span><span class="p">:</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="n">course_num</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> 
+    <span class="n">G</span><span class="p">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">course_num</span><span class="p">,</span>
+               <span class="n">course_num</span>      <span class="o">=</span> <span class="n">course_num</span><span class="p">,</span>
+               <span class="n">page</span>            <span class="o">=</span> <span class="n">valid_courses</span><span class="p">[</span><span class="n">course_num</span><span class="p">],</span>
+               <span class="n">department</span>      <span class="o">=</span> <span class="n">department</span><span class="p">,</span> 
+               <span class="n">color</span>           <span class="o">=</span> <span class="n">department_colors</span><span class="p">[</span><span class="n">department</span><span class="p">],</span>
+               <span class="n">department_name</span> <span class="o">=</span> <span class="n">department_names</span><span class="p">[</span><span class="n">department</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Then we add directed edge that points <em>away</em> from the preresuisite course:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">course_num</span> <span class="ow">in</span> <span class="n">valid_courses</span><span class="p">:</span>
+
+    <span class="c1"># Initialize BeautifulSoup object
+</span>    <span class="n">page</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">course_num</span><span class="p">][</span><span class="s">'page'</span><span class="p">]</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span>
+
+    <span class="c1"># Define the search pattern to match both "Academic prerequisites" and "Mandatory prerequisites"
+</span>    <span class="n">search_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s">"(Academic prerequisites|Mandatory Prerequisites)"</span>
+    
+    <span class="c1"># Find the label element that matches the pattern
+</span>    <span class="n">label</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'label'</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="c1"># Skip if no label is found
+</span>    
+    <span class="c1"># Get the parent element that contains the label and prerequisites
+</span>    <span class="n">parent</span> <span class="o">=</span> <span class="n">label</span><span class="p">.</span><span class="n">find_parent</span><span class="p">().</span><span class="n">find_parent</span><span class="p">()</span>
+    
+    <span class="c1"># Get the second &lt;td&gt; (assuming it contains the prerequisites text)
+</span>    <span class="n">prerequisite</span> <span class="o">=</span> <span class="n">parent</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'td'</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="n">text</span>
+
+    <span class="c1"># Remove whitespace and line breaks
+</span>    <span class="n">prerequisite</span> <span class="o">=</span> <span class="n">prerequisite</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\r</span><span class="s">'</span><span class="p">,</span> <span class="s">' '</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="s">' '</span><span class="p">)</span>
+
+    <span class="c1"># Extract 5-digit course numbers
+</span>    <span class="n">prerequisites</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s">'\d{5}'</span><span class="p">,</span> <span class="n">prerequisite</span><span class="p">))</span>
+    
+    <span class="c1"># Add edges to the graph for valid prerequisites
+</span>    <span class="k">for</span> <span class="n">prerequisite</span> <span class="ow">in</span> <span class="n">prerequisites</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prerequisite</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">prerequisite</span> <span class="o">!=</span> <span class="n">course_num</span><span class="p">:</span>  <span class="c1"># Skip self-loops
+</span>                <span class="n">G</span><span class="p">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">prerequisite</span><span class="p">,</span> <span class="n">course_num</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>And the most important step is then to create a subgraph for each course number, where the course of interest is the center or root, and each layer/level “forward” is the next level of subsequent courses, and each layer/level “backwards” is the next level of prerequisite courses.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get all courses
+</span><span class="n">all_course_nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">.</span><span class="n">nodes</span><span class="p">())</span>
+
+<span class="c1"># Create subgraph for all course numbers
+</span><span class="k">for</span> <span class="n">center_node</span> <span class="ow">in</span> <span class="n">all_course_nums</span><span class="p">:</span>
+
+    <span class="c1"># Get forward and reverse BFS nodes
+</span>    <span class="n">forward_nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">center_node</span><span class="p">)</span>
+    <span class="n">reverse_nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span> <span class="n">center_node</span><span class="p">)</span>
+
+    <span class="c1"># Combine all relevant nodes
+</span>    <span class="n">all_nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">forward_nodes</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">reverse_nodes</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">levels</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">all_nodes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="n">center_node</span><span class="p">:</span>
+            <span class="n">levels</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">reverse_nodes</span><span class="p">:</span>
+            <span class="n">levels</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">reverse_nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">levels</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">forward_nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+
+    <span class="c1"># Create a new DiGraph with only those edges
+</span>    <span class="n">filtered_subG</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">DiGraph</span><span class="p">()</span>
+    <span class="n">filtered_subG</span><span class="p">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">all_nodes</span><span class="p">)</span>
+    
+
+    <span class="c1"># Build layout positions
+</span>    <span class="n">pos</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">level_nodes</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">level_nodes</span><span class="p">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="p">[]).</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">level_nodes</span><span class="p">):</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">level_nodes</span><span class="p">[</span><span class="n">level</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+            <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="o">-</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="c1"># Remove edges if they don't point "forward"
+</span>    <span class="n">edges</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">all_nodes</span><span class="p">).</span><span class="n">edges</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">pos</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pos</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">]</span>
+    <span class="n">filtered_subG</span><span class="p">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+
+    <span class="c1"># Write to JSON
+</span>    <span class="n">graph_to_json</span><span class="p">(</span><span class="n">center_node</span><span class="p">,</span> <span class="n">filtered_subG</span><span class="p">,</span> <span class="n">levels</span><span class="p">)</span>
+</code></pre></div></div>
+<p>(<em>the rest of the code can be found in the <a href="https://github.com/Marcrulo/DTU-courses-extension">GitHub repo</a></em>)</p>
+
+<p>To see what this looks like, consider the image below. The center is <strong>02180</strong>. Is has 5 prerequisites: (<strong>02100</strong>,<strong>02312</strong>,<strong>02105</strong>,<strong>01019</strong>,<strong>01017</strong>), and is itself the prerequisite to 3 courses (<strong>02256</strong>,<strong>02287</strong>,<strong>02285</strong>)</p>
+
+<p><img src="/MonthlyProjects/assets/images/courses/layer_graph.png" alt="layer_graph" title="layer_graph" /></p>
+
+<p>The goal is to insert this graph into the course website itself, and this is where we get to the <strong><em>Chrome Extension</em></strong></p>
+
+<h2 id="chrome-extension"><a href="#chrome-extension"></a>Chrome Extension</h2>
+<p>I quickly knew that it would be a problem to simply paste the image of the graph into the website. Not only is an image not interactive, but it would require quite a lot of data storage and loading.</p>
+
+<p>Instead, I realized that the layered graph almost looked like a table structure, which is one of the most basic elements in HTML. Columns would indicate the “level” and rows would be added based on the number of nodes within the levels altogether.</p>
+
+<h3 id="practical-stuff">Practical Stuff</h3>
+<p>To start creating a Chrome extension, I simply followed <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world">this tutorial</a>. In essence, I the center of the project, <code class="language-plaintext highlighter-rouge">manifest.json</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DTU - Extended Course Overview"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"manifest_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"default_popup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popup.html"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"content_scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"js"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"anseki-leader-line/leader-line.min.js"</span><span class="p">,</span><span class="s2">"content.js"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"css"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"my-css.css"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"matches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://kurser.dtu.dk/course/*"</span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"web_accessible_resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"graphs.json"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id_to_name.json"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"matches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"&lt;all_urls&gt;"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"icons"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"16"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon16.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"32"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon32.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"48"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon48.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"128"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon128.png"</span><span class="w">
+  </span><span class="p">}</span><span class="w">   
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This basically defines the main settings, as well as which files to import as well (javascript and css)</p>
+
+<p>When you have a project folder with this file within it, you can start testing the extension locally. To get it public, you first need to pay the “Chrome Web Store developer registration fee”, and then upload the project and get it approved by Google</p>
+
+<h3 id="the-magic-of-htmlcssjs">The Magic of HTML/CSS/JS</h3>
+<p>To alter the HTML content of a page, you first need to define that you need access to a certain page. The wider the permission required, the harder it might be to get the extension approved. Luckily, I only need permission to alter these pages:</p>
+<blockquote>
+  <p>https://kurser.dtu.dk/course/*</p>
+</blockquote>
+
+<p>We then need the <code class="language-plaintext highlighter-rouge">content.js</code> file that does the logic and rendering. The significant features are:</p>
+
+<p><strong>1</strong>) Read the json gists that are continuously updated through a github action</p>
+
+<p><strong>2</strong>) Run code as soon as files are loaded (using async)</p>
+
+<p><strong>3</strong>) Extend left-most div/table (the element with course type, name, points etc.)</p>
+
+<p><strong>4</strong>) Constructing and rendering tables, where the cells represent graph nodes (courses)</p>
+
+<p><strong>5</strong>) Render tables in HTML</p>
+
+<p><strong>6</strong>) Draw lines (edges) between cells, corresponding to the graph we computed. Lines are created using the “LeaderLine” package</p>
+
+<p><strong>7</strong>) Upon hovering, highlight node and its 1-hop neighborhood (highlight immediate neighbors in both directions)</p>
+
+<p><strong>8</strong>) Collapse graph if its too big; requiring the user to click in order to get the full view</p>
+
+<p>In essence, we add a section to the course website, and create a table that represents the course graph. I use the awesome <strong><em>LeaderLine</em></strong> library for creating arrows (<em>directed edges</em>) between cell elements (<em>nodes</em>)</p>
+
+<p>The result looks something like this:</p>
+
+<p><img src="/MonthlyProjects/assets/images/courses/screenshot.png" alt="screenshot" title="screenshot" /></p>
+
+<h2 id="maintenance"><a href="#maintenance"></a>Maintenance</h2>
+<p>As of now, the extension works fine, but this is only the case for the current course structure. If anything changes with the courses or the prerequisites, the graph will technically be wrong, which may cause confusion and frustration. Let’s try and fix that.</p>
+
+<h3 id="automatic-updates">Automatic updates</h3>
+<p>I know for a fact that the course structure is changed once a year at around May or June. If I simply run the script yearly in July, then all will be good, right? Just to be certain, we run it monthly (because you never know).</p>
+
+<p>What will likely happen is that I forget about the project, or maybe don’t really care anymore. Maybe the first years it will work fine, but after that it will not work anymore.</p>
+
+<p>The obvious solution for this is then to create a scheduled job for scraping the course websites and create the graph. I tried some recommended websites for free python script hosting, but I also need file hosting as well. It did not go well. I then found that <strong>GitHub actions</strong> lets you do exactly that. GitHub actions is usually used for CI/CD tasks, but it doesn’t <em>have</em> to be that.</p>
+
+<p>I have created an <code class="language-plaintext highlighter-rouge">update_courses.yml</code> workflow file. This will run all the processing the 1st of every month.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Update Graph</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">schedule</span><span class="pi">:</span>
+    <span class="c1"># Run 1st of every month</span>
+    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
+  <span class="na">workflow_dispatch</span><span class="pi">:</span> <span class="c1"># allows manual run</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">run-python</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+
+    <span class="na">permissions</span><span class="pi">:</span>
+      <span class="na">contents</span><span class="pi">:</span> <span class="s">write</span>
+
+    <span class="na">steps</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">token</span><span class="pi">:</span> <span class="s">$</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Python</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-python@v4</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">python-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.12.11'</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">python -m pip install --upgrade pip</span>
+        <span class="s">if [ -f requirements.txt ]; then pip install -r requirements.txt; fi</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run Python scripts</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">cd processing</span>
+        <span class="s">python 1_scrape_content.py</span>
+        <span class="s">python 2_create_graph.py</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Push output file to branch</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">git config --global user.name  "github-actions[bot]"</span>
+        <span class="s">git config --global user.email "github-actions[bot]@users.noreply.github.com"</span>
+        <span class="s">git add jsons/valid_courses.json</span>
+        <span class="s">git add jsons/id_to_name.json</span>
+        <span class="s">git add jsons/graphs.json</span>
+        <span class="s">git commit -m "Update output for $(date +'%Y-%m-%d')"</span>
+        <span class="s">git push -u origin master --force</span>
+
+</code></pre></div></div>
+
+<p>The coolest thing is that you let a “bot user” push files to the repo. So instead of adding the graph JSON file directly into the Chrome extension, the file will be located and updated at a specific file in the repo, which is directly accessible from the web (since its a public repo). It will basically act as a GitHub “gist” file.</p>
+
+<h3 id="open-sourcing">Open-Sourcing</h3>
+<p>To be realistic, I can’t assume that people will agree with the design of the extension, so I want to give people the option to add improvements to it. It is a gift for the public after all. In the event that the course website undergoes a drastic change that renders the extension useless, I want people in the future to be able to fix that as well. I will, of course, be responsible for reviewing pull requests.</p>
+
+<p>Maybe no one cares. Who knows? Now that I have this tool, I can’t imagine a world without it anymore. I want everyone to get the same benefits as I got from it. It was a fun project nonetheless.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Create a chrome extension for the DTU course website]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/MonthlyProjects/courses/screenshot.png" /><media:content medium="image" url="http://localhost:4000/MonthlyProjects/courses/screenshot.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">4. RAG model for Danish court trial data (Part 2/2)</title><link href="http://localhost:4000/MonthlyProjects/court_trial_ai_B" rel="alternate" type="text/html" title="4. RAG model for Danish court trial data (Part 2/2)" /><published>2025-07-01T00:00:00+02:00</published><updated>2025-07-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/court_trial_ai_B</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/court_trial_ai_B"><![CDATA[<h2 id="cloud"><a href="#cloud"></a>Cloud</h2>
 <p>At first, the reason for using the cloud was primarily just to learn more about it, despite thinking that it won’t be necessary, but it was actually quite beneficial. First of all, it enabled me to host an endpoint for the model, which makes it possible to interact with it from anywhere in the world. But most importantly, it was actually quite nice to offload the data processing to a cloud computer. Not only would my local PC have been unavailable for proper use, the computation also happened much faster, since the cheaper VMs ran the processing way faster than my own PC, and also did not encounter any crashes. It took Azure 3½ hours using some of the cheapest compute, but mine had not even finished after 5+ hours locally.</p>
 
 <p><img src="/MonthlyProjects/assets/images/domstol/job_script.png" alt="job_script" title="job_script" /></p>
@@ -161,7 +551,7 @@ It’s hard to say why only 2 and 4 seem valid, as the distance measure doesn’
 <p>Another thing to consider is the feedback of doing changes. Azure ML does provide cloud notebooks which lets one run code directly in the cloud, but they take some time to get up and running. For almost any other thing, it would take a long time to see if it worked. This is because things behave differently on the cloud, as they need certain access rights, and code has to work with the online environment etc. . When working locally, things usually just work. The biggest reason for using the cloud is that its available almost 100% of the time. The cloud computers don’t need to be turned off, which makes server hosting and automatic script execution very easy.</p>
 
 <h3 id="final-thoughts">Final thoughts</h3>
-<p>This has been a very large project, and I have learned a ton. I never expected the results to be any good, as the methods used/learned were important in themselves. I have always struggled with cloud computing, but I think this experience helped me figure it out. I am still interested in working with court data, but that would be in the context of creating an AI to assist or replace the classic role of the judge.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[(Part 2/2) Hosting the model in the cloud]]></summary></entry><entry><title type="html">3. RAG model for Danish court trial data (Part 1/2)</title><link href="http://localhost:4000/MonthlyProjects/court_trial_ai_A" rel="alternate" type="text/html" title="3. RAG model for Danish court trial data (Part 1/2)" /><published>2025-06-01T00:00:00+02:00</published><updated>2025-06-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/court_trial_ai_A</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/court_trial_ai_A"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>This has been a very large project, and I have learned a ton. I never expected the results to be any good, as the methods used/learned were important in themselves. I have always struggled with cloud computing, but I think this experience helped me figure it out. I am still interested in working with court data, but that would be in the context of creating an AI to assist or replace the classic role of the judge.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[(Part 2/2) Hosting the model in the cloud]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/MonthlyProjects/domstol/standoff.png" /><media:content medium="image" url="http://localhost:4000/MonthlyProjects/domstol/standoff.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">3. RAG model for Danish court trial data (Part 1/2)</title><link href="http://localhost:4000/MonthlyProjects/court_trial_ai_A" rel="alternate" type="text/html" title="3. RAG model for Danish court trial data (Part 1/2)" /><published>2025-06-01T00:00:00+02:00</published><updated>2025-06-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/court_trial_ai_A</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/court_trial_ai_A"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
 <p>Ethics regarding the use of AI for decision making in court, has been one of my favorite topics to discuss, as the philosophy of intelligence, conciousness, and emotions in AI has had a big impact on my world view.</p>
 
 <p>As an engineer, I would also like to see things in practice, rather than just theorize about things. This is what drove me to start a project about AI with public Danish court trial data. Ideally, the available data would be structuered in a way similar to datasets in supervised learning, where we have a text description of the case, and a label corresponding to the punishment. Unfortunately, this was not the case, as the data consists of text documents that are not defined in a specific template. Therefore, the goal became to make a RAG model for retrieving these court documents based on a search prompt. I.e. to do natural text search on these documents. I want to do this using local models, and without LLM-pipeline libraries like LangChain.</p>
@@ -393,7 +783,7 @@ ASSITANT RESPONSE : "Here is the worst punishment a burglar has received: &lt;..
 
 <p>As we have covered all steps of the process, let’s show a over-simplified flowchart:</p>
 
-<p><img src="/MonthlyProjects/assets/images/domstol/workflow_local.png" alt="workflow_local" title="workflow_local" /></p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[(Part 1/2) A model for retrieving relevant historic trials, given short text description]]></summary></entry><entry><title type="html">2. Shortcut Removal using Diffusion Models</title><link href="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion" rel="alternate" type="text/html" title="2. Shortcut Removal using Diffusion Models" /><published>2025-05-01T00:00:00+02:00</published><updated>2025-05-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p><img src="/MonthlyProjects/assets/images/domstol/workflow_local.png" alt="workflow_local" title="workflow_local" /></p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[(Part 1/2) A model for retrieving relevant historic trials, given short text description]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/MonthlyProjects/domstol/workflow_local.png" /><media:content medium="image" url="http://localhost:4000/MonthlyProjects/domstol/workflow_local.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">2. Shortcut Removal using Diffusion Models</title><link href="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion" rel="alternate" type="text/html" title="2. Shortcut Removal using Diffusion Models" /><published>2025-05-01T00:00:00+02:00</published><updated>2025-05-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/shortcut_removal_diffusion"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
 <p>May has been a busy month, as I had to prepare for (and attend) 4 exams, as well as creating curriculum for the <strong><em>introduction to python and numerical algorithms for solving differential equations</em></strong> used in this <a href="https://unf.dk/aktiviteter/2025-06-29/unf-matematisk-modelleringsuge/">UNF summer camp</a>, where I am volunteering.</p>
 
 <p>So instead of rushing a project, now that exams are done, I thought it would be interesting to share my exam project from the DTU course, “<strong>Advanced Deep Learning in Computer Vision</strong>”. The project was done in collaboration with 2 awesome guys, Joakim Dihn and Vebjörn Skre, with the professor Aasa Feragen as supervisor (who also happened to supervise my Bachelor’s thesis)</p>
@@ -451,7 +841,7 @@ ASSITANT RESPONSE : "Here is the worst punishment a burglar has received: &lt;..
 <h2 id="discussion-and-conclusion"><a href="#discussion"></a>Discussion and Conclusion</h2>
 <p>I think the quality of shortcut removal is quite good, but not nearly as impressive as in the paper. As we didn’t utilize the deterministic forward process, our diffusion model altered too much of the images, despite using the correct denoising process. It might have helped to find an even better pair of parameters for the noise level (L=160) and gradient scale (s=100).</p>
 
-<p>Despite that, the still managed to increase generalizability. The lesion classifiers then just had to be trained better, such that it would reach accuracies of &gt;50%</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[A summary of my exam project in the course "Advanced Deep Learning in Computer Vision"]]></summary></entry><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/A-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-historic"><![CDATA[<h3 id="️-tron-game-2024">🏍️ Tron game [2024]</h3>
+<p>Despite that, the still managed to increase generalizability. The lesion classifiers then just had to be trained better, such that it would reach accuracies of &gt;50%</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[A summary of my exam project in the course "Advanced Deep Learning in Computer Vision"]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/MonthlyProjects/shortcuts/attention.png" /><media:content medium="image" url="http://localhost:4000/MonthlyProjects/shortcuts/attention.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Historic projects</title><link href="http://localhost:4000/MonthlyProjects/A-historic" rel="alternate" type="text/html" title="Historic projects" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-historic</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-historic"><![CDATA[<h3 id="️-tron-game-2024">🏍️ Tron game [2024]</h3>
 <p>I had gone a bit back and forth regarding game development, but I thought I’d give it a shot again, with the hope of creating an AI to play a custom game after being inspired by <a href="https://www.youtube.com/watch?v=AaGK-fj-BAM&amp;ab_channel=TheCodingTrain">this video</a> of a guy coding snake from the bottom up in JavaScript. I tried to recreate the old arcade classic <a href="https://tron.fandom.com/wiki/TRON_(arcade_game)">Tron</a></p>
 
 <p><img src="/MonthlyProjects/assets/images/historic/tron1.png" alt="tron1" title="tron1" />
@@ -546,7 +936,7 @@ The highlights consist of:</p>
 </code></pre></div></div>
 <p>Unfortunately, the I preferred, somehow was not compatible with Jekyll v4, which is required for it to run on GitHub pages. Therefore I had to implement it manually from the theme’s <a href="https://github.com/tocttou/hacker-blog">source code</a>, which itself is a fork of the original <a href="https://pages-themes.github.io/hacker/">hacker theme</a>. It was surprisingly easy to get to work, so it was definitely worth the detour. From this point, it was straight-forward to implement small tweaks such as scrollbar color, fixed header, month emojis, etc.</p>
 
-<p>I will admit that it required some more knowledge of the Jekyll structure to get right - so I had to go through the official <a href="https://jekyllrb.com/docs/step-by-step/01-setup/">step-by-step tutorial</a> at that point. But as you can see, the website ended up quite nice - if I may say so myself.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[First project in a series of monthly projects. This requires a website ;)]]></summary></entry><entry><title type="html">1. Textual Inversion</title><link href="http://localhost:4000/MonthlyProjects/C-textual_inversion" rel="alternate" type="text/html" title="1. Textual Inversion" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/C-textual_inversion</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/C-textual_inversion"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>I will admit that it required some more knowledge of the Jekyll structure to get right - so I had to go through the official <a href="https://jekyllrb.com/docs/step-by-step/01-setup/">step-by-step tutorial</a> at that point. But as you can see, the website ended up quite nice - if I may say so myself.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[First project in a series of monthly projects. This requires a website ;)]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/MonthlyProjects/all/nyancat.gif" /><media:content medium="image" url="http://localhost:4000/MonthlyProjects/all/nyancat.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">1. Textual Inversion</title><link href="http://localhost:4000/MonthlyProjects/C-textual_inversion" rel="alternate" type="text/html" title="1. Textual Inversion" /><published>2025-04-01T00:00:00+02:00</published><updated>2025-04-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/C-textual_inversion</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/C-textual_inversion"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
 <p>With the website quickly done, I still had time for another April project. I am currently taking a course on deep learning in computer vision, where we had about diffusion models for some weeks. A few weeks ago, I was not able to do the task on <em>textual inversion</em>. We were given most of the code, but the code stack was kind of a mess to get an overview of, and as a result, I could not generate anything remotely interesting. I was thinking to myself that it was not supposed to be that hard to implement, which is why I went to the internet. And as I should have thought, I was lead to <a href="https://huggingface.co">Hugging Face 🤗</a></p>
 
 <h2 id="textual-inversion"><a href="#textual-inversion"></a>Textual Inversion</h2>
@@ -768,4 +1158,4 @@ Another thing is that when working on Colab, you are assigned a “session”, w
 
 <p>I am not entirely satisfied with my efforts in lowering the training loss. I should have been more meticulous in tracking losses from the start, and tuning more responsively. The Charizard embedding could have been of much higher quality.</p>
 
-<p>Now that I have become slightly more accustomed to the Huggingface API, I think a next step in this domain would definitely be to try larger models, and to do some more <em>heavy</em> training.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Utilize textual inversion to learn an word-embedding of the Pokémon "Charizard", in order to generate an image with Stable Diffusion 1.5]]></summary></entry></feed>
+<p>Now that I have become slightly more accustomed to the Huggingface API, I think a next step in this domain would definitely be to try larger models, and to do some more <em>heavy</em> training.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Utilize textual inversion to learn an word-embedding of the Pokémon "Charizard", in order to generate an image with Stable Diffusion 1.5]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/MonthlyProjects/textual_inversion/hyper_realistic.png" /><media:content medium="image" url="http://localhost:4000/MonthlyProjects/textual_inversion/hyper_realistic.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
