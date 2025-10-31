@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-09-28T21:24:08+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">7. LiDAR sensor</title><link href="http://localhost:4000/MonthlyProjects/lidar" rel="alternate" type="text/html" title="7. LiDAR sensor" /><published>2025-09-01T00:00:00+02:00</published><updated>2025-09-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/lidar</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/lidar"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-10-31T21:05:08+01:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">8. Grocery Swiper (Part 1/3) - Gathering grocery data</title><link href="http://localhost:4000/MonthlyProjects/grocery-swiper-part1" rel="alternate" type="text/html" title="8. Grocery Swiper (Part 1/3) - Gathering grocery data" /><published>2025-10-01T00:00:00+02:00</published><updated>2025-10-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/grocery-swiper-part1</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/grocery-swiper-part1"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>I have once abandoned a project regarding automatic retrieval of weekly Netto deals. The reason for that is, that when you live 100 meters away from a Netto, you simply go down there and check for the things you want anyway. But now that I live a WHOPPING 700 meters away, I can’t possibly do that anymore - that would be outrageous! Jokes aside, my girlfriend routinely reads the sales flyers, which seems so daunting to me, which is why I thought of automating it! The best possible solution I came up with is to send a mail of the “best” groceries for this week, in terms of price and product. But how is a system going to know about her preferences? Introducing Tinder… but for groceries. Similarly as to how we judge people on the internet within 1 second on dating apps, we can apply the same idea for groceries! What a brilliant idea!</p>
+
+<p>This project is waaaay too large to complete within a month, so let’s stretch it across 3 months. <br />
+<strong>Part 1</strong> will be about creating a system that scrapes weekly grocery offers, automatically. This would be used as “training data” / “historic preference data”. <br />
+<strong>Part 2</strong> will be about creating the actual app for gathering preferences, and  <br />
+<strong>Part 3</strong> will be an AI-driven email notification system. Let’s get to it!</p>
+
+<h2 id="getting-some-groceries"><a href="#getting-some-groceries"></a>Getting some groceries</h2>
+<p>The easiest way to get grocery data would be if there was a good API for it, which there is not. Instead, many websites offer a collection of sales flyers for multiple grocery stores. We will scrape offers from <a href="https://www.tilbudsugen.dk/">this</a> website.</p>
+
+<p><img src="/MonthlyProjects/assets/images/grocery_swiper/tilbudsugen.png" alt="tilbudsugen" title="tilbudsugen" /></p>
+
+<p>I really do like that the pictures from the actual flyer is there, as well as a name and price. However, I am a greedy bastard, and I want more. the filter section on the left of the page suggests that there are many other attributes associated with each item. I had the correct suspicious that the extra data should be available, but just not visible. I inspected the network packages, and to my luck, there was a JSON file with a ton of meta data for the item:</p>
+
+<p><img src="/MonthlyProjects/assets/images/grocery_swiper/devtool.png" alt="devtool" title="devtool" /></p>
+
+<p>The request URL for the JSON file is:</p>
+
+<blockquote>
+  <p>https://www.tilbudsugen.dk/_next/data/0LbXUdvz48Lb0tgkd4pVT/dk/single/<strong>&lt;ITEM_ID&gt;</strong>.json?id=<strong>&lt;ITEM_ID&gt;</strong></p>
+</blockquote>
+
+<p>where we know the item ids. The middle part <strong><em>0LbXUdvz48Lb0tgkd4pVT</em></strong> might be a dynamic id that changes occasionally to prevent exactly these kind of “attacks”, but it hasn’t changed for the past 2-3 weeks, so I think I’m good.</p>
+
+<p>I converted the relevant part of the JSON into a table (csv) format. Much of the information was on the webpage, but we now also have <strong>category</strong>, which I think will be valuable later.</p>
+
+<p><img src="/MonthlyProjects/assets/images/grocery_swiper/raw_df.png" alt="raw_df" title="raw_df" /></p>
+
+<h2 id="processing"><a href="#processing"></a>Processing</h2>
+<p>Now have simply gathered the raw data, but we should also do a wee bit of processing. First of all, I don’t trust that the image URLs will be there forever, so I have chosen to download them. The images are downscaled such that the largest dimension (width or height) is 300 pixels. I then uploaded them to a cloud service called <a href="https://cloudinary.com/">Cloudinary</a>. This service allows 25GB of free storage, with public image urls, while Firebase (which I’ll look into next month) only seems to allow 1GB storage, which I won’t clutter with images. I will say that Cloudinary has the easiest getting started guide for anything cloud hosted that I have ever seen:</p>
+
+<p><img src="/MonthlyProjects/assets/images/grocery_swiper/cloudinary.png" alt="cloudinary" title="cloudinary" /></p>
+
+<p>The other processing steps are regarding the “Tinder bio” belonging to each grocery item. I thought it would be funny to go all in here, so I let an LLM create a short, witty bio, based on the product name/type. But as the Danish LLMs, quite frankly, are very bad, I choose to do it on the English translation instead. I tried finding the most reliable, free, light-weight Danish-to-English model, and came up with the <a href="https://huggingface.co/Helsinki-NLP/opus-mt-da-en">Helsinki-NLP/opus-mt-da-en</a> model, and used <a href="https://huggingface.co/Qwen/Qwen3-1.7B">Qwen/Qwen3-1.7B</a> for creating the bio. This choice was based on previous success with this model, and is the largest of its kind that runs on Github actions, which is where the weekly processing will be performed. Also, both models should be fast enough to run on CPU for the same reason.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">translator</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s">"translation"</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s">"Helsinki-NLP/opus-mt-da-en"</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s">'cpu'</span><span class="p">)</span>
+
+<span class="n">model_name</span> <span class="o">=</span> <span class="s">"Qwen/Qwen3-1.7B"</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span><span class="n">torch_dtype</span><span class="o">=</span><span class="s">"auto"</span><span class="p">,</span><span class="n">device_map</span><span class="o">=</span><span class="s">"cpu"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Given the following prompt:</p>
+<blockquote>
+  <p>“<em>Give me a fun/creative short single-sentence Tinder bio for me, but imagine I am the following grocery item: ‘{row[‘translated_product’]}’. Only output the bio, and don’t mention the word ‘grocery’. Include 1 emoji.</em>”</p>
+</blockquote>
+
+<p>I get something like this:</p>
+<blockquote>
+  <p><strong>Fish oil</strong>: <em>“Omega-3 powerhouse, turning every bite into a superpower — 🐟✨”</em></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Wet napkins</strong>: <em>“Sooze up, wipe down, and never let your life get messy again! 🧂”</em></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Orange juice</strong>: <em>“Citrusy energy boost, made simple. 🍊”</em></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Agurk</strong>: <em>“Chill, sweet, and slightly spicy — I’m the Agurk, the vegetable that knows how to make your day just right. 🍅”</em></p>
+</blockquote>
+
+<p>Well, it obviously has a hard time translating “Agurk” (Cucumber) to English. But the Qwen model thinks that an “Agurk” is a spicy vegetable. This is what we get with only 1.7B parameter models. It’s still fun, though! I wonder what would happen if I prompted them to be less innocent, as some dating profile bios tend to be.</p>
+
+<h2 id="automation"><a href="#automation"></a>Automation</h2>
+<p>I don’t seem to have easy access to earlier weeks’ offers, so I’ll just collect grocery data slowly over the next many weeks. To fetch the newest data, I have setup a Github action (thingy) that runs both scraping and processing once a week, and does the aforementioned processing and saves the new products in the repo, and uploads images to Cloudinary. I was afraid that it would take forever to process using Github actions, as the compute is not necessarily that powerful. I was actually qutie shocked to see how “fast” it actually went:</p>
+
+<p><img src="/MonthlyProjects/assets/images/grocery_swiper/gh_scraping.png" alt="gh_scraping" title="gh_scraping" />
+<img src="/MonthlyProjects/assets/images/grocery_swiper/gh_processing.png" alt="gh_processing" title="gh_processing" /></p>
+
+<p>With roughly 500 products; scraping took ~18 minutes, and processing was ~1 hour 24 minutes.</p>
+
+<h2 id="next-steps"><a href="#next-steps"></a>Next steps</h2>
+<p>Now that I have some processed data, it is now time to create the Tinder-like app that let’s you swipe in order to define grocery preferences. It’s probably going to be basic, but I’ll do my best to create an awesome Android app this next month!</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[I need a Tinder-like app for defining grocery preferences. So first, let's create data for the "profiles"]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/MonthlyProjects/grocery_swiper/tinder_swiping.png" /><media:content medium="image" url="http://localhost:4000/MonthlyProjects/grocery_swiper/tinder_swiping.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">7. LiDAR sensor</title><link href="http://localhost:4000/MonthlyProjects/lidar" rel="alternate" type="text/html" title="7. LiDAR sensor" /><published>2025-09-01T00:00:00+02:00</published><updated>2025-09-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/lidar</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/lidar"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
 <p>The first time I heard about a LiDAR, was in the context of self-driving cars ~5 years ago. Apparently, this type of distance sensor is so advanced that it can easily map its surrounding with high speed. I have only worked with an ultra-violet distance sensor for my electronic car set, which did not show very promising results. I was fascinated to hear that there exists sensors out there that actually does accurate distance measuring.</p>
 
 <p>I was completely astounded when I saw <a href="https://www.youtube.com/watch?v=IQJL3htsDyQ">this YouTube video</a> of Mark Rober, who managed to map the entire Disneyland Space Mountain ride using a LiDAR sensor. The layout of this rollercoster ride has been kept secret, as the ride is completely dark.</p>
