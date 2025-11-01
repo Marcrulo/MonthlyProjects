@@ -1,20 +1,660 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-07-27T09:04:34+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">//Under Construction// 8. Crowd-sourced Beverage Rating</title><link href="http://localhost:4000/MonthlyProjects/beverage_rating" rel="alternate" type="text/html" title="//Under Construction// 8. Crowd-sourced Beverage Rating" /><published>2025-10-01T00:00:00+02:00</published><updated>2025-10-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/beverage_rating</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/beverage_rating"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Website made using Replit]]></summary></entry><entry><title type="html">//Under Construction// 7. Self-hosted concert notifier</title><link href="http://localhost:4000/MonthlyProjects/ticketmaster-raspberry-pi" rel="alternate" type="text/html" title="//Under Construction// 7. Self-hosted concert notifier" /><published>2025-09-01T00:00:00+02:00</published><updated>2025-09-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/ticketmaster-raspberry-pi</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/ticketmaster-raspberry-pi"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Notify on mail when a relevant concert is revealed using the Ticket Master API (hosted on Raspberry Pi)]]></summary></entry><entry><title type="html">//Under Construction// 5. Danish Championhsip in AI - All 3 Tasks</title><link href="http://localhost:4000/MonthlyProjects/A-dmiai_2025" rel="alternate" type="text/html" title="//Under Construction// 5. Danish Championhsip in AI - All 3 Tasks" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-dmiai_2025</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-dmiai_2025"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/MonthlyProjects/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/MonthlyProjects/" rel="alternate" type="text/html" /><updated>2025-08-21T11:08:12+02:00</updated><id>http://localhost:4000/MonthlyProjects/feed.xml</id><title type="html">Marcus Presutti</title><subtitle>List of projects by Marcus Presutti</subtitle><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><entry><title type="html">//Under Construction// 7. Something LiDAR</title><link href="http://localhost:4000/MonthlyProjects/lidar" rel="alternate" type="text/html" title="//Under Construction// 7. Something LiDAR" /><published>2025-09-01T00:00:00+02:00</published><updated>2025-09-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/lidar</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/lidar"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[I got myself a LiDAR sensor :)]]></summary></entry><entry><title type="html">//Under Construction// 5. Danish Championhsip in AI - All 3 Tasks</title><link href="http://localhost:4000/MonthlyProjects/A-dmiai_2025" rel="alternate" type="text/html" title="//Under Construction// 5. Danish Championhsip in AI - All 3 Tasks" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/A-dmiai_2025</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/A-dmiai_2025"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>What a journey it has been to compete at the <a href="https://dmiai.dk/">Danish Championship in AI</a> (hosted by <a href="https://ambolt.io/">Ambolt</a>). Initially, this was meant as a small thing I could do with a few friends, but ended up as a serious competition with a larger team than expected, and an actual chance of becoming Danish champions. We, <strong>Team Seje Rejer</strong>, managed to get 3rd place, which we are all very proud of, even if we were convinced that 1st place was very possible to achieve as well. We won 5,000 DKK for sharing, and were invited for the <a href="https://d3aconference.dk/">D3A conference</a> to share our solutions alongside the other top 3 teams. It has truly been fun - and we have all learned a ton in the process.</p>
 
-<h2 id="task-1---name"><a href="#task-1"></a>Task 1 - [name]</h2>
+<h2 id="the-competition"><a href="#competition"></a>The Competition</h2>
+<p>The competition is a week long hackaton where your team is evaluated across 3 different challenges. How many points you get in a task depends on your performance <em>relative</em> to the other contestants. The points of the indiviuals challenges are based on the <a href="https://racingnews365.com/f1-points-system">Formula 1 point system</a>; 1. place gets 25 points, 2. place gets 18 points, 3. place gets 15 points, etc.</p>
+
+<p>The challenges are formatted in a way, such that we can host an endpoint to expose our models/systems (whatever) API - the API will then have inputs sent to it, for which there are constraints on how long it can take to return a valid answer.</p>
+
+<p>Throughout the week, we are able to repeatedly test our models on the <em>validation leaderboard</em>, which signals to everyone how people are doing so far in the competition. Although it is definitely possible to <em>overfit</em> a solution to the validation leaderboard, it should be a good indication as to how well you are expected to perform on the final evaluation test, for which we only have 1 attempt!</p>
+
+<h2 id="challenge-1---emergency-heathcare-rag"><a href="#challenge-1"></a>Challenge 1 - Emergency Heathcare RAG</h2>
+<p>As if decided by fate, one of the challenges was to design a RAG system, which I just happended to have spent my previous 2 months working on.</p>
+
+<h3 id="our-solution">Our solution</h3>
+<p>…</p>
 
 <h3 id="others-solutions">Others’ solutions</h3>
+<p>…</p>
 
-<h2 id="task-2---name"><a href="#task-2"></a>Task 2 - [name]</h2>
+<h2 id="challenge-2---racecar"><a href="#challenge-2"></a>Challenge 2 - Racecar</h2>
+<p>…intro…</p>
+
+<h3 id="our-solution-1">Our solution</h3>
+<p>…</p>
 
 <h3 id="others-solutions-1">Others’ solutions</h3>
+<p>…</p>
 
-<h2 id="task-3---name"><a href="#task-3"></a>Task 3 - [name]</h2>
+<h2 id="challenge-3---tumor-segmentation"><a href="#challenge-3"></a>Challenge 3 - Tumor Segmentation</h2>
+<p>…intro…</p>
+
+<h3 id="our-solution-2">Our solution</h3>
+<p>…</p>
 
 <h3 id="others-solutions-2">Others’ solutions</h3>
+<p>…</p>
 
-<h2 id="conclusion"><a href="#conclusion"></a>Conclusion</h2>
+<h2 id="final-words">Final words</h2>
 
-<h3 id="leaderboard">Leaderboard</h3>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[An overview of the 3 tasks from DMiAI, and how we tried to solve it]]></summary></entry><entry><title type="html">//Under Construction// 6. DTU course discovery</title><link href="http://localhost:4000/MonthlyProjects/B-dtu_courses" rel="alternate" type="text/html" title="//Under Construction// 6. DTU course discovery" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/B-dtu_courses</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/B-dtu_courses"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Add website interface to Social Graph course exam project]]></summary></entry><entry><title type="html">4. RAG model for Danish court trial data (Part 2/2)</title><link href="http://localhost:4000/MonthlyProjects/court_trial_ai_B" rel="alternate" type="text/html" title="4. RAG model for Danish court trial data (Part 2/2)" /><published>2025-07-01T00:00:00+02:00</published><updated>2025-07-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/court_trial_ai_B</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/court_trial_ai_B"><![CDATA[<h2 id="cloud"><a href="#cloud"></a>Cloud</h2>
+<h3 id="leaderboards"><a href="#leaderboards"></a>Leaderboards</h3>
+<p>…</p>
+
+<h3 id="code">Code</h3>
+<p><a href="https://github.com/Marcrulo/TEAM_SEJE_REJER">code</a></p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[An overview of how our team tackled the 3 tasks from DMiAI and came in 3rd 🏆🥉]]></summary></entry><entry><title type="html">6. DTU course discovery</title><link href="http://localhost:4000/MonthlyProjects/B-dtu_courses" rel="alternate" type="text/html" title="6. DTU course discovery" /><published>2025-08-01T00:00:00+02:00</published><updated>2025-08-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/B-dtu_courses</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/B-dtu_courses"><![CDATA[<h2 id="prologue"><a href="#prologue"></a>Prologue</h2>
+<p>What started out as a curiosity, turned into an exam project in the DTU course “<strong><em>Social Graphs and Interactions</em></strong>” (02805). Repo can be found <a href="https://github.com/ThereseStein/CourseAnalyzer">here</a>. Even though we managed to create and analyse the course graph for the exam (<em>there was more depth to the project, but let’s omit that for now</em>), I knew that I wanted to somehow help other students in practice, using this data.</p>
+
+<p><img src="/MonthlyProjects/assets/images/courses/big_graph.png" alt="big_graph" title="big_graph" /></p>
+
+<p><em>The graph shows all courses (which have neighbors), and how they are connected to other courses by their prerequisites, where each node is colored by department, and has size equivalent to its degree.</em></p>
+
+<p>Therefore I came up with a way to help fellow students, using a <a href="https://chromewebstore.google.com/detail/dtu-extended-course-overv/pfgokeibjgebafnamhbgkgfgbmhmgpde">Chrome extension that alters the DTU course website</a> (and the GitHub <a href="https://github.com/Marcrulo/DTU-courses-extension">here</a>). A problem with the current <a href="https://kurser.dtu.dk/course/02285">website</a> is, that while it does show what courses are required for taking ‘this’ course (the “prerequisites”), it does not show which courses it is a prerequisite to. In other words, it does not show the “subsequent” courses. In general is it quite hard to get an overview of how courses are connected… but the extension solves that!</p>
+
+<p>Let’s go through the steps on by one, to see how it all comes together</p>
+
+<h2 id="scraping"><a href="#scraping"></a>Scraping</h2>
+<p>There is no API for retrieving course data nicely, which is why we need to scrape the course website instead (for each course). Using the <strong>BeautifulSoup4</strong> library we can easily go through all possible course number, and check if the website returns a valid course description:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Imports
+</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="c1"># Initial
+</span><span class="n">base_url</span> <span class="o">=</span> <span class="s">"https://kurser.dtu.dk/course/"</span>
+<span class="n">cookies</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'ASP.NET_SessionId'</span> <span class="p">:</span> <span class="s">"&lt;SessionId&gt;"</span><span class="p">,</span>   <span class="c1"># not that important
+</span>    <span class="s">'{DTUCoursesPublicLanguage}'</span> <span class="p">:</span> <span class="s">'en-GB'</span> <span class="c1"># ensure that the site is always in English
+</span><span class="p">}</span>
+
+<span class="c1"># Department number-to-name mapping
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'department_names.json'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">departments</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+<span class="n">departments_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">departments</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="c1"># Loop through all possible course sites
+</span><span class="n">valid_courses</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">dep</span> <span class="ow">in</span> <span class="n">departments_keys</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">course_num</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">dep</span><span class="si">}{</span><span class="n">i</span><span class="si">:</span><span class="mi">03</span><span class="si">}</span><span class="s">"</span>
+        <span class="n">course_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">course_num</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">course_url</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">)</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">content</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">title</span><span class="p">.</span><span class="n">string</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">valid_courses</span><span class="p">[</span><span class="n">course_num</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">text</span>  
+
+<span class="c1"># Save text content for each course description
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'valid_courses.json'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">valid_courses</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h2 id="course-graphs"><a href="#graphs"></a>Course Graphs</h2>
+<p>Now we need to extract the relevant information from the HTML pages in order to create a graph, using the <strong>NetworkX</strong> library.</p>
+
+<p>We start by creating all the nodes:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Initialize directd graph
+</span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<span class="c1"># Go through each course
+</span><span class="k">for</span> <span class="n">course_num</span> <span class="ow">in</span> <span class="n">valid_courses</span><span class="p">:</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="n">course_num</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> 
+    <span class="n">G</span><span class="p">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">course_num</span><span class="p">,</span>
+               <span class="n">course_num</span>      <span class="o">=</span> <span class="n">course_num</span><span class="p">,</span>
+               <span class="n">page</span>            <span class="o">=</span> <span class="n">valid_courses</span><span class="p">[</span><span class="n">course_num</span><span class="p">],</span>
+               <span class="n">department</span>      <span class="o">=</span> <span class="n">department</span><span class="p">,</span> 
+               <span class="n">color</span>           <span class="o">=</span> <span class="n">department_colors</span><span class="p">[</span><span class="n">department</span><span class="p">],</span>
+               <span class="n">department_name</span> <span class="o">=</span> <span class="n">department_names</span><span class="p">[</span><span class="n">department</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Then we add directed edge that points <em>away</em> from the preresuisite course:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">course_num</span> <span class="ow">in</span> <span class="n">valid_courses</span><span class="p">:</span>
+
+    <span class="c1"># Initialize BeautifulSoup object
+</span>    <span class="n">page</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">course_num</span><span class="p">][</span><span class="s">'page'</span><span class="p">]</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span>
+
+    <span class="c1"># Define the search pattern to match both "Academic prerequisites" and "Mandatory prerequisites"
+</span>    <span class="n">search_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s">"(Academic prerequisites|Mandatory Prerequisites)"</span>
+    
+    <span class="c1"># Find the label element that matches the pattern
+</span>    <span class="n">label</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'label'</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="c1"># Skip if no label is found
+</span>    
+    <span class="c1"># Get the parent element that contains the label and prerequisites
+</span>    <span class="n">parent</span> <span class="o">=</span> <span class="n">label</span><span class="p">.</span><span class="n">find_parent</span><span class="p">().</span><span class="n">find_parent</span><span class="p">()</span>
+    
+    <span class="c1"># Get the second &lt;td&gt; (assuming it contains the prerequisites text)
+</span>    <span class="n">prerequisite</span> <span class="o">=</span> <span class="n">parent</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'td'</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="n">text</span>
+
+    <span class="c1"># Remove whitespace and line breaks
+</span>    <span class="n">prerequisite</span> <span class="o">=</span> <span class="n">prerequisite</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\r</span><span class="s">'</span><span class="p">,</span> <span class="s">' '</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="s">' '</span><span class="p">)</span>
+
+    <span class="c1"># Extract 5-digit course numbers
+</span>    <span class="n">prerequisites</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s">'\d{5}'</span><span class="p">,</span> <span class="n">prerequisite</span><span class="p">))</span>
+    
+    <span class="c1"># Add edges to the graph for valid prerequisites
+</span>    <span class="k">for</span> <span class="n">prerequisite</span> <span class="ow">in</span> <span class="n">prerequisites</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prerequisite</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">prerequisite</span> <span class="o">!=</span> <span class="n">course_num</span><span class="p">:</span>  <span class="c1"># Skip self-loops
+</span>                <span class="n">G</span><span class="p">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">prerequisite</span><span class="p">,</span> <span class="n">course_num</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>And the most important step is then to create a subgraph for each course number, where the course of interest is the center or root, and each layer/level “forward” is the next level of subsequent courses, and each layer/level “backwards” is the next level of prerequisite courses.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get all courses
+</span><span class="n">all_course_nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">.</span><span class="n">nodes</span><span class="p">())</span>
+
+<span class="c1"># Create subgraph for all course numbers
+</span><span class="k">for</span> <span class="n">center_node</span> <span class="ow">in</span> <span class="n">all_course_nums</span><span class="p">:</span>
+
+    <span class="c1"># Get forward and reverse BFS nodes
+</span>    <span class="n">forward_nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">center_node</span><span class="p">)</span>
+    <span class="n">reverse_nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span> <span class="n">center_node</span><span class="p">)</span>
+
+    <span class="c1"># Combine all relevant nodes
+</span>    <span class="n">all_nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">forward_nodes</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">reverse_nodes</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">levels</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">all_nodes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="n">center_node</span><span class="p">:</span>
+            <span class="n">levels</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">reverse_nodes</span><span class="p">:</span>
+            <span class="n">levels</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">reverse_nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">levels</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">forward_nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+
+    <span class="c1"># Create a new DiGraph with only those edges
+</span>    <span class="n">filtered_subG</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">DiGraph</span><span class="p">()</span>
+    <span class="n">filtered_subG</span><span class="p">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">all_nodes</span><span class="p">)</span>
+    
+
+    <span class="c1"># Build layout positions
+</span>    <span class="n">pos</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">level_nodes</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">level_nodes</span><span class="p">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="p">[]).</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">level_nodes</span><span class="p">):</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">level_nodes</span><span class="p">[</span><span class="n">level</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+            <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="o">-</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="c1"># Remove edges if they don't point "forward"
+</span>    <span class="n">edges</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">all_nodes</span><span class="p">).</span><span class="n">edges</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">pos</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pos</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">]</span>
+    <span class="n">filtered_subG</span><span class="p">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+
+    <span class="c1"># Write to JSON
+</span>    <span class="n">graph_to_json</span><span class="p">(</span><span class="n">center_node</span><span class="p">,</span> <span class="n">filtered_subG</span><span class="p">,</span> <span class="n">levels</span><span class="p">)</span>
+</code></pre></div></div>
+<p>(<em>the rest of the code can be found in the <a href="https://github.com/Marcrulo/DTU-courses-extension">GitHub repo</a></em>)</p>
+
+<p>To see what this looks like, consider the image below. The center is <strong>02180</strong>. Is has 5 prerequisites: (<strong>02100</strong>,<strong>02312</strong>,<strong>02105</strong>,<strong>01019</strong>,<strong>01017</strong>), and is itself the prerequisite to 3 courses (<strong>02256</strong>,<strong>02287</strong>,<strong>02285</strong>)</p>
+
+<p><img src="/MonthlyProjects/assets/images/courses/layer_graph.png" alt="layer_graph" title="layer_graph" /></p>
+
+<p>The goal is to insert this graph into the course website itself, and this is where we get to the <strong><em>Chrome Extension</em></strong></p>
+
+<h2 id="chrome-extension"><a href="#chrome-extension"></a>Chrome Extension</h2>
+<p>I quickly knew that it would be a problem to simply paste the image of the graph into the website. Not only is an image not interactive, but it would require quite a lot of data storage and loading.</p>
+
+<p>Instead, I realized that the layered graph almost looked like a table structure, which is one of the most basic elements in HTML. Columns would indicate the “level” and rows would be added based on the number of nodes within the levels altogether.</p>
+
+<h3 id="practical-stuff">Practical Stuff</h3>
+<p>To start creating a Chrome extension, I simply followed <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world">this tutorial</a>. In essence, I the center of the project, <code class="language-plaintext highlighter-rouge">manifest.json</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DTU - Extended Course Overview"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"manifest_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"default_popup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popup.html"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"content_scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"js"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"anseki-leader-line/leader-line.min.js"</span><span class="p">,</span><span class="s2">"content.js"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"css"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"my-css.css"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"matches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://kurser.dtu.dk/course/*"</span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"web_accessible_resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"graphs.json"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id_to_name.json"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"matches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"&lt;all_urls&gt;"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"icons"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"16"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon16.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"32"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon32.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"48"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon48.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"128"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon128.png"</span><span class="w">
+  </span><span class="p">}</span><span class="w">   
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This basically defines the main settings, as well as which files to import as well (javascript and css)</p>
+
+<p>When you have a project folder with this file within it, you can start testing the extension locally. To get it public, you first need to pay the “Chrome Web Store developer registration fee”, and then upload the project and get it approved by Google</p>
+
+<h3 id="the-magic-of-htmlcssjs">The Magic of HTML/CSS/JS</h3>
+<p>To alter the HTML content of a page, you first need to define that you need access to a certain page. The wider the permission required, the harder it might be to get the extension approved. Luckily, I only need permission to alter these pages:</p>
+<blockquote>
+  <p>https://kurser.dtu.dk/course/*</p>
+</blockquote>
+
+<p>We then need the <code class="language-plaintext highlighter-rouge">content.js</code> file that does the logic and rendering. The code is basically split into 7 sections:</p>
+
+<p><strong>1</strong> - Load relevant files</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get course ID from URL</span>
+<span class="c1">// Example: https://kurser.dtu.dk/course/&lt;course-id&gt;</span>
+<span class="kd">const</span> <span class="nx">courseId</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">).</span><span class="nx">pop</span><span class="p">();</span>
+
+<span class="c1">// Load id_to_name mapping from JSON file</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">loadIdToName</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">chrome</span><span class="p">.</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">getURL</span><span class="p">(</span><span class="dl">"</span><span class="s2">id_to_name.json</span><span class="dl">"</span><span class="p">));</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error loading id_to_name.json</span><span class="dl">"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span> <span class="c1">// rethrow so the caller knows it failed</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Load graph data from JSON file for a specific courseId</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">loadGraph</span><span class="p">(</span><span class="nx">courseId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">chrome</span><span class="p">.</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">getURL</span><span class="p">(</span><span class="dl">"</span><span class="s2">graphs.json</span><span class="dl">"</span><span class="p">));</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">[</span><span class="nx">courseId</span><span class="p">];</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error loading graphs.json</span><span class="dl">"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>2</strong> - Run code as soon as files are loaded (using async)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">loadGraph</span><span class="p">(</span><span class="nx">courseId</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">mapping</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">loadIdToName</span><span class="p">();</span>
+  
+  <span class="p">...</span>
+
+<span class="p">})();</span>
+</code></pre></div></div>
+<p><strong>3</strong> - Extend left-most div/table (the element with course type, name, points etc.)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Insert new rows into the second table on the page</span>
+<span class="kd">const</span> <span class="nx">tables</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">table</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="nx">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">rowBefore</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">insertRow</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_before1</span> <span class="o">=</span> <span class="nx">rowBefore</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_before2</span> <span class="o">=</span> <span class="nx">rowBefore</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+
+<span class="c1">// Disclaimer row</span>
+<span class="kd">const</span> <span class="nx">rowDisclaimer</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">insertRow</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_disclaimer</span> <span class="o">=</span> <span class="nx">rowDisclaimer</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+<span class="nx">cell_disclaimer</span><span class="p">.</span><span class="nx">colSpan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">cell_disclaimer</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span>
+<span class="s2">`&lt;label style='font-style: italic; color: gray;'&gt;
+    The graph shows all possible paths of courses leading to/from </span><span class="p">${</span><span class="nx">courseId</span><span class="p">}</span><span class="s2">. &lt;br&gt;
+    However, it is rarely required to take all the courses shown!
+&lt;/label&gt;`</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">rowPrereq</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">insertRow</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_title_prereq</span> <span class="o">=</span> <span class="nx">rowPrereq</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_content_prereq</span> <span class="o">=</span> <span class="nx">rowPrereq</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">rowSubseq</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">insertRow</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_title_subseq</span> <span class="o">=</span> <span class="nx">rowSubseq</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_content_subseq</span> <span class="o">=</span> <span class="nx">rowSubseq</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+
+<span class="c1">// Footer / contact row</span>
+<span class="kd">const</span> <span class="nx">rowContact</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">insertRow</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_contact</span> <span class="o">=</span> <span class="nx">rowContact</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+<span class="nx">cell_contact</span><span class="p">.</span><span class="nx">colSpan</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">cell_contact</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span>
+<span class="s2">`&lt;label style='font-style: italic; color: gray; font-size: 8px;'&gt;
+    &lt;br&gt;&lt;br&gt;You are welcome to contribute to the project by &lt;br&gt;
+    leaving feedback or suggesting improvements: &lt;br&gt;
+    &lt;a href="https://github.com/Marcrulo/DTU-courses-extension" target="_blank"&gt;https://github.com/Marcrulo/DTU-courses-extension&lt;/a&gt;
+&lt;/label&gt;`</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">rowAfter</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">insertRow</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_after1</span> <span class="o">=</span> <span class="nx">rowAfter</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cell_after2</span> <span class="o">=</span> <span class="nx">rowAfter</span><span class="p">.</span><span class="nx">insertCell</span><span class="p">();</span>
+
+<span class="c1">// Section titles</span>
+<span class="nx">cell_title_prereq</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;label&gt;Prerequisite course &lt;br&gt; paths&lt;/label&gt;</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">cell_title_subseq</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;label&gt;Subsequent course &lt;br&gt; paths&lt;/label&gt;</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// Section dividers</span>
+<span class="p">[</span><span class="nx">cell_before1</span><span class="p">,</span> <span class="nx">cell_before2</span><span class="p">,</span> <span class="nx">cell_after1</span><span class="p">,</span> <span class="nx">cell_after2</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">cell</span> <span class="o">=&gt;</span> <span class="p">{</span>
+         <span class="nx">cell</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&lt;div style="border-top: 1px solid #b50404; margin: 10px 0;"&gt;&lt;/div&gt;`</span><span class="p">;</span>
+    <span class="p">});</span>     
+
+</code></pre></div></div>
+
+<p><strong>4</strong> - Constructing tables structure, where the cells represent graph nodes (courses)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* ====== BUILD TABLES ====== */</span>
+<span class="kd">function</span> <span class="nx">buildTables</span><span class="p">(</span><span class="nx">courseId</span><span class="p">,</span> <span class="nx">graph</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">max_subseq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">max_prereq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">subseq_height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">prereq_height</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">table_prereq</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">({</span> <span class="na">length</span><span class="p">:</span> <span class="nx">prereq_height</span> <span class="p">},</span> <span class="p">()</span> <span class="o">=&gt;</span>
+    <span class="nb">Array</span><span class="p">(</span><span class="nx">max_prereq</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="kd">const</span> <span class="nx">table_subseq</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">({</span> <span class="na">length</span><span class="p">:</span> <span class="nx">subseq_height</span> <span class="p">},</span> <span class="p">()</span> <span class="o">=&gt;</span>
+    <span class="nb">Array</span><span class="p">(</span><span class="nx">max_subseq</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">prereq_row</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">const</span> <span class="nx">subseq_row</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="c1">// Place nodes in correct table depending on level</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">level</span> <span class="p">}</span> <span class="k">of</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">nodes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">level</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">level</span> <span class="k">in</span> <span class="nx">prereq_row</span><span class="p">))</span> <span class="nx">prereq_row</span><span class="p">[</span><span class="nx">level</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">table_prereq</span><span class="p">[</span><span class="nx">prereq_row</span><span class="p">[</span><span class="nx">level</span><span class="p">]][</span><span class="nx">max_prereq</span> <span class="o">+</span> <span class="nx">level</span><span class="p">]</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+    <span class="nx">prereq_row</span><span class="p">[</span><span class="nx">level</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">level</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">level</span> <span class="k">in</span> <span class="nx">subseq_row</span><span class="p">))</span> <span class="nx">subseq_row</span><span class="p">[</span><span class="nx">level</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">table_subseq</span><span class="p">[</span><span class="nx">subseq_row</span><span class="p">[</span><span class="nx">level</span><span class="p">]][</span><span class="nx">level</span><span class="p">]</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+    <span class="nx">subseq_row</span><span class="p">[</span><span class="nx">level</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Place the courseId itself</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">prereq_height</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">table_prereq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="nx">max_prereq</span><span class="p">]</span> <span class="o">=</span> <span class="nx">courseId</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">subseq_height</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">table_subseq</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">courseId</span><span class="p">;</span>
+
+<span class="c1">// Ensure non-empty tables</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">table_prereq</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">table_prereq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="kc">null</span><span class="p">]);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">table_subseq</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">table_subseq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="kc">null</span><span class="p">]);</span>
+
+<span class="c1">// Add spacing columns</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">table_prereq</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">row</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="nx">row</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">table_subseq</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">row</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="nx">row</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Helper: sort values in each column alphabetically</span>
+<span class="kd">function</span> <span class="nx">sortColumns</span><span class="p">(</span><span class="nx">table</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">rows</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">cols</span> <span class="o">=</span> <span class="nx">table</span><span class="p">[</span><span class="mi">0</span><span class="p">]?.</span><span class="nx">length</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">col</span> <span class="o">&lt;</span> <span class="nx">cols</span><span class="p">;</span> <span class="nx">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">rows</span><span class="p">;</span> <span class="nx">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">table</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">table</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="nx">values</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">rows</span><span class="p">;</span> <span class="nx">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">table</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">=</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">values</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">values</span><span class="p">[</span><span class="nx">row</span><span class="p">]</span> <span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Helper: center values vertically in each column</span>
+<span class="kd">function</span> <span class="nx">centerColumns</span><span class="p">(</span><span class="nx">table</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">rows</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">cols</span> <span class="o">=</span> <span class="nx">table</span><span class="p">[</span><span class="mi">0</span><span class="p">]?.</span><span class="nx">length</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">col</span> <span class="o">&lt;</span> <span class="nx">cols</span><span class="p">;</span> <span class="nx">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">rows</span><span class="p">;</span> <span class="nx">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">table</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">table</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="kd">const</span> <span class="nx">filled</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">filled</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+
+        <span class="kd">const</span> <span class="nx">topPadding</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">rows</span> <span class="o">-</span> <span class="nx">filled</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">row</span> <span class="o">&lt;</span> <span class="nx">rows</span><span class="p">;</span> <span class="nx">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nx">row</span> <span class="o">-</span> <span class="nx">topPadding</span><span class="p">;</span>
+            <span class="nx">table</span><span class="p">[</span><span class="nx">row</span><span class="p">][</span><span class="nx">col</span><span class="p">]</span> <span class="o">=</span> <span class="nx">idx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">idx</span> <span class="o">&lt;</span> <span class="nx">filled</span> <span class="p">?</span> <span class="nx">values</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">sortColumns</span><span class="p">(</span><span class="nx">table_prereq</span><span class="p">);</span>
+<span class="nx">sortColumns</span><span class="p">(</span><span class="nx">table_subseq</span><span class="p">);</span>
+<span class="nx">centerColumns</span><span class="p">(</span><span class="nx">table_prereq</span><span class="p">);</span>
+<span class="nx">centerColumns</span><span class="p">(</span><span class="nx">table_subseq</span><span class="p">);</span>
+
+<span class="k">return</span> <span class="p">{</span> <span class="nx">table_prereq</span><span class="p">,</span> <span class="nx">table_subseq</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">table_prereq</span><span class="p">,</span> <span class="nx">table_subseq</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">buildTables</span><span class="p">(</span><span class="nx">courseId</span><span class="p">,</span> <span class="nx">graph</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>5</strong> - Render tables in HTML</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* ====== RENDER TABLES ====== */</span>
+  <span class="kd">function</span> <span class="nx">renderTable</span><span class="p">(</span><span class="nx">table</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">fontSizeBase</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">`
+      &lt;table id='course-overview-</span><span class="p">${</span><span class="nx">type</span><span class="p">}</span><span class="s2">' style="width: 100%; border-collapse: separate;"&gt;
+        </span><span class="p">${</span><span class="nx">table</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">row</span> <span class="o">=&gt;</span> <span class="s2">`
+          &lt;tr&gt;
+            </span><span class="p">${</span><span class="nx">row</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">cell</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`
+              &lt;td id='</span><span class="p">${</span><span class="nx">cell</span> <span class="p">?</span> <span class="nx">cell</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">_</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">type</span> <span class="p">:</span> <span class="dl">""</span><span class="p">}</span><span class="s2">'
+                  style="width: </span><span class="p">${</span><span class="nx">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">30px</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">50px</span><span class="dl">"</span><span class="p">}</span><span class="s2">;"&gt;
+                </span><span class="p">${</span><span class="nx">cell</span> <span class="p">?</span> <span class="s2">`
+                  &lt;a href="https://kurser.dtu.dk/course/</span><span class="p">${</span><span class="nx">cell</span><span class="p">}</span><span class="s2">"
+                     class="tooltip-link"
+                     style="color: #b50404; text-decoration: none; font-size: </span><span class="p">${</span><span class="nx">fontSizeBase</span> <span class="o">-</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">prereq</span><span class="dl">"</span> <span class="p">?</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">max_prereq</span> <span class="p">:</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">max_subseq</span><span class="p">)}</span><span class="s2">px;"&gt;
+                    </span><span class="p">${</span><span class="nx">cell</span><span class="p">}</span><span class="s2">
+                    &lt;span class="tooltip-text"&gt;</span><span class="p">${</span><span class="nx">mapping</span><span class="p">[</span><span class="nx">cell</span><span class="p">]</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">No info available</span><span class="dl">"</span><span class="p">}</span><span class="s2">&lt;/span&gt;
+                  &lt;/a&gt;`</span> <span class="p">:</span> <span class="dl">""</span><span class="p">}</span><span class="s2">
+              &lt;/td&gt;`</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">)}</span><span class="s2">
+          &lt;/tr&gt;`</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">)}</span><span class="s2">
+      &lt;/table&gt;
+    `</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Fill content cells</span>
+  <span class="nx">cell_content_prereq</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">renderTable</span><span class="p">(</span><span class="nx">table_prereq</span><span class="p">,</span> <span class="dl">"</span><span class="s2">prereq</span><span class="dl">"</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+  <span class="nx">cell_content_subseq</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">renderTable</span><span class="p">(</span><span class="nx">table_subseq</span><span class="p">,</span> <span class="dl">"</span><span class="s2">subseq</span><span class="dl">"</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+
+  <span class="c1">// Replace with labels if empty</span>
+  <span class="kd">function</span> <span class="nx">isTableEmpty</span><span class="p">(</span><span class="nx">table</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">table</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">row</span> <span class="o">=&gt;</span> <span class="nx">row</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">cell</span> <span class="o">=&gt;</span> <span class="nx">cell</span> <span class="o">===</span> <span class="kc">null</span><span class="p">));</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isTableEmpty</span><span class="p">(</span><span class="nx">table_prereq</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">cell_content_prereq</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span>
+      <span class="s2">`&lt;label style="font-style: italic; color: gray;"&gt;This course does not have any prerequisites&lt;/label&gt;`</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isTableEmpty</span><span class="p">(</span><span class="nx">table_subseq</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">cell_content_subseq</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span>
+      <span class="s2">`&lt;label style="font-style: italic; color: gray;"&gt;This course does not lead to any other courses&lt;/label&gt;`</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Highlight "endpoints" of prereq/subseq tables</span>
+  <span class="nx">cell_content_prereq</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">td:last-child</span><span class="dl">"</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">cell</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">cell</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">italic</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">cell</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">textDecoration</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">underline</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">cell</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#b50404</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="nx">cell_content_subseq</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">td:first-child</span><span class="dl">"</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">cell</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">cell</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">italic</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">cell</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">textDecoration</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">underline</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">cell</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#b50404</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>6</strong> - Draw lines (edges) between cells, corresponding to the graph we computed. Lines are created using the “LeaderLine” package</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* ====== DRAW STATIC LEADERLINES ====== */</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">edge</span> <span class="k">of</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">suffix</span> <span class="k">of</span> <span class="p">[</span><span class="dl">"</span><span class="s2">_prereq</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">_subseq</span><span class="dl">"</span><span class="p">])</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">startNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">edge</span><span class="p">.</span><span class="nx">source</span> <span class="o">+</span> <span class="nx">suffix</span><span class="p">);</span>
+      <span class="kd">const</span> <span class="nx">endNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">edge</span><span class="p">.</span><span class="nx">target</span> <span class="o">+</span> <span class="nx">suffix</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">startNode</span> <span class="o">&amp;&amp;</span> <span class="nx">endNode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">new</span> <span class="nx">LeaderLine</span><span class="p">(</span><span class="nx">startNode</span><span class="p">,</span> <span class="nx">endNode</span><span class="p">,</span> <span class="p">{</span>
+          <span class="na">size</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rgba(36, 4, 9, 0.3)</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">straight</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">endPlug</span><span class="p">:</span> <span class="dl">"</span><span class="s2">arrow3</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">startSocket</span><span class="p">:</span> <span class="dl">"</span><span class="s2">right</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">endSocket</span><span class="p">:</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>7</strong> - Upon hovering, highlight node and its 1-hop neighborhood (highlight immediate neighbors in both directions)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* ====== INTERACTIVE HIGHLIGHTING ====== */</span>
+<span class="kd">let</span> <span class="nx">tempLines</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">let</span> <span class="nx">highlightedLinks</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.tooltip-link</span><span class="dl">"</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">link</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">link</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mouseenter</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">table_id</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">_</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">link</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="dl">"</span><span class="s2">table</span><span class="dl">"</span><span class="p">).</span><span class="nx">id</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">-</span><span class="dl">"</span><span class="p">)[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// "_prereq" or "_subseq"</span>
+    <span class="kd">const</span> <span class="nx">hoveredId</span> <span class="o">=</span> <span class="nx">link</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">).</span><span class="nx">pop</span><span class="p">();</span>
+
+    <span class="c1">// Find edges connected to hovered course</span>
+    <span class="kd">const</span> <span class="nx">connectedEdges</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+    <span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">hoveredId</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">===</span> <span class="nx">hoveredId</span>
+    <span class="p">);</span>
+
+    <span class="c1">// Collect all connected IDs</span>
+    <span class="kd">const</span> <span class="nx">connectedIds</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">([</span><span class="nx">hoveredId</span><span class="p">]);</span>
+    <span class="nx">connectedEdges</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">connectedIds</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">source</span><span class="p">);</span>
+    <span class="nx">connectedIds</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="c1">// Highlight connected nodes</span>
+    <span class="nx">connectedIds</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">id</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">elems</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">`td[id='</span><span class="p">${</span><span class="nx">id</span><span class="p">}${</span><span class="nx">table_id</span><span class="p">}</span><span class="s2">'] .tooltip-link`</span><span class="p">);</span>
+    <span class="nx">elems</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">el</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontWeight</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">bold</span><span class="dl">"</span><span class="p">;</span>
+        <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">textDecoration</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">underline</span><span class="dl">"</span><span class="p">;</span>
+        <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#b50404</span><span class="dl">"</span><span class="p">;</span>
+        <span class="nx">highlightedLinks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="c1">// Draw temporary leaderlines</span>
+    <span class="nx">connectedEdges</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">edge</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">startNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">edge</span><span class="p">.</span><span class="nx">source</span> <span class="o">+</span> <span class="nx">table_id</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">endNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">edge</span><span class="p">.</span><span class="nx">target</span> <span class="o">+</span> <span class="nx">table_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">startNode</span> <span class="o">&amp;&amp;</span> <span class="nx">endNode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">line</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LeaderLine</span><span class="p">(</span><span class="nx">startNode</span><span class="p">,</span> <span class="nx">endNode</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">size</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rgba(181, 4, 4, 0.9)</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">straight</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">endPlug</span><span class="p">:</span> <span class="dl">"</span><span class="s2">arrow3</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">startSocket</span><span class="p">:</span> <span class="dl">"</span><span class="s2">right</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">endSocket</span><span class="p">:</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">});</span>
+        <span class="nx">tempLines</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">line</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">link</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mouseleave</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Remove temporary lines</span>
+    <span class="nx">tempLines</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">line</span> <span class="o">=&gt;</span> <span class="nx">line</span><span class="p">.</span><span class="nx">remove</span><span class="p">());</span>
+    <span class="nx">tempLines</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="c1">// Remove highlights</span>
+    <span class="nx">highlightedLinks</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">el</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontWeight</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">textDecoration</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="nx">highlightedLinks</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>In essence, we add a section to the course website, and create a table that represents the course graph. I use the awesome <strong><em>LeaderLine</em></strong> library for creating arrows (<em>directed edges</em>) between cell elements (<em>nodes</em>)</p>
+
+<p>The result looks something like this:</p>
+
+<p><img src="/MonthlyProjects/assets/images/courses/screenshot.png" alt="screenshot" title="screenshot" /></p>
+
+<h2 id="maintenance"><a href="#maintenance"></a>Maintenance</h2>
+<p>As of now, the extension works fine, but this is only the case for the current course structure. If anything changes with the courses or the prerequisites, the graph will technically be wrong, which may cause confusion and frustration. Let’s try and fix that.</p>
+
+<h3 id="automatic-updates">Automatic updates</h3>
+<p>I know for a fact that the course structure is changed once a year at around May or June. If I simply run the script yearly in July, then all will be good, right?</p>
+
+<p>What will likely happen is that I forget about the project, or maybe don’t really care anymore. Maybe the first years it will work fine, but after that it will not work anymore.</p>
+
+<p>The obvious solution for this is then to create a scheduled job for scraping the course websites and create the graph. I tried some recommended websites for free python script hosting, but I also need file hosting as well. It did not go well. I then found that <strong>GitHub actions</strong> lets you do exactly that. GitHub actions is usually used for CI/CD tasks, but it doesn’t <em>have</em> to be that.</p>
+
+<p>I have created an <code class="language-plaintext highlighter-rouge">update_courses.yml</code> workflow file. This is simply a test that runs daily, but eventually it will be made to run all the correct scripts, yearly.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Run Python Daily (change later)</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">schedule</span><span class="pi">:</span>
+    <span class="c1"># Runs at 00:00 UTC every day</span>
+    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
+  <span class="na">workflow_dispatch</span><span class="pi">:</span> <span class="c1"># allows manual run</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">run-python</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+
+    <span class="na">permissions</span><span class="pi">:</span>
+      <span class="na">contents</span><span class="pi">:</span> <span class="s">write</span>
+
+    <span class="na">steps</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">token</span><span class="pi">:</span> <span class="s">$</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Python</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-python@v4</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">python-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.11'</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">python -m pip install --upgrade pip</span>
+        <span class="s">if [ -f requirements.txt ]; then pip install -r requirements.txt; fi</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run Python script</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">cd processing</span>
+        <span class="s">python 1_scrape_content.py</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Push output file to branch</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">cd processing</span>
+        <span class="s">git config --global user.name "github-actions[bot]"</span>
+        <span class="s">git config --global user.email "github-actions[bot]@users.noreply.github.com"</span>
+        <span class="s">git checkout -B daily-output</span>
+        <span class="s">mkdir -p output</span>
+        <span class="s">mv valid_courses.json output/</span>
+        <span class="s">git add output/valid_courses.json</span>
+        <span class="s">git commit -m "Update output for $(date +'%Y-%m-%d')"</span>
+        <span class="s">git push -u origin daily-output --force</span>
+</code></pre></div></div>
+
+<p>The coolest thing is that you let a “bot user” push files to the repo. So instead of adding the graph JSON file directly into the Chrome extension, the file will be located and updated at a specific file in the repo, which is directly accessible from the web (since its a public repo). It will basically act as a GitHub “gist” file.</p>
+
+<h3 id="open-sourcing">Open-Sourcing</h3>
+<p>To be realistic, I can’t assume that people will agree with the design of the extension, so I want to give people the option to add improvements to it. It is a gift for the public after all. In the event that the course website undergoes a drastic change that renders the extension useless, I want people in the future to be able to fix that as well. I will, of course, be responsible for reviewing pull requests.</p>
+
+<p>Maybe no one cares. Who knows? Now that I have this tool, I can’t imagine a world without it anymore. I want everyone to get the same benefits as I got from it. It was a fun project nonetheless.</p>]]></content><author><name>Marcus Presutti</name><email>marcus.presutti.eu@gmail.com</email></author><summary type="html"><![CDATA[Create a chrome extension for the DTU course website]]></summary></entry><entry><title type="html">4. RAG model for Danish court trial data (Part 2/2)</title><link href="http://localhost:4000/MonthlyProjects/court_trial_ai_B" rel="alternate" type="text/html" title="4. RAG model for Danish court trial data (Part 2/2)" /><published>2025-07-01T00:00:00+02:00</published><updated>2025-07-01T00:00:00+02:00</updated><id>http://localhost:4000/MonthlyProjects/court_trial_ai_B</id><content type="html" xml:base="http://localhost:4000/MonthlyProjects/court_trial_ai_B"><![CDATA[<h2 id="cloud"><a href="#cloud"></a>Cloud</h2>
 <p>At first, the reason for using the cloud was primarily just to learn more about it, despite thinking that it won’t be necessary, but it was actually quite beneficial. First of all, it enabled me to host an endpoint for the model, which makes it possible to interact with it from anywhere in the world. But most importantly, it was actually quite nice to offload the data processing to a cloud computer. Not only would my local PC have been unavailable for proper use, the computation also happened much faster, since the cheaper VMs ran the processing way faster than my own PC, and also did not encounter any crashes. It took Azure 3½ hours using some of the cheapest compute, but mine had not even finished after 5+ hours locally.</p>
 
 <p><img src="/MonthlyProjects/assets/images/domstol/job_script.png" alt="job_script" title="job_script" /></p>
