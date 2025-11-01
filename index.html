@@ -12,6 +12,9 @@ layout: default
               {{ site.data.month_emoji[month_name] }}
           </time>
           <p>{{ post.description }}</p>
-      </li>
+          <img style='max-height:300px' src="{{ site.baseurl }}/assets/images/{{ post.image }}" alt="{{ post.title }}"/>        
+          <p></p>
+
+        </li>
     {% endfor %}
 </ul>

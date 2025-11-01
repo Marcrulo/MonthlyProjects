@@ -2,6 +2,7 @@
 title: 1. Textual Inversion
 description: Utilize textual inversion to learn an word-embedding of the Pokémon "Charizard", in order to generate an image with Stable Diffusion 1.5
 published: true
+image: 'textual_inversion/hyper_realistic.png'
 ---
 
 ## [](#prologue)Prologue
