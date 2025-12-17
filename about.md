@@ -29,12 +29,16 @@ title: About me
 ### 🧑‍💼 Experience
 
 <br>
-**STUDENT ASSISTANT** (_Production_) – [ChemoMetec](https://chemometec.com/) \
-📅 Dec. 2021 – Dec. 2023 | 📍 Lillerød, Denmark 
-- **Analysing** and **refining** production data, whilst providing meaningful insights for the machine operators, using **self-made visualization- and report generating software**.
-- Developed an **LLM-pipeline** for daily summarizations of production batches, which
-are sent through mail.
-- Parameter optimization of welding in production, using **Bayesian optimization**, by analysing product quality through images (**Bachelor thesis**).
+**STUDENT ASSISTANT** (_Insights & Machine Learning_) – [GN](https://www.gn.com/) \
+📅 Sep. 2024 -   Now   | 📍 Ballerup, Denmark
+- Maintaining and building **Power BI reports**; based on hearing-aid event data.
+- Creating **analyses in proof-of-concept projects**; i.e. pricing and viability of translation technology, and **machine learning classification** of biosensor experiments
+
+<br>
+**CONSULTANT / FREELANCER** - [Presutti Solutions](https://lasso.dk/firmaer/44744821/presutti-solutions) \
+📅 Feb. 2024 -   Now   | 📍 Ballerup, Denmark
+- Maintaining production **PHP website** for [linsen.dk](https://www.linsen.dk), which has involved **classic tasks for modern websites** such as: Google Tag Manager for market analysis, SQL querying, css styling, adding cookies (and cookie banners) etc.
+- Adding insights into how being **self-employed** works, which has put me in an **entrepreneurial mindset**.
 
 <br>
 **STUDENT ASSISTANT** (_CRM & Loyalty_) – [Dansk Industri (DI)](https://www.danskindustri.dk/) \
@@ -44,29 +48,23 @@ are sent through mail.
 - Maintaining **Power BI reports**; used by colleagues to visualize membership data.
 
 <br>
-**CONSULTANT / FREELANCER** - [Presutti Solutions](https://lasso.dk/firmaer/44744821/presutti-solutions) \
-📅 Feb. 2024 -   Now   | 📍 Ballerup, Denmark
-- Maintaining production **PHP website** for [linsen.dk](https://www.linsen.dk), which has involved **classic tasks for modern websites** such as: Google Tag Manager for market analysis, SQL querying, css styling, adding cookies (and cookie banners) etc.
-- Adding insights into how being **self-employed** works, which has put me in an **entrepreneurial mindset**.
-
-<br>
-**STUDENT ASSISTANT** (_Insights & Machine Learning_) – [GN](https://www.gn.com/) \
-📅 Sep. 2024 -   Now   | 📍 Ballerup, Denmark
-- Maintaining and building **Power BI reports**; based on hearing-aid event data.
-- Creating **analyses in proof-of-concept projects**; i.e. pricing and viability of translation technology, and **machine learning classification** of biosensor experiments
+**STUDENT ASSISTANT** (_Production_) – [ChemoMetec](https://chemometec.com/) \
+📅 Dec. 2021 – Dec. 2023 | 📍 Lillerød, Denmark 
+- **Analysing** and **refining** production data, whilst providing meaningful insights for the machine operators, using **self-made visualization- and report generating software**.
+- Developed an **LLM-pipeline** for daily summarizations of production batches, which
+are sent through mail.
+- Parameter optimization of welding in production, using **Bayesian optimization**, by analysing product quality through images (**Bachelor thesis**).
 
 <br>
 
 ---
 
 ### 🎓 Education
-
 <br>
-**HTX (_Programming and Mathematics_)** – [Hillerød Teknisk Gymnasium](https://unord.dk/skoler/hilleroed-tekniske-gymnasium)  
-📅 Aug. 2017 – Jun. 2020 | 📍 Hillerød, Denmark
-- Learned programming
-- Introduced to Python, SQL and HTML/CSS/JS
-- _Technology_ class taught me about creating viable products
+**MSc in Engineering (_Human-Centered AI_)** – [DTU](https://www.dtu.dk/)  
+📅 Feb. 2024 – (expected) Jun. 2026 | 📍 Kgs. Lyngby, Denmark
+- Got more into deep learning, in particular
+- Became more comfortable with advanced math
 
 <br>
 **BSc in Engineering (_AI and Data_)** – [DTU](https://www.dtu.dk/)  
@@ -75,10 +73,11 @@ are sent through mail.
 - Got fond of image analysis / computer vision
 
 <br>
-**MSc in Engineering (_Human-Centered AI_)** – [DTU](https://www.dtu.dk/)  
-📅 Feb. 2024 – (expected) Jun. 2026 | 📍 Kgs. Lyngby, Denmark
-- Got more into deep learning, in particular
-- Became more comfortable with advanced math
+**HTX (_Programming and Mathematics_)** – [Hillerød Teknisk Gymnasium](https://unord.dk/skoler/hilleroed-tekniske-gymnasium)  
+📅 Aug. 2017 – Jun. 2020 | 📍 Hillerød, Denmark
+- Learned programming
+- Introduced to Python, SQL and HTML/CSS/JS
+- _Technology_ class taught me about creating viable products
 
 <br>
 
@@ -127,6 +126,7 @@ _Link:_ [GitHub/Live URL]
 
 ### 🏆 Competition participation
 
+- [DM i AI (2025)](https://dmiai.dk/) [🥉3rd place]
 - [DM i AI (2024)](https://dmiai.dk/)
 - [DM i AI (2023)](https://dmiai.dk/)
 - [DM i AI (2022)](https://dmiai.dk/)
