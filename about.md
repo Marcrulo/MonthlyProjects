@@ -126,7 +126,7 @@ _Link:_ [GitHub/Live URL]
 
 ### 🏆 Competition participation
 
-- [DM i AI (2025)](https://dmiai.dk/) [🥉3rd place]
+- [DM i AI (2025)](https://dmiai.dk/) 🥉3rd place
 - [DM i AI (2024)](https://dmiai.dk/)
 - [DM i AI (2023)](https://dmiai.dk/)
 - [DM i AI (2022)](https://dmiai.dk/)
