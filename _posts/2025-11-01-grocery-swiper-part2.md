@@ -8,11 +8,21 @@ image: 'grocery_swiper/wizard_4.png'
 ## [](#prologue)Prologue
 
 
-TODO
+
+Content
 * Oh well, they do change the URL dynamically. There's no free lunch :/ . Let's create a way to check for the correct URL! 
    * `playwright` package
    * Simulate browser (headless) and listen for network packages
-* And about the app... let's AI our way to victory!
+* First attempt (Android studio)
+   * Android studio + Kotlin tutorial (got overwhelmed)
+   * Hard to implement AI assistant
+* Second attempt (online AI tools)
    * Firebase studio
-   * replit
-   * Make them create a prototype, then take the code, utilize copilot in VSCode to tune the codebase
+   * Replit
+   * Retrieving code (large codebase)
+   * Not even a mobile app - just website (I can do that myself then)
+* Third attempt (website app)
+   * Simple JS/HTML/CSS + Flask + SQLite
+   * ...
+
+* Raspberry PI server hosting
