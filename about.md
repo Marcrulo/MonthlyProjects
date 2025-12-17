@@ -29,7 +29,7 @@ title: About me
 ### 🧑‍💼 Experience
 
 <br>
-**STUDENT ASSISTANT** (_Insights & Machine Learning_) – [GN](https://www.gn.com/) \
+**STUDENT ASSISTANT** (_R&D Insights & Machine Learning_) – [GN](https://www.gn.com/) \
 📅 Sep. 2024 -   Now   | 📍 Ballerup, Denmark
 - Maintaining and building **Power BI reports**; based on hearing-aid event data.
 - Creating **analyses in proof-of-concept projects**; i.e. pricing and viability of translation technology, and **machine learning classification** of biosensor experiments
