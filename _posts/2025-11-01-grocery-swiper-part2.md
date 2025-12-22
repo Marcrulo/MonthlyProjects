@@ -25,6 +25,7 @@ Content
    * Simple JS/HTML/CSS + Flask + SQLite
    * ...
 * Raspberry PI server hosting
+   * Port-forwarding for 100% uptime
 * Active (machine) learning
    * "What to show the user to learn the most"
    * Fast probability updates after each swipe
