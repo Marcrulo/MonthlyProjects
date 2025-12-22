@@ -24,5 +24,16 @@ Content
 * Third attempt (website app)
    * Simple JS/HTML/CSS + Flask + SQLite
    * ...
-
 * Raspberry PI server hosting
+* Active (machine) learning
+   * "What to show the user to learn the most"
+   * Fast probability updates after each swipe
+      * Non-parametric models (KNN/FAISS)
+      * Low-complexity models (Logistic regression, Naïve Bayes)
+   * Uncertainty sampling - Binary classification: Least confidence
+   * Super-like = Generate 5 samples (?) or somehow do weighting of these entries
+* Email notification
+   * Separate github workflow
+   * Top K sales entries (or C% confidence threshold entries)
+      * Ranking model 
+     
