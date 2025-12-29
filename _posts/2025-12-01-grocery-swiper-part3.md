@@ -19,9 +19,9 @@ These might even be the same model, but their goals are quite different. However
 #### Embedding models
 I was stoked to do feature engineering, because I had thought of a *bullet-proof* plan of embedding the groceries in a large latent space. My intuition was that we didn't really care about the exact word of a grocery, but more the idea behind it. Such as if a person has a liking for lettuce, they might also like cabbage. Considering this assumption, it could actually be quite hard to define very specific preferences, without being bombarded with false positives, of somewhat similar groceries. 
 
-![kanye]({{ site.baseurl }}/assets/images/grocery_swiper/kanye.png "kanye")
+![kanye]({{ site.baseurl }}/assets/images/grocery_swiper/kanye.gif "kanye")
 
-(*I apologize for using that meme wrongly*)
+(*I apologize for using that meme incorrectly*)
 
 Learning from my past mistakes regarding embedding models on Danish text, I had a found myself a light-weight Danish-to-English translation LLM, in order to work on English text instead. In part 1, I show how this is then used to create the "bio" for the groceries - which had sadly shown subpar results. The dull quality of the bios created could surely be attributed to the light-weight text generator, right? But as it seems, the translations themselves, upon further inspection, are absolutely abysmal! My prime example is the translation of:
 
