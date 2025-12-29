@@ -12,24 +12,6 @@ image: 'grocery_swiper/genie.png'
 
 
 
-* Oh well, they do change the URL dynamically. There's no free lunch :/ . Let's create a way to check for the correct URL! 
-   * `playwright` package
-   * Simulate browser (headless) and listen for network packages
-* First attempt (Android studio)
-   * Android studio + Kotlin tutorial (got overwhelmed)
-   * Hard to implement AI assistant
-* Second attempt (online AI tools)
-   * Firebase studio
-   * Replit
-   * Retrieving code (large codebase)
-   * Not even a mobile app - just website (I can do that myself then)
-* Third attempt (website app)
-   * Simple JS/HTML/CSS + Flask + SQLite
-   * ...
-* Raspberry PI server hosting
-   * Port-forwarding for 100% uptime (?)
-   * Tunneling using ngrok
-   * Server + DB hosting on same port (flask app)
 * Preference model
    * KNN (5-NN)
    * Feature engineering
@@ -44,7 +26,6 @@ image: 'grocery_swiper/genie.png'
       * Non-parametric models (KNN/FAISS)
       * Low-complexity models (Logistic regression, Naïve Bayes)
    * Uncertainty sampling - Binary classification: Least confidence
-
 * Email notification
    * Separate github workflow
    * Top K sales entries (or C% confidence threshold entries)
