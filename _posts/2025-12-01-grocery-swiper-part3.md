@@ -5,7 +5,7 @@ published: true
 image: 'grocery_swiper/genie.png'
 ---
 
-## [](#model)Preference Model
+## [](#model)Preference-Model
 The app prototype works wonders, and my girlfriend has enjoyed swiping on groceries - huge win! (but we are not done). The groceries shown are randomly picked, and the preferences are not being used for anything yet. The database has been populated with approximately 500 preferences, which will constitute the training and validation sets. 
 
 For this system we need 2 models; <br>
@@ -17,11 +17,11 @@ These might even be the same model, but their goals are quite different. However
 ### [](#preprocessing)Feature Enginerring
 
 #### Embedding models
-I was stoked to do feature engineering, because I had thought of a *bullet-proof* plan of embedding the groceries in a large latent space. My intuition was that we didn't really care about the exact word of a grocery, but more the idea behind it. Such as if a person has a liking for lettuce, they might also like cabbage. Considering this assumption, it could actually be quite hard to define very specific preferences, without being bombarded with false positives, of somewhat similar groceries. 
+I was stoked to do feature engineering, because I had thought of a *bullet-proof* plan of embedding the groceries in a large latent space. My intuition was that we didn't really care about the exact word of a grocery, but more the idea behind it. Such as if a person has a liking for lettuce, they might also like cabbage. Considering this assumption, it could actually be quite hard to define very specific preferences, without being bombarded with false positives of only somewhat similar groceries. Or maybe not.
 
 ![kanye]({{ site.baseurl }}/assets/images/grocery_swiper/kanye.gif "kanye")
 
-(*I apologize for using that meme incorrectly*)
+(*I won't apologize for using that meme incorrectly*)
 
 Learning from my past mistakes regarding embedding models on Danish text, I had a found myself a light-weight Danish-to-English translation LLM, in order to work on English text instead. In part 1, I show how this is then used to create the "bio" for the groceries - which had sadly shown subpar results. The dull quality of the bios created could surely be attributed to the light-weight text generator, right? But as it seems, the translations themselves, upon further inspection, are absolutely abysmal! My prime example is the translation of:
 
@@ -35,12 +35,12 @@ But for this model translates to:
 
 > "*Emblem Cheese Shelf Blossom & Lemon*"
 
-**If you know Danish, I challenge you inspect the sentence, and see how it might have gone wrong**. It is really bad, as many translation destroy the meaning of the original phrase, and I had to try something else. 
+**If you know Danish, I challenge you to inspect the sentence, and consider how it might have gone wrong**. It is really bad, as many translation destroy the meaning of the original phrase, and I had to try something else. 
 
 Had I had the memory available within the automation pipeline (Github actions), I could simply use more powerful models, but this was not an option.
 
-
-
+#### The Classic (Boring) Approach
+...
 
 
 
