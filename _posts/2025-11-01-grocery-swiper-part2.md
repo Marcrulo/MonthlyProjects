@@ -9,6 +9,9 @@ image: 'grocery_swiper/wizard_4.png'
 ## [](#scraping)Scraping - fix
 Since last time, the automation pipeline has failed on me, due to a strong assumption I made about the sales flyer website's scraping prevention. As it turns out, the ID used to identify the json data file on their server actually *does* change dynamically, meaning that I need a way to catch that as well. Currently, I depend on the data path to the json files to only depend on the item-id displayed directly on the webpage. To fix this, I used the `playwright` package which simulates a browser without a GUI (aka *headless*), in order to catch the data packages (and thereby the ID for the json files) that are retrieved on the client side, but not accesible through scraping of the static website.
 
+## [](#app)Creating an App
+To recap, the idea is to create a Tinder like app that let's the user "swipe" on grocery items from the sales flyer. The goal is to learn the preferences for historic items, in order to give a recommendations of the best sales when the next sales flyer is released. 
+
 ## [](#attempt-1)Attempt 1 - Android Studio and Kotlin
 I tried to go through Google's official [Android Studio + Kotlin (programming language) tutorial](https://developer.android.com/get-started/overview), in order to create my own Android app. After tedious amounts of tutorial-ing, I was overwhelmed of the idea of building this entire thing in Kotlin. I also needed a backend, and smart access to a database service such as Firebase. I do believe project building is the best way to learn new tools and skills; but this was just too big of a mouthful, and I had to try something else.
 
