@@ -35,6 +35,9 @@ But for this model translates to:
 
 > "*Emblem Cheese Shelf Blossom & Lemon*"
 
+![mom_meme]({{ site.baseurl }}/assets/images/grocery_swiper/mom_meme.png "mom_meme")
+
+
 **If you know Danish, I challenge you to inspect the sentence, and consider how it might have gone wrong**. It is really bad, as many translation destroy the meaning of the original phrase, and I had to try something else. 
 
 Had I had the memory available within the automation pipeline (Github actions), I could simply use more powerful models, but this was not an option.
