@@ -6,9 +6,11 @@ image: 'grocery_swiper/tinder_swiping.png'
 ---
 
 ## [](#prologue)Prologue
-I have once abandoned a project regarding automatic retrieval of weekly Netto deals. The reason for that is, that when you live 100 meters away from a Netto, you simply go down there and check for the things you want anyway. But now that I live a WHOPPING 700 meters away, I can't possibly do that anymore - that would be outrageous! Jokes aside, my girlfriend routinely reads the sales flyers, which seems so daunting to me, which is why I thought of automating it! The best possible solution I came up with is to send a mail of the "best" groceries for this week, in terms of price and product. But how is a system going to know about her preferences? Introducing Tinder... but for groceries. Similarly as to how we judge people on the internet within 1 second on dating apps, we can apply the same idea for groceries! What a brilliant idea!
+I have once abandoned a project regarding automatic retrieval of weekly Netto deals. The reason for that is, that when you live 100 meters away from a Netto, you simply go down there and check for the things you want anyway. But now that I live a WHOPPING 700 meters away, I can't possibly do that anymore - that would be outrageous! 
 
-This project is waaaay too large to complete within a month, so let's stretch it across 3 months. <br>
+Jokes aside, my girlfriend routinely reads the sales flyers, which seems so daunting to me, which is why I thought of automating it! The best possible solution I came up with is to send a mail of the "best" groceries for this week, in terms of price and product. But how is a system going to know about her preferences? Introducing Tinder... but for groceries. Similarly as to how we judge people on the internet within 1 second on dating apps, we can apply the same idea for groceries! What a brilliant idea!
+
+This project is waaaay too large to complete within a month, so let's stretch it across multiple smaller projects. <br>
 **Part 1** will be about creating a system that scrapes weekly grocery offers, automatically. This would be used as "training data" / "historic preference data". <br>
 **Part 2** will be about creating the actual app for gathering preferences, and  <br>
 **Part 3** will be an AI-driven email notification system. Let's get to it!
