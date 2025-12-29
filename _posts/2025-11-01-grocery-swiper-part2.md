@@ -17,7 +17,7 @@ There has been a lot of hype around tools such as [replit](https://replit.com/) 
 
 I used both [replit](https://replit.com/) and [Firebase Studio](https://firebase.studio/), which essentially do the same thing. I prompted something like:
 
-> *Create a Tinder-like mobile app, but let each profile be a grocery item*
+> "***Create a Tinder-like mobile app, but let each profile be a grocery item***"
 
 With this very simple prompt and some small tweaks, I got to this point: <br>
 (Left: *Replit*. Right: *Fireebase Studio*)
@@ -31,48 +31,23 @@ The first thing I noticed was that the codebase was very large (300 MB), and was
 I had given up on these type of AI tools, as they would limit my freedom in the long run. Instead, I gladly took their idea of simply simulating an app through the web browser - something that I am way more comfortable working with. So, plans changed. The mobile app will instead be a website, not an Android app, which I had first anticipated.
 
 ## [](#attempt-3)Attempt 3 - Website Imitating a Mobile App
-I hosted a server locally using **Flask**, with the app itself being simple HTML/CSS/JS, with an SQLite database for storing swipe data for all users. 
+I hosted a server locally using **Flask**, with the app itself being simple HTML/CSS/JS, with an SQLite database for storing swipe data for all users, and ended up looking like this:
 
 ![app]({{ site.baseurl }}/assets/images/grocery_swiper/app.png "app")
 
+In the top left, we have a *history* button, that let's one go back in history and change preference:
 
-* First attempt (Android studio)
-   * Android studio + Kotlin tutorial (got overwhelmed)
-   * Hard to implement AI assistant
-* Second attempt (online AI tools)
-   * Firebase studio
-   * Replit
-   * Retrieving code (large codebase)
-   * Not even a mobile app - just website (I can do that myself then)
-* Third attempt (website app)
-   * Simple JS/HTML/CSS + Flask + SQLite
-   * ...
-* Raspberry PI server hosting
-   * Port-forwarding for 100% uptime (?)
-   * Tunneling using ngrok
-   * Server + DB hosting on same port (flask app)
+![history]({{ site.baseurl }}/assets/images/grocery_swiper/history.png "history")
 
-* Preference model
-   * KNN (5-NN)
-   * Feature engineering
-      * One-hot
-      * Scaling
-      * Embeddings using LLMs?
-   * Super-like = Generate 3 samples
-   * Majority vote
-* Idea/theory: Active (machine) learning
-   * "What to show the user to learn the most"
-   * Fast probability updates after each swipe
-      * Non-parametric models (KNN/FAISS)
-      * Low-complexity models (Logistic regression, Naïve Bayes)
-   * Uncertainty sampling - Binary classification: Least confidence
+In the top right, there is a full-screen button that remove the browser header and such, so make it feel like an actual mobile app.
 
-* Email notification
-   * Separate github workflow
-   * Top K sales entries (or C% confidence threshold entries)
-      * Ranking model 
-* On AI usage
-   * Transparency
-   * Learning
-   * Efficiency
-     
+On top of having the **like**/**pass** swiping options, it is also possible to ***super-like*** something, which will put more emphasis on this entry in the recommendation model.
+
+
+### [](#hosting)Server Hosting
+I have been playing around with my Raspberry Pi for various reasons as of late, and I chose to use that as a server host. In short, a Raspberry Pi is a small light-weight computer (size of a palm). As server hosting is not very compute intensive we can host the server on that device 24/7, if needed. 
+
+Currently, you can access the server if you are on the same local network, which works fine for testing, but so as much in practice. Therefore, we need a way to "publish it to the world". A not so safe way is to "**port-forward**" a port on the router. While the router itself is exposed to the internet, the devices belonging the the respective network are not (as much). They are protected by a firewall, blocking others from accessing my computer in various ways. A port is kind of a path to a device within the network. When port-forwarding we open that port up to the world. 
+
+Instead of doing that, we can use **tunneling**, which is similar to port-forwarding, but more safe. It utilizes a third-party provider, in my case [ngrok](https://ngrok.com/), to safely connect my local server with the outside world. When starting the Flask app, the server lies on a certain port, and that port will be conencted to the public through the ngrok tunnel. As it only let's me tunnel a single endpoint, I will have DB access through the same port as the server. Public database access is important as the automation pipeline in Github needs access to the latest version of the database.
+
