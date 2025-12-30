@@ -66,44 +66,43 @@ Even if this active learning approach did not make it to the final product, the 
 ### [](#ranker)Ranking Model
 With preferences now collected, we now need to model to rank the new, unseen groceries from the latest sales flyer from most preferable, to least preferable. The knee jerk reaction would be to use a ***learning-to-rank*** model, that orders items in a sophisticated way. This is supervised learning problem where we expect ordering during training to be known. That would require too much work, but probably yield the best results. Instead we will assign probabilities/confidences to each entry, and sort by those. 
 
-The choice for such a model could be as simple as a logistic regression model, which I would have chosen, had I not already access to a perfectly fine KNN model. With K=5, the probabilities would only be in the set {0.6,0.8,1}, which definitely limits the expressiveness of prediction. I believe it's quite alright, since it's a somewhat hard problem to model anyway, as the dataset is very sparse. To get more varying probabilities, we should have a more dense dataset anyway. That is at least my suspicion. But...
+The choice for such a model could be as simple as a logistic regression model, which I would have chosen, had I not already access to a perfectly fine KNN model. To incorporate a super-like in a KNN, we can simply duplicate the super-liked entry 2 times, in order to essentially "weight" the contribution of that entry more.
+
+With K=5, the probabilities would only be in the set {0.6,0.8,1}, which definitely limits the expressiveness of prediction. I believe it's quite alright, since it's a somewhat hard problem to model anyway, as the dataset is very sparse. To get more varying probabilities, we should have a more dense dataset anyway. Or maybe just use a *Naïve Bayes* model that is very well sutied for datasets with binary features. Again, it's just a suspcision, but... 
 
 ![kanye]({{ site.baseurl }}/assets/images/grocery_swiper/kanye.gif "kanye")
 
 
-
-
 ## [](#email)Email Notification System
 
+With a working ranking model, we can easily setup an email notification system by extending the automation pipeline. To make things even better, the database actually stores the device/user -id of the swipes. If multiple people interacted with the system, they could each get a recommendation sent, based on their own swipes. 
+
+To format a pretty email, we can use simple HTML, and the results will look like this:
+
+![notification]({{ site.baseurl }}/assets/images/grocery_swiper/notification.png "notification")
+
+A vast majority of the items displayed (not all are shown) have been approved by my girlfriend, meaning that the model succesfully recommends valid groceries. It currently displays 50 items, instead of 400 that are usually in a sales flyer. I'd say that is a huge improvement!
+
 ## [](#conclusion)Conclusion
+This project has surely been a mouthful, having to stretch it across 3 months, which is the majority of my semester. However, this is exactly why I chose to do these monthly projects. All my previous attempts at making a larger project have failed because my ambitions had exceeded my long-term structuring capabilities. 
+
+There is plenty of room for improvement in the final product, which I must simply ignore, as life has to move on. I like to cover the theory of things that I did not get to implement; mostly because I want to convince myself that I actually understand the material, and haven't simply given up. 
+
+I think this project really encapsulates many aspects of me as a person and future engineer. 
+* I build **for others**
+* I get to **be creative and have fun**
+* I get to use my skills, while also **stretching my capabilities** by challenging myself
+* Things should work properly, but **time is not wasted trying to perfect it**
 
 ## [](#ai)Epilogue: AI Usage and Learning
+* Why these final words? Guilt and pride
+* AI makes me smarter and more efficient. Is that wishful thinking?
+* How to distinguish oneself in a world of AI
+* When to and not to use AI
+* A deal with the devil
+* Do we actually want to learn for the sake of learning, or do we want to learn in order to perform? Can we perform without learning? 
+* What is there to learn?
 
 
 
 
-
-
-* Preference model
-   * KNN (5-NN)
-   * Feature engineering
-      * One-hot
-      * Scaling
-      * Embeddings using LLMs?
-   * Super-like = Generate 3 samples
-   * Majority vote
-* Idea/theory: Active (machine) learning
-   * "What to show the user to learn the most"
-   * Fast probability updates after each swipe
-      * Non-parametric models (KNN/FAISS)
-      * Low-complexity models (Logistic regression, Naïve Bayes)
-   * Uncertainty sampling - Binary classification: Least confidence
-* Email notification
-   * Separate github workflow
-   * Top K sales entries (or C% confidence threshold entries)
-      * Ranking model 
-* On AI, efficiency, and learning
-   * Transparency
-   * Learning
-   * Efficiency
-     
