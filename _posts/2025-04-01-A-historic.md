@@ -2,6 +2,8 @@
 title: Historic projects
 description: A brief description of some previous projects
 published: true
+image: 'historic/trin2.png'
+
 ---
 
 ### 🏍️ Tron game [2024]
