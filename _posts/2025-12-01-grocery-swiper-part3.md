@@ -81,7 +81,7 @@ To format a pretty email, we can use simple HTML, and the results will look like
 
 ![notification]({{ site.baseurl }}/assets/images/grocery_swiper/notification.png "notification")
 
-(*Technically this email was generated "manually" which is the the active sales are a week behind*)
+(*Technically this email was generated "manually" which is why the active sales are a week behind*)
 
 A vast majority of the items displayed (not all are shown) have been approved by my girlfriend, meaning that the model succesfully recommends valid groceries. It currently displays 50 items, instead of 400 that are usually in a sales flyer. I'd say that is a huge improvement!
 
