@@ -100,7 +100,21 @@ I think this project really encapsulates many aspects of me as a person and futu
 
 These past few years, vibe-coding has become an essential for programmers everywhere. The obvious reason is that you can produce code so much faster, with much less effort. So why does it still feel so wrong to use AI? Has outsourcing of our thinking gone too far, and why does this matter? Whenever I ask this question, a sense of ego and pride flares within me. 
 
-I personally have a lot of conflict answering this question. On one hand, I find pride in the independence that comes with building my own code, but how is it then that I also feel pride in a project that has been created with AI-assistance? Is my sense of ownership of the project justified, or is it an illusion that covers over a lack of patience, skills, and perseverance? The architecture and idea for my latest project is certainly novel, but will that be all that matters in the end? 
+I personally have a lot of conflict answering this question. On one hand, I find pride in the independence that comes with building my own code, but how is it then that I also feel pride in a project that has been created with AI-assistance? Is my sense of ownership of the project justified, or is it an illusion that covers over a lack of patience, skills, and perseverance? The architecture and idea for my latest project is certainly novel, but will that be all that matters in the end? The conflict will probably be there for a long time before I come to peace with it. 
 
 I believe that the solution is not to surrender oneself to the AI, but instead to tame it. If vibe-coding is all you will amount to, you will probably be replaced quickly. Instead, become a person that can utilize AI well, and learn other skills, that are not so easily replaced my AI. This is just one of many challenges associated with this new exciting technology.
 
+To finish up, I'd like to share some skills I look forward to learn in the future, that are hopefully not completely replacable by an AI agent:
+* Robotics and mechanics (probably just using LEGOs, but still)
+* Becoming more proficient in Linux
+* Networking (the internet kind of networking, not the social kind)
+* Playing piano at a higher level
+* Creating/editing videos
+* Better at cooking
+* Public speaking
+
+Whereas skills that are definitely aided by AI, that I also look forward to work with would be:
+* Visual AI systems
+* More web-scraping projects
+* Reinforcement learning of games I like
+* Reinforcement learning on bouldering simulation and bouldering route creation
