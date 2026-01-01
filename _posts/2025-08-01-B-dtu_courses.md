@@ -5,6 +5,8 @@ published: true
 image: 'courses/screenshot.png'
 ---
 
+Github repo: [DTU courses extension](https://github.com/Marcrulo/DTU-courses-extension)
+
 ## [](#prologue)Prologue
 What started out as a curiosity, turned into an exam project in the DTU course "***Social Graphs and Interactions***" (02805). Repo can be found [here](https://github.com/ThereseStein/CourseAnalyzer). Even though we managed to create and analyse the course graph for the exam (*there was more depth to the project, but let's omit that for now*), I knew that I wanted to somehow help other students in practice, using this data. 
 

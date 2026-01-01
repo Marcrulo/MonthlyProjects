@@ -5,6 +5,8 @@ published: true
 image: 'grocery_swiper/tinder_swiping.png'
 ---
 
+Github repo: [Grocery Swiper](https://github.com/Marcrulo/grocery_swiper)
+
 ## [](#prologue)Prologue
 I have once abandoned a project regarding automatic retrieval of weekly Netto deals. The reason for that is, that when you live 100 meters away from a Netto, you simply go down there and check for the things you want anyway. But now that I live a WHOPPING *700* meters away, I can't possibly do that anymore - that would be outrageous! 
 

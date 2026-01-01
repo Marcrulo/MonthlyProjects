@@ -5,6 +5,7 @@ published: true
 image: 'grocery_swiper/wizard_4.png'
 ---
 
+Github repo: [Grocery Swiper](https://github.com/Marcrulo/grocery_swiper)
 
 ## [](#scraping)Scraping - fix
 Since last time, the automation pipeline has failed on me, due to a strong assumption I made about the sales flyer website's scraping prevention. As it turns out, the ID used to identify the json data file on their server actually *does* change dynamically, meaning that I need a way to catch that as well. Currently, I depend on the data path to the json files to only depend on the item-id displayed directly on the webpage. To fix this, I used the `playwright` package which simulates a browser without a GUI (aka *headless*), in order to catch the data packages (and thereby the ID for the json files) that are retrieved on the client side, but not accesible through scraping of the static website.

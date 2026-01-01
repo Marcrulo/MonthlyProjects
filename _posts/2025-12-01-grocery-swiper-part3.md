@@ -5,6 +5,8 @@ published: true
 image: 'grocery_swiper/genie.png'
 ---
 
+Github repo: [Grocery Swiper](https://github.com/Marcrulo/grocery_swiper)
+
 ## [](#model)Preference-Model
 The app prototype works wonders, and my girlfriend has enjoyed swiping on groceries - huge win! (but we are not done). The groceries shown are randomly picked, and the preferences are not being used for anything yet. The database has been populated with approximately 500 preferences, which will constitute the training and validation sets. 
 
