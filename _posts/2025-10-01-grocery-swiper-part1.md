@@ -6,11 +6,12 @@ image: 'grocery_swiper/tinder_swiping.png'
 ---
 
 ## [](#prologue)Prologue
-I have once abandoned a project regarding automatic retrieval of weekly Netto deals. The reason for that is, that when you live 100 meters away from a Netto, you simply go down there and check for the things you want anyway. But now that I live a WHOPPING 700 meters away, I can't possibly do that anymore - that would be outrageous! 
+I have once abandoned a project regarding automatic retrieval of weekly Netto deals. The reason for that is, that when you live 100 meters away from a Netto, you simply go down there and check for the things you want anyway. But now that I live a WHOPPING *700* meters away, I can't possibly do that anymore - that would be outrageous! 
 
-Jokes aside, my girlfriend routinely reads the sales flyers, which seems so daunting to me, which is why I thought of automating it! The best possible solution I came up with is to send a mail of the "best" groceries for this week, in terms of price and product. But how is a system going to know about her preferences? Introducing Tinder... but for groceries. Similarly as to how we judge people on the internet within 1 second on dating apps, we can apply the same idea for groceries! What a brilliant idea!
+Jokes aside, my girlfriend routinely reads the sales flyers, which seems so daunting to me, which is why I thought of automating it! The best possible solution I came up with is to send a mail of the "best" groceries for this week, in terms of price and product. But how is a system going to know about her preferences? Introducing Tinder... but for groceries. Similarly to how we judge people on the internet within 1 second on dating apps, we can apply the same idea for groceries! What a brilliant idea!
 
-This project is waaaay too large to complete within a month, so let's stretch it across multiple smaller projects. <br>
+This project is waaaay too large to complete within a month, so let's stretch it across multiple smaller projects:
+
 **Part 1** will be about creating a system that scrapes weekly grocery offers, automatically. This would be used as "training data" / "historic preference data". <br>
 **Part 2** will be about creating the actual app for gathering preferences, and  <br>
 **Part 3** will be an AI-driven email notification system. Let's get to it!
@@ -30,7 +31,7 @@ The request URL for the JSON file is:
 
 where we know the item ids. The middle part ***0LbXUdvz48Lb0tgkd4pVT*** might be a dynamic id that changes occasionally to prevent exactly these kind of "attacks", but it hasn't changed for the past 2-3 weeks, so I think I'm good.
 
-I converted the relevant part of the JSON into a table (csv) format. Much of the information was on the webpage, but we now also have **category**, which I think will be valuable later.
+I converted the relevant part of the JSON into a table (csv) format. Much of the grocery information was readily accessible from the static website, but information such as product-`category` was not. 
 
 ![raw_df]({{ site.baseurl }}/assets/images/grocery_swiper/raw_df.png "raw_df")
 
@@ -39,7 +40,7 @@ I converted the relevant part of the JSON into a table (csv) format. Much of the
 
 
 ## [](#processing)Processing
-Now have simply gathered the raw data, but we should also do a wee bit of processing. First of all, I don't trust that the image URLs will be there forever, so I have chosen to download them. The images are downscaled such that the largest dimension (width or height) is 300 pixels. I then uploaded them to a cloud service called [Cloudinary](https://cloudinary.com/). This service allows 25GB of free storage, with public image urls, while Firebase (which I'll look into next month) only seems to allow 1GB storage, which I won't clutter with images. I will say that Cloudinary has the easiest getting started guide for anything cloud hosted that I have ever seen:
+Now have simply gathered the raw data, but we should also do a wee bit of processing. First of all, I don't trust that the image URLs will be there forever, so I have chosen to download the images. The images are downscaled such that the largest dimension (width or height) is 300 pixels. I then uploaded them to a cloud service called [Cloudinary](https://cloudinary.com/). This service allows 25GB of free storage, with public image urls, while Firebase (which I'll look into next month) only seems to allow 1GB storage, which I won't clutter with images. I will say that Cloudinary has the easiest getting started guide for anything cloud hosted that I have ever seen:
 
 ![cloudinary]({{ site.baseurl }}/assets/images/grocery_swiper/cloudinary.png "cloudinary")
 
@@ -51,8 +52,8 @@ The other processing steps are regarding the "Tinder bio" belonging to each groc
 translator = pipeline("translation", model="Helsinki-NLP/opus-mt-da-en", device='cpu')
 
 model_name = "Qwen/Qwen3-1.7B"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name,torch_dtype="auto",device_map="cpu")
+tokenizer  = AutoTokenizer.from_pretrained(model_name)
+model      = AutoModelForCausalLM.from_pretrained(model_name,torch_dtype="auto",device_map="cpu")
 ```
 
 Given the following prompt:
@@ -69,8 +70,8 @@ I get something like this:
 
 Well, it obviously has a hard time translating "Agurk" (Cucumber) to English. But the Qwen model thinks that an "Agurk" is a spicy vegetable. This is what we get with only 1.7B parameter models. It's still fun, though! I wonder what would happen if I prompted them to be less innocent, as some dating profile bios tend to be.
 
-## [](#automation)Automation
-I don't seem to have easy access to earlier weeks' offers, so I'll just collect grocery data slowly over the next many weeks. To fetch the newest data, I have setup a Github action (thingy) that runs both scraping and processing once a week, and does the aforementioned processing and saves the new products in the repo, and uploads images to Cloudinary. I was afraid that it would take forever to process using Github actions, as the compute is not necessarily that powerful. I was actually qutie shocked to see how "fast" it actually went:
+## [](#automation)Automation Pipeline
+I don't seem to have easy access to earlier weeks' offers, so I'll just collect grocery data slowly over the next many weeks. To fetch the newest data, I have setup a Github action workflow that runs both scraping and processing once a week, and does the aforementioned processing and saves the new products in the repo, and uploads images to Cloudinary. I was afraid that it would take forever to process using Github actions, as the compute is not necessarily that powerful, but it was reasonable:
 
 ![gh_scraping]({{ site.baseurl }}/assets/images/grocery_swiper/gh_scraping.png "gh_scraping")
 ![gh_processing]({{ site.baseurl }}/assets/images/grocery_swiper/gh_processing.png "gh_processing")

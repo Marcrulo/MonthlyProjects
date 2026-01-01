@@ -23,7 +23,7 @@ I used both [replit](https://replit.com/) and [Firebase Studio](https://firebase
 > "***Create a Tinder-like mobile app, but let each profile be a grocery item***"
 
 With this very simple prompt and some small tweaks, I got to this point: <br>
-(Left: *Replit*. Right: *Fireebase Studio*)
+(Left: *Replit*. Right: *Firebase Studio*)
 
 ![both]({{ site.baseurl }}/assets/images/grocery_swiper/both.png "both")
 
