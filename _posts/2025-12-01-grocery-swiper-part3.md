@@ -19,11 +19,7 @@ These might even be the same model, but their goals are quite different. However
 ### [](#preprocessing)Feature Enginerring
 
 #### Embedding models
-I was stoked to do feature engineering, because I had thought of a *bullet-proof* plan of embedding the groceries in a large latent space. My intuition was that we didn't really care about the exact word of a grocery, but more the idea behind it. Such as if a person has a liking for lettuce, they might also like cabbage. Considering this assumption, it could actually be quite hard to define very specific preferences, without being bombarded with false positives of only somewhat similar groceries. Or maybe not...
-
-![kanye]({{ site.baseurl }}/assets/images/grocery_swiper/kanye.gif "kanye")
-
-(*I won't apologize for using that meme incorrectly*)
+I was stoked to do feature engineering, because I had thought of a *bullet-proof* plan of embedding the groceries in a large latent space. My intuition was that we didn't really care about the exact word of a grocery, but more the idea behind it. Such as if a person has a liking for lettuce, they might also like cabbage. Considering this assumption, it could actually be quite hard to define very specific preferences, without being bombarded with false positives of only somewhat similar groceries. 
 
 Learning from my past mistakes regarding embedding models on Danish text, I had a found myself a light-weight Danish-to-English translation LLM, in order to work on English text instead. In part 1, I show how this is then used to create the "bio" for the groceries - which had sadly shown subpar results. The dull quality of the bios created could surely be attributed to the light-weight text generator, right? But as it seems, the translations themselves, upon further inspection, are absolutely abysmal! My prime example is the translation of:
 
@@ -42,7 +38,7 @@ But for this model translates to:
 
 **If you know Danish, I challenge you to inspect the sentence, and consider how it might have gone wrong**. It is really bad, as many translation destroy the meaning of the original phrase, and I had to try something else. 
 
-Had I had the memory available within the automation pipeline (Github actions), I could simply use more powerful models, but this was not an option.
+Had I had the memory available within the automation pipeline (Github actions), I could simply use more powerful models, but this was not an option. In oter words, using text-embeddings was simply not viable for this project.
 
 #### A Classic (Boring) Approach
 The groceries provide very few numerical features (only `price` is relevant), and is outshined by the string features `name`, `category` (such as "vegatable"), and `brand`. The `category` and `brand` features are categorical by nature, but I choose to now treat the name as a category as well, as embedding the name did not work as planned. 
@@ -58,23 +54,17 @@ In our case, we display groceries to the user, and they have to label them with 
 
 For binary classification, we simply consider samples with highest uncertainty (closest to 50% confidence) - aka. the "**least confidence** method". For multiple classes we can use **margin sampling** that select candidates where the top 2 classes have similar confidence. Or we can use **maximum entropy** can finds candidates with a largest spread of confidence across classes (including the top class).
 
-As the user swipes on a candidate grocery, the model should update its belief, which will impact the new candidates. Doing so without retraining the entire model requires a model that can be trained really fast, but also has an intrinsic probability metric associated with samples. A common choice for small datasets is a **Gaussian Process** model (even with its cubic training time), which essentially is a regression curve with associated confidences at each point. 
+As the user swipes on a candidate grocery, the model will update its belief, which will impact the new candidates. Doing so without retraining the entire model requires a model that can be trained really fast, but also has an intrinsic probability metric associated with samples. A common choice for small datasets (in terms of number of total swiped items) is a **Gaussian Process** model (even with its cubic training time), which essentially is a regression curve with associated confidences at each point. 
 
-A more simple choice is the **K-nearest-neighbors (KNN)** model, that considers the label of the K closest neighbors. When neighbors agree more, the confidence increases. This is a **non-parametric** model, meaning that it doesn't require training. Instead, during inference the model looks at neighboring points in the training (in my case K=5). This K has to be high enough such that inference is robust, but also not so large that it will consider neighbors that are too far away, and pull the prediction in a completely wrong direction.
+A more simple choice is the **K-nearest-neighbors (KNN)** model, that considers the label of the K closest neighbors. When neighbors agree more, the confidence increases. This is a **non-parametric** model, meaning that it doesn't require training. Instead, during inference the model looks at neighboring points in the training. I found out that for this small dataset, training time is trivially small, hence using a more advanced model such as **XGBoost** yielded the best results.
 
-Even if this active learning approach did not make it to the final product, the system was designed with active learning in mind. Instead the user is just exposed to random unseen groceries.  
+In practice, we load the 20 most uncertain items into cache and showcase those. Then retrain the model after the user swipes the first 10 items, while displaying the remaining 10 items in the meantime. And that repeats itself.
 
 
 ### [](#ranker)Ranking Model
-With preferences now collected, we now need to model to rank the new, unseen groceries from the latest sales flyer from most preferable, to least preferable. The knee jerk reaction would be to use a ***learning-to-rank*** model, that orders items in a sophisticated way. This is supervised learning problem where we expect ordering during training to be known. That would require too much work, but probably yield the best results. Instead we will assign probabilities/confidences to each entry, and sort by those. 
+With preferences eventually collected, we now need to rank the new, unseen groceries from the latest sales flyer from most preferable, to least preferable. The knee jerk reaction would be to use a ***learning-to-rank*** model, that orders items in a sophisticated way. But that is a supervised learning problem where we expect ordering during training to be known. That would require too much work, but probably yield the best results. Instead we will assign probabilities/confidences to each entry, and sort by those. 
 
-The choice for such a model could be as simple as a logistic regression model, which I would have chosen, had I not already access to a perfectly fine KNN model. To incorporate a super-like in a KNN, we can simply duplicate the super-liked entry 2 times, in order to essentially "weight" the contribution of that entry more.
-
-With K=5, the probabilities would only be in the set ```{0.6,0.8,1}```, which definitely limits the expressiveness of prediction. I believe it's quite alright, since it's a somewhat hard problem to model anyway, as the dataset is very sparse. To get more varying probabilities, we should have a more dense dataset anyway. Or maybe just use a *Naïve Bayes* model that is very well sutied for datasets with binary features. Again, it's just a suspcision, but... 
-
-![kanye]({{ site.baseurl }}/assets/images/grocery_swiper/kanye.gif "kanye")
-
-(*Yeah... there's a lot of things I never got to try out in this project*)
+The choice for such a model could be as simple as a logistic regression model, which I would have chosen, had I not already access to a perfectly fine XGBoost model. To incorporate a super-like in such a model, we can simply duplicate the super-liked entry 10 times, in order to essentially "weight" the contribution of that entry more.
 
 ## [](#email)Email Notification System
 
@@ -91,10 +81,13 @@ A vast majority of the items displayed (not all are shown) have been approved by
 ## [](#conclusion)Conclusion
 This project has surely been a mouthful, having to stretch it across 3 months, which is the majority of my semester. However, this is exactly why I chose to do these monthly projects. All my previous attempts at making a larger project have failed because my ambitions had exceeded my long-term structuring capabilities. 
 
-There is plenty of room for improvement in the final product, which I must simply ignore, as life has to move on. I like to cover the theory of things that I did not get to implement; mostly because I want to convince myself that I actually understand the material, and haven't simply given up. 
+Originally the project was officially finished with several things not working properly, which I had just accepted. But testing the app with my girlfriend wanted me to improve her user-experience, which essentially required me to finish up those last things. 
 
 I think this project really encapsulates many aspects of me as a person and future engineer. 
-* I build **for others**
-* I get to **be creative and have fun**
-* I get to use my skills, while also **stretching my capabilities** by challenging myself
-* Things should work properly, but **time is not wasted trying to perfect it**
+* Building **for others**
+* Get to **be creative and have fun**
+* Use my skills, while also **stretching my capabilities** by challenging myself
+* Having things work properly, while **not wasting time trying to perfect it**
+
+<br>
+These next 6 months I will be writing my Master's thesis as well as writing a curriculum for the UNF summer camp, where I will teach introductory deep learning. But I am certain that there will still be time for these monthly projects, while still performing well in the other things. This will be very exciting for sure!
