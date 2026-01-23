@@ -37,6 +37,8 @@ Among the 6,653 food nodes, only 416 of those have known molecule data, and are 
 
 ## [](#graph)Graph
 
+<iframe src="{{ site.baseurl }}/assets/images/food_pairing/network_graph.html" width="100%" height="600px" frameborder="0"></iframe>
+
 * Explore structure of graph
 * Visualize
 
