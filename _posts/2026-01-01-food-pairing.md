@@ -43,6 +43,13 @@ Among the 6,653 food nodes, only 416 of those have known molecule data, and are 
 * Visualize
 
 ## [](#embeddings)Embeddings
+
+<iframe src="{{ site.baseurl }}/assets/images/food_pairing/tsne.html" width="100%" height="600px" frameborder="0"></iframe>
+
+
+![vector_addition]({{ site.baseurl }}/assets/images/food_pairing/vector_addition.png "vector_addition")
+
+
 * Explore properties of embeddings
 * Visualize 
 
