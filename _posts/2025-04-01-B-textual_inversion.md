@@ -121,7 +121,7 @@ This shows absolutely no sign of learning, even though, the embedding is definit
 ### [](#memory)Memory
 As always when working with deep learning on image data, memory quickly becomes an issue, as we usually want fast training + high resolution images. Getting most out of one's GPU is not a trivial task; therefore we need to utilize as many optimization tricks as possible. But first, let's check out the stats of the GPU we are using.
 
-Unless you are a gamer, it is unlikely that you own a modern NVIDIA GPU that isi suitable for training DL models. Google Colab therefore becomes a good first choice for (cloud) training. But I actually have a GPU locally, meaning that I should consider which GPU (and setup) I prefer.
+Unless you are a gamer, it is unlikely that you own a modern NVIDIA GPU that is suitable for training DL models. Google Colab therefore becomes a good first choice for (cloud) training. But I actually have a GPU locally, meaning that I should consider which GPU (and setup) I prefer.
 
 Let's start by considering the GPU specs. Free tier users on Colab get a **Tesla T4** GPU, and I own a **GeForce RTX 2070 Super**:
 

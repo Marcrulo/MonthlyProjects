@@ -358,3 +358,28 @@ a:active, a:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: #b5e853; /* Lighter color when hovering over the handle */
 }
+
+/* Archive list alignment: make month and link align neatly */
+#main_content section ul {
+  list-style: none; /* override image bullets for archive */
+  padding-left: 0;
+  margin-left: 0;
+}
+
+#main_content section ul li {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 2px 0;
+}
+
+#main_content section ul li time {
+  display: inline-block;
+  width: 100px; /* reserve space for the month */
+  flex: 0 0 100px;
+  color: #999;
+}
+
+#main_content section ul li a {
+  display: inline-block;
+}

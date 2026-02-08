@@ -3,15 +3,15 @@ layout: page
 title: About me
 ---
 
-# *Updated April 2025*
+### *Updated Feb 2026*
 
-# About Me
+# 😎 About Me
 
 <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
 
   <div style="flex: 1; min-width: 250px;">
     <p>Hi! I'm <strong>Marcus</strong>, a passionate programmer with a love for data analysis and machine learning. I am currently pursuing my master's degree in <i>Human-Centered Artificial Intelligence</i> at <a href="https://www.dtu.dk/" target="_blank">DTU</a>, working as a student assistant at <a href="https://www.gn.com/" target="_blank">GN</a>, and doing <a href="https://lasso.dk/firmaer/44744821/presutti-solutions" target="_blank">consulting</a> on the side</p>
-    <p>Other than programming, I find huge joy in playing and listening to music, hanging out with friends, and exercising.</p>
+    <p>Other than programming, I find huge joy in playing and listening to music, hanging out with friends, and exercising (especially boundering).</p>
   </div>
 
   <div style="flex: 0 0 200px;">
@@ -24,21 +24,32 @@ title: About me
 
 ---
 
-## 📄 Curriculum Vitae
+# 📄 Curriculum Vitae
 
-### 🧑‍💼 Experience
+## 🧑‍💼 Experience
 
 <br>
 **STUDENT ASSISTANT** (_R&D Insights & Machine Learning_) – [GN](https://www.gn.com/) \
 📅 Sep. 2024 -   Now   | 📍 Ballerup, Denmark
-- Maintaining and building **Power BI reports**; based on hearing-aid event data.
-- Creating **analyses in proof-of-concept projects**; i.e. pricing and viability of translation technology, and **machine learning classification** of biosensor experiments
+- Developing in-house **Power BI** dashboards for data-driven decision making, utilizing knowledge in **Fabric**, **SQL** and **PySpark** for processing.
+- Building machine learning solutions for **exploratory** analysis and **predictive modelling** in **Python**, utilizing **Azure** as a cloud provider.
+- Assisting the team with ad-hoc tasks like **data labeling**, providing data and statistics for **evaluating model performance**, and doing **penetration testing**.
+
+<br>
+**VOLUNTEER WORK** (_Mathematical Modelling Camps_) – [UNF](https://unf.dk/) \
+📅 Dec. 2024 -   Now   | 📍 Copenhagen, Denmark
+- **Educating** young people about mathematical modelling with a focus on **practical deep learning** and **programming**.
+- Being a **reliable** person and a teacher, which involves being a **team player** among the teachers and organizers, while being **pedagogical** towards the students.
+- Creating theoretical and practical teaching material that should be **structured**, **practical**, and **helpful** for teachers and students alike.
+
 
 <br>
 **CONSULTANT / FREELANCER** - [Presutti Solutions](https://lasso.dk/firmaer/44744821/presutti-solutions) \
 📅 Feb. 2024 -   Now   | 📍 Ballerup, Denmark
-- Maintaining production **PHP website** for [linsen.dk](https://www.linsen.dk), which has involved **classic tasks for modern websites** such as: Google Tag Manager for market analysis, SQL querying, css styling, adding cookies (and cookie banners) etc.
-- Adding insights into how being **self-employed** works, which has put me in an **entrepreneurial mindset**.
+- **Building good relationships** with customers, and making sure that requests are solved efficiently, and with **proper communication.**
+- Maintaining production website build in **PHP**, assisting with both **frontend** and **backend** logic.
+- Ensuring compatibility with third-party software such as **Google Analytics** and **cookie
+banner** implementations.
 
 <br>
 **STUDENT ASSISTANT** (_CRM & Loyalty_) – [Dansk Industri (DI)](https://www.danskindustri.dk/) \
@@ -59,7 +70,7 @@ are sent through mail.
 
 ---
 
-### 🎓 Education
+## 🎓 Education
 <br>
 **MSc in Engineering (_Human-Centered AI_)** – [DTU](https://www.dtu.dk/)  
 📅 Feb. 2024 – (expected) Jun. 2026 | 📍 Kgs. Lyngby, Denmark
@@ -81,50 +92,10 @@ are sent through mail.
 
 <br>
 
----
-
-### 💻 Skills
-
-
-**Data analysis** 
-- Python
-- SQL
-- Power BI
-- Excel
-- (R)
-
-**Web**
-- HTML / CSS / JS
-- REST API
-- Web scraping
-- Jekyll
-- (PHP + Yii)
-
-**Machine Learning**
-- PyTorch
-- Computer vision
-
-<br>
 
 ---
 
-<!-- 
-### 🛠️ Projects
-
-**[Project Name]**  
-_Link:_ [GitHub/Live URL]  
-- What it does, why it's cool
-- Technologies used: _[Tech1, Tech2]_
-
-**[Another Project]**  
-_Link:_ [GitHub/Live URL]  
-- One-liner description
-- Maybe a fun outcome or use-case
-
---- 
--->
-
-### 🏆 Competition participation
+## 🏆 Competition participation
 
 - [DM i AI (2025)](https://dmiai.dk/) 🥉3rd place
 - [DM i AI (2024)](https://dmiai.dk/)
@@ -136,7 +107,7 @@ _Link:_ [GitHub/Live URL]
 
 ---
 
-### 📬 Contact
+## 📬 Contact
 
 - **Email:** marcus.presutti.eu@gmail.com 
 - **GitHub:** [github.com/Marcrulo](https://www.github.com/Marcrulo)  
