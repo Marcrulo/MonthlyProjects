@@ -359,7 +359,6 @@ a:active, a:focus {
   background: #b5e853; /* Lighter color when hovering over the handle */
 }
 
-<<<<<<< HEAD
 /* Audio player styling */
 .audio-container {
   margin: 2em 0;
@@ -384,7 +383,8 @@ a:active, a:focus {
   color: #999;
   margin-top: 0.5em;
   font-size: 14px;
-=======
+}
+
 /* Archive list alignment: make month and link align neatly */
 #main_content section ul {
   list-style: none; /* override image bullets for archive */
@@ -408,5 +408,4 @@ a:active, a:focus {
 
 #main_content section ul li a {
   display: inline-block;
->>>>>>> cb79ac4f1568cbf6d2dff347a5260ef41854dc8d
 }
