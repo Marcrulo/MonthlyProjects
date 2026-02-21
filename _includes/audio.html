@@ -1,0 +1,14 @@
+{% comment %}
+Usage: {% include audio.html src="path/to/audio.mp3" caption="Optional caption" %}
+Supports: mp3, wav, ogg
+{% endcomment %}
+
+<div class="audio-container" style="margin: 2em 0;">
+  <audio controls preload="metadata" style="width: 100%; max-width: 600px;">
+    <source src="{{ site.baseurl }}{{ include.src }}" type="audio/{% if include.src contains '.mp3' %}mpeg{% elsif include.src contains '.wav' %}wav{% elsif include.src contains '.ogg' %}ogg{% else %}mpeg{% endif %}">
+    Your browser does not support the audio element.
+  </audio>
+  {% if include.caption %}
+  <p style="font-style: italic; color: #666; margin-top: 0.5em;">{{ include.caption }}</p>
+  {% endif %}
+</div>

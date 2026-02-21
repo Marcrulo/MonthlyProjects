@@ -358,3 +358,29 @@ a:active, a:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: #b5e853; /* Lighter color when hovering over the handle */
 }
+
+/* Audio player styling */
+.audio-container {
+  margin: 2em 0;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(181, 232, 83, 0.3);
+  border-radius: 4px;
+}
+
+.audio-container audio {
+  width: 100%;
+  max-width: 600px;
+  outline: none;
+}
+
+.audio-container audio::-webkit-media-controls-panel {
+  background-color: rgba(40, 40, 40, 0.8);
+}
+
+.audio-container p {
+  font-style: italic;
+  color: #999;
+  margin-top: 0.5em;
+  font-size: 14px;
+}
