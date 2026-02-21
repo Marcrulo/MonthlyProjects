@@ -1,0 +1,19 @@
+<style>
+  .spoiler {
+    display: inline;
+    background-color: #333;
+    color: #333;
+    cursor: pointer;
+    padding: 0 0.2em;
+    border-radius: 2px;
+    transition: color 0.2s, background-color 0.2s;
+    user-select: none;
+  }
+  .spoiler.revealed {
+    color: inherit;
+    background-color: transparent;
+    cursor: default;
+  }
+</style>
+
+<span class="spoiler" onclick="this.classList.add('revealed');" title="Click to reveal">{{ include.text }}</span>
