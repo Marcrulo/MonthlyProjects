@@ -36,6 +36,7 @@ title: About me
 - Assisting the team with ad-hoc tasks like **data labeling**, providing data and statistics for **evaluating model performance**, and doing **penetration testing**.
 
 <br>
+<br>
 **VOLUNTEER WORK** (_Mathematical Modelling Camps_) – [UNF](https://unf.dk/) \
 📅 Dec. 2024 -   Now   | 📍 Copenhagen, Denmark
 - **Educating** young people about mathematical modelling with a focus on **practical deep learning** and **programming**.
@@ -43,6 +44,7 @@ title: About me
 - Creating theoretical and practical teaching material that should be **structured**, **practical**, and **helpful** for teachers and students alike.
 
 
+<br>
 <br>
 **CONSULTANT / FREELANCER** - [Presutti Solutions](https://lasso.dk/firmaer/44744821/presutti-solutions) \
 📅 Feb. 2024 -   Now   | 📍 Ballerup, Denmark
@@ -52,12 +54,14 @@ title: About me
 banner** implementations.
 
 <br>
+<br>
 **STUDENT ASSISTANT** (_CRM & Loyalty_) – [Dansk Industri (DI)](https://www.danskindustri.dk/) \
 📅 Jan. 2024 - Aug. 2024 | 📍 Copenhagen, Denmark 
 - Handling in-house requests, which often involve **database querying**, **data processing** and **visualization** of member data. Usually done using **Python**, **R**, and **Excel**.
 - Adding insights to DI’s membership satisfaction analysis, using **statistical testing**, **sentiment analysis**, **multivariate regression** etc.
 - Maintaining **Power BI reports**; used by colleagues to visualize membership data.
 
+<br>
 <br>
 **STUDENT ASSISTANT** (_Production_) – [ChemoMetec](https://chemometec.com/) \
 📅 Dec. 2021 – Dec. 2023 | 📍 Lillerød, Denmark 
@@ -74,21 +78,14 @@ are sent through mail.
 <br>
 **MSc in Engineering (_Human-Centered AI_)** – [DTU](https://www.dtu.dk/)  
 📅 Feb. 2024 – (expected) Jun. 2026 | 📍 Kgs. Lyngby, Denmark
-- Got more into deep learning, in particular
-- Became more comfortable with advanced math
 
 <br>
 **BSc in Engineering (_AI and Data_)** – [DTU](https://www.dtu.dk/)  
 📅 Sep. 2020 – Jan. 2024 | 📍 Kgs. Lyngby, Denmark
-- Got into machine learning
-- Got fond of image analysis / computer vision
 
 <br>
 **HTX (_Programming and Mathematics_)** – [Hillerød Teknisk Gymnasium](https://unord.dk/skoler/hilleroed-tekniske-gymnasium)  
 📅 Aug. 2017 – Jun. 2020 | 📍 Hillerød, Denmark
-- Learned programming
-- Introduced to Python, SQL and HTML/CSS/JS
-- _Technology_ class taught me about creating viable products
 
 <br>
 
