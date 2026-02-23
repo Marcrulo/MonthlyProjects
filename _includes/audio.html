@@ -1,14 +1,32 @@
 {% comment %}
 Usage: {% include audio.html src="path/to/audio.mp3" caption="Optional caption" %}
 Supports: mp3, wav, ogg
+Automatically displays two versions: file.mp3 and file_ORIG.mp3
 {% endcomment %}
 
+{% assign file_parts = include.src | split: '.' %}
+{% assign extension = file_parts | last %}
+{% assign file_base = include.src | remove: '.' | remove: extension %}
+{% assign orig_src = file_base | append: '_ORIG.' | append: extension %}
+
 <div class="audio-container" style="margin: 2em 0;">
-  <audio controls preload="metadata" style="width: 100%; max-width: 600px;">
-    <source src="{{ site.baseurl }}{{ include.src }}" type="audio/{% if include.src contains '.mp3' %}mpeg{% elsif include.src contains '.wav' %}wav{% elsif include.src contains '.ogg' %}ogg{% else %}mpeg{% endif %}">
-    Your browser does not support the audio element.
-  </audio>
   {% if include.caption %}
-  <p style="font-style: italic; color: #666; margin-top: 0.5em;">{{ include.caption }}</p>
+  <p style="font-weight: bold; margin-bottom: 1em;">{{ include.caption }}</p>
   {% endif %}
+  
+  <div style="margin-bottom: 1.5em;">
+    <p style="font-style: italic; color: #444; margin-bottom: 0.5em;">Processed:</p>
+    <audio controls preload="metadata" style="width: 100%; max-width: 600px;">
+      <source src="{{ site.baseurl }}{{ include.src }}" type="audio/{% if include.src contains '.mp3' %}mpeg{% elsif include.src contains '.wav' %}wav{% elsif include.src contains '.ogg' %}ogg{% else %}mpeg{% endif %}">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  
+  <div>
+    <p style="font-style: italic; color: #444; margin-bottom: 0.5em;">Original:</p>
+    <audio controls preload="metadata" style="width: 100%; max-width: 600px;">
+      <source src="{{ site.baseurl }}{{ orig_src }}" type="audio/{% if include.src contains '.mp3' %}mpeg{% elsif include.src contains '.wav' %}wav{% elsif include.src contains '.ogg' %}ogg{% else %}mpeg{% endif %}">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 </div>
