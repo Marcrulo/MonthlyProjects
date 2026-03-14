@@ -1,5 +1,5 @@
 ---
-title: 15. Curriculum for UNF Volunteer Teaching
+title: 15. Old-school coding from scratch
 description: ...
 published: true
 image: '/'
