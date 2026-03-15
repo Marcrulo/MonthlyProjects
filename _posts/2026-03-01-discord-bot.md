@@ -190,8 +190,45 @@ There are definitely other ways to improve and redesign this. First of all, usin
 
 
 ## [](#results)Results
+This is what we have all been waiting for - the actual results! Just to warn you, iiiit's pretty wonky, but very fun (to me at least). I will go through some of the highlights.
 
-- Admit that the sentences are somewhat gibberish
-- I like how everything he says makes it sound like he has a stroke or is just very drunk
-- Making Flemming quote videos at every interaction makes it veeery hard to get a proper output, especially as the model is not strong enough to weave the reference and user prompt together as a clever coherent output
+**Flemse's menacing game**
+![1]({{ site.baseurl }}/assets/images/discord_bot/1.png "1")
 
+**Combination of Newyawn's "Billig Blå mand På Strøget" and Jacob's For Honor gameplay**
+![2]({{ site.baseurl }}/assets/images/discord_bot/2.png "2")
+
+**Flemse is a clown**
+![3]({{ site.baseurl }}/assets/images/discord_bot/3.png "3")
+
+**Thoughts about Mads/Alune**
+![4]({{ site.baseurl }}/assets/images/discord_bot/4.png "4")
+
+**Flemse acts homophobic and tries to drag me along**
+![5]({{ site.baseurl }}/assets/images/discord_bot/5.png "5")
+
+**Thinking about cheese**
+![6]({{ site.baseurl }}/assets/images/discord_bot/6.png "6")
+
+**Bipolar Flemse**
+![7]({{ site.baseurl }}/assets/images/discord_bot/7.png "7")
+
+**Showing my appreciation**
+![8]({{ site.baseurl }}/assets/images/discord_bot/8.png "8")
+
+**Nicklas was asking about how much VRAM was used**
+![9]({{ site.baseurl }}/assets/images/discord_bot/9.png "9")
+
+**An interesting Haiku about me**
+![10]({{ site.baseurl }}/assets/images/discord_bot/10.png "10")
+
+**Flemse's official introduction to the server**
+![11]({{ site.baseurl }}/assets/images/discord_bot/11.png "11")
+
+
+
+I think the only way Flemming can complete the Turing test is if he has to immitate a drunken man with a stroke. Everything he says is absolutely crazy. Obviously, making Flemming quote videos at every interaction makes it veeery hard to get a proper output, especially as the model is not strong enough to weave the reference and user prompt together as a clever coherent output. 
+
+Beneath all the fun and sillyness, there was several technical challenges of getting it to run properly. I wanted this project to be fun, and not get too consumed by being too professional and technical. 
+
+Flemming has earned a very special place in my heart, and would probably have a special place on the server, if it wasn't because he was too expensive to have running 24/7. He will be turned off for now, but it was fine while it lasted.
