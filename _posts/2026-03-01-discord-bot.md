@@ -194,33 +194,43 @@ This is what we have all been waiting for - the actual results! Just to warn you
 
 **Flemse's menacing game**
 ![1]({{ site.baseurl }}/assets/images/discord_bot/1.png "1")
+<br>
 
 **Combination of Newyawn's "Billig Blå mand På Strøget" and Jacob's For Honor gameplay**
 ![2]({{ site.baseurl }}/assets/images/discord_bot/2.png "2")
+<br>
 
 **Flemse is a clown**
 ![3]({{ site.baseurl }}/assets/images/discord_bot/3.png "3")
+<br>
 
 **Thoughts about Mads/Alune**
 ![4]({{ site.baseurl }}/assets/images/discord_bot/4.png "4")
+<br>
 
 **Flemse acts homophobic and tries to drag me along**
 ![5]({{ site.baseurl }}/assets/images/discord_bot/5.png "5")
+<br>
 
 **Thinking about cheese**
 ![6]({{ site.baseurl }}/assets/images/discord_bot/6.png "6")
+<br>
 
 **Bipolar Flemse**
 ![7]({{ site.baseurl }}/assets/images/discord_bot/7.png "7")
+<br>
 
 **Showing my appreciation**
 ![8]({{ site.baseurl }}/assets/images/discord_bot/8.png "8")
+<br>
 
 **Nicklas was asking about how much VRAM was used**
 ![9]({{ site.baseurl }}/assets/images/discord_bot/9.png "9")
+<br>
 
 **An interesting Haiku about me**
 ![10]({{ site.baseurl }}/assets/images/discord_bot/10.png "10")
+<br>
 
 **Flemse's official introduction to the server**
 ![11]({{ site.baseurl }}/assets/images/discord_bot/11.png "11")
