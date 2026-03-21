@@ -5,6 +5,9 @@ published: true
 image: 'discord_bot/discord_icon.png'
 ---
 
+## DISCLAIMER
+If you are here for professional reasons, please look past the very immature nature of the bot's personality. Enjoy!
+
 ## [](#prologue)Prologue
 My favorite kind of projects when I started programming was to create these *Discord bots*. If you don't know Discord, it's more or less Slack/Teams/Zoom etc. for gamers. It was, and still is, very easy to create a bot that you can interact with. But back in the days, LLMs were not invented, so it was not really meant to chat with. Rather, it was either meant for silly little interactions or admin stuff for larger servers. 
 
