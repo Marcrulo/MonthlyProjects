@@ -1,4 +1,4 @@
-# MonthlyProjects
+# 📅 MonthlyProjects
 
 MonthlyProjects is a lightweight archive of monthly blog posts, experiments, and project write-ups.
 
