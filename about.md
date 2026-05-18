@@ -3,7 +3,7 @@ layout: page
 title: About me
 ---
 
-### *Updated Feb 2026*
+### *Updated May 2026*
 
 # 😎 About Me
 
@@ -15,7 +15,7 @@ title: About me
   </div>
 
   <div style="flex: 0 0 200px;">
-    <img src="{{ site.baseurl }}/assets/images/about/anon.png" alt="Photo of me" style="width: 100%; max-width: 200px; border-radius: 50px;">
+    <img src="{{ site.baseurl }}/assets/images/about/profile_pic.png" alt="Photo of me" style="width: 100%; max-width: 200px; border-radius: 50px;">
   </div>
 
 </div>
@@ -94,6 +94,7 @@ are sent through mail.
 
 ## 🏆 Competition participation
 
+- [Oticon Audio Explorers 2026](https://www.demant.com/jobs-and-career/audio-explorers)
 - [DM i AI (2025)](https://dmiai.dk/) 🥉3rd place
 - [DM i AI (2024)](https://dmiai.dk/)
 - [DM i AI (2023)](https://dmiai.dk/)
