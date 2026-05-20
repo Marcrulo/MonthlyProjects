@@ -4,9 +4,14 @@ Website: https://marcrulo.github.io/MonthlyProjects/
 
 MonthlyProjects is a lightweight archive of monthly blog posts, experiments, and project write-ups.
 
+## 🧮 [Neural Network from Scratch](_posts/2026-05-01-nn-live-implementation.md)
+Building a fully-connected neural network in pure NumPy to test my skills, for when I can't simply ask Google or AI for help at the slightest inconvenience.
 
 ## 🎮 [Game RL](_posts/2026-04-01-game-RL.md)
 A 2D bouldering environment in PyGame/Gymnasium and a PPO agent that learns to climb via tuned rewards and movement constraints.
+
+## 🤖 [Discord Bot](_posts/2026-03-01-discord-bot.md)
+An LLM-based bot for our Discord server with humor derived from content from our childhood.
 
 ## 🎵 [SAM Audio](_posts/2026-02-01-sam-audio.md)
 Hands-on tests of Meta's SAM Audio for stem separation, with local setup notes and cherry-picked instrument demos.
