@@ -59,4 +59,4 @@ I won! With a 113 point difference. I could never have done that myself against 
 
 ![final_board]({{ site.baseurl }}/assets/images/wordfeud/final_board.png "final_board")
 
-This way SO fun to make and play with. There are still a few bugs that needed fixing - mainly board reading capabilities. And maybe a way to play the game automatically, but that is quite difficult without an official Wordfeud API for taking turns. I definitely see a future where this project is more autonomous, and is much more complex, utilizing something like expecti-mini-max search and neural net based value functions.
+This was SO fun to make and play with. There are still a few bugs that needed fixing - mainly board reading capabilities. And maybe a way to play the game automatically, but that is quite difficult without an official Wordfeud API for taking turns. I definitely see a future where this project is more autonomous, and is much more complex, utilizing something like expecti-mini-max search and neural net based value functions.
