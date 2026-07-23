@@ -81,7 +81,7 @@ for course_num in valid_courses:
                department_name = department_names[department])
 ```
 
-Then we add directed edge that points *away* from the preresuisite course:
+Then we add directed edge that points *away* from the prerequisite course:
 ```python
 for course_num in valid_courses:
 

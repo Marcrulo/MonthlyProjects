@@ -72,7 +72,20 @@
         <ul>
     
       <li>
-          <h2 class="page_title"><a href="/MonthlyProjects/wordfued-bot">16. Wordfeud bot (No RL)</a></h2>
+          <h2 class="page_title"><a href="/MonthlyProjects/masters-thesis">17. And Now I have a Master's Degree🎓</a></h2>
+          <time datetime="2026-07-01T00:00:00+02:00">
+              July 2026 
+              
+              ⛱️
+          </time>
+          <p>A quick review of my Master's thesis "Improving Hand Gesture Detection with Super-resolution Approaches"</p>
+          <img style='max-height:300px' src="/MonthlyProjects/assets/images/thesis/pose_hands.png" alt="17. And Now I have a Master's Degree🎓"/>        
+          <p></p>
+
+        </li>
+    
+      <li>
+          <h2 class="page_title"><a href="/MonthlyProjects/wordfeud-bot">16. Wordfeud bot (No RL)</a></h2>
           <time datetime="2026-06-01T00:00:00+02:00">
               June 2026 
               
@@ -136,19 +149,6 @@
 
         </li>
     
-      <li>
-          <h2 class="page_title"><a href="/MonthlyProjects/food-pairing">11. Food Pairing</a></h2>
-          <time datetime="2026-01-01T00:00:00+01:00">
-              January 2026 
-              
-              🎆
-          </time>
-          <p>Elevate any dish using this machine learning approach for gastronomy</p>
-          <img style='max-height:300px' src="/MonthlyProjects/assets/images/food_pairing/remy.png" alt="11. Food Pairing"/>        
-          <p></p>
-
-        </li>
-    
 </ul>
       </section>
     </div>
@@ -185,6 +185,32 @@
 
 
   
+
+  <script>
+    // Make the hand-written `[](#slug)` in each heading the real, working
+    // anchor id, and turn that empty link into a clickable "#" permalink.
+    document.addEventListener('DOMContentLoaded', function () {
+      var content = document.getElementById('main_content');
+      if (!content) return;
+      content.querySelectorAll('h2, h3, h4, h5, h6').forEach(function (h) {
+        var link = h.querySelector('a[href^="#"]');
+        if (!link) return;
+        var slug = link.getAttribute('href').slice(1);
+        if (slug) {
+          h.id = slug;                          // custom slug wins over kramdown's auto id
+        } else {
+          link.setAttribute('href', '#' + h.id); // no slug written: fall back to auto id
+        }
+        link.setAttribute('aria-label', 'Link to this section');
+      });
+      // Deep links (e.g. .../post#website) are resolved by the browser before
+      // the ids above exist, so re-scroll once the target is now present.
+      if (location.hash) {
+        var target = document.getElementById(location.hash.slice(1));
+        if (target) target.scrollIntoView();
+      }
+    });
+  </script>
 </body>
 
 </html>

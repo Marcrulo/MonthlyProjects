@@ -6,7 +6,7 @@ image: 'wordfeud/board.png'
 ---
 
 ## [](#prologue)Prologue
-Wordfeud is the mobile phone equivalent of the classic game "Scrabble". The goal of this game is to form words on a board each round using the existing letters, and up to 7 letters from your hand, where you score more points depending on the rarity of individual letters. Despite being font of grammar and writing, I still suck at Wordfeud. My mom, however, is very good at it, and seems to always beat her friends and myself in the game. But one day I thought to myself; "how hard can it possibly be to create a bot in this game to beat my mom?". Knowing about fancy models like the chess bot *DeepBlue*, I was confident I could make something similar. 
+Wordfeud is the mobile phone equivalent of the classic game "Scrabble". The goal of this game is to form words on a board each round using the existing letters, and up to 7 letters from your hand, where you score more points depending on the rarity of individual letters. Despite being fond of grammar and writing, I still suck at Wordfeud. My mom, however, is very good at it, and seems to always beat her friends and myself in the game. But one day I thought to myself; "how hard can it possibly be to create a bot in this game to beat my mom?". Knowing about fancy models like the chess bot *DeepBlue*, I was confident I could make something similar. 
 
 ## [](#natural-stupidity)Natural Stupidity
 Wordfeud has some similarities with chess, in that it's turn-based and has a discrete number of possible actions to take each turn. DeepBlue uses the **alpha-beta** algorithm that does a tree search of possible outcomes, which prunes branches in order to expand the search even more, with the goal of finding the move that gives the largest advantage, assuming that the opponent plays perfectly. This method assumes perfect information, which Wordfeud unfortunately doesn't have, due to the hidden letters of the other player. Instead, the **expecti-mini-max** algorithm takes uncertainty into account. I thought this was the obvious way to solve the Wordfeud game, but realized that this might be a bit overkill to just win a game against my mom. I realized that the best solution wasn't advanced AI, but rather a very simple tree search. More on that later - now it's time to build the actual game "engine".
@@ -37,7 +37,7 @@ The following shows the best 10 moves and their scores. We see that the #1 move 
 
 
 
-## [](#game)The game againsts my mom
+## [](#game)The game against my mom
 
 The following are screenshots from the game that show how the board and the points progress throughout the game. The word "INDLÆS" gives me a strong lead.
 

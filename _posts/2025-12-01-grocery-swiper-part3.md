@@ -38,7 +38,7 @@ But for this model translates to:
 
 **If you know Danish, I challenge you to inspect the sentence, and consider how it might have gone wrong**. It is really bad, as many translation destroy the meaning of the original phrase, and I had to try something else. 
 
-Had I had the memory available within the automation pipeline (Github actions), I could simply use more powerful models, but this was not an option. In oter words, using text-embeddings was simply not viable for this project.
+Had I had the memory available within the automation pipeline (Github actions), I could simply use more powerful models, but this was not an option. In other words, using text-embeddings was simply not viable for this project.
 
 #### A Classic (Boring) Approach
 The groceries provide very few numerical features (only `price` is relevant), and is outshined by the string features `name`, `category` (such as "vegatable"), and `brand`. The `category` and `brand` features are categorical by nature, but I choose to now treat the name as a category as well, as embedding the name did not work as planned. 

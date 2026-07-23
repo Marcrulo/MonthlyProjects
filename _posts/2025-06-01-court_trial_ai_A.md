@@ -6,14 +6,14 @@ image: 'domstol/workflow_local.png'
 ---
 
 ## [](#prologue)Prologue
-Ethics regarding the use of AI for decision making in court, has been one of my favorite topics to discuss, as the philosophy of intelligence, conciousness, and emotions in AI has had a big impact on my world view. 
+Ethics regarding the use of AI for decision making in court, has been one of my favorite topics to discuss, as the philosophy of intelligence, consciousness, and emotions in AI has had a big impact on my world view. 
 
 As an engineer, I would also like to see things in practice, rather than just theorize about things. This is what drove me to start a project about AI with public Danish court trial data. Ideally, the available data would be structuered in a way similar to datasets in supervised learning, where we have a text description of the case, and a label corresponding to the punishment. Unfortunately, this was not the case, as the data consists of text documents that are not defined in a specific template. Therefore, the goal became to make a RAG model for retrieving these court documents based on a search prompt. I.e. to do natural text search on these documents. I want to do this using local models, and without LLM-pipeline libraries like LangChain.
 
 As the ambition level of the project fell, I had to challenge myself in another way to keep it exciting. I chose to utilize cloud computing for every step of the project, including testing, data processing, storage, and even endpoint hosting, primarily using Azure Machine Learning. I have always struggled with using cloud computing succesfully, so this is a perfect chance to give it another shot.
 
 ## [](#data-gathering)Data Gathering
-In Denmark, we recently acquired a public database of court case documents, which are accesible through the [website](https://domsdatabasen.dk/) or the [API](https://domsdatabasen.dk/spoergsmaal-og-svar/api-adgang-til-domsdatabasen/). Although not exhaustive, it contains many cases from recent years. We will use the API to collect a local copy of all the data.
+In Denmark, we recently acquired a public database of court case documents, which are accessible through the [website](https://domsdatabasen.dk/) or the [API](https://domsdatabasen.dk/spoergsmaal-og-svar/api-adgang-til-domsdatabasen/). Although not exhaustive, it contains many cases from recent years. We will use the API to collect a local copy of all the data.
 
 We first need to authenticate:
 ```python
@@ -133,7 +133,7 @@ df_meta['case_type']    = df_meta['case_type'].astype('category')
 df_meta.to_parquet('meta.parquet', index=False)
 ```
 
-This is a somewhat neglible addition, as the table is ~5000x10. But it's still a good principle, and I also just learned these tricks from my "Python and High-peformance Computing" course, so I wanted to see it in practice.
+This is a somewhat neglible addition, as the table is ~5000x10. But it's still a good principle, and I also just learned these tricks from my "Python and High-performance Computing" course, so I wanted to see it in practice.
 
 As for the actual documents, they are stored in HTML format. The text itself can easily be extracted using the Beautiful Soup (bs4) library. It is also beneficial to split the text into small paragraphs, such that they can later be used for "chunking" (more on that later). It is easy to make these splits, as each actual paragraph is given by the HTML paragraph- or 'p' tag. 
 

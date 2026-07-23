@@ -16,7 +16,7 @@ Over these many years, my friends and I have accumulated a lot of interaction in
 ## [](#setup)Setup
 With the high prices associated with GPU cloud hosting, it was very tempting to host the bot purely locally. The Discord bot API creates a tunnel for us, so we don't need to consider port-forwarding as a bottleneck. Buuuuut to my experience there exists no small models capable of generating coherent Danish text, so it was going to be hard. The contenders are the **Qwen3** and **Mistral** model families, as well as the **OpenEuroLLM-Danish** model (a Danish fine-tuned version of Gemma3). I ended up using the Qwen3 models and played around with model sized 4b,8b and 14b locally. Locally, 8b was the one that could run on the GPU without doing any CPU off-loading. 
 
-After much consideration I finally gave up and sacrifised 5 dollars for a virtual machine hosted on [Vast.ai](https://vast.ai/) 
+After much consideration I finally gave up and sacrificed 5 dollars for a virtual machine hosted on [Vast.ai](https://vast.ai/) 
 
 ![vast_ai]({{ site.baseurl }}/assets/images/discord_bot/vast_ai.png "vast_ai")
 
