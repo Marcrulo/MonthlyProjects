@@ -1,5 +1,5 @@
 ---
-title: 13. LLM-powered Discord bot
+title: 13. LLM-powered Discord bot for absolute chaos 🤖
 description: Utilize the power of AI to create the newest member on the server
 published: true
 image: 'discord_bot/discord_icon.png'

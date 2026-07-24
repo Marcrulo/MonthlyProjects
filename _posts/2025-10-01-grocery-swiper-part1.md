@@ -1,5 +1,5 @@
 ---
-title: 8. Grocery Swiper (Part 1/3) - Gathering grocery data
+title: 8. Grocery Swiper (Part 1/3) - Gathering grocery data 🛒
 description: I need a Tinder-like app for defining grocery preferences. So first, let's create data for the "profiles"
 published: true
 image: 'grocery_swiper/tinder_swiping.png'

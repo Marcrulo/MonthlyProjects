@@ -1,5 +1,5 @@
 ---
-title: 11. Food Pairing
+title: 11. Figuring Out What Food Goes Well With My Pasta 🍝🇮🇹
 description: Elevate any dish using this machine learning approach for gastronomy
 published: true
 image: 'food_pairing/remy.png'

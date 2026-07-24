@@ -1,5 +1,5 @@
 ---
-title: 10. Grocery Swiper (Part 3/3) - Recommender system
+title: 10. Grocery Swiper (Part 3/3) - Recommender system 🤖
 description: Now we just need to notify the user of the weekly recommendations
 published: true
 image: 'grocery_swiper/genie.png'

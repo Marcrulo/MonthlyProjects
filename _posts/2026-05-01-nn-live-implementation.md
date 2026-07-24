@@ -1,5 +1,5 @@
 ---
-title: 15. Neural Network built from scratch [Coding Challenge]
+title: 15. Just heard about this thing called a Neural Network - let's try building one from scratch [Coding Challenge]
 description: Spending a day implementing a neural network in numpy.
 published: true
 image: 'nn_implementation/thumbnail.png'

@@ -1,5 +1,5 @@
 ---
-title: 9. Grocery Swiper (Part 2/3) - Create an app
+title: 9. Grocery Swiper (Part 2/3) - Create an app 📱
 description: Now that we have data, let's create an app!
 published: true
 image: 'grocery_swiper/wizard_4.png'

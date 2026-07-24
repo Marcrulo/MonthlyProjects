@@ -1,5 +1,5 @@
 ---
-title: 16. Wordfeud bot (No RL)
+title: 16. Finally a way to beat my mom in Wordfeud 🔠
 description: I created a bot to finally beat my mom in Wordfeud
 published: true
 image: 'wordfeud/board.png'
