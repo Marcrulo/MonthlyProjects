@@ -1,20 +1,20 @@
 ---
 title: 1. Textual Inversion for Generating Copyrighted Material 🐉🔥
-description: Utilize textual inversion to learn an word-embedding of the Pokémon "Charizard", in order to generate an image with Stable Diffusion 1.5
+description: Utilize textual inversion to learn a word-embedding of the Pokémon "Charizard", in order to generate an image with Stable Diffusion 1.5
 published: true
 image: 'textual_inversion/hyper_realistic.png'
 ---
 
 ## [](#prologue)Prologue
-With the website quickly done, I still had time for another April project. I am currently taking a course on deep learning in computer vision, where we had about diffusion models for some weeks. A few weeks ago, I was not able to do the task on *textual inversion*. We were given most of the code, but the code stack was kind of a mess to get an overview of, and as a result, I could not generate anything remotely interesting. I was thinking to myself that it was not supposed to be that hard to implement, which is why I went to the internet. And as I should have thought, I was lead to [Hugging Face 🤗](https://huggingface.co)
+With the website quickly done, I still had time for another April project. I am currently taking a course on deep learning in computer vision, where we covered diffusion models for some weeks. A few weeks ago, I was not able to do the task on *textual inversion*. We were given most of the code, but the code stack was kind of a mess to get an overview of, and as a result, I could not generate anything remotely interesting. I was thinking to myself that it was not supposed to be that hard to implement, which is why I went to the internet. And as I should have thought, I was led to [Hugging Face 🤗](https://huggingface.co)
 
 
 ## [](#textual-inversion)Textual Inversion
 Let's start from scratch: "What is textual inversion?"
 
-So, diffusion models like "Stable Diffusion" use (most notably) text to generate images. In order for these models to use that for anything, we need a model that learns comparisons between training images and their respective text labels. For this, a common solution is to use the CLIP model. This model encodes text and images in pairs, into a latent space, where the model tries to learn the encoding that increases similarity between image and text in each pair. Each **\<token\>** now has it's own latent representation that, through the prompt, guides how the diffusion model should produce an image. 
+So, diffusion models like "Stable Diffusion" use (most notably) text to generate images. In order for these models to use that for anything, we need a model that learns comparisons between training images and their respective text labels. For this, a common solution is to use the CLIP model. This model encodes text and images in pairs, into a latent space, where the model tries to learn the encoding that increases similarity between image and text in each pair. Each **\<token\>** now has its own latent representation that, through the prompt, guides how the diffusion model should produce an image. 
 
-But what if I want to create an image of something very specific that can't be captured my a prompt? Do we then need to retrain the entire diffusion model? Luckily no, since the diffusion model and CLIP model are completely independent of each other. Instead, we use **textual inversion** to create a new embedding, that belongs to the same latent space that the CLIP encoder captures. This requires us to use a few images (5-7 should be plenty) that belongs to that embedding, in order to start.
+But what if I want to create an image of something very specific that can't be captured by a prompt? Do we then need to retrain the entire diffusion model? Luckily no, since the diffusion model and CLIP model are completely independent of each other. Instead, we use **textual inversion** to create a new embedding, that belongs to the same latent space that the CLIP encoder captures. This requires us to use a few images (5-7 should be plenty) that belongs to that embedding, in order to start.
 
 To make it easy for ourselves, we can initialize a new embedding from an existing similar one. Then, we update the embedding directly, by optimizing wrt. the predicted noise of the diffusion model, similarly to how we'd normally train a diffusion model. This entire process should be done while freezing all parameters that are not the embedding.
 
@@ -34,7 +34,7 @@ Alright now, let's get to work!
 
 ## [](#hugging-face)Hugging Face 🤗
 
-The journey starts at a [Hugging Face tutorial](https://huggingface.co/docs/diffusers/training/text_inversion), which forms the base of this (rather small) project. All the "logic" has been provided, so we only need to concern ourselves with data, training parameters, and inference. This is the only things we need to define before running the training code:
+The journey starts at a [Hugging Face tutorial](https://huggingface.co/docs/diffusers/training/text_inversion), which forms the base of this (rather small) project. All the "logic" has been provided, so we only need to concern ourselves with data, training parameters, and inference. These are the only things we need to define before running the training code:
 ```python
 import os
 os.environ["MODEL_NAME"] = "stable-diffusion-v1-5/stable-diffusion-v1-5"
@@ -56,7 +56,7 @@ In the tutorial, we are creating an embedding of a weird cat-like statue:
 But I have a better idea: Let's instead create an embedding for the famous Pokémon **Charizard**:
 ![charizard_base]({{ site.baseurl }}/assets/images/textual_inversion/charizard_base.jpg "charizard_base")
 
-It was very straight forward to create a [custom datasets](https://huggingface.co/docs/diffusers/training/create_dataset) instead, as it simply required one to have a folder with images in, and then pass the folder name as a training argument.
+It was very straight forward to create a [custom dataset](https://huggingface.co/docs/diffusers/training/create_dataset) instead, as it simply required one to have a folder with images in, and then pass the folder name as a training argument.
 
 I used a collection of Pokémon images from a [Kaggle dataset](https://www.kaggle.com/datasets/thedagger/pokemon-generation-one). It contains a total of 52 images of Charizard (as well as all other Pokémon), but not all of the images are of great quality. I picked the 7 cleanest ones for this project. 
 ![charizard_all]({{ site.baseurl }}/assets/images/textual_inversion/charizard_all.png "charizard_all")
@@ -141,10 +141,10 @@ Another thing is that when working on Colab, you are assigned a "session", which
 With the limited VRAM, I have to be extra cautious about memory use. I need some tricks!
 
 #### [](#mixed-precision)Mixed precision
-In order to update weights and gradients with high precision, 32-bit precision is usually used ±3.4*x*10^38. To reduce the amount of memory for storing these large number, we use *mixed precision*. This means that for certain calculations and weights, only 16-bit precision is used ±6.5*x*10^4. We risk losing some precision, but get a significant memory increase in return, and usually also a speedup with certain optimized hardware.
+In order to update weights and gradients with high precision, 32-bit precision is usually used ±3.4*x*10^38. To reduce the amount of memory for storing these large numbers, we use *mixed precision*. This means that for certain calculations and weights, only 16-bit precision is used ±6.5*x*10^4. We risk losing some precision, but get a significant memory increase in return, and usually also a speedup with certain optimized hardware.
 
 #### [](#gradient-checkpointing)Gradient Checkpointing
-As I understand it, a lot of memory is used during backpropagation because we store all activations. Therefore it is sometimes preferable to only store some of the activations, and recompute the others. This obviously requries more compute time, but it saves a lot of memory as well.
+As I understand it, a lot of memory is used during backpropagation because we store all activations. Therefore it is sometimes preferable to only store some of the activations, and recompute the others. This obviously requires more compute time, but it saves a lot of memory as well.
 
 #### [](#xFormer)xFormers
 Transformers are present many places throughout stable diffusion, and by using *xFormers* we get almost risk-free optimizations, like reduced VRAM and faster computation. Even though we don't train the transformers themselves, they are still used in training.
@@ -156,13 +156,13 @@ While mini-batching lets you compute gradients over all element in the batch, gr
 ```math
 eff_batch_size = batch_size * gradient_accumulation_steps
 ```
-So clarify, gradient accumulation kind of gives you are larger batch-size, but the accurate expression is that the "effective batch size" increases. 
+To clarify, gradient accumulation kind of gives you a larger batch-size, but the accurate expression is that the "effective batch size" increases. 
 
 While batches can be processed in parallel, gradient accumulation requires a full forward+backward pass for each gradient accumulation step.
 
 
 #### [](#deepspeed)DeepSpeed
-DeepSpeed is an open-source library my Microsoft that can add significant performance boosts to model training... if you utilize *multiple* GPUs. As neither Colab nor my local setup has this capability, adding DeepSpeed doesn't really add anything. It might have something especially for single GPU use, but it did not seem to have an actual impact on my model.
+DeepSpeed is an open-source library by Microsoft that can add significant performance boosts to model training... if you utilize *multiple* GPUs. As neither Colab nor my local setup has this capability, adding DeepSpeed doesn't really add anything. It might have something especially for single GPU use, but it did not seem to have an actual impact on my model.
 
 
 
@@ -187,7 +187,7 @@ image = pipeline(prompt, num_inference_steps=50).images[0]
 image.save("out.png")
 ```
 
-The strategy was quite simple. In my experience, some keywords/tags seem to be more effective than others, which is why I used ChatGPT to craft a diffusion prompt from natural language. Tags like "8K" and "ArtStation trending" seem to be associated with higher quality images. I assume that newer models have natural language capabilities incorporated - but that is not the case the early stable diffusion models. 
+The strategy was quite simple. In my experience, some keywords/tags seem to be more effective than others, which is why I used ChatGPT to craft a diffusion prompt from natural language. Tags like "8K" and "ArtStation trending" seem to be associated with higher quality images. I assume that newer models have natural language capabilities incorporated - but that is not the case for the early stable diffusion models. 
 
 My first attempt at a prompt was to create a more or less realistic looking Charizard, which the model interpreted as smooth 3D-like:
 ```python
@@ -217,7 +217,7 @@ Just for comparison, the following images are from using the prompts "Charizard"
 
 
 ## [](#reflection)Reflection
-While not the quality I had hoped for, it was still fun to work with training optimizations, and especially to observe the monstrosities that the model created. While the simple SD v1.5 is quite small/simple, it is very accesible, and should also be quite simple to fine-tune using LoRA (which I look forward to in the future). 
+While not the quality I had hoped for, it was still fun to work with training optimizations, and especially to observe the monstrosities that the model created. While the simple SD v1.5 is quite small/simple, it is very accessible, and should also be quite simple to fine-tune using LoRA (which I look forward to in the future). 
 
 I am not entirely satisfied with my efforts in lowering the training loss. I should have been more meticulous in tracking losses from the start, and tuning more responsively. The Charizard embedding could have been of much higher quality.
 

@@ -16,12 +16,12 @@ For this system we need 2 models; <br>
 
 These might even be the same model, but their goals are quite different. However, we should first think of a proper way to do feature engineering that fits this task.
 
-### [](#preprocessing)Feature Enginerring
+### [](#preprocessing)Feature Engineering
 
 #### Embedding models
 I was stoked to do feature engineering, because I had thought of a *bullet-proof* plan of embedding the groceries in a large latent space. My intuition was that we didn't really care about the exact word of a grocery, but more the idea behind it. Such as if a person has a liking for lettuce, they might also like cabbage. Considering this assumption, it could actually be quite hard to define very specific preferences, without being bombarded with false positives of only somewhat similar groceries. 
 
-Learning from my past mistakes regarding embedding models on Danish text, I had a found myself a light-weight Danish-to-English translation LLM, in order to work on English text instead. In part 1, I show how this is then used to create the "bio" for the groceries - which had sadly shown subpar results. The dull quality of the bios created could surely be attributed to the light-weight text generator, right? But as it seems, the translations themselves, upon further inspection, are absolutely abysmal! My prime example is the translation of:
+Learning from my past mistakes regarding embedding models on Danish text, I had found myself a light-weight Danish-to-English translation LLM, in order to work on English text instead. In part 1, I show how this is then used to create the "bio" for the groceries - which had sadly shown subpar results. The dull quality of the bios created could surely be attributed to the light-weight text generator, right? But as it seems, the translations themselves, upon further inspection, are absolutely abysmal! My prime example is the translation of:
 
 > "*Æblemost Hyldeblomst & Citron*"
 
@@ -36,23 +36,23 @@ But for this model translates to:
 ![mom_meme]({{ site.baseurl }}/assets/images/grocery_swiper/mom_meme.png "mom_meme")
 
 
-**If you know Danish, I challenge you to inspect the sentence, and consider how it might have gone wrong**. It is really bad, as many translation destroy the meaning of the original phrase, and I had to try something else. 
+**If you know Danish, I challenge you to inspect the sentence, and consider how it might have gone wrong**. It is really bad, as many translations destroy the meaning of the original phrase, and I had to try something else. 
 
 Had I had the memory available within the automation pipeline (Github actions), I could simply use more powerful models, but this was not an option. In other words, using text-embeddings was simply not viable for this project.
 
 #### A Classic (Boring) Approach
-The groceries provide very few numerical features (only `price` is relevant), and is outshined by the string features `name`, `category` (such as "vegatable"), and `brand`. The `category` and `brand` features are categorical by nature, but I choose to now treat the name as a category as well, as embedding the name did not work as planned. 
+The groceries provide very few numerical features (only `price` is relevant), and is outshined by the string features `name`, `category` (such as "vegetable"), and `brand`. The `category` and `brand` features are categorical by nature, but I choose to now treat the name as a category as well, as embedding the name did not work as planned. 
 
 The `price` feature was **standardized**, and the remaining features were encoded as vectors. `category` and `brand` were **one-hot encoded**, whereas `name` was encoded as a binary bag-of-words vector, consisting of all non-stopwords present in the groceries' names. The number of features in the final processed dataset will increase as new categories and words enter the dataset (after each new swipe). The larger the dataset we gather, the better our model will be. 
 
 
 
 ### [](#active_learning)Active (Machine) Learning
-I'd like to cover the interesting topic of **active (machine) learning**, which is a machine learning paradigm that is concerned with updating it's knowledge "on the fly" (*online*), as the user interacts with the system, instead of only learning *offline* in a dedicated training step prior to deployment.
+I'd like to cover the interesting topic of **active (machine) learning**, which is a machine learning paradigm that is concerned with updating its knowledge "on the fly" (*online*), as the user interacts with the system, instead of only learning *offline* in a dedicated training step prior to deployment.
 
 In our case, we display groceries to the user, and they have to label them with either a "like" or "pass" (and a "super-like", but we ignore that for now). It does not make sense to expose the user to an item which matches other liked groceries completely, as we are confident this grocery will be labeled as "liked". Instead, we want to expose the user to groceries, where the model struggles the most. Figuring out the best candidate to display is found using **uncertainty sampling**. 
 
-For binary classification, we simply consider samples with highest uncertainty (closest to 50% confidence) - aka. the "**least confidence** method". For multiple classes we can use **margin sampling** that select candidates where the top 2 classes have similar confidence. Or we can use **maximum entropy** can finds candidates with a largest spread of confidence across classes (including the top class).
+For binary classification, we simply consider samples with highest uncertainty (closest to 50% confidence) - aka. the "**least confidence** method". For multiple classes we can use **margin sampling** that selects candidates where the top 2 classes have similar confidence. Or we can use **maximum entropy** that finds candidates with a largest spread of confidence across classes (including the top class).
 
 As the user swipes on a candidate grocery, the model will update its belief, which will impact the new candidates. Doing so without retraining the entire model requires a model that can be trained really fast, but also has an intrinsic probability metric associated with samples. A common choice for small datasets (in terms of number of total swiped items) is a **Gaussian Process** model (even with its cubic training time), which essentially is a regression curve with associated confidences at each point. 
 

@@ -15,7 +15,7 @@ What started out as a curiosity, turned into an exam project in the DTU course "
 *The graph shows all courses (which have neighbors), and how they are connected to other courses by their prerequisites, where each node is colored by department, and has size equivalent to its degree.*
 
 
-Therefore I came up with a way to help fellow students, using a [Chrome extension that alters the DTU course website](https://chromewebstore.google.com/detail/dtu-extended-course-overv/pfgokeibjgebafnamhbgkgfgbmhmgpde) (and the GitHub [here](https://github.com/Marcrulo/DTU-courses-extension)). A problem with the current [website](https://kurser.dtu.dk/course/02285) is, that while it does show what courses are required for taking 'this' course (the "prerequisites"), it does not show which courses it is a prerequisite to. In other words, it does not show the "subsequent" courses. In general is it quite hard to get an overview of how courses are connected... but the extension solves that!
+Therefore I came up with a way to help fellow students, using a [Chrome extension that alters the DTU course website](https://chromewebstore.google.com/detail/dtu-extended-course-overv/pfgokeibjgebafnamhbgkgfgbmhmgpde) (and the GitHub [here](https://github.com/Marcrulo/DTU-courses-extension)). A problem with the current [website](https://kurser.dtu.dk/course/02285) is, that while it does show what courses are required for taking 'this' course (the "prerequisites"), it does not show which courses it is a prerequisite to. In other words, it does not show the "subsequent" courses. In general it is quite hard to get an overview of how courses are connected... but the extension solves that!
 
 I'd also like to add that the Javascript (JS) / Chrome extension part is heavily vibe-coded. It was very fascinating to orchestrate this and let the chatbot build the right features one at a time. All the JS logic is contained in a single file, so it's easy to edit the entire thing at the same time. I realized that designing a good experience was very important, and has actually been quite challenging. As the AI's "manager" I could focus more on the design and user experience, instead of being too fixated on the code itself, as I might become too attached to it, and less willing to change it. 
 
@@ -23,7 +23,7 @@ Anyway, let's go through the steps on by one, to see how it all comes together
 
 
 ## [](#scraping)Scraping
-There is no API for retrieving course data nicely, which is why we need to scrape the course website instead (for each course). Using the **BeautifulSoup4** library we can easily go through all possible course number, and check if the website returns a valid course description:
+There is no API for retrieving course data nicely, which is why we need to scrape the course website instead (for each course). Using the **BeautifulSoup4** library we can easily go through all possible course numbers, and check if the website returns a valid course description:
 
 ```python
 # Imports
@@ -182,7 +182,7 @@ I quickly knew that it would be a problem to simply paste the image of the graph
 Instead, I realized that the layered graph almost looked like a table structure, which is one of the most basic elements in HTML. Columns would indicate the "level" and rows would be added based on the number of nodes within the levels altogether.
 
 ### Practical Stuff
-To start creating a Chrome extension, I simply followed [this tutorial](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world). In essence, I the center of the project, `manifest.json` 
+To start creating a Chrome extension, I simply followed [this tutorial](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world). In essence, the center of the project is `manifest.json` 
 
 ```json
 {
@@ -240,7 +240,7 @@ We then need the `content.js` file that does the logic and rendering. The signif
 
 **7**) Upon hovering, highlight node and its 1-hop neighborhood (highlight immediate neighbors in both directions)
 
-**8**) Collapse graph if its too big; requiring the user to click in order to get the full view
+**8**) Collapse graph if it's too big; requiring the user to click in order to get the full view
 
 
 In essence, we add a section to the course website, and create a table that represents the course graph. I use the awesome ***LeaderLine*** library for creating arrows (*directed edges*) between cell elements (*nodes*)

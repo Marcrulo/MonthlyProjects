@@ -25,19 +25,19 @@ This is my attempt at creating the equivalent workflow, from before, in the clou
 ### Cost management
 In Azure, you create an endpoint, but you also need to actually *deploy* a VM that acts as our API server. It should be noted that they run until you turn them off. I had falsely assumed that it was stationary until someone did an API call (cold start), which in turn cost me around 900 DKK.
 
-For the overall expendeture of the project, I present the full overview:
+For the overall expenditure of the project, I present the full overview:
 
 ![azure_costs]({{ site.baseurl }}/assets/images/domstol/azure_costs.png "azure_costs")
 
 * ~900 kr. was spent on **Compute**, which is every time a computer is running computation. This is notebooks, job scripts, building environments and endpoint deployments etc.
 * ~100 kr. was spent on **Storage**, which is for storing the files I have in BLOB storage. This is the text files, FAISS index, and meta data files.
 * ~30 kr. was spent on **Networking**, which is the cost of bandwidth of data leaving Azure. This must accumulate from multiple sources, as there is not an obvious resource that consumes a ton of bandwidth.
-* ~30 kr. was spent on **Containers**, which is basically compute used in (emphemeral) containers. This would be the serverless job scripts that I used for processing.
+* ~30 kr. was spent on **Containers**, which is basically compute used in (ephemeral) containers. This would be the serverless job scripts that I used for processing.
 
 
 
 ## [](#results)Results
-Now that the endpoint is up an running, we can try an inspect the results of the following prompt:
+Now that the endpoint is up and running, we can try and inspect the results of the following prompt:
 
 > **(DK) Prompt: "Tiltalt for at besidde våben og stoffer"** \
 > **(EN) Prompt: "Charged with possession of weapons and drugs"**
@@ -105,13 +105,13 @@ RESULT 5)
 
 In the output, the "CHUNK_TEXT" is what is actually being compared with the prompt, and "DISTANCE" defined how close the sentences are in vector space. 
 
-Even if the chunk-text in result 2 and 4 are the only ones that actually mentions both weapons and drugs, the "case subjects" usually include both. This is purely coincidental.
+Even if the chunk-text in result 2 and 4 are the only ones that actually mention both weapons and drugs, the "case subjects" usually include both. This is purely coincidental.
 It's hard to say why only 2 and 4 seem valid, as the distance measure doesn't come with a good explanation. Result 1 does not even have "drugs" in the case subject. The embeddings might have had a focus on something different. To maybe better understand these embeddings, let's try visualizing them.
 
 
 ### PCA projection
 
-To get an intuitive feel of how close the vector are, other than the distance itself, we can display all the embeddings as a 2D prjection using PCA. This means that all the information of the 384 dimensions have been cramped into 2 dimensions, or *principal components* (PC). These PCs are basically combinations of all 384 dimensions, but are supposed to "span the 2D space of most information".
+To get an intuitive feel of how close the vector are, other than the distance itself, we can display all the embeddings as a 2D projection using PCA. This means that all the information of the 384 dimensions have been cramped into 2 dimensions, or *principal components* (PC). These PCs are basically combinations of all 384 dimensions, but are supposed to "span the 2D space of most information".
 
 It would seem that the chunks/points that are closest in the full space are also quite close in the 2 principal directions/dimensions:
 
@@ -121,17 +121,17 @@ But notice that the results 1 and 4 are the most dissimilar to the prompt, in PC
 
 ![explained_variance]({{ site.baseurl }}/assets/images/domstol/explained_variance.jpeg "explained_variance")
 
-The graph above shows how much information is kept, by reducing the dataset to K components. Using 100 out of 384 PCs, we keep around 80% information. Experience tells me that this dataset can't really be compressed, as all the dimensions have a quite big impact, since the curve is not very start for low K's. This would suggest that the embeddings don't have a few latent variables that explain most of the information.
+The graph above shows how much information is kept, by reducing the dataset to K components. Using 100 out of 384 PCs, we keep around 80% information. Experience tells me that this dataset can't really be compressed, as all the dimensions have a quite big impact, since the curve is not very steep for low K's. This would suggest that the embeddings don't have a few latent variables that explain most of the information.
 
 ## [](#reflection)Reflection
 The RAG is quite limited by the Danish embeddings, even though it did alright. I should definitely also have included the headline as a valid chunk that could be compared to the prompt embedding, but I did not think of that in time. The RAG could be improved further if I pushed the limit on how much text I would assign to each chunk. The current paragraphs/chunks don't even come near the ~400 word limit. I also imagine that doing the project on a translated version of the court data might actually have been better, instead of training an embedding model on Danish data. The language is definitely a bottleneck in making this work perfectly, but not necessarily the first bottleneck. 
 
-### Assesment of cloud computing
+### Assessment of cloud computing
 The idea of having everything hosted on the cloud in a pay-as-you-go fashion is quite appealing. In theory it's great, but in practice it has been a mess to get working. It's definitely more clear to me what to do in the future, but it still requires a solid plan as you quickly lose the overview. 
 
 First of all, you have to be careful what resources are running, which is not displayed in a clear way. Also, the Azure SDK (libraries, whatever) are very confusing, as they have 2 very different versions that tend to conflict with each other. Everything worked when I was consistent at using SDKv2 only, but it was very unclear at first that there was this distinction.
 
-Another thing to consider is the feedback of doing changes. Azure ML does provide cloud notebooks which lets one run code directly in the cloud, but they take some time to get up and running. For almost any other thing, it would take a long time to see if it worked. This is because things behave differently on the cloud, as they need certain access rights, and code has to work with the online environment etc. . When working locally, things usually just work. The biggest reason for using the cloud is that its available almost 100% of the time. The cloud computers don't need to be turned off, which makes server hosting and automatic script execution very easy. 
+Another thing to consider is the feedback of doing changes. Azure ML does provide cloud notebooks which lets one run code directly in the cloud, but they take some time to get up and running. For almost any other thing, it would take a long time to see if it worked. This is because things behave differently on the cloud, as they need certain access rights, and code has to work with the online environment etc. . When working locally, things usually just work. The biggest reason for using the cloud is that it's available almost 100% of the time. The cloud computers don't need to be turned off, which makes server hosting and automatic script execution very easy. 
 
 ### Final thoughts
 This has been a very large project, and I have learned a ton. I never expected the results to be any good, as the methods used/learned were important in themselves. I have always struggled with cloud computing, but I think this experience helped me figure it out. I am still interested in working with court data, but that would be in the context of creating an AI to assist or replace the classic role of the judge.

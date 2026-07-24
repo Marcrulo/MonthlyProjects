@@ -8,9 +8,9 @@ image: 'domstol/workflow_local.png'
 ## [](#prologue)Prologue
 Ethics regarding the use of AI for decision making in court, has been one of my favorite topics to discuss, as the philosophy of intelligence, consciousness, and emotions in AI has had a big impact on my world view. 
 
-As an engineer, I would also like to see things in practice, rather than just theorize about things. This is what drove me to start a project about AI with public Danish court trial data. Ideally, the available data would be structuered in a way similar to datasets in supervised learning, where we have a text description of the case, and a label corresponding to the punishment. Unfortunately, this was not the case, as the data consists of text documents that are not defined in a specific template. Therefore, the goal became to make a RAG model for retrieving these court documents based on a search prompt. I.e. to do natural text search on these documents. I want to do this using local models, and without LLM-pipeline libraries like LangChain.
+As an engineer, I would also like to see things in practice, rather than just theorize about things. This is what drove me to start a project about AI with public Danish court trial data. Ideally, the available data would be structured in a way similar to datasets in supervised learning, where we have a text description of the case, and a label corresponding to the punishment. Unfortunately, this was not the case, as the data consists of text documents that are not defined in a specific template. Therefore, the goal became to make a RAG model for retrieving these court documents based on a search prompt. I.e. to do natural text search on these documents. I want to do this using local models, and without LLM-pipeline libraries like LangChain.
 
-As the ambition level of the project fell, I had to challenge myself in another way to keep it exciting. I chose to utilize cloud computing for every step of the project, including testing, data processing, storage, and even endpoint hosting, primarily using Azure Machine Learning. I have always struggled with using cloud computing succesfully, so this is a perfect chance to give it another shot.
+As the ambition level of the project fell, I had to challenge myself in another way to keep it exciting. I chose to utilize cloud computing for every step of the project, including testing, data processing, storage, and even endpoint hosting, primarily using Azure Machine Learning. I have always struggled with using cloud computing successfully, so this is a perfect chance to give it another shot.
 
 ## [](#data-gathering)Data Gathering
 In Denmark, we recently acquired a public database of court case documents, which are accessible through the [website](https://domsdatabasen.dk/) or the [API](https://domsdatabasen.dk/spoergsmaal-og-svar/api-adgang-til-domsdatabasen/). Although not exhaustive, it contains many cases from recent years. We will use the API to collect a local copy of all the data.
@@ -97,7 +97,7 @@ all_meta.append([item['headline'],
                 item['caseType']['displayText']
                 ])
 ```
-The filters available in the request header is quite limited. We can extract 25 documents per page, which is reasonable, but we are not able to filter by time, or any other relevant attributes. Also, sorting is not possible. This is also why we need to extract every document, since we can't guarantee which document we get otherwise.
+The filters available in the request header are quite limited. We can extract 25 documents per page, which is reasonable, but we are not able to filter by time, or any other relevant attributes. Also, sorting is not possible. This is also why we need to extract every document, since we can't guarantee which document we get otherwise.
 
 I have added a small overview of all the important attributes. Some of them are attributes for the *case*, while some are attributes of the actual *documents* associated with a case:
 
@@ -153,11 +153,11 @@ Vector similarity is somewhat complicated, since embeddings might actually be si
 ### (Theory) Training an embedding model
 Let's get into a bit more details regarding this embedding model. For basically any NLP (Natural Language Processing) -related task, we should use a transformer-based model. The most popular one would be the GPT-models that are used for the famous chatbots. But GPT-models are inherently text prediction models which are good for *generating* text, but not necessarily *classifying* text. On the other hand, BERT-models are good at classification as it takes an entire sequence and analyses each part of the sequence from both left-to-right, but also right-to-left, making them *bi-directional* (the B in BERT). Our embedding model is therefore a fine-tuned BERT model for (Danish) sentence embeddings, aka. Sentence-BERT.
 
-To optimzie the weights of a deep neural network, we need a *loss-function* that defines how well the task is being solved during training, in order to nudge the weights in the right direction. This model has been trained using a *contrastive* loss function, which we need to minimize (but the fraction should be maximzied, so to speak):
+To optimize the weights of a deep neural network, we need a *loss-function* that defines how well the task is being solved during training, in order to nudge the weights in the right direction. This model has been trained using a *contrastive* loss function, which we need to minimize (but the fraction should be maximized, so to speak):
 
 ![contrastive_loss]({{ site.baseurl }}/assets/images/domstol/contrastive_loss.png "contrastive_loss")
 
-Let's understand this. The training dataset consist of N pairs of sentences, where each element (A and B) in a pair is somehow related to each other. Given the current state of the model, we try to embed A, B, and many other sentences. The goal is the make the embedding of A and B more similar (numerator), while letting A and the other sentences become more dissimilar (denominator). Note that the vector operation between embeddings is the *inner product*, which is also called the *cosine similarity*:
+Let's understand this. The training dataset consists of N pairs of sentences, where each element (A and B) in a pair is somehow related to each other. Given the current state of the model, we try to embed A, B, and many other sentences. The goal is to make the embedding of A and B more similar (numerator), while letting A and the other sentences become more dissimilar (denominator). Note that the vector operation between embeddings is the *inner product*, which is also called the *cosine similarity*:
 
 ![inner_product]({{ site.baseurl }}/assets/images/domstol/inner_product.png "inner_product")
 
@@ -190,10 +190,10 @@ If we were to do this ourselves, we should be cautious of:
 
 Anyway, we are keeping it simple.
 
-We have not talked about the challenge of searching for similar documents, which is very interesting. The straight forward way to find the most similar vectors wrt. the prompt vector, would be to simply check all options by brute force. In itself, this is slow, but using the FAISS (Facebook AI Similarity Search) library, many optimizations have been applied to speedup even the brute-force approach. It's very memory efficient, and it utilizes multiprocessing in order to parallelize the computation. They also offer approximate solutions for large datasets, where brute force in not feasible.
+We have not talked about the challenge of searching for similar documents, which is very interesting. The straight forward way to find the most similar vectors wrt. the prompt vector, would be to simply check all options by brute force. In itself, this is slow, but using the FAISS (Facebook AI Similarity Search) library, many optimizations have been applied to speedup even the brute-force approach. It's very memory efficient, and it utilizes multiprocessing in order to parallelize the computation. They also offer approximate solutions for large datasets, where brute force is not feasible.
 
 
-As we have covered all steps of the process, let's show a over-simplified flowchart:
+As we have covered all steps of the process, let's show an over-simplified flowchart:
 
 ![workflow_local]({{ site.baseurl }}/assets/images/domstol/workflow_local.png "workflow_local")
 

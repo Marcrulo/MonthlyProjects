@@ -9,9 +9,9 @@ image: 'food_pairing/remy.png'
 ## [](#prologue)Prologue
 I recently started watching ***Master Chef*** and became fascinated by how effortlessly contestants seem to assemble cohesive dishes, even under intense pressure. This made me wonder whether such skill is primarily the result of experience, or whether it draws on *gastronomic theory*. Although cooking is often viewed as an art, gastronomy has increasingly developed into a science, providing structured principles that explain why certain flavors and ingredients complement each other.
 
-We have seen chemistry been used extensively in this field - most notably *Molecular Gastronomy*, which utilizes chemical properties of foods to create fascinating dishes, but is also used to learn about the molecular components of food, which allows us to understand food more in depth. And as it turns out, having a much richer representation of food gives rise to yet another sub-field: ***Computational Gastronomy***, which takes a data-driven approach to gastronomy, meaning that we can apply machine learning (Hooray!) .
+We have seen chemistry being used extensively in this field - most notably *Molecular Gastronomy*, which utilizes chemical properties of foods to create fascinating dishes, but is also used to learn about the molecular components of food, which allows us to understand food more in depth. And as it turns out, having a much richer representation of food gives rise to yet another sub-field: ***Computational Gastronomy***, which takes a data-driven approach to gastronomy, meaning that we can apply machine learning (Hooray!) .
 
-As this is a rather new field, there is not much to work with out there. Luckily, I did fall upon an open-source project that blew my mind: [FlavorGraph](https://github.com/lamypark/FlavorGraph/tree/master) - a graph structure of ingredients and molecules (nodes) that pair well together in a dish, the closer they are in this network. The project also comes with a 300-dimensional vector embedding of all foods, that has somewhat similar properties to the graph is terms of proximity. 
+As this is a rather new field, there is not much to work with out there. Luckily, I did fall upon an open-source project that blew my mind: [FlavorGraph](https://github.com/lamypark/FlavorGraph/tree/master) - a graph structure of ingredients and molecules (nodes) that pair well together in a dish, the closer they are in this network. The project also comes with a 300-dimensional vector embedding of all foods, that has somewhat similar properties to the graph in terms of proximity. 
 
 I even found an awesome application ([Epicure](https://epicure.kaikaku.ai/)), which I was heavily inspired by, that use this FlavorGraph to create (free) food suggestions. They have done some processing on it which makes it way more usable than the vanilla FlavorGraph.
 
@@ -22,7 +22,7 @@ I even found an awesome application ([Epicure](https://epicure.kaikaku.ai/)), wh
 ## [](#flavorgraph)FlavorGraph
 The FlavorGraph project was made by the *Data Mining and Information Systems Lab* at Korea University, and was made for the purpose of improving food pairing suggestions. 
 
-To create such a graph, you would need some data. One part consist of a huge database of recipes, that tell you about ingredient co-occurance (top-down approach), while the another source tells us about the molecule composition of those ingredients (bottom-up approach). So the data is essentially a mix of practical and theoretical food pairings. 
+To create such a graph, you would need some data. One part consists of a huge database of recipes, that tell you about ingredient co-occurrence (top-down approach), while the other source tells us about the molecule composition of those ingredients (bottom-up approach). So the data is essentially a mix of practical and theoretical food pairings. 
 
 The graph is *heterogeneous*, as the nodes can either be ingredients *or* molecules, meaning that the edges correspond to ingredient-ingredient, ingredient-molecule, and molecule-molecule connections. Ingredients and/or molecules that occur together in the dataset are more likely to be connected in the graph - where the authors have a method for determining when to add edges or not.
 
@@ -34,7 +34,7 @@ Using the FlavorGraph and associated embeddings, I'd like to see how well I am a
 
 
 ## [](#graph)Graph
-We have an undirected graph with weights corresponding to similarity, and to keep things simple, I only work with ingredient nodes (hubs and non-hubs). By itself, it is not a "recipe generator" of any kind. Instead, it shows how all ingredients are interconnected. For instance, `coffee` is closely related with `ladyfingers`, because of their common occurance in *Tiramisu*, but `coffee` is also related to certain `sirups`, as they are often combined in coffee-beverages. And yet, it's hard to say what the global impact on the graph is, based on the presence of `coffee`. There is supposedly a lage complex structure, but we can only clearly observe and try to understand the local structure. 
+We have an undirected graph with weights corresponding to similarity, and to keep things simple, I only work with ingredient nodes (hubs and non-hubs). By itself, it is not a "recipe generator" of any kind. Instead, it shows how all ingredients are interconnected. For instance, `coffee` is closely related with `ladyfingers`, because of their common occurrence in *Tiramisu*, but `coffee` is also related to certain `syrups`, as they are often combined in coffee-beverages. And yet, it's hard to say what the global impact on the graph is, based on the presence of `coffee`. There is supposedly a large complex structure, but we can only clearly observe and try to understand the local structure. 
 
 With this in mind, we can start creating a strategy, or *heuristic*, for how we will recommend ingredients for dishes, where we already have some ingredients. First of all, let's consider how we might think of the connectedness between two non-neighboring ingredients, `pasta` and `tomato`. If we consider the un-weighted scenario, these ingredients lie within a 2-hop neighborhood of each other (only 1 ingredient between them). You can connect them through either `canned tuna` or `sun-dried tomato pesto`, which makes sense. But if we consider the weighted graph (recall that weights refer to similarity), then the shortest (cheapest) path is 6 traversals long:
 
@@ -123,7 +123,7 @@ Something seems a bit off with some of the "ingredients". I can imagine that thi
 
 And yes, it does hurt my soul that 3/7 of the suggestions for `chicken` is (cheap) cheese. 
 
-I can definitely see most of following suggestions make sense. I see `wine`, `parmesan cheese`, `italian plum tomato`, `red pepper` and `basil pesto`. But even `tune in brine` makes sense for pasta salads.
+I can definitely see most of following suggestions make sense. I see `wine`, `parmesan cheese`, `italian plum tomato`, `red pepper` and `basil pesto`. But even `tuna in brine` makes sense for pasta salads.
 
 ### Pasta
 
@@ -182,4 +182,4 @@ But hey, the `stock cube` finally showed up!
 ## [](#conclusion)Final Words
 As always, this was very fun to work with! While I didn't achieve results anywhere near *Epicure's*, it was still fascinating to work with. It's obvious that  the Epicure version was way more curated, as they have removed and/or combined ingredients together (for instance you can't pick or get suggested `kraft cheese` on the website). The original data also labels Kefir as an alcoholic beverage, not dairy. Kefir *can* contain alcohol, but it's obviously not an alcoholic beverage.
 
-It might also be too naive to assume this graph thing works for suggesting ingredients for entire dishes. I can see it's use for discovering pairing between 2 foods only. A good dish is also more than aromas - it's also about textures, which is completely neglected in this model. So the next generation of FlavorGraph-like models should probably incorporate textures, but also become less dependent of bulk-scraped online recipes. I am very hopeful for this field, and I look forward to work with food suggestions again!
+It might also be too naive to assume this graph thing works for suggesting ingredients for entire dishes. I can see its use for discovering pairings between 2 foods only. A good dish is also more than aromas - it's also about textures, which is completely neglected in this model. So the next generation of FlavorGraph-like models should probably incorporate textures, but also become less dependent on bulk-scraped online recipes. I am very hopeful for this field, and I look forward to working with food suggestions again!
