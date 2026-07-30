@@ -3,14 +3,14 @@ layout: page
 title: About me
 ---
 
-### *Updated May 2026*
+### *Updated July 2026*
 
 # 😎 About Me
 
 <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
 
   <div style="flex: 1; min-width: 250px;">
-    <p>Hi! I'm <strong>Marcus</strong>, a passionate programmer with a love for data analysis and machine learning. I am currently pursuing my master's degree in <i>Human-Centered Artificial Intelligence</i> at <a href="https://www.dtu.dk/" target="_blank">DTU</a>, working as a student assistant at <a href="https://www.gn.com/" target="_blank">GN</a>, and doing <a href="https://lasso.dk/firmaer/44744821/presutti-solutions" target="_blank">consulting</a> on the side</p>
+    <p>Hi! I'm <strong>Marcus</strong>, a passionate programmer with a love for data analysis and machine learning. I just finished my master's degree in <i>Human-Centered Artificial Intelligence</i> at <a href="https://www.dtu.dk/" target="_blank">DTU</a>, and am now starting as a Machine Learning Enginner at GN <a href="https://www.gn.com/" target="_blank">GN</a>, and doing <a href="https://lasso.dk/firmaer/44744821/presutti-solutions" target="_blank">consulting</a> on the side</p>
     <p>Other than programming, I find huge joy in playing and listening to music, hanging out with friends, and exercising (especially boundering).</p>
   </div>
 
@@ -29,8 +29,14 @@ title: About me
 ## 🧑‍💼 Experience
 
 <br>
+**ML ENGINEER** (_R&D Insights & Machine Learning_) – [GN](https://www.gn.com/) \
+📅 Aug. 2026 - Now   | 📍 Ballerup, Denmark
+<br>
+<br>
+
+<br>
 **STUDENT ASSISTANT** (_R&D Insights & Machine Learning_) – [GN](https://www.gn.com/) \
-📅 Sep. 2024 -   Now   | 📍 Ballerup, Denmark
+📅 Sep. 2024 -   July 2026   | 📍 Ballerup, Denmark
 - Developing in-house **Power BI** dashboards for data-driven decision making, utilizing knowledge in **Fabric**, **SQL** and **PySpark** for processing.
 - Building machine learning solutions for **exploratory** analysis and **predictive modelling** in **Python**, utilizing **Azure** as a cloud provider.
 - Assisting the team with ad-hoc tasks like **data labeling**, providing data and statistics for **evaluating model performance**, and doing **penetration testing**.
@@ -77,7 +83,7 @@ are sent through mail.
 ## 🎓 Education
 <br>
 **MSc in Engineering (_Human-Centered AI_)** – [DTU](https://www.dtu.dk/)  
-📅 Feb. 2024 – (expected) Jun. 2026 | 📍 Kgs. Lyngby, Denmark
+📅 Feb. 2024 – (expected) July 2026 | 📍 Kgs. Lyngby, Denmark
 
 <br>
 **BSc in Engineering (_AI and Data_)** – [DTU](https://www.dtu.dk/)  
