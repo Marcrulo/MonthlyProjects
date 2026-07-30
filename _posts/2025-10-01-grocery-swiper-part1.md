@@ -1,5 +1,5 @@
 ---
-title: 8. Grocery Swiper (Part 1/3) - Gathering grocery data
+title: 8. Grocery Swiper (Part 1/3) - Gathering grocery data 🛒
 description: I need a Tinder-like app for defining grocery preferences. So first, let's create data for the "profiles"
 published: true
 image: 'grocery_swiper/tinder_swiping.png'
@@ -23,7 +23,7 @@ The easiest way to get grocery data would be if there was a good API for it, whi
 
 ![tilbudsugen]({{ site.baseurl }}/assets/images/grocery_swiper/tilbudsugen.png "tilbudsugen")
 
-I really do like that the pictures from the actual flyer is there, as well as a name and price. However, I am a greedy bastard, and I want more. the filter section on the left of the page suggests that there are many other attributes associated with each item. I had the correct suspicious that the extra data should be available, but just not visible. I inspected the network packages, and to my luck, there was a JSON file with a ton of meta data for the item:
+I really do like that the pictures from the actual flyer is there, as well as a name and price. However, I am a greedy bastard, and I want more. the filter section on the left of the page suggests that there are many other attributes associated with each item. I had the correct suspicion that the extra data should be available, but just not visible. I inspected the network packages, and to my luck, there was a JSON file with a ton of meta data for the item:
 
 ![devtool]({{ site.baseurl }}/assets/images/grocery_swiper/devtool.png "devtool")
 
@@ -31,7 +31,7 @@ The request URL for the JSON file is:
 
 > https://www.tilbudsugen.dk/_next/data/0LbXUdvz48Lb0tgkd4pVT/dk/single/**\<ITEM_ID\>**.json?id=**\<ITEM_ID\>**
 
-where we know the item ids. The middle part ***0LbXUdvz48Lb0tgkd4pVT*** might be a dynamic id that changes occasionally to prevent exactly these kind of "attacks", but it hasn't changed for the past 2-3 weeks, so I think I'm good.
+where we know the item ids. The middle part ***0LbXUdvz48Lb0tgkd4pVT*** might be a dynamic id that changes occasionally to prevent exactly these kinds of "attacks", but it hasn't changed for the past 2-3 weeks, so I think I'm good.
 
 I converted the relevant part of the JSON into a table (csv) format. Much of the grocery information was readily accessible from the static website, but information such as product-`category` was not. 
 
@@ -42,13 +42,13 @@ I converted the relevant part of the JSON into a table (csv) format. Much of the
 
 
 ## [](#processing)Processing
-Now have simply gathered the raw data, but we should also do a wee bit of processing. First of all, I don't trust that the image URLs will be there forever, so I have chosen to download the images. The images are downscaled such that the largest dimension (width or height) is 300 pixels. I then uploaded them to a cloud service called [Cloudinary](https://cloudinary.com/). This service allows 25GB of free storage, with public image urls, while Firebase (which I'll look into next month) only seems to allow 1GB storage, which I won't clutter with images. I will say that Cloudinary has the easiest getting started guide for anything cloud hosted that I have ever seen:
+Now we have simply gathered the raw data, but we should also do a wee bit of processing. First of all, I don't trust that the image URLs will be there forever, so I have chosen to download the images. The images are downscaled such that the largest dimension (width or height) is 300 pixels. I then uploaded them to a cloud service called [Cloudinary](https://cloudinary.com/). This service allows 25GB of free storage, with public image urls, while Firebase (which I'll look into next month) only seems to allow 1GB storage, which I won't clutter with images. I will say that Cloudinary has the easiest getting started guide for anything cloud hosted that I have ever seen:
 
 ![cloudinary]({{ site.baseurl }}/assets/images/grocery_swiper/cloudinary.png "cloudinary")
 
 
 
-The other processing steps are regarding the "Tinder bio" belonging to each grocery item. I thought it would be funny to go all in here, so I let an LLM create a short, witty bio, based on the product name/type. But as the Danish LLMs, quite frankly, are very bad, I choose to do it on the English translation instead. I tried finding the most reliable, free, light-weight Danish-to-English model, and came up with the [Helsinki-NLP/opus-mt-da-en](https://huggingface.co/Helsinki-NLP/opus-mt-da-en) model, and used [Qwen/Qwen3-1.7B](https://huggingface.co/Qwen/Qwen3-1.7B) for creating the bio. This choice was based on previous success with this model, and is the largest of its kind that runs on Github actions, which is where the weekly processing will be performed. Also, both models should be fast enough to run on CPU for the same reason. 
+The other processing steps are regarding the "Tinder bio" belonging to each grocery item. I thought it would be funny to go all in here, so I let an LLM create a short, witty bio, based on the product name/type. But as the Danish LLMs, quite frankly, are very bad, I chose to do it on the English translation instead. I tried finding the most reliable, free, light-weight Danish-to-English model, and came up with the [Helsinki-NLP/opus-mt-da-en](https://huggingface.co/Helsinki-NLP/opus-mt-da-en) model, and used [Qwen/Qwen3-1.7B](https://huggingface.co/Qwen/Qwen3-1.7B) for creating the bio. This choice was based on previous success with this model, and is the largest of its kind that runs on Github actions, which is where the weekly processing will be performed. Also, both models should be fast enough to run on CPU for the same reason. 
 
 ```python
 translator = pipeline("translation", model="Helsinki-NLP/opus-mt-da-en", device='cpu')

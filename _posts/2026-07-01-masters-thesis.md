@@ -8,13 +8,13 @@ image: 'thesis/pose_hands.png'
 [Github repo](https://github.com/Marcrulo/masters-thesis) 
 
 ## [](#motivation)Motivation 💡
-Hand gesture recognition (HGR) in hybrid meetings are yet to be explored, since the most advanced technology in this regard is to activate a thumbs up emote by holding up said gesture in front of a laptop camera. Bringing HGR into large meeting rooms requires a strategy for reliably recognizing gestures of especially small hands, which is what my thesis explores.
+Hand gesture recognition (HGR) in hybrid meetings is yet to be explored, since the most advanced technology in this regard is to activate a thumbs up emote by holding up said gesture in front of a laptop camera. Bringing HGR into large meeting rooms requires a strategy for reliably recognizing gestures of especially small hands, which is what my thesis explores.
 
 ![motivation]({{ site.baseurl }}/assets/images/thesis/motivation.png "motivation")
 
 
 ## [](#outline)Outline 📋
-The goal of the thesis is to explore and evaluate different methods for detecting hands and recognizing gestures, by mainly relying on open-source options, while also being mindful of feasability of inference time. The thesis mainly covers these following topics:
+The goal of the thesis is to explore and evaluate different methods for detecting hands and recognizing gestures, by mainly relying on open-source options, while also being mindful of feasibility of inference time. The thesis mainly covers these following topics:
 1. **Hand detection** (hand bounding boxes)
 2. **Landmark localization** (hand joint keypoint)
 3. **Gesture recognition** (single- and multiframe gesture classes)
@@ -23,11 +23,11 @@ The goal of the thesis is to explore and evaluate different methods for detectin
 ![themes]({{ site.baseurl }}/assets/images/thesis/themes.png "themes")
 
 
-The goal is to identify meaningful improvements in HGR for the meeting room domain, while not focusing on absolute performance. This blog post will only touch briefly on the main findings and contributions, since fully covering a 85 page thesis, conducted over 6 months, will almost be as exhausting as watching that clip of [Skyler singing "Happy Birthday"](https://www.youtube.com/watch?v=n_GiCz7nPsU) again.
+The goal is to identify meaningful improvements in HGR for the meeting room domain, while not focusing on absolute performance. This blog post will only touch briefly on the main findings and contributions, since fully covering an 85-page thesis, conducted over 6 months, will almost be as exhausting as watching that clip of [Skyler singing "Happy Birthday"](https://www.youtube.com/watch?v=n_GiCz7nPsU) again.
 
 ## [](#hands)Hands ✋
 
-Using existing open-source hand detector models, small hands were barely detected. One reason could be that many hand detector models were trained to work on front-facing close-by hand detection, and not more troublesome real-life settings. There was not much to do about that, so in order to best utilize these models, tried various small object detection methods, that generally boil down to applying detection within crops of the image.
+Using existing open-source hand detector models, small hands were barely detected. One reason could be that many hand detector models were trained to work on front-facing close-by hand detection, and not more troublesome real-life settings. There was not much to do about that, so in order to best utilize these models, I tried various small object detection methods, that generally boil down to applying detection within crops of the image.
 
 Techniques such as ***SAHI*** sweeps over the image and naively applies detection on all slices, whereas prior-based detection such as within a detected ***person and/or wrist crop*** reduces the number of detections, while also keeping the region-of-interest centered within the crop:
 
@@ -38,7 +38,7 @@ The final method starts by detecting a person crop, followed by estimating body 
 
 ![hands]({{ site.baseurl }}/assets/images/thesis/hands.png "hands")
 
-Now that a hand crop is found, it's time to define the structure of the hand by estimaing hand joint keypoints/landmarks.
+Now that a hand crop is found, it's time to define the structure of the hand by estimating hand joint keypoints/landmarks.
 
 ## [](#landmarks)Landmarks 📍
 
@@ -62,9 +62,9 @@ Admittedly, this static-to-dynamic heuristic did not perform particularly well i
 
 ## [](#edge)Edge Devices 🔌
 
-While the thesis doesn't optimize model for efficient edge devices performance, the models are still evaluated for edge devices to get an idea of how much to optimize. The goal is for the full edge *system* to keep performing at real-time at a frame-rate of 16 FPS (62.5 ms per frame). This means that the upper bound of inference time should not exceed 62.5ms. 
+While the thesis doesn't optimize models for efficient edge-device performance, the models are still evaluated for edge devices to get an idea of how much to optimize. The goal is for the full edge *system* to keep performing at real-time at a frame-rate of 16 FPS (62.5 ms per frame). This means that the upper bound of inference time should not exceed 62.5ms. 
 
-Two chipsets of interest are compared (denoted *Chip A* and *Chip B*), with chip B being much faster, and therefore of most fascinating. The following figure shows the accumulated inference time of the full pipeline, by considering the inference time of each step. This assumes 2 visible people, meaning that detection is done within 2 separate person crops.
+Two chipsets of interest are compared (denoted *Chip A* and *Chip B*), with chip B being much faster, and therefore the most fascinating. The following figure shows the accumulated inference time of the full pipeline, by considering the inference time of each step. This assumes 2 visible people, meaning that detection is done within 2 separate person crops.
 
 ![edge]({{ site.baseurl }}/assets/images/thesis/edge.png "edge")
 

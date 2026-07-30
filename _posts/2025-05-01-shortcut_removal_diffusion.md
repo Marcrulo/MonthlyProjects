@@ -13,13 +13,13 @@ So instead of rushing a project, now that exams are done, I thought it would be 
 
 ## [](#project)Project Formulation
 
-This project is about removing *shortcuts* from [lesion images](https://challenge.isic-archive.com/data/#2018). In classification, a "shortcut" is some kind of proxy in the image, that is highly correlated with a specific class, without being the actual object of interest. An example would be how a model that is supposed to distinguish between a *wolf* and a *husky* might look for snow in the background. This is because images of wolves are usually taken in cold places (usually with snow). This becomes a problem when an image of a wolf in either not in a snowy area, or we get an image of a husky that *is* in a snowy area:
+This project is about removing *shortcuts* from [lesion images](https://challenge.isic-archive.com/data/#2018). In classification, a "shortcut" is some kind of proxy in the image, that is highly correlated with a specific class, without being the actual object of interest. An example would be how a model that is supposed to distinguish between a *wolf* and a *husky* might look for snow in the background. This is because images of wolves are usually taken in cold places (usually with snow). This becomes a problem when an image of a wolf is either not in a snowy area, or we get an image of a husky that *is* in a snowy area:
 
 ![wolf_husky]({{ site.baseurl }}/assets/images/shortcuts/wolf_husky.png "wolf_husky")
 
 In this project, the dataset consists of images of lesions of 7 classes (disease types + benign), but we are also provided with a label of whether the image contains a known shortcut or not. Shortcuts in this case are usually ruler markings on the skin. 
 
-Our goal is then to remove those shortcuts by first noising the image, and then recreate the image with the shortcut gone - esentially creating a ***counterfactual explanation*** of what an image would look like without the shortcut there. This is meant as a preprocessing step that can be applied to a dataset, such that the model that classifies lesion diseases will never be impacted by shortcuts, which lets the model focus on relevant features. The methods are based on [this paper](https://arxiv.org/abs/2203.04306).
+Our goal is then to remove those shortcuts by first noising the image, and then recreate the image with the shortcut gone - essentially creating a ***counterfactual explanation*** of what an image would look like without the shortcut there. This is meant as a preprocessing step that can be applied to a dataset, such that the model that classifies lesion diseases will never be impacted by shortcuts, which lets the model focus on relevant features. The methods are based on [this paper](https://arxiv.org/abs/2203.04306).
 
 
 ## [](#understand)Understanding the Problem
@@ -50,7 +50,7 @@ To check what a model "sees" when it makes a prediction, we have trained a Visua
 
 ![attention]({{ site.baseurl }}/assets/images/shortcuts/attention.png "attention")
 
-It is very obvious from this, that the model abuses the shortcut when it's present. When it's not present, it actually looks at the lesions. More specifically, it look at the edge of the lesion, which is also what professional doctors use when looking for signs of disease.
+It is very obvious from this, that the model abuses the shortcut when it's present. When it's not present, it actually looks at the lesions. More specifically, it looks at the edge of the lesion, which is also what professional doctors use when looking for signs of disease.
 
 We have also tried to compare accuracy of models. In the first case, the models have been trained and tested on the artificial shortcut dataset, and in the second one, the models have been trained on the dataset with artificial shortcuts *removed* - through diffusion, and tested on images with artificial shortcuts:
 
@@ -60,7 +60,7 @@ There are two bars, indicating the predictive ability of the model on shortcut- 
 
 The top plot seems to completely over-utilize the shortcuts, as they get almost perfect predictions when shortcuts are present. They also perform very poorly when a shortcut is then *not* present.
 
-The bottom plot shows the effect of removing shortcuts altogether (but testing on images with shortcuts). The models don't seems to perform significatly differently despite shortcuts being present. On top of that, the accuracy even increases for the images without shortcuts, as the model can now focus on the actual lesions. 
+The bottom plot shows the effect of removing shortcuts altogether (but testing on images with shortcuts). The models don't seem to perform significantly differently despite shortcuts being present. On top of that, the accuracy even increases for the images without shortcuts, as the model can now focus on the actual lesions. 
 
 It should be noted that an accuracy below 50% in a binary classification task is a bit weird, since we would then just flip the prediction to get a better accuracy. We are aware of the "bad quality" of the models. The important thing is, that the model has a better understanding of the classes. We do still get a higher accuracy than before.
 
@@ -69,4 +69,4 @@ It should be noted that an accuracy below 50% in a binary classification task is
 ## [](#discussion)Discussion and Conclusion
 I think the quality of shortcut removal is quite good, but not nearly as impressive as in the paper. As we didn't utilize the deterministic forward process, our diffusion model altered too much of the images, despite using the correct denoising process. It might have helped to find an even better pair of parameters for the noise level (L=160) and gradient scale (s=100).
 
-Despite that, the still managed to increase generalizability. The lesion classifiers then just had to be trained better, such that it would reach accuracies of >50%
+Despite that, they still managed to increase generalizability. The lesion classifiers then just had to be trained better, such that it would reach accuracies of >50%

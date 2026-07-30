@@ -1,5 +1,5 @@
 ---
-title: 16. Wordfeud bot (No RL)
+title: 16. Finally a way to beat my mom in Wordfeud 🔠
 description: I created a bot to finally beat my mom in Wordfeud
 published: true
 image: 'wordfeud/board.png'
@@ -26,10 +26,10 @@ So, a very intelligent bot would have access to a value function (neural net) th
 
 1. Calculate all legal moves
 2. Pick top K of these legal moves based on points
-3. For each K moves, sample N possible sets of letters on my opponents hand (based on which letters that are left), and calculate their best move
-4. Pick one of the K moves that maximized the difference between that word, and the opponents expected best move.
+3. For each K moves, sample N possible sets of letters on my opponent's hand (based on which letters that are left), and calculate their best move
+4. Pick one of the K moves that maximized the difference between that word, and the opponent's expected best move.
 
-In other words, I pick the move where I expect to get the largest point difference after my opponents turn. 
+In other words, I pick the move where I expect to get the largest point difference after my opponent's turn. 
 
 The following shows the best 10 moves and their scores. We see that the #1 move is "KEHRAUS" (43 points), which doesn't score nearly as much as #9 "HAUSA" for 63 points. This is because it sets up 2 triple word multipliers for the opponent. I can't tell if Wordfeud accepts "HAUSA" as a word, but it is definitely in the dictionary.
 

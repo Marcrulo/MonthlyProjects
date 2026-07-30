@@ -1,5 +1,5 @@
 ---
-title: 13. LLM-powered Discord bot
+title: 13. LLM-powered Discord bot for absolute chaos 🤖
 description: Utilize the power of AI to create the newest member on the server
 published: true
 image: 'discord_bot/discord_icon.png'
@@ -14,7 +14,7 @@ My favorite kind of projects when I started programming was to create these *Dis
 Over these many years, my friends and I have accumulated a lot of interaction in the text channels, meaning that an LLM could learn about us quickly. So now I wanted to test its capabilities. And yes, we will again be facing danish data, meaning that bad grammar and reasoning is inevitable.
 
 ## [](#setup)Setup
-With the high prices associated with GPU cloud hosting, it was very tempting to host the bot purely locally. The Discord bot API creates a tunnel for us, so we don't need to consider port-forwarding as a bottleneck. Buuuuut to my experience there exists no small models capable of generating coherent Danish text, so it was going to be hard. The contenders are the **Qwen3** and **Mistral** model families, as well as the **OpenEuroLLM-Danish** model (a Danish fine-tuned version of Gemma3). I ended up using the Qwen3 models and played around with model sized 4b,8b and 14b locally. Locally, 8b was the one that could run on the GPU without doing any CPU off-loading. 
+With the high prices associated with GPU cloud hosting, it was very tempting to host the bot purely locally. The Discord bot API creates a tunnel for us, so we don't need to consider port-forwarding as a bottleneck. Buuuuut to my experience there exists no small models capable of generating coherent Danish text, so it was going to be hard. The contenders are the **Qwen3** and **Mistral** model families, as well as the **OpenEuroLLM-Danish** model (a Danish fine-tuned version of Gemma3). I ended up using the Qwen3 models and played around with model sizes 4b,8b and 14b locally. Locally, 8b was the one that could run on the GPU without doing any CPU off-loading. 
 
 After much consideration I finally gave up and sacrificed 5 dollars for a virtual machine hosted on [Vast.ai](https://vast.ai/) 
 
@@ -28,7 +28,7 @@ It has *2* **RTX 3090** GPUs - this is one generation newer than my own PCs GPU,
 | RTX 2070 |    2304    |  8 GB |     7.5 TFLOPS   |      175 Watt     |
 | RTX 3090 |    10496   | 24 GB |    35.6 TFLOPS   |      350 Watt     |
 
-This should still be much cheaper than hosting on the large platforms like AVS, Azure or Google Cloud. This let me host a **Qwen3-32b** model for approximately 24 hours. I now have a better shot at this Danish text challenge.
+This should still be much cheaper than hosting on the large platforms like AWS, Azure or Google Cloud. This let me host a **Qwen3-32b** model for approximately 24 hours. I now have a better shot at this Danish text challenge.
 
 
 ## [](#personality)Personality
@@ -116,7 +116,7 @@ async def ask(ctx, *, question):
     await loading_message.edit(content=query_result)
 ```
 
-A lot of my time actually went into making the model faster such that queries would take 5-10 seconds instead of 1 minute. I was convinced that I had already disabled thinking, so I had just assumed my hardware was slow for the model, or that my system prompt was getting too big. Apprarently not the case. A big discovery was that there were multiple suggestions as how to remove thinking upon model loading such as:
+A lot of my time actually went into making the model faster such that queries would take 5-10 seconds instead of 1 minute. I was convinced that I had already disabled thinking, so I had just assumed my hardware was slow for the model, or that my system prompt was getting too big. Apparently not the case. A big discovery was that there were multiple suggestions as how to remove thinking upon model loading such as:
 
 ```python
 llm = ChatOllama(
@@ -240,8 +240,8 @@ This is what we have all been waiting for - the actual results! Just to warn you
 
 
 
-I think the only way Flemming can complete the Turing test is if he has to immitate a drunken man with a stroke. Everything he says is absolutely crazy. Obviously, making Flemming quote videos at every interaction makes it veeery hard to get a proper output, especially as the model is not strong enough to weave the reference and user prompt together as a clever coherent output. 
+I think the only way Flemming can complete the Turing test is if he has to imitate a drunken man with a stroke. Everything he says is absolutely crazy. Obviously, making Flemming quote videos at every interaction makes it veeery hard to get a proper output, especially as the model is not strong enough to weave the reference and user prompt together as a clever coherent output. 
 
-Beneath all the fun and sillyness, there was several technical challenges of getting it to run properly. I wanted this project to be fun, and not get too consumed by being too professional and technical. 
+Beneath all the fun and silliness, there were several technical challenges of getting it to run properly. I wanted this project to be fun, and not get too consumed by being too professional and technical. 
 
 Flemming has earned a very special place in my heart, and would probably have a special place on the server, if it wasn't because he was too expensive to have running 24/7. He will be turned off for now, but it was fine while it lasted.
