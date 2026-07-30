@@ -31,6 +31,7 @@ title: About me
 <br>
 **ML ENGINEER** (_R&D Insights & Machine Learning_) – [GN](https://www.gn.com/) \
 📅 Aug. 2026 - Now   | 📍 Ballerup, Denmark
+- ...
 <br>
 <br>
 
