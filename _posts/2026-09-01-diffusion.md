@@ -6,7 +6,7 @@ image: 'diffusion/thumbnail.png'
 math: true
 ---
 
-Github repo: [TODO](https://github.com/Marcrulo/PixelartDiffusion)
+Github repo: [Pixelart Diffusion](https://github.com/Marcrulo/PixelartDiffusion)
 
 
 ## [](#prologue)Prologue
@@ -25,4 +25,5 @@ Github repo: [TODO](https://github.com/Marcrulo/PixelartDiffusion)
 
 ## [](#pokemon)Pokémon
 - a (failed) usecase (sprites)
+- model: DDPM T=1000, cosine scheduler, DPM++ SDE 50, Classifier-free guidance
 - reflection and other methods to consider
