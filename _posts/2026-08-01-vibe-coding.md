@@ -31,7 +31,12 @@ Many websites surely do something similar, but this one is tailored to our need,
 
 
 ## [](#project-2)Project 2 - "One ring to rule them all"
-I want to find an engagement ring (for super unknown reasons), but since they are quite expensive, I want to at least know which one is the prettiest. My girlfriend has already in the context of the "grocery swiper" project proved that she is excellent at having preferences. Therefore we bring the swiping app back! Inspired by the swiping app concept, my girlfriend got to swipe 1500 rings so that I could learn which types of rings she liked and disliked. And no, she did not get to choose the exact one she wanted - I just need to understand her taste. Hopefully I will find a good ring. Time will tell...
+I want to find an engagement ring (for super unknown reasons), but since they are quite expensive, I want to at least know which one is the prettiest. My girlfriend has already in the context of the "grocery swiper" project proved that she is excellent at having preferences. Therefore we bring the swiping app back! 
+
+![ring]({{ site.baseurl }}/assets/images/vibe-coding/ring.png "ring")
+
+
+Inspired by the swiping app concept, my girlfriend got to swipe 1500 rings so that I could learn which types of rings she liked and disliked. And no, she did not get to choose the exact one she wanted - I just need to understand her taste. Hopefully I will find a good ring. Time will tell...
 
 ## [](#project-3)Project 3 - "Veggie day alert"
 People at work are complaing about the canteen placing the "Vegan day" on random days of the week, such that it's impossible to work from home on those days. This problem is easily solved by just checking the weekly menus on the canteen's website, but that would require WORK. As altruistic as I am, I made a scraper that sends out a warning Sunday evening.
