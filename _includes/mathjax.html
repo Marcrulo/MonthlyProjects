@@ -1,0 +1,25 @@
+<script>
+  window.MathJax = {
+    tex: {
+      // kramdown already turns $$...$$ into \(...\) inline and \[...\] display,
+      // so those are the only delimiters that ever reach the browser.
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'none'
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  /* long equations scroll instead of blowing out the column on mobile */
+  mjx-container[display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.2em 0;
+  }
+</style>

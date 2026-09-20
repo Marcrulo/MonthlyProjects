@@ -4,6 +4,15 @@ Website: https://marcrulo.github.io/MonthlyProjects/
 
 MonthlyProjects is a lightweight archive of monthly blog posts, experiments, and project write-ups.
 
+## 🤖🤙 [Vibe Coding](https://marcrulo.github.io/MonthlyProjects/vibe-coding)
+Three agent-built projects in one month - a housing map with transport and road-noise layers, a ring-swiping preference app, and a canteen veggie-day alert.
+
+## 🎓 [Master's Thesis](https://marcrulo.github.io/MonthlyProjects/masters-thesis)
+Improving hand gesture detection in meeting rooms with pose-guided crops, super-resolution, and the Super*HAN* landmark model.
+
+## 🔠 [Wordfeud Bot](https://marcrulo.github.io/MonthlyProjects/wordfeud-bot)
+Reading the board from a screenshot via template matching, then a simple search that maximizes my score while minimizing my mom's.
+
 ## 🧮 [Neural Network from Scratch](https://marcrulo.github.io/MonthlyProjects/nn-live-implementation)
 Building a fully-connected neural network in pure NumPy to test my skills, for when I can't simply ask Google or AI for help at the slightest inconvenience.
 
