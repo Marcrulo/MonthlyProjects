@@ -1,7 +1,7 @@
 ---
 title: 19. If I had a nickel for every time I tried creating Pokémon with Diffusion 🌀
 description: I'd have two nickels. Which isn't a lot, but it's weird that it happened twice
-published: true
+published: false
 image: 'diffusion/thumbnail.png'
 math: true
 ---
