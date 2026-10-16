@@ -25,7 +25,7 @@ So, in both cases, the internal state of a model describes how the data is struc
 ### How do we define a distribution?
 In the classification case, all the classes are assigned a probability, given some input. These probabilities sum to 1 and are non-negative, which describes a ***probability distribution***. A linear regression model only outputs a single number or *estimate*, but underlyingly defines a gaussian distribution around the estimate, with the residuals determining the variancce. 
 
-It is not as straight forward with generative models. For classification, you might want to estimate the probability between 10 classes, wheres with generative models you should in theory apply a probability to any possible image, matching the desired resolution. Defining the joint distribution is therefore less striaght forward, and there are many approaches to this. For LLMs, the models process the input text in a way that resolves in a probability distribution over the next tokens. For Variational Autoencoders (VAE), 
+It is not as straight forward with generative models. For classification, you might want to estimate the probability between 10 classes, wheres with generative models you should in theory apply a probability to any possible, let's say, image (of a fixed resolution). Defining the joint distribution is therefore less striaght forward, and there are many approaches to this. For LLMs, the models process the input text in a way that resolves in a probability distribution over the next tokens. For Variational Autoencoders (VAE) for images, each pixel is usually gaussian distributed
 
 
 
