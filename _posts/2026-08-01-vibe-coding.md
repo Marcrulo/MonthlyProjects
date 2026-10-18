@@ -1,5 +1,5 @@
 ---
-title: 18. Programming is so last year - Vibing is the new thing 🤖🤙
+title: 18. Programming is so last year - Vibe coding is the new thing 🤖🤙
 description: I have finally found peace in AI agents replacing my programming completely. This month was spent practicing using agents to solve my actual problems
 published: true
 image: 'vibe-coding/thumbnail.png'
